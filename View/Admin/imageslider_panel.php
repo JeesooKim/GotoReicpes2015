@@ -17,7 +17,7 @@ and open the template in the editor.
         <form action="imageslider_panel.php" method="POST">
             Name: <input type="text" name="name" />
             Description: <input type="text" name="name" />
-            <input type="button" name="upload" value="Browse File" />
+            <input type="button" name="upload" value="Browse for File" />
             Text: <input type="text" name="name" />
             
             <?php echo "Preview"; ?>
