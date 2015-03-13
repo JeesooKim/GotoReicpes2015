@@ -1,3 +1,7 @@
+<?php include '../View/Shared/header.php';
+?>
+
+
 <?php
 require_once('database.php');
 error_reporting(0);
@@ -105,7 +109,7 @@ if( isset($_POST['upload']) ){
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD SHTML 1.0 Transitional//EN"
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD SHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999.xhtml">
@@ -113,7 +117,7 @@ if( isset($_POST['upload']) ){
         <meta http-equiv="Contet-Type" content="text/html"; charset="utf-8" />
         <title>Upload Images</title>
     </head>
-    <body>
+    <body>-->
         
         <form action="image_upload.php" method="post" enctype="multipart/form-data">
             
@@ -164,5 +168,7 @@ if( isset($_POST['upload']) ){
             <input type="submit" name="upload" value="Upload Image"/>
             
         </form>
-    </body>
-</html>
+    
+
+
+<?php include '../View/Shared/footer.php';  ?>
