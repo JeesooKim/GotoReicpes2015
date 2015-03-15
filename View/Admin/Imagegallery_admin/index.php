@@ -1,9 +1,9 @@
 <?php
-require('../../model/database.php');
-require('../../model/category.php');
-require('../../model/category_db.php');
-require('../../model/imagegallery.php');
-require('../../model/imagegallery_db.php');
+require('../../../model/database.php');
+require('../../../model/category.php');
+require('../../../model/category_db.php');
+require('../../../model/imagegallery.php');
+require('../../../model/imagegallery_db.php');
 error_reporting();
 
 if (isset($_POST['action'])) {
@@ -60,7 +60,7 @@ if ($action == 'list_images') { //when the page is loaded for the fist time
     
     $img_filename = basename($_FILES['file_upload']['name']);
     $t_name = $_FILES['file_upload']['tmp_name'];
-    $dir='../../content/uploads/images/'; //specifies the directory where the file is going to be placed
+    $dir='../../../content/uploads/images/'; //specifies the directory where the file is going to be placed
     $img_path = $dir . $img_filename;
     $img_size =$_FILES["file_upload"]["size"];
     $img_type = pathinfo($img_path, PATHINFO_EXTENSION);  //holds the file extension of the file
@@ -149,7 +149,7 @@ if ($action == 'list_images') { //when the page is loaded for the fist time
      //Check if $uploadOk is set to 0 by an error             
     if ($uploadOk == 0) {        
         $error = "Sorry, your file was not uploaded.";
-        include('../../Errors/error.php');    
+        include('../../../Errors/error.php');    
     }
     else if($uploadOK ==1) {       
         // if everything is ok, try to upload file        

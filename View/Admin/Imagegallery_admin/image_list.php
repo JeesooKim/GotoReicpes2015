@@ -1,5 +1,6 @@
-<?php include '../../view/header.php'; ?>
-<div id="main">
+<?php include '../../../View/Shared/header.php'; ?>
+<!--<div id="main">-->
+<section maing>
 
     <h1>Image List</h1>
 
@@ -53,5 +54,5 @@
         <p><a href="?action=show_upload_form">Upload Image</a></p>
     </div>
 
-</div>
-<?php include '../../view/footer.php'; ?>
+</section>
+<?php include '../../../View/Shared/footer.php'; ?>

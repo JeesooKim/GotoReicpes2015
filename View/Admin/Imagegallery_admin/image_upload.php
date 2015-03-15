@@ -1,4 +1,4 @@
-<?php include '../../view/header.php'; ?>
+<?php include '../../../View/Shared/header.php'; ?>
 
 <div id="main">
     <h1>Upload Image</h1>
@@ -40,7 +40,7 @@
                 </tr>
                 <tr>
                     <td><label>Source:</label></td>
-                    <td><input type="input" name="img_source" placeholer="http://" /></td>
+                    <td><input type="input" name="img_source" placeholder="http://" /></td>
                 </tr>
                 
         </table>
@@ -51,4 +51,4 @@
     <p><a href="index.php?action=list_images">View Image List</a></p>
 
 </div>
-<?php include '../../view/footer.php'; ?>
+<?php include '../../Shared/footer.php'; ?>
