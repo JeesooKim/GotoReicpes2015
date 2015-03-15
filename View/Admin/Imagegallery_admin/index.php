@@ -164,7 +164,7 @@ if ($action == 'list_images') { //when the page is loaded for the fist time
               try{
 //                        $db= Database::getDB();       
 //
-//                        $query = "INSERT INTO gallery (img_title, cat_id ,img_key, img_detail, img_filename, img_path, img_size, img_type, 
+//                        $query = "INSERT INTO imagegallery (img_title, cat_id ,img_key, img_detail, img_filename, img_path, img_size, img_type, 
 //                                                                             img_author, img_source)
 //                                            VALUES('$img_title', '$category_id', '$img_key','$img_detail', '$img_filename', '$img_path', '$img_size', '$img_type', 
 //                                                                             '$img_author','$img_source' )";

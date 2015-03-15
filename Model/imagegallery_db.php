@@ -14,7 +14,7 @@ class ImageGalleryDB{
     public static function GetImages(){
         $dbCon =Database::getDB();    //connection to the database
         
-        $sql= 'SELECT * FROM gallery INNER JOIN categories ON gallery.cat_id=categories.cat_id';
+        $sql= 'SELECT * FROM imagegallery INNER JOIN categories ON gallery.cat_id=categories.cat_id';
         $result= $dbCon ->query($sql);   
         $images = array();
         foreach($result as $row){    
@@ -38,7 +38,7 @@ class ImageGalleryDB{
         //then get the images from gallery table where cat_id matches  $category_id
         $dbCon=Database::getDB();
         $category = CategoryDB::getCategory($category_id);
-        $sql = "SELECT * FROM gallery WHERE cat_id='$category_id'  ORDER BY img_id ";
+        $sql = "SELECT * FROM imagegallery WHERE cat_id='$category_id'  ORDER BY img_id ";
 
         $result= $dbCon->query($sql);
         $images=array();
@@ -62,7 +62,7 @@ class ImageGalleryDB{
         //get the category by creating category obj
         
         $dbCon= Database::getDB();
-        $sql = "SELECT * FROM gallery WHERE img_id = '$img_id'";
+        $sql = "SELECT * FROM imagegallery WHERE img_id = '$img_id'";
         $result = $dbCon->query($sql);
         
         //convert result into array
@@ -77,7 +77,7 @@ class ImageGalleryDB{
     
     public static function deleteImage($img_id){
         $dbCon=Database::getDB();
-        $sql="DELETE FROM gallery WHERE img_id='$img_id' ";
+        $sql="DELETE FROM imagegallery WHERE img_id='$img_id' ";
         $row_count = $dbCon-> exec($sql);
         return $row_count;
         
@@ -105,7 +105,7 @@ class ImageGalleryDB{
         $img_author = $image -> getAuthor();
         $img_source = $image->getSource();
         
-        $sql = "INSERT INTO gallery (img_title,cat_id,img_key, img_detail, "
+        $sql = "INSERT INTO imagegallery (img_title,cat_id,img_key, img_detail, "
                                                     . "img_filename, img_path, img_size, img_type,"
                                                     . " img_author, img_source) "
                                         . "VALUES('$img_title', '$cat_id', '$img_key','$img_detail', "
