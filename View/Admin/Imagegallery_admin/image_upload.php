@@ -52,3 +52,10 @@
 
 </div>
 <?php include '../../Shared/footer.php'; ?>
+
+<!--
+//PHP project-gotorecipes.com
+//Image Gallery(Admin), File:image_upload.php
+//Humber College 2015
+//Jeesoo Kim, March 16
+-->

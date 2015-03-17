@@ -1,4 +1,4 @@
-<?php include '../view/header.php'; ?>
+<?php include '../view/Shared/header.php'; ?>
 
 <?php 
 ini_set('display_errors', 'on');
@@ -9,4 +9,4 @@ ini_set('display_errors', 'on');
     <h1 class="top">Error</h1>
     <p><?php echo $error; ?></p>
 </div>
-<?php include '../view/footer.php'; ?>
+<?php include '../view/Shared/footer.php'; ?>

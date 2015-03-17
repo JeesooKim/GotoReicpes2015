@@ -51,7 +51,10 @@ if ($action == 'list_images') { //when the page is loaded for the fist time
     
 } else if ($action == 'Upload Image') {
     
-    $category_id = $_POST['category_id'];       
+    $category_id = $_POST['category_id'];      
+    $current_category = CategoryDB::getCategory($category_id);   //Category object having name and id properties
+    $category_name=$current_category->getCatName();
+    
     $img_title = $_POST['img_title'];    
     $img_key=$_POST['img_key'];
     $img_detail=$_POST['img_detail'];    
@@ -60,10 +63,12 @@ if ($action == 'list_images') { //when the page is loaded for the fist time
     
     $img_filename = basename($_FILES['file_upload']['name']);
     $t_name = $_FILES['file_upload']['tmp_name'];
-    $dir='../../../content/uploads/images/'; //specifies the directory where the file is going to be placed
-    $img_path = $dir . $img_filename;
+    $dir='../../../content/uploads/images/';    //specifies the directory where the file is going to be placed,
+    $img_path = $dir . $category_name . "/";
+    $img_file_path = $dir . $category_name . "/" . $img_filename;
+    
     $img_size =$_FILES["file_upload"]["size"];
-    $img_type = pathinfo($img_path, PATHINFO_EXTENSION);  //holds the file extension of the file
+    $img_type = pathinfo($img_file_path, PATHINFO_EXTENSION);  //holds the file extension of the file
     //$img_type=$_FILES['file_upload']['type'];
     
     //http://www.php-mysql-tutorial.com/wikis/mysql-tutorials/uploading-files-to-mysql-database.aspx    
@@ -99,7 +104,7 @@ if ($action == 'list_images') { //when the page is loaded for the fist time
 
 
  // Check if file already exists
-        if(file_exists($img_path)){
+        if(file_exists($img_file_path)){
             echo "File already exists in uploads folder. <br/>";
             $uploadOk=0;    
         }
@@ -129,21 +134,6 @@ if ($action == 'list_images') { //when the page is loaded for the fist time
         }
         
 /***************** end of  ImageFile Validation ***********************************/
-
-//    echo "title: " . $img_title . "<br/>";    
-//    echo "cat id: " . $category_id . "<br/>";  
-//    echo "key:  " . $img_key . "<br/>";  
-//    echo "detail: " . $img_detail . "<br/>";  
-//    echo "author: " . $img_author . "<br/>";  
-//    echo "source: " . $img_source . "<br/>";  
-//    
-//    echo "filename: " . $img_filename . "<br/>";
-//    echo "path: " . $img_path. "<br/>";
-//    echo "size: " . $img_size. "<br/>";
-//    echo "type: " . $img_type. "<br/>";    
-//    
-//    
-//    echo $uploadOK . "<br/>";
     
     //Depending on the result of the above validation, do the following.
      //Check if $uploadOk is set to 0 by an error             
@@ -155,24 +145,19 @@ if ($action == 'list_images') { //when the page is loaded for the fist time
         // if everything is ok, try to upload file        
          //$current_category = CategoryDB::getCategory($category_id);       
          //$current category...is a category Object...not a string         
-         $imageObj = new ImageGallery($img_title, $category_id, $img_key,$img_detail, $img_filename, $img_path, $img_size, $img_type, $img_author,$img_source);
+         $imageObj = new ImageGallery($img_title, $category_id, $img_key,$img_detail, $img_filename, $img_file_path, $img_size, $img_type, $img_author,$img_source);
                                                
-          if(move_uploaded_file($t_name, "$img_path")){ 
+          if(move_uploaded_file($t_name, "$img_file_path")){ 
           //move_uploaded_file — Moves an uploaded file to a new location
            //bool move_uploaded_file ( string $filename , string $destination )
-             
+              
+              $pathToImages = $img_path;
+              $pathToThumbs = $img_path . "thumbnails/" ;
+              $thumbWidth = 100;   //in dpi              
+              ImageEdit::CreateThumbs($pathToImages, $pathToThumbs, $thumbWidth );
+              
               try{
-//                        $db= Database::getDB();       
-//
-//                        $query = "INSERT INTO imagegallery (img_title, cat_id ,img_key, img_detail, img_filename, img_path, img_size, img_type, 
-//                                                                             img_author, img_source)
-//                                            VALUES('$img_title', '$category_id', '$img_key','$img_detail', '$img_filename', '$img_path', '$img_size', '$img_type', 
-//                                                                             '$img_author','$img_source' )";
-//                        //$db->prepare($query);
-//                        $db->exec($query);
-
-                        ImageGalleryDB::addImage($imageObj);
-                        //echo "upload successful";                           
+                        ImageGalleryDB::addImage($imageObj);                                           
               }
               catch(PDOException $e){
                   $err= $e->getMessage();
@@ -188,4 +173,9 @@ if ($action == 'list_images') { //when the page is loaded for the fist time
     }
     //Ref: http://www.w3schools.com/php/php_file_upload.asp  Feb 25,2015
 }
+
+//PHP project-gotorecipes.com
+//Image Gallery(Admin), File: index.php
+//Humber College 2015
+//Jeesoo Kim, March 16
 ?>

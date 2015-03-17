@@ -1,4 +1,4 @@
-<?php include '../../../View/Shared/header.php'; ?>
+<?php include '../../Shared/header.php'; ?>
 <!--<div id="main">-->
 <section maing>
 
@@ -55,4 +55,11 @@
     </div>
 
 </section>
-<?php include '../../../View/Shared/footer.php'; ?>
+<?php include '../../Shared/footer.php'; ?>
+
+<!--
+//PHP project-gotorecipes.com
+//Image Gallery(Admin), File: image_list.php
+//Humber College 2015
+//Jeesoo Kim, March 16
+-->

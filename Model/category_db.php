@@ -30,4 +30,8 @@ class CategoryDB {
         return $category;
     }    
 }
+
+//PHP project-gotorecipes.com
+//Humber College 2015
+//Jeesoo Kim, March 16
 ?>

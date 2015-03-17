@@ -125,4 +125,8 @@ class ImageGallery{
         $this->source =$value;
     }   
 }
+
+//PHP project-gotorecipes.com
+//Humber College 2015
+//Jeesoo Kim, March 16
 ?>

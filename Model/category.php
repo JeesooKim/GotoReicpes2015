@@ -33,4 +33,8 @@ class Category{
         $this->category_name=$value;
     }    
 }
+
+//PHP project-gotorecipes.com
+//Humber College 2015
+//Jeesoo Kim, March 16
 ?>
