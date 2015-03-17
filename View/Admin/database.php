@@ -4,7 +4,7 @@ class Database {
 
     private static $dsn = 'mysql:host=lotus.arvixe.com;dbname=gotorecipes_db';
     private static $username = 'admin_gotorecipe';
-    private static $password = 'recipe';
+    private static $password = 'riverside';
     //reference to db connection
     private static $db;
 
@@ -20,8 +20,7 @@ class Database {
                     self::$password);
                 //echo "CONNECTED";
             } catch (PDOException $e) {
-                $error_message = $e->getMessage();
-                include('../Errors/database_error.php');
+                //echo "ERROR CONNECTING TO DB";
                 exit();
             }
             
