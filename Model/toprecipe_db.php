@@ -24,7 +24,6 @@ class ToprecipeDB {
 		."dish_name, dish_cat, dish_key, dish_num_serving, dish_cook_time from recipes a "
 		." where dish_cat = '$category' order by cnt desc";
         }
-         echo $query;   
         $result = $db->query($query);
         $toprecipe = array();
         foreach ($result as $row) {

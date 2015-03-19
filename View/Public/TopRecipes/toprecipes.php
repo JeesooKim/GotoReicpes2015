@@ -43,9 +43,10 @@ Today's Recipe
     <form action="toprecipes.php" method="post">
         <select name="category">
         <?php 
+        echo "<option value='' >All</option>";
         foreach ($categories as $category) : 
             
-            if( strcmp($category_parm, $category) ){
+            if( !strcmp($category_parm, $category)){
                 echo "<option value='$category' selected >$category</option>";
             }else{
                 echo "<option value='$category'  >$category</option>";
@@ -61,7 +62,22 @@ Today's Recipe
 
 $toprecipes = ToprecipeDB::getTopRecipeByCategory($category_parm);
 
+
+echo "<br />";
 echo '<table border="1">';
+?>
+<tr>
+    <th>count</th>
+    <th>Dish Id</th>
+    <th>Dish Name</th>
+    <th>Category</th>
+    <th>Key</th>
+    <th>Number of Serving</th>
+    <th>Cook Time</th>
+</tr>
+
+<?php
+
 foreach ($toprecipes as $toprecipe) :
     echo "<tr>";
     echo "<td>";
