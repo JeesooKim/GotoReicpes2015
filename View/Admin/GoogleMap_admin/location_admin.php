@@ -1,8 +1,8 @@
 <?php 
-        include '../../View/Shared/header.php';
-        require ('../../Model/database.php'); 
-        require ('../../Model/location_db.php'); 
-        require ('../../Model/locations.php'); 
+        include ('../../../View/Shared/header.php');
+        require ('../../../Model/database.php'); 
+        require ('../../../Model/location_db.php'); 
+        require ('../../../Model/locations.php'); 
         
         //handle delete from data
         if(isset($_POST['location_id'])){

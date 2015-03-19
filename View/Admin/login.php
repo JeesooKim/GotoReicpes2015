@@ -1,28 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Welcome to GoToRecipes</title>
-	<!--[if lt IE 9]>
-	      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-	<![endif]-->
-	<link href="../../Content/css/bootstrap.css" rel="stylesheet">
-	<link href="../../Content/css/style.css" rel="stylesheet" type="text/css">
-	<link href="../../Content/css/reset.css" rel="stylesheet" type="text/css">
-</head>
-
-<body>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../Content/js/bootstrap.min.js"></script>
-
-	<div id="container">
-		<?php include ('../../View/Shared/header.php') ?>
-		<!--end top-->
+<?php include ('../../View/Shared/header.php') ?>
 
 		<h2><span class="fontawesome-lock"></span>User Login</h2>
 
@@ -44,6 +20,3 @@
 		</form>
 
 		<?php include ('../../View/Shared/footer.php') ?>
-	</div> <!--end container-->
-</body>
-</html>
