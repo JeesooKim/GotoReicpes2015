@@ -1,8 +1,10 @@
-<?php include ('../../View/Shared/header.php'); ?>
-
-	
-        <?php include ('../../View/Shared/side-menu.php'); ?>
+<?php   include ('../../View/Shared/header.php');
+        include ('../../View/Shared/side-menu.php');
+        
+        echo "ADMIN PANEL</h1>";
         
 		
-		<?php include ('../../View/Shared/footer.php'); ?>
+        include ('../../View/Shared/footer.php'); 
+                
+?>
                

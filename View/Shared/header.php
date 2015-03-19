@@ -13,12 +13,12 @@
 	<link href="../../Content/css/bootstrap.css" rel="stylesheet">
 	<link href="../../Content/css/style.css" rel="stylesheet" type="text/css">
 	<link href="../../Content/css/reset.css" rel="stylesheet" type="text/css">
-</head>
+</head> 
     <body>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../../Content/js/bootstrap.min.js"></script>
+    <script src="../../Content/js/bootstrap.min.js"></script>
 
 	<div id="container">
 		<header>
@@ -52,7 +52,6 @@
 								<li><a class="ddl_link" href="#">Newest Recipes</a></li>
 								<li class="divider"></li>
 								<li><a class="ddl_link" href="#">Appetizers</a></li>
-								<li><a class="ddl_link" href="#">Quick Meals</a></li>
 								<li><a class="ddl_link" href="#">Breakfast</a></li>
 								<li><a class="ddl_link" href="#">Lunch</a></li>
 								<li><a class="ddl_link" href="#">Dinner</a></li>
