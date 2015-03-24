@@ -3,7 +3,7 @@
 class Database{
     //Database class to create a database connection object(Php Data Object)
     
-    private static $dsn='mysql:host=localhost;dbname=gotorecipe';
+    private static $dsn='mysql:host=localhost;dbname=gotorecipes_db';
     private static $username = 'root';
     private static $password ='';
     //reference to db connection

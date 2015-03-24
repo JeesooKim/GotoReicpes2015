@@ -1,4 +1,4 @@
-<?php include '../../../View/Shared/header.php'; ?>
+<?php include '../../Shared/header.php'; ?>
 
 <div id="main">
     <p><a href="index.php?action=list_images">View Image List</a></p>
