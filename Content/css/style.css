@@ -227,3 +227,17 @@ footer{
 #media a:hover{
 	color: #bababa;
 }
+
+/*-------- image gallery table (added Mar23) -JS----------*/
+#image_upload_table{
+    border: 1px solid black;
+}
+#image_upload_table thead th {
+    border: 1px solid black;
+    text-align: center;
+    font-weight: bold;
+}
+
+#image_upload_table tbody td{
+    border: 1px solid black;
+}

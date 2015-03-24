@@ -1,6 +1,7 @@
 <?php include '../../../View/Shared/header.php'; ?>
 
 <div id="main">
+    <p><a href="index.php?action=list_images">View Image List</a></p>
     <h1>Upload Image</h1>
 
      <form action="index.php" method="post" enctype="multipart/form-data">         
@@ -48,7 +49,7 @@
         <input type="submit" name="action" value="Upload Image" />  
         <br />
     </form>
-    <p><a href="index.php?action=list_images">View Image List</a></p>
+    
 
 </div>
 <?php include '../../Shared/footer.php'; ?>
