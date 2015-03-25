@@ -1,16 +1,15 @@
 <?php
-
-include '../../Shared/header.php';
-include '../../Shared/side-column.php';
-require('../../Model/location_admin.php');
-require('../../Model/location_db.php');
+require('../../../view/shared/header.php');
+require('../../../model/database.php');
+require('../../../model/locations.php');
+require('../../../model/location_db.php');
 
 if(isset($_GET['id'])) {
-    $contact_id = $_GET['id'];
+    $location_id = $_GET['id'];
 } else {
     $location_id = $_POST['location_id'];
 }
-$map_location = locationDB::getLocation($location_id);
+$map_location = LocationDB::getLocation($location_id);
 $map_location_branch = $map_location->getBranch();
 $map_location_phone = $map_location->getPhone();
 $map_location_street = $map_location->getStreet();
@@ -62,7 +61,7 @@ if (isset($_POST['location_update'])) {
         </div>
         
         <div class="form-group">
-            <label for="location_postal">Longitude</label>
+            <label for="location_postal">Postal</label>
             <input type="text" value="<?php echo $map_location_postal; ?>" class="form-control" name="location_postal">
         </div>
         
@@ -72,18 +71,21 @@ if (isset($_POST['location_update'])) {
         </div>
         
         <div class="form-group">
-            <label for="location_province">Latitude</label>
+            <label for="location_province">Province</label>
             <input type="text" value="<?php echo $map_location_province; ?>" class="form-control" name="location_province">
         </div>
         
         <div class="form-group">
-            <label for="location_country">Latitude</label>
+            <label for="location_country">Country</label>
             <input type="text" value="<?php echo $map_location_country; ?>" class="form-control" name="location_country">
         </div>
         <button type="submit" class="btn btn-primary" name="location_update">Update</button>
+        <a class="btn btn-default" href="location_admin.php">Back to list</a>
     </form>
 </div>
 <!--End of update form-->
 
-
-<?php include 'view/footer.php'; ?>
+<?php
+include '../../Shared/footer.php';
+?>
+         

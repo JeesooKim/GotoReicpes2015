@@ -159,12 +159,14 @@ header{
 
 footer{
 	clear: both;
-	height: 80px;
+	height: 40px;
 	background-color: #363636;
 }
 
 #copyright{
-	color: #fff;
+        float: right;
+        margin-right: 15px;
+	color: #CDCDCD;
 	text-decoration: none;
 	font-size: 13px;
 	padding-left: 50px;
@@ -240,4 +242,10 @@ footer{
 
 #image_upload_table tbody td{
     border: 1px solid black;
+}
+
+.breadcrumb{
+    font-size: .85em;
+    margin: auto;
+    background-color: #FDF9F0;
 }

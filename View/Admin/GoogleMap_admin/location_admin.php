@@ -1,23 +1,28 @@
 <?php
-include '../../header.php';
-include '../../Shared/side-column.php';
-require('../../Model/location_admin.php');
-require('../../Model/location_db.php');
+require('../../../view/shared/header.php');
+require('../../../model/database.php');
+require('../../../model/locations.php');
+require('../../../model/location_db.php');
 
 if(isset($_POST['location_id'])){
 $location_id = $_POST['location_id'];
-locationDB::deleteLocation($location_id);
+LocationDB::deleteLocation($location_id);
     header("Location: location_admin.php");
 }
 ?>
 
 <div id="main">
-    <article class="placeholder">
-        <h4>Contact Locations</h4>
-        <a href="location_insert.php" class="btn btn-primary">Insert new branch</a>
+    <ol class="breadcrumb">
+        <li><a href="../../../View/Admin/index.php">Admin Panel</a></li>
+        <li class="active">Locations</li>
+    </ol>
+
+    <article>
+        <h4>Branch Locations</h4>
+        <a href="location_insert.php">Add new branch</a>
     </article>
 
-    <table class="table table-responsive table-striped">
+    <table class="table table-responsive">
         <thead>
         <tr>
             <th>Branch</th>
@@ -33,9 +38,8 @@ locationDB::deleteLocation($location_id);
         </thead>
         <tbody>
         <?php
-        $locations = locationDB::getLocations();
+        $locations = LocationDB::getLocations();
         foreach ($locations as $row):
-
             ?>
             <tr>
                 <iframe width="325" height="250" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=<?php echo $row->getStreet(),$row->getPostal(),$row->getCountry();?>&amp;aq=&amp;sspn=0.111915,0.295601&amp;ie=UTF8&amp;hq=&amp;hnear=<?php echo $row->getStreet(),$row->getPostal(),$row->getCountry();?>&amp;t=m&amp;z=12&amp;output=embed" w></iframe>
@@ -68,6 +72,6 @@ locationDB::deleteLocation($location_id);
 </div><!--End of main-->
 
 <?php
-include '../../Shared/footer.php';
+require('../../../view/shared/footer.php');
 ?>
                 

@@ -3,9 +3,9 @@
 class Database{
     //Database class to create a database connection object(Php Data Object)
     
-    private static $dsn='mysql:host=localhost;dbname=gotorecipes_db';
-    private static $username = 'root';
-    private static $password ='';
+    private static $dsn='mysql:host=lotus.arvixe.com;dbname=gotorecipes_db';
+    private static $username = 'admin_gotorecipe';
+    private static $password ='recipe';
     //reference to db connection
     private static $dbCon;
     
@@ -22,11 +22,13 @@ public static function getDB(){
                     }
                     catch(PDOException $e){
                         $error_message= $e->getMessage();
-                        include('../Errors/database_error.php');
+                        include('../../../Errors/database_error.php');
                         exit();
                     }
             }  
             return self::$dbCon;
     }
 }
+
+//$pdo = Database::getDB();
 ?>
