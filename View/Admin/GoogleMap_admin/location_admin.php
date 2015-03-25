@@ -4,6 +4,7 @@ require('../../../model/database.php');
 require('../../../model/locations.php');
 require('../../../model/location_db.php');
 
+//delete option
 if(isset($_POST['location_id'])){
 $location_id = $_POST['location_id'];
 LocationDB::deleteLocation($location_id);
@@ -22,7 +23,7 @@ LocationDB::deleteLocation($location_id);
         <a href="location_insert.php">Add new branch</a>
     </article>
 
-    <table class="table table-responsive">
+    <table class="table table-responsive table-bordered">
         <thead>
         <tr>
             <th>Branch</th>
@@ -53,15 +54,15 @@ LocationDB::deleteLocation($location_id);
                 <td><?php echo $row->getProvince(); ?></td>
                 <td><?php echo $row->getCountry(); ?></td>
                 <td>
-                    <a class="btn btn-link" href="location_update.php?id=<?php echo $row->getID(); ?>">
-                        <span class="glyphicon glyphicon-pencil"></span>
+                    <a class="btn-link" href="location_update.php?id=<?php echo $row->getID(); ?>">
+                        <span class="glyphicon glyphicon-edit"></span>
                     </a>
                 </td>
                 <td>
                     <form action="location_admin.php" method="post">
                         <input type="hidden" name="location_id" value="<?php echo $row->getID(); ?>"/>
-                        <button class="btn btn-link" type="submit" value="delete">
-                            <span class="glyphicon glyphicon-trash"></span>
+                        <button class="btn-link" type="submit" value="delete"  onclick="return confirm('Are you sure you want to delete this?');">
+                            <span class="glyphicon glyphicon-remove"></span>
                         </button>
                     </form>
                 </td>
