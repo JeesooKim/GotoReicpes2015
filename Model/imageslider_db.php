@@ -1,56 +1,49 @@
 <?php
-class LocationDB {
-	//use category and product class
-	//four static method
-    public static function getLocations() {
+class ImagesliderDB {
+    
+    public static function getImagesliders() {
         $db = Database::getDB();
-        $query = 'SELECT * FROM location';
+        $query = $db->prepare('SELECT * FROM imageslider');
         $result = $db->query($query);
-        $locations = array();
+        $imagesliders = array();
         foreach ($result as $row) {
-            $location = new Location(
-                                   $row['branch'],
-                                   $row['phone'],
-                                   $row['street'],
-                                   $row['postal'],
-                                   $row['city'],
-                                   $row['province'],
-                                   $row['country']);
-            $location->setId($row['id']);
-            $locations[] = $location;
+            $imageslider = new Slideshow(
+                                   $row['name'],
+                                   $row['description'],
+                                   $row['image'],
+                                   $row['date']);
+            $imageslider->setId($row['imageId']);
+            $imagesliders[] = $imageslider;
         }
-        return $locations;
+        return $imagesliders;
     }
 
     //accept product id
-    public static function getLocation($location_id) {
+    public static function getImageslider($image_id) {
         $db = Database::getDB();
-        $query = "SELECT * FROM location
-                  WHERE id = '$location_id'";
+        $query = $db->prepare("SELECT * FROM imageslider
+                  WHERE imageId = '$image_id'");
         $result = $db->query($query);
         //convert result into array
         $row = $result->fetch();
-        $location = new Location(
-                                   $row['branch'],
-                                   $row['phone'],
-                                   $row['street'],
-                                   $row['postal'],
-                                   $row['city'],
-                                   $row['province'],
-                                   $row['country']);
-        $location->setID($row['id']);
-        return $location;
+        $imageslider = new Slideshow(
+                                   $row['name'],
+                                   $row['description'],
+                                   $row['image'],
+                                   $row['date']);
+        $imageslider->setImageID($row['imageId']);
+        return $imageslider;
     }
 
-    public static function deleteLocation($location_id) {
+    public static function deleteImageslider($image_id) {
         $db = Database::getDB();
-        $query = "DELETE FROM location
-                  WHERE id = '$location_id'";
+        $query = $db->prepare("DELETE FROM imageslider
+                  WHERE imageId = '$image_id'");
         $row_count = $db->exec($query);
         return $row_count;
     }
 
-    public static function addLocation($location) {
+    public static function addImageslider($imageslider) {
         $db = Database::getDB();
 
         //$location_id = $location->getID();
@@ -62,11 +55,11 @@ class LocationDB {
         $province = $location->getProvince();
         $country = $location->getCountry();
 
-        $query =
+        $query = $db->prepare(
             "INSERT INTO location
                  (branch, phone, street, postal, city, province, country)
              VALUES
-                 ('$branch', '$phone', '$street', '$postal', '$city', '$province', '$country')";
+                 ('$branch', '$phone', '$street', '$postal', '$city', '$province', '$country')");
 
         $row_count = $db->exec($query);
         return $row_count;

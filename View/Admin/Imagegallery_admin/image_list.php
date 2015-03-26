@@ -35,7 +35,7 @@
     <div id="content">
         <!-- display a table of products -->
    
-        <table id="image_upload_table"    width="900">
+        <table class="table table-responsive table-bordered"    width="900">
             <thead bgcolor="#a8cb81" >                
                 <tr style="font-variant:small-caps;font-style:normal;color:black;font-size:18px;">
                     <th>Title</th>

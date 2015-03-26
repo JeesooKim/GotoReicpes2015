@@ -14,7 +14,7 @@
     <h1>Upload Image</h1>
 
      <form action="index.php" method="post" enctype="multipart/form-data">         
-          <table>                
+          <table class="table table-responsive table-bordered">                
                 <tr>
                     <td><label>Category:</label></td>
                     <td> 

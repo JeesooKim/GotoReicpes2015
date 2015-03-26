@@ -277,9 +277,3 @@ else if ($action == 'show_upload_form') {
 }
 
 ?>
-//PHP project-gotorecipes.com
-//Image Gallery(Admin), File: index.php
-//Humber College 2015
-//Jeesoo Kim, March 16
-?>
-

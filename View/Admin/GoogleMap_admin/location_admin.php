@@ -1,5 +1,4 @@
 <?php
-include('../../../view/shared/header.php');
 require('../../../model/database.php');
 require('../../../model/locations.php');
 require('../../../model/location_db.php');
@@ -12,6 +11,7 @@ LocationDB::deleteLocation($location_id);
 }
 ?>
 
+<?php include('../../../view/shared/header.php'); ?>
 <div id="main">
     <ol class="breadcrumb">
         <li><a href="../../../View/Admin/index.php">Admin Panel</a></li>

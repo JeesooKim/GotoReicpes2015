@@ -17,7 +17,7 @@
      <form action="index.php" method="post" enctype="multipart/form-data">      
          <input type="hidden" name="image_id" value="<?php echo $image->getID(); ?>" />
          
-          <table>                
+          <table class="table table-responsive table-bordered">                
                 <tr>
                     <td><label>Category:</label></td>
                     <td> 
