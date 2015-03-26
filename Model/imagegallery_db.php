@@ -1,9 +1,9 @@
 <?php
 #File name: imagegallery_db.php
-#File for Image Gallery
-#Team Project: gotorecipes
-#Author: Jeesoo Kim
-#March 2015
+#File for Image Gallery -Model
+#Team Project: PHP project-gotorecipes.com
+#Author: Jeesoo Kim@Humber College
+#March 16, 2015
 #Reference: Class material -PDO Class
 
 class ImageGalleryDB{
@@ -297,8 +297,4 @@ public static function CreateThumbs( $pathToImages, $pathToThumbs, $thumbWidth )
 //createThumbs("upload/","upload/thumbs/",100);
 }
 
-
-//PHP project-gotorecipes.com
-//Humber College 2015
-//Jeesoo Kim, March 16
 ?>

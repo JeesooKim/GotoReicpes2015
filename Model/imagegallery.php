@@ -1,14 +1,14 @@
 <?php
 #File name: imagegallery.php
-#File for Image Gallery
-#Team Project: gotorecipes
-#Author: Jeesoo Kim
-#March 2015
+#File for Image Gallery -Model
+#Team Project: PHP project-gotorecipes.com
+#Author: Jeesoo Kim@Humber College
+#March 16, 2015
 #Reference: Class material -PDO Class
 
 class ImageGallery{
-    //Gallery class to create an object to PLACE DATA from the gallery table
-    //twelve(12) properties with mtehods to read/write such properties
+    //Gallery class to create an object to PLACE DATA from the imagegallery table
+    //Eleven(11) properties with methods to read/write such properties
     //$id for img_id, PRIMARY KEY of the table
     //category(cat_id in the table) is a foreign key related to the primary key of the categories table
    
