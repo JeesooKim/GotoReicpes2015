@@ -1,7 +1,7 @@
 <?php
 
 class Database{
-    //Database class to create a database connection object(Php Data Object)
+    //Database class to create a database connection object(Php Data Object)    
     
     private static $dsn='mysql:host=lotus.arvixe.com;dbname=gotorecipes_db';
     private static $username = 'admin_gotorecipe';

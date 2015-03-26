@@ -1,4 +1,10 @@
 <?php
+#File name: imagegallery_db.php
+#File for Image Gallery -Model
+#Team Project: PHP project-gotorecipes.com
+#Author: Jeesoo Kim@Humber College
+#March 16, 2015
+#Reference: Class material -PDO Class
 
 class ImageGalleryDB{
     //ImageGalleryDB class is controllers to connect and control data from the table 
@@ -82,6 +88,33 @@ class ImageGalleryDB{
         
     }
     
+    public static function editImage($img_id,$img_title,$img_key, $img_detail, $img_filename,$img_path, $img_size, $img_type , $img_author,$img_source, $cat_id){
+        //the parameter $image for this method is supposed to be an object initiated by the ImageGallery class
+        
+        $dbCon= Database::getDB();       
+        $image = self::GetImage($img_id);   
+        
+        $sql = "UPDATE imagegallery SET "
+                . "img_title='$img_title', "
+                . "cat_id= '$cat_id',"
+                . "img_key='$img_key', "
+                . "img_detail='$img_detail', "
+                . "img_filename='$img_filename', "
+                . "img_path='$img_path', "
+                . "img_size='$img_size', "
+                . "img_type='$img_type', "
+                . "img_author='$img_author', "
+                . "img_source='$img_source' "
+                . "WHERE img_id='$img_id' ";
+        echo '[' . $sql . ']';                               
+        //$row_count = $dbCon->exec($sql);
+        //return $row_count;        
+        $dbCon->exec($sql);
+        //echo "data edited the gallery table";
+        //var_dump(debug_backtrace());
+        
+    }
+    
     public static function addImage($image){
         //the parameter $image for this method is supposed to be an object initiated by the ImageGallery class
         
@@ -113,63 +146,63 @@ class ImageGalleryDB{
         //$row_count = $dbCon->exec($sql);
         //return $row_count;        
         $dbCon->exec($sql);
-        echo "new data inserted to the gallery table";
-        var_dump(debug_backtrace());
+        //echo "new data inserted to the gallery table";
+        //var_dump(debug_backtrace());
         
     }
 }
 
-//class ImageFileValidation{
-//    
-//    //$t_name, $image_file_path, $image_size, $image_type;
-//    
-//    public function isImage($t_name){
-//        if(getimagesize($t_name)){
-//             //echo "File is an image - " . $check["mime"] . ".<br/>";
-//            return true;
-//        }
-//        else{
-//            echo 'File is not an image. <br/>';
-//            return false;       
-//        }
-//    }
-//    
-//    public function isExists($image_file_path){
-//         // Check if file already exists
-//        if(file_exists($image_file_path)){
-//            echo "File already exists in uploads folder. <br/>";
-//            return false;
-//        }
-//        
-//    }
-//    
-//    public function sizeCheck($image_size){
-//        // Check file size
-//        if($image_size > 5000000){
-//            echo "File is too large. <br/>";
-//            return false;        
-//             }
-//             
-//    }
-//    
-//    public function formatCheck($image_type){
-//    //check file type
-//         if($image_type != "jpg" 
-//                 && $image_type != "png" 
-//                 && $image_type != "jpeg"
-//                 && $image_type != "gif" ) {
-//             echo "Only JPG, JPEG, PNG & GIF files are allowed.<br/>";
-//             return false;
-//             }             
-//    }
-//}
+class ImageFileValidation{
+    
+    //$t_name, $image_file_path, $image_size, $image_type;
+    public static $error;
+    
+    public static function isImage($t_name){
+        if(getimagesize($t_name)){
+             //echo "File is an image - " . $check["mime"] . ".<br/>";
+            return true;
+        }
+        else{
+            self::$error = 'File is not an image. <br/>';
+            return false;       
+        }
+    }
+    
+    public static function doesExist($image_file_path){
+         // Check if file already exists
+        if(file_exists($image_file_path)){
+            self::$error= "File already exists in uploads folder. <br/>";
+            return false;
+        }else {return true;}        
+    }
+    
+    public static function sizeCheck($image_size){
+        // Check file size
+        if($image_size > 5000000){
+            self::$error="File is too large. <br/>";
+            return false;        
+             }else{return true;}
+             
+    }
+    
+    public static function formatCheck($image_type){
+    //check file type
+         if($image_type != "jpg" 
+                 && $image_type != "png" 
+                 && $image_type != "jpeg"
+                 && $image_type != "gif" ) {
+             self::$error="Only JPG, JPEG, PNG & GIF files are allowed.<br/>";
+             return false;
+             }       else{return true;}      
+    }
+}
 
 class ImageEdit {
 //Ref: http://webcheatsheet.com/php/create_thumbnail_images.php
 //Ref: http://davidwalsh.name/create-image-thumbnail-php
 //Ref: http://php.net/manual/en/function.imagecreatefromjpeg.php
     //thumbWidth : unit in dpi (dots per inch)
-public function CreateThumbs( $pathToImages, $pathToThumbs, $thumbWidth )
+public static function CreateThumbs( $pathToImages, $pathToThumbs, $thumbWidth )
 {
   // open the directory
   $dir = opendir( $pathToImages );
@@ -178,90 +211,81 @@ public function CreateThumbs( $pathToImages, $pathToThumbs, $thumbWidth )
             while (false !== ($fname = readdir( $dir ))) {
                         // parse path for the extension
                         $info = pathinfo($pathToImages . $fname);
-                        // continue only if this is a JPEG image
-                        if ( strtolower($info['extension']) == 'jpg' )
+                        //echo "<pre>"; var_dump($info); echo "</pre>";
+                        // continue only if this is a JPEG, PNG, or GIF image
+                        if ( strtolower($info['extension']) == 'jpg' ||  strtolower($info['extension']) == 'png' || strtolower($info['extension']) == 'gif')
                         {
-                          echo "Creating thumbnail for {$fname} <br />";
-
+                          
                           // load image and get image size
-                          $img = imagecreatefromjpeg( "{$pathToImages}{$fname}" );
-                          $width = imagesx( $img );
-                          $height = imagesy( $img );
+                          switch( strtolower($info['extension'])){
+                              case "jpg":
+                                  $img = imagecreatefromjpeg( "{$pathToImages}{$fname}" );                                  
+                                  $width = imagesx( $img );
+                                  $height = imagesy( $img );
 
-                          // calculate thumbnail size
-                          $new_width = $thumbWidth;
-                          $new_height = floor( $height * ( $thumbWidth / $width ) );
+                                  // calculate thumbnail size
+                                  $new_width = $thumbWidth;
+                                  $new_height = floor( $height * ( $thumbWidth / $width ) );
 
-                          // create a new temporary image
-                          $tmp_img = imagecreatetruecolor( $new_width, $new_height );
+                                  // create a new temporary image
+                                  $tmp_img = imagecreatetruecolor( $new_width, $new_height );
 
-                          // copy and resize old image into new image
-                          imagecopyresized( $tmp_img, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
+                                  // copy and resize old image into new image
+                                  imagecopyresized( $tmp_img, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
 
-                          // save thumbnail into a file
-                          imagejpeg( $tmp_img, "{$pathToThumbs}{$fname}" );
-                        }
-            }
-            
-            // loop through it, looking for any/all PNG files:
-            while (false !== ($fname = readdir( $dir ))) {
-                        // parse path for the extension
-                        $info = pathinfo($pathToImages . $fname);
-                        // continue only if this is a JPEG image
-                        if ( strtolower($info['extension']) == 'png' )
-                        {
-                          echo "Creating thumbnail for {$fname} <br />";
+                                  // save thumbnail into a file
+                                  //imagejpeg — Output image to browser or file
+                                  //imagejpeg() creates a JPEG file from the given image.
+                                  imagejpeg( $tmp_img, "{$pathToThumbs}{$fname}" );
+                                  //echo "Creating thumbnail for {$fname} <br />";
+                                  break;
+                              case "png":
+                                  $img = imagecreatefrompng( "{$pathToImages}{$fname}" );
+                                  $width = imagesx( $img );
+                                  $height = imagesy( $img );
 
-                          // load image and get image size
-                          $img = imagecreatefrompng( "{$pathToImages}{$fname}" );
-                          $width = imagesx( $img );
-                          $height = imagesy( $img );
+                                  // calculate thumbnail size
+                                  $new_width = $thumbWidth;
+                                  $new_height = floor( $height * ( $thumbWidth / $width ) );
 
-                          // calculate thumbnail size
-                          $new_width = $thumbWidth;
-                          $new_height = floor( $height * ( $thumbWidth / $width ) );
+                                  // create a new temporary image
+                                  $tmp_img = imagecreatetruecolor( $new_width, $new_height );
 
-                          // create a new temporary image
-                          $tmp_img = imagecreatetruecolor( $new_width, $new_height );
+                                  // copy and resize old image into new image
+                                  imagecopyresized( $tmp_img, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
 
-                          // copy and resize old image into new image
-                          imagecopyresized( $tmp_img, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
+                                  // save thumbnail into a file
+                                  //imagejpeg — Output image to browser or file
+                                  //imagejpeg() creates a JPEG file from the given image.
+                                  imagepng( $tmp_img, "{$pathToThumbs}{$fname}" );
+                                  //echo "Creating thumbnail for {$fname} <br />";
+                                  break;
+                              case "gif":
+                                  $img = imagecreatefromgif( "{$pathToImages}{$fname}" );
+                                  $width = imagesx( $img );
+                                  $height = imagesy( $img );
 
-                          // save thumbnail into a file
-                          imagepng( $tmp_img, "{$pathToThumbs}{$fname}" );
-                        }
-            }
-            
-             // loop through it, looking for any/all GIF files:
-            while (false !== ($fname = readdir( $dir ))) {
-                        // parse path for the extension
-                        $info = pathinfo($pathToImages . $fname);
-                        // continue only if this is a JPEG image
-                        if ( strtolower($info['extension']) == 'gif' )
-                        {
-                          echo "Creating thumbnail for {$fname} <br />";
+                                  // calculate thumbnail size
+                                  $new_width = $thumbWidth;
+                                  $new_height = floor( $height * ( $thumbWidth / $width ) );
 
-                          // load image and get image size
-                          $img = imagecreatefromjpeg( "{$pathToImages}{$fname}" );
-                          $width = imagesx( $img );
-                          $height = imagesy( $img );
+                                  // create a new temporary image
+                                  $tmp_img = imagecreatetruecolor( $new_width, $new_height );
 
-                          // calculate thumbnail size
-                          $new_width = $thumbWidth;
-                          $new_height = floor( $height * ( $thumbWidth / $width ) );
+                                  // copy and resize old image into new image
+                                  imagecopyresized( $tmp_img, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
 
-                          // create a new temporary image
-                          $tmp_img = imagecreatetruecolor( $new_width, $new_height );
-
-                          // copy and resize old image into new image
-                          imagecopyresized( $tmp_img, $img, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
-
-                          // save thumbnail into a file
-                          imagegif( $tmp_img, "{$pathToThumbs}{$fname}" );
-                        }
-            }
-            
-            
+                                  // save thumbnail into a file
+                                  //imagejpeg — Output image to browser or file
+                                  //imagejpeg() creates a JPEG file from the given image.
+                                  imagegif( $tmp_img, "{$pathToThumbs}{$fname}" );
+                                  //echo "Creating thumbnail for {$fname} <br />";
+                                  break;
+                              default:
+                                  break;
+                          }//end of switch                             
+                        }//end of if
+            }    //end of while     
   // close the directory
   closedir( $dir );
 }
@@ -273,8 +297,4 @@ public function CreateThumbs( $pathToImages, $pathToThumbs, $thumbWidth )
 //createThumbs("upload/","upload/thumbs/",100);
 }
 
-
-//PHP project-gotorecipes.com
-//Humber College 2015
-//Jeesoo Kim, March 16
 ?>

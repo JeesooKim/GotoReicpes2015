@@ -1,19 +1,22 @@
 <?php include '../../Shared/header.php'; 
 
-#File name: image_upload.php
+#File name: image_edit.php
 #File for Image Gallery-Admin
 #Team Project: PHP project-gotorecipes.com
-#Author: Jeesoo Kim @Humber College 2015
-#Created :March 16, 2015
-#Modified: March 25,2015
+#Author: Jeesoo Kim
+#Created : March 23,2015
+#Modified: March 25, 2015
 #Reference: Class material -PDO Class
+
 ?>
 
 <div id="main">
     <p><a href="index.php?action=list_images">View Image List</a></p>
-    <h1>Upload Image</h1>
+    <h1>Edit Image</h1>
 
-     <form action="index.php" method="post" enctype="multipart/form-data">         
+     <form action="index.php" method="post" enctype="multipart/form-data">      
+         <input type="hidden" name="image_id" value="<?php echo $image->getID(); ?>" />
+         
           <table>                
                 <tr>
                     <td><label>Category:</label></td>
@@ -29,36 +32,38 @@
                 </tr>
                 
                 <tr>
-                    <td><label>Upload Image File: </label></td>
-                    <td><input type="file" name="file_upload" /></td>
+                    <td><label>Edit Image File: </label></td>
+                    <td><input type="file" name="file_upload" value=""/></td>
+                </tr>
+                <tr><td><label>Edit File Name:</label></td>
+                    <td><input type="input" name="img_filename" value="<?php echo$image->getFileName(); ?>"/></td>
                 </tr>
                 <tr>
                     <td><label>Title:</label></td>
-                    <td> <input type="input" name="img_title" /></td>
+                    <td> <input type="input" name="img_title"  value="<?php echo $image->getTitle();  ?>"/></td>
                 </tr>
                 <tr>
                     <td><label>Key Ingredient:</label></td>
-                    <td><input type="input" name="img_key" /></td>
+                    <td><input type="input" name="img_key" value="<?php echo $image->getKeyIngredient(); ?>" /></td>
                 </tr>
                 <tr>
                     <td><label>Description:</label></td>
-                    <td><input type="input" name="img_detail" /></td>
+                    <td><input type="input" name="img_detail" value="<?php echo $image->getDetail(); ?>" /></td>
                 </tr>
                 <tr>
                     <td><label>Author:</label></td>
-                    <td><input type="input" name="img_author" /></td>
+                    <td><input type="input" name="img_author" value="<?php echo $image->getAuthor(); ?>"/></td>
                 </tr>
                 <tr>
                     <td><label>Source:</label></td>
-                    <td><input type="input" name="img_source" placeholder="http://" /></td>
+                    <td><input type="input" name="img_source" value="<?php echo $image->getSource(); ?>" /></td>
                 </tr>
                 
         </table>
         <label>&nbsp;</label>
-        <input type="submit" name="action" value="Upload Image" />  
+        <input type="submit" name="action" value="Edit_Image" />  
         <br />
     </form>
-    
+</div> <!-- end of #main-->
 
-</div>
 <?php include '../../Shared/footer.php'; ?>

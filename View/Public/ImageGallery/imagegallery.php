@@ -4,6 +4,14 @@ require('../../../model/category.php');
 require('../../../model/category_db.php');
 require('../../../model/imagegallery.php');
 require('../../../model/imagegallery_db.php');
+
+#File name: imagegallery.php
+#File for Image Gallery-Public
+#Team Project: gotorecipes
+#Author: Jeesoo Kim
+#March 2015
+#Reference: Class material -PDO Class
+
 //connect to db
 //bring data here
 //images are stored in content/images and each image has its own path
@@ -35,7 +43,4 @@ if ($action == 'list_view_images') {
 
 include('image_list_view.php');
 }
-//PHP team project at Humber 2015
-//ImageGallery-Public Page(1/2)
-//Jeesoo Kim, March 16
 ?>
