@@ -20,6 +20,7 @@ if(isset($_POST['location_insert'])){
     }
     else{
         echo  'Missing data fields.';
+        exit();
     }
 }
 ?>

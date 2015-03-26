@@ -46,41 +46,34 @@ class ImagesliderDB {
     public static function addImageslider($imageslider) {
         $db = Database::getDB();
 
-        //$location_id = $location->getID();
-        $branch = $location->getBranch();
-        $phone = $location->getPhone();
-        $street = $location->getStreet();
-        $postal = $location->getPostal();
-        $city = $location->getCity();
-        $province = $location->getProvince();
-        $country = $location->getCountry();
+        $name = $imageslider->getName();
+        $description = $imageslider->getDescription();
+        $image = $imageslider->getImage();
+        $date = $imageslider->getDate();
 
         $query = $db->prepare(
-            "INSERT INTO location
-                 (branch, phone, street, postal, city, province, country)
+            "INSERT INTO imageslider
+                 (name, description, image, date)
              VALUES
-                 ('$branch', '$phone', '$street', '$postal', '$city', '$province', '$country')");
+                 ('$name', '$description', '$image', '$date')");
 
         $row_count = $db->exec($query);
         return $row_count;
     }
 
     
-    public static function UpdateLocation($map_location, $location_id)
+    public static function updateImageslider($imageslider, $image_id)
     {
         $db = Database::getDB();
-        $map_location_branch = $map_location->getBranch();
-        $map_location_phone = $map_location->getPhone();
-        $map_location_street = $map_location->getStreet();
-        $map_location_postal = $map_location->getPostal();
-        $map_location_city = $map_location->getCity();
-        $map_location_province = $map_location->getProvince();
-        $map_location_country = $map_location->getCountry();
+        $name = $imageslider->getName();
+        $description = $imageslider->getDescription();
+        $image = $imageslider->getImage();
+        $date = $imageslider->getDate();
 
-        $query = "UPDATE location SET branch = '$map_location_branch',
-                                              phone = '$map_location_phone',
-                                              street = '$map_location_street',
-                                              postal = '$map_location_postal', city = '$map_location_city', province = '$map_location_province', country = '$map_location_country' WHERE id = '$location_id' ";
+        $query = $db->prepare("UPDATE imageslider SET name = '$name',
+                                              description = '$description',
+                                              image = '$image',
+                                              date = '$date' WHERE imageId = '$image_id' ");
         $row_count = $db->exec($query);
         return $row_count;
 

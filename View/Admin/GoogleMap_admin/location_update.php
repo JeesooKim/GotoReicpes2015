@@ -37,7 +37,7 @@ if (isset($_POST['location_update'])) {
         header("Location: location_admin.php");
     }else{
         echo "Missing fields.";
-        die(); 
+        exit(); 
    }
 }
 ?>
