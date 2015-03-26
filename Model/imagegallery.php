@@ -1,4 +1,10 @@
 <?php
+#File name: imagegallery.php
+#File for Image Gallery
+#Team Project: gotorecipes
+#Author: Jeesoo Kim
+#March 2015
+#Reference: Class material -PDO Class
 
 class ImageGallery{
     //Gallery class to create an object to PLACE DATA from the gallery table

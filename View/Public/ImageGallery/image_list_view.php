@@ -1,5 +1,16 @@
-<?php   include ('../../Shared/header.php'); ?>
-<?php  include ('../../Shared/side-menu.php'); ?>
+<?php   
+
+include ('../../Shared/header.php'); 
+include ('../../Shared/side-menu.php'); 
+
+#File name: image_list_view.php
+#File for Image Gallery-Public
+#Team Project: gotorecipes
+#Author: Jeesoo Kim
+#March 2015
+#Reference: Class material -PDO Class
+
+?>
 
 <!-- END of 'header include' in image_list_view-->
 <!--  File:image_list_view : START here-->
@@ -10,6 +21,8 @@
  -->
 <div id="main">
     <div id="sidebar">
+        
+        <p><a href="../../Admin/Imagegallery_admin/index.php">Image Gallery Admin(temporary)</a></p>
 <!--        <h1>Categories</h1>-->
         <ul class="nav">
             <!-- display links for all categories -->
@@ -90,7 +103,3 @@ document.getElementById('links').onclick = function (event) {
 <?php include ('../../Shared/footer.php'); ?>
  
 <!-- END of 'footer include' in image_list_view-->
-<!--PHP team project at Humber 2015
-//ImageGallery-Public Page(2/2)
-//Jeesoo Kim, March 16
--->
