@@ -1,5 +1,5 @@
 <?php
-require('../../../view/shared/header.php');
+include('../../../view/shared/header.php');
 require('../../../model/database.php');
 require('../../../model/locations.php');
 require('../../../model/location_db.php');
@@ -29,15 +29,16 @@ if (isset($_POST['location_update'])) {
 
     // Validate the entered data
     if ($map_location_branch != '' || $map_location_phone != '' || $map_location_street != '' || $map_location_postal !='' || $map_location_city !='' ||$map_location_province !='' ||$map_location_country !='') {
-        echo "Missing fields.";
         $map_location = new Location($map_location_branch, $map_location_phone, $map_location_street, $map_location_postal, $map_location_city, $map_location_province, $map_location_country);
 
-        locationDB::UpdateLocation($map_location, $map_location_id);
+        locationDB::UpdateLocation($map_location, $location_id);
 
         header("Location: location_admin.php");
-    }
+    }else{
+        echo "Missing fields.";
+        die(); 
+   }
 }
-
 ?>
 
 <!--Update form-->

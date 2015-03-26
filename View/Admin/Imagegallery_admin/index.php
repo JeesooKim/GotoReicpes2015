@@ -179,3 +179,4 @@ if ($action == 'list_images') { //when the page is loaded for the fist time
 //Humber College 2015
 //Jeesoo Kim, March 16
 ?>
+

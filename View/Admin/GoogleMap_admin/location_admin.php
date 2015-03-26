@@ -1,5 +1,5 @@
 <?php
-require('../../../view/shared/header.php');
+include('../../../view/shared/header.php');
 require('../../../model/database.php');
 require('../../../model/locations.php');
 require('../../../model/location_db.php');
