@@ -1,21 +1,19 @@
 <?php
 class Imageslider {
-    private $imageId, $name, $description, $image, $date;
+    private $id, $name, $path;
 
-    public function __construct($imageId, $name, $description, $image, $date) {
-        $this->imageId = $imageId;
+    public function __construct($name, $path) {
+        //$this->id = $id;
         $this->name = $name;
-        $this->description = $description;
-        $this->image = $image;
-        $this->date = $date;
+        $this->path = $path;
     }
     
     public function getImageID() {
-        return $this->imageId;
+        return $this->id;
     }
 
     public function setImageID($value) {
-        $this->imageId = $value;
+        $this->id = $value;
     }
     
     public function getName() {
@@ -26,28 +24,12 @@ class Imageslider {
         $this->name = $value;
     }
     
-    public function getDescription() {
-        return $this->description;
+    public function getPath() {
+        return $this->path;
     }
 
-    public function setDescription($value) {
-        $this->description = $value;
-    }
-    
-    public function getImage() {
-        return $this->image;
-    }
-
-    public function setImage($value) {
-        $this->image = $value;
-    }
-    
-    public function getDate() {
-        return $this->date;
-    }
-
-    public function setDate($value) {
-        $this->date = $value;
+    public function setPath($value) {
+        $this->path = $value;
     }
     
 }

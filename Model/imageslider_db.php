@@ -1,79 +1,80 @@
 <?php
 class ImagesliderDB {
     
+    //selecting all rows from the table
     public static function getImagesliders() {
+        //calling the database
         $db = Database::getDB();
-        $query = $db->prepare('SELECT * FROM imageslider');
+        $query = 'SELECT * FROM imageslider';
         $result = $db->query($query);
         $imagesliders = array();
         foreach ($result as $row) {
-            $imageslider = new Slideshow(
-                                   $row['name'],
-                                   $row['description'],
-                                   $row['image'],
-                                   $row['date']);
-            $imageslider->setId($row['imageId']);
+            $imageslider = new Imageslider(
+                                    $row['name'],
+                                    $row['path']);
+            $imageslider->setImageID($row['image_id']);
             $imagesliders[] = $imageslider;
         }
         return $imagesliders;
     }
 
     //accept product id
-    public static function getImageslider($image_id) {
+    public static function getImageslider($img_id) {
+        //calling the database
         $db = Database::getDB();
-        $query = $db->prepare("SELECT * FROM imageslider
-                  WHERE imageId = '$image_id'");
+        $query = "SELECT * FROM imageslider
+                  WHERE image_id = '$img_id'";
         $result = $db->query($query);
         //convert result into array
         $row = $result->fetch();
-        $imageslider = new Slideshow(
-                                   $row['name'],
-                                   $row['description'],
-                                   $row['image'],
-                                   $row['date']);
-        $imageslider->setImageID($row['imageId']);
+        $imageslider = new Imageslider(
+                                    $row['name'],
+                                    $row['path']);
+        $imageslider->setImageID($row['image_id']);
         return $imageslider;
     }
 
-    public static function deleteImageslider($image_id) {
+    public static function deleteImageslider($img_id) {
+        //calling the database
         $db = Database::getDB();
-        $query = $db->prepare("DELETE FROM imageslider
-                  WHERE imageId = '$image_id'");
+        $query = "DELETE FROM imageslider
+                  WHERE image_id = '$img_id'";
         $row_count = $db->exec($query);
         return $row_count;
     }
 
+    //function inserting into imageslider table
     public static function addImageslider($imageslider) {
+        //calling the database
         $db = Database::getDB();
+        
+        //declaring variables from the values of imagesliders
+        $img_name = $imageslider->getName();
+        $img_path = $imageslider->getPath();
 
-        $name = $imageslider->getName();
-        $description = $imageslider->getDescription();
-        $image = $imageslider->getImage();
-        $date = $imageslider->getDate();
-
-        $query = $db->prepare(
+        //sql insert statement
+        $query =
             "INSERT INTO imageslider
-                 (name, description, image, date)
+                 (name, path)
              VALUES
-                 ('$name', '$description', '$image', '$date')");
+                 ('$img_name', '$img_path')";
 
         $row_count = $db->exec($query);
         return $row_count;
     }
 
-    
-    public static function updateImageslider($imageslider, $image_id)
+    //function updating the imageslider table
+    public static function updateImageslider($imageslider, $img_id)
     {
+        //calling the database
         $db = Database::getDB();
-        $name = $imageslider->getName();
-        $description = $imageslider->getDescription();
-        $image = $imageslider->getImage();
-        $date = $imageslider->getDate();
+        
+        //declaring variables from the values of imagesliders
+        $img_name = $imageslider->getName();
+        $img_path = $imageslider->getPath();
 
-        $query = $db->prepare("UPDATE imageslider SET name = '$name',
-                                              description = '$description',
-                                              image = '$image',
-                                              date = '$date' WHERE imageId = '$image_id' ");
+        //sql update statement
+        $query = "UPDATE imageslider SET name = '$img_name', path = '$img_path' WHERE image_id = '$img_id'";
         $row_count = $db->exec($query);
         return $row_count;
 

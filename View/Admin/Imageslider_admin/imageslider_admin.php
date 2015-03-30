@@ -5,8 +5,8 @@ require('../../../model/imageslider_db.php');
 
 //delete option
 if(isset($_POST['image_id'])){
-$image_id = $_POST['image_id'];
-ImagesliderDB::deleteImageslider($image_id);
+$img_id = $_POST['image_id'];
+ImagesliderDB::deleteImageslider($img_id);
     header("Location: imageslider_admin.php");
 }
 ?>
@@ -25,10 +25,9 @@ ImagesliderDB::deleteImageslider($image_id);
     <table class="table table-responsive table-bordered">
         <thead>
         <tr>
+            <th>Image ID</th>
             <th>Name</th>
-            <th>Description</th>
             <th>Image</th>
-            <th>Date</th>
             <th></th>
             <th></th>
         </tr>
@@ -39,10 +38,9 @@ ImagesliderDB::deleteImageslider($image_id);
         foreach ($imagesliders as $row):
             ?>
             <tr>
+                <td><?php echo $row->getImageID(); ?></td>
                 <td><?php echo $row->getName(); ?></td>
-                <td><?php echo $row->getDescription(); ?></td>
-                <td><?php echo $row->getImage(); ?></td>
-                <td><?php echo $row->getDate(); ?></td>
+                <td><?php echo $row->getPath(); ?></td>
                 <td>
                     <a class="btn-link" href="imageslider_update.php?id=<?php echo $row->getImageID(); ?>">
                         <span class="glyphicon glyphicon-edit"></span>

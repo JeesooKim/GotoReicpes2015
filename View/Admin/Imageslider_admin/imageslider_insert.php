@@ -3,21 +3,31 @@ require('../../../model/database.php');
 require('../../../model/imagesliders.php');
 require('../../../model/imageslider_db.php');
 
-if(isset($_POST['imageslider_insert'])){
-    $image_name = $_POST['image_name'];
-    $image_description = $_POST['image_description'];
-    $image_image = $_POST['image_image'];
-    $image_date = $_POST['image_date'];
+//declaring variables from input
+if(isset($_POST['submit'])){
+    //text field name variable
+    $img_name = $_POST['img_name'];
     
-
-    if($image_name != ' ' || $image_description != ' ' || $image_image !=' ' || $image_date !=' '){
-        $imageslider = new Slideshow($image_name, $image_description, $image_image, $image_date);
+    //image name being uploaded
+    $filename = basename($_FILES['image']['name']);
+    //tmp folder
+    $t_name = $_FILES['image']['tmp_name'];
+    //declaring the folder to be uploaded into
+    $dir = '../../../Content/uploads/images/imageslider';
+    //this is the path of the specific image uploaded
+    //$path is to be inserted into db
+    $img_path = $dir . "/" . $filename;
+    
+    if($img_name != ' ' || $img_path != ' '){
+    //validating the file being uploaded from tmp folder to $dir folder
+    if(move_uploaded_file($t_name,$dir . "/" . $filename)){
+        $imageslider = new Imageslider($img_name, $img_path);
         ImagesliderDB::addImageslider($imageslider);
         header("Location: imageslider_admin.php");
+    }else{
+        echo 'Upload failed.';
     }
-    else{
-        echo  'Missing data fields.';
-        exit();
+    
     }
 }
 ?>
@@ -25,39 +35,26 @@ if(isset($_POST['imageslider_insert'])){
 <?php include('../../../view/shared/header.php'); ?>
 <ol class="breadcrumb">
         <li><a href="../../../View/Admin/index.php">Admin Panel</a></li>
-        <li><a href="../../../View/Admin/GoogleMap_admin/imageslider_admin.php">Imageslider</a></li>
+        <li><a href="../../../View/Admin/Imageslider_admin/imageslider_admin.php">Imageslider</a></li>
         <li class="active">Insert</li>
     </ol>
 
 <div id="main">
-    <h1>Insert an image</h1>
-
-    <form action="imageslider_insert.php" method="post">
+    <h1>Insert a branch</h1>
+    <form action="imageslider_insert.php" method="POST" enctype="multipart/form-data">
+        
         <div class="form-group">
-            <label for="image_name">Name</label>
-            <input type="text" class="form-control" name="image_name">
+            <label for="img_name">Name</label>
+            <input type="text" class="form-control" name="img_name">
         </div>
-
-        <div class="form-group">
-            <label for="image_description">Description</label>
-            <textarea class="form-control" name="image_description"></textarea>
-        </div>
-
-        <div class="form-group">
-            <!--inserting image file in here-->
-            <label for="image_image">Image</label>
-            <input type="file" class="form-control" name="image_image">
-        </div>
-
-        <div class="form-group">
-            <label for="image_date">Date</label>
-            <!--input date here-->
-        </div>
-        <button type="submit" class="btn btn-primary" name="imageslider_insert">Submit</button>
-        <a class="btn btn-default" href="imageslider_admin.php">Back to list</a>
+        
+        File:
+        <input type="file" name="image" id="image" />
+        <input type="submit" name="submit" value="Upload" />
+        <p>Must be less than 512kb. Only JPG, GIF and PNG files.</p>
     </form>
-</div><!-- /main -->
-
+    
+</div>
 <?php
 include '../../Shared/footer.php';
 ?>

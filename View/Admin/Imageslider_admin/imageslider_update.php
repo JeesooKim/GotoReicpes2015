@@ -3,63 +3,63 @@ require('../../../model/database.php');
 require('../../../model/imagesliders.php');
 require('../../../model/imageslider_db.php');
 
-if(isset($_GET['imageId'])) {
-    $image_id = $_GET['imageId'];
+if(isset($_GET['image_id'])) {
+    $img_id = $_GET['image_id'];
 } else {
-    $image_id = $_POST['image_id'];
+    $img_id = $_POST['image_id'];
 }
-$imageslider = ImagesliderDB::getImageslider($image_id);
-$image_id = $imageslider->getImageID();
-$imageslider_name = $imageslider->getName();
-$imageslider_description = $imageslider->getDescription();
-$imageslider_image = $imageslider->getImage();
-$imageslider_date = $imageslider->getDate();
+$imageslider = ImagesliderDB::getImageslider($img_id);
+$img_id = $imageslider->getImageID();
+$img_name = $imageslider->getName();
+$img_path = $imageslider->getPath();
 
 if (isset($_POST['imageslider_update'])) {
-    $image_id = $_POST['image_id'];
-    $imageslider_name = $_POST['image_name'];
-    $imageslider_description = $_POST['image_description'];
-    $imageslider_image = $_POST['image_image'];
-    $imageslider_date = $_POST['image_date'];
+    $img_id = $_POST['img_id'];
+    //text field name variable
+    $img_name = $_POST['img_name'];
+    
+    //image name being uploaded
+    $filename = basename($_FILES['image']['name']);
+    //tmp folder
+    $t_name = $_FILES['image']['tmp_name'];
+    //declaring the folder to be uploaded into
+    $dir = '../../../Content/uploads/images/imageslider';
+    //this is the path of the specific image uploaded
+    //$path is to be inserted into db
+    $img_path = $dir . "/" . $filename;
 
     // Validate the entered data
-    if ($image_id != '' || $imageslider_name != '' || $imageslider_description != '' || $imageslider_image != '' || $imageslider_date !='') {
-        $imageslider = new Slideshow($imageslider_name, $imageslider_description, $imageslider_image, $imageslider_date);
-
-        locationDB::UpdateLocation($imageslider, $image_id);
-
-        header("Location: imageslider_admin.php");
+    if ($img_id != '' || $img_name != '' || $img_path != '') {
+        if(move_uploaded_file($t_name,$dir . "/" . $filename)){
+            $imageslider = new Imageslider($img_name, $img_path);
+            ImagesliderDB::addImageslider($imageslider);
+            header("Location: imageslider_admin.php");
     }else{
         echo "Missing fields.";
         exit(); 
    }
+    }
 }
 ?>
 
 <!--Update form-->
 <?php include('../../../view/shared/header.php'); ?>
 <div>
-    <h1><?php echo $imageslider_name; ?></h1>
+    <h1><?php echo $img_name; ?></h1>
 
     <form action="imageslider_update.php" method="POST">
-        <input type="hidden" name="image_id" value="<?php echo $image_id; ?>" />
+        <input type="hidden" name="image_id" value="<?php echo $img_id; ?>" />
+        
         <div class="form-group">
-            <label for="image_name">Name</label>
-            <input type="text" value="<?php echo $imageslider_name; ?>" class="form-control" name="image_name">
-        </div>
-        <div class="form-group">
-            <label for="image_description">Description</label>
-            <input type="text" value="<?php echo $imageslider_description; ?>" class="form-control" name="image_description">
+            <label for="img_name">Name</label>
+            <input type="text" value="<?php echo $img_name; ?>" class="form-control" name="img_name">
         </div>
         
         <div class="form-group">
-            <label for="image_image">Image</label>
-            <input type="file" value="<?php echo $imageslider_image; ?>" class="form-control" name="image_image">
-        </div>
-        
-        <div class="form-group">
-            <label for="image_date">Date</label>
-            <input type="text" value="<?php echo $imageslider_date; ?>" class="form-control" name="image_date">
+            <label for="location_branch">File:</label>
+            <img src="<?php echo $img_path; ?>" alt="<?php echo $img_name; ?>" title="<?php echo $img_name; ?>" />
+            <input type="file" name="image" id="image" />
+            <p>Must be less than 512kb. Only JPG, GIF and PNG files.</p>
         </div>
         
         <button type="submit" class="btn btn-primary" name="imageslider_update">Update</button>
