@@ -155,5 +155,5 @@ if(isset ($_POST['send'])){
 </body>
 <?php
        
-        include '../../Shared/footer.php';
+        include PATH_FOOTER;
 ?>

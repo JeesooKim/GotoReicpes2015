@@ -1,19 +1,14 @@
+<?php  include "c:/xampp/htdocs/suzieq/PHP/GotoReicpes2015/config.php";  ?>
+
+<?php include PATH_HEADER;  ?>  
+<!--end top-->
+
 <?php 
-include '../../Shared/header.php' ; 
-require('../../../model/database.php');
-require('../../../model/locations.php');
-require('../../../model/location_db.php');
+require(PATH_DATABASE);
+require(PATH_MODEL_LOCATIONS);
+require(PATH_MODEL_LOCATION_DB);
 ?>
 
-
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Contact Us</title>
-      <link rel="stylesheet" type="text/css" href="main.css"/> 
-</head>
-<body>-->
     <div id="content">
         <h1>Contact Us</h1>
          <?php

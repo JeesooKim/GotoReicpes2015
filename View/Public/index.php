@@ -1,7 +1,9 @@
-        <?php include('../Shared/header.php'); ?>
-        <!--end top-->
+<?php  include "c:/xampp/htdocs/suzieq/PHP/GotoReicpes2015/config.php";  ?>
 
-        <?php include('imageslider.php'); ?>
+<?php include PATH_HEADER;  ?>  
+<!--end top-->
+<?php 
+     include(PATH_VIEW_PUBLIC.'/imageslider.php'); ?>
         <!--end imageslider feature-->
 
 <!-- <ol class="breadcrumb">
@@ -15,7 +17,7 @@
                 <h1 class="h1-title">Recipes</h1>
                 <div class="col-sm-6 col-md-4">
                         <a href="#"><div class="thumbnail">
-                                <img src="../../Content/uploads/images/prawnmango.jpg" class="img-responsive" alt="Appetizers"/>
+                                <img src="<?php echo PATH_IMAGES . '/prawnmango.jpg' ; ?>"  class="img-responsive" alt="Appetizers"/>
                                 <div class="caption">
                                 <h3>Breakfast</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -26,7 +28,7 @@
 
                 <div class="col-sm-6 col-md-4">
                         <a href="#"><div class="thumbnail">
-                          <img src="../../Content/uploads/images/prawnmango.jpg" class="img-responsive" alt="Quick Meals"/>
+                          <img src="<?php echo PATH_IMAGES . '/prawnmango.jpg' ; ?>" class="img-responsive" alt="Quick Meals"/>
                                 <div class="caption">
                                 <h3>Pastry</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -37,7 +39,7 @@
 
                 <div class="col-sm-6 col-md-4">
                         <a href="#"><div class="thumbnail">
-                          <img src="../../Content/uploads/images/prawnmango.jpg" class="img-responsive" alt="Pastry"/>
+                          <img src="<?php echo PATH_IMAGES . '/prawnmango.jpg' ; ?>" class="img-responsive" alt="Pastry"/>
                                 <div class="caption">
                                 <h3>Lunch</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -48,7 +50,7 @@
 
                 <div class="col-sm-6 col-md-4">
                         <a href="#"><div class="thumbnail">
-                          <img src="../../Content/uploads/images/prawnmango.jpg" class="img-responsive" alt="Pastry"/>
+                          <img src="<?php echo PATH_IMAGES . '/prawnmango.jpg' ; ?>" class="img-responsive" alt="Pastry"/>
                                 <div class="caption">
                                 <h3>Dinner</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -59,7 +61,7 @@
 
                 <div class="col-sm-6 col-md-4">
                         <a href="#"><div class="thumbnail">
-                          <img src="../../Content/uploads/images/prawnmango.jpg" class="img-responsive" alt="Pastry"/>
+                          <img src="<?php echo PATH_IMAGES . '/prawnmango.jpg' ; ?>" class="img-responsive" alt="Pastry"/>
                                 <div class="caption">
                                 <h3>Beverages</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -80,4 +82,4 @@
 </section>
 <!--end content-->
 
-<?php include ('../Shared/footer.php'); ?>
+<?php include (PATH_FOOTER); ?>

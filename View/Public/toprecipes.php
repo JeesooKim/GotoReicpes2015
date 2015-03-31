@@ -1,8 +1,12 @@
-<?php include ('../../View/Shared/header.php') ?>
+<?php  include "c:/xampp/htdocs/suzieq/PHP/GotoReicpes2015/config.php";  ?>
+
+<?php include PATH_HEADER;  ?>  
+<!--end top-->
+
 <?php
-require('../../Model/database.php');
-require('../../Model/toprecipe.php');
-require('../../Model/toprecipe_db.php');
+require(PATH_DATABASE);
+require(PATH_MODEL_TOPRECIPE);
+require(PATH_MODEL_TOPRECIPE_DB);
 
 $category_parm = "";
 if(isset($_POST['category'])){
@@ -12,6 +16,8 @@ if(isset($_POST['category'])){
 $categories = ToprecipeDB::getRecipeCategory();
 
 ?>
+
+
 Today's Recipe
                 
     <form action="toprecipes.php" method="post">
@@ -79,4 +85,4 @@ foreach ($toprecipes as $toprecipe) :
 endforeach;
 
 ?>
-<?php include ('../../View/Shared/footer.php') ?>
+<?php include  PATH_FOOTER; ?>
