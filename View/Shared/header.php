@@ -76,8 +76,6 @@
                                                 <li><a class="ddl_link" href="#">Dinner</a></li>
                                         </ul>
                                 </li>
-                                <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/register.php">Register</a></li>
-                                <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/login.php">Login</a></li>
                                 <li><a href="#">Events</a></li>
                                 </ul>
                         
@@ -87,3 +85,5 @@
 </header>
 <!--end top-->
     
+                                <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/register.php">Register</a></li>
+                                <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/login.php">Login</a></li>
