@@ -1,5 +1,7 @@
-<?php include '../../Shared/header.php';
 
+<?php include PATH_HEADER;    ?>
+<!--end top-->
+<?php
 #File name: image_list.php
 #File for Image Gallery-Admin
 #Team Project: PHP project-gotorecipes.com
@@ -76,4 +78,4 @@
         
     </div><!-- end of #content -->
 </div><!-- end of #main -->
-<?php include '../../Shared/footer.php'; ?>
+<?php include PATH_FOOTER;    ?>

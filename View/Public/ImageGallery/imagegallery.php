@@ -1,9 +1,15 @@
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+
+<?php include PATH_HEADER;  ?>  
+<!--end top-->
+
 <?php
-require('../../../model/database.php');
-require('../../../model/category.php');
-require('../../../model/category_db.php');
-require('../../../model/imagegallery.php');
-require('../../../model/imagegallery_db.php');
+require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
+require_once( PATH_MODEL_CATEGORY);
+require_once( PATH_MODEL_CATEGORY_DB);
+require_once( PATH_MODEL_IMAGEGALLERY);
+require_once( PATH_MODEL_IMAGEGALLERY_DB);
+
 
 #File name: imagegallery.php
 #File for Image Gallery-Public

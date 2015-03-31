@@ -1,7 +1,11 @@
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+
+
 <?php
-require('../../../model/database.php');
-require('../../../model/locations.php');
-require('../../../model/location_db.php');
+require_once( PATH_DATABASE);  
+require(PATH_MODEL_LOCATIONS);
+require(PATH_MODEL_LOCATION_DB);
+
 
 if(isset($_GET['id'])) {
     $location_id = $_GET['id'];
@@ -43,7 +47,9 @@ if (isset($_POST['location_update'])) {
 ?>
 
 <!--Update form-->
-<?php include('../../../view/shared/header.php'); ?>
+
+<?php include PATH_HEADER;    ?>
+<!--end top-->
 <div>
     <h1>Update Branch Location: <?php echo $map_location_branch; ?></h1>
 
@@ -88,7 +94,4 @@ if (isset($_POST['location_update'])) {
 </div>
 <!--End of update form-->
 
-<?php
-include '../../Shared/footer.php';
-?>
-         
+<?php include PATH_FOOTER;    ?>

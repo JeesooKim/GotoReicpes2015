@@ -1,8 +1,12 @@
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+
+<?php include PATH_HEADER;  ?>  
+<!--end top-->
+
 <?php 
-include '../../Shared/header.php' ; 
-require('../../../model/database.php');
-require('../../../model/locations.php');
-require('../../../model/location_db.php');
+require(PATH_DATABASE);
+require(PATH_MODEL_LOCATIONS);
+require(PATH_MODEL_LOCATION_DB);
 ?>
 
     <div id="content">
@@ -95,4 +99,6 @@ require('../../../model/location_db.php');
     </table> 
 </form>
         
-<?php include ('../../Shared/footer.php') ?>
+<?php       
+        include PATH_FOOTER;
+?>

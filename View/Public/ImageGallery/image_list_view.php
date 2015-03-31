@@ -1,7 +1,6 @@
-<?php   
+    <?php   
 
-include ('../../Shared/header.php'); 
-include ('../../Shared/side-menu.php'); 
+//include ('../../Shared/side-menu.php'); 
 
 #File name: image_list_view.php
 #File for Image Gallery-Public
@@ -19,10 +18,11 @@ include ('../../Shared/side-menu.php');
     $categories = CategoryDB::getCategories();
     $images = ImageGalleryDB::GetImagesByCategory($category_id);
  -->
+ <div id="content">
 <div id="main">
     <div id="sidebar">
         
-        <p><a href="../../Admin/Imagegallery_admin/index.php">Image Gallery Admin(temporary)</a></p>
+        <p><a href="<?php echo PATH__ADMIN_IMAGEGALLERY. '/index.php'; ?>"> Image Gallery Admin(temporary)</a></p>
 <!--        <h1>Categories</h1>-->
         <ul class="nav">
             <!-- display links for all categories -->
@@ -47,9 +47,9 @@ include ('../../Shared/side-menu.php');
                 <?php 
                      foreach ($images as $image) : 
                          
-                         $img_ref= '../../../Content/uploads/images/'. $current_category->getCatName() .
+                         $img_ref= PATH_IMAGES. '/'. $current_category->getCatName() .
                                    '/'. $image->getFilename();
-                        $img_src = '../../../Content/uploads/images/'. $current_category->getCatName() . 
+                        $img_src = PATH_IMAGES. '/' . $current_category->getCatName() . 
                                  '/thumbnails/'.$image->getFilename();
                          
                   ?>                   
@@ -80,13 +80,9 @@ include ('../../Shared/side-menu.php');
                 
 <!--    </div>  end of #content -->
 </div> <!-- end #main -->
-
+</div> <!-- end of #content -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-<!--<script src="//blueimp.github.io/Gallery/js/blueimp-gallery.min.js"></script>-->
-<script src="../../Content/js/bootstrap-image-gallery.js"></script>
 <script>
 document.getElementById('links').onclick = function (event) {
     event = event || window.event;
@@ -100,6 +96,6 @@ document.getElementById('links').onclick = function (event) {
  
 <!-- END of FILE image_list_view-->
 <!-- START of footer include in image_list_view-->
-<?php include ('../../Shared/footer.php'); ?>
+<?php include (PATH_FOOTER); ?>
  
 <!-- END of 'footer include' in image_list_view-->

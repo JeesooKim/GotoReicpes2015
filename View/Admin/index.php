@@ -1,10 +1,16 @@
-<?php   include ('../../View/Shared/header.php');
-        include ('../../View/Shared/side-menu.php');
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+
+<?php include PATH_HEADER;  ?>  
+<!--end top-->
+
+<?php   
+        include PATH_VIEW_SHARED . '/side-menu.php';
         
-        echo "ADMIN PANEL</h1>";
+        
+        echo "<h1>ADMIN PANEL</h1>";
         
 		
-        include ('../../View/Shared/footer.php'); 
+         include PATH_FOOTER;
                 
 ?>
                
