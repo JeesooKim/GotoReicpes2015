@@ -71,4 +71,31 @@ class Toprecipe{
     }    
     
 }
+
+class TopRecipeDisplay{
+    
+    private $dish_id, $displayYN;
+    
+    public function __construct($dish_id, $displayYN){
+        $this->dish_id=$dish_id;
+        $this->displayYN=$displayYN;
+    }
+ 
+    public function getDishId(){
+        return $this->dish_id;
+    }
+    
+    public function setDishId($value){
+        $this->dish_id=$value;
+    }    
+    
+    public function getDisplyYN(){   
+        return $this->displayYN;
+    }
+    
+    public function setDisplayYN($value){
+        $this->displayYN=$value;
+    }
+    
+}
 ?>
