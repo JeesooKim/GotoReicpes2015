@@ -3,8 +3,8 @@
 define('HOST', 'http://localhost' );
 define('ROOT_FOLDER','/suzieq/PHP/GotoReicpes2015');
 
-define("SITEROOT", 'c:/xampp/htdocs/suzieq/PHP/GotoReicpes2015');
-define("SERVERROOT", 'http://localhost/suzieq/PHP/GotoReicpes2015');
+define("SITEROOT", 'c:/xampp/htdocs/GotoReicpes2015');
+define("SERVERROOT", 'http://localhost/GotoReicpes2015');
 
 //***** Content Paths *****//
 define('PATH_CSS' , SERVERROOT.'/Content/css');

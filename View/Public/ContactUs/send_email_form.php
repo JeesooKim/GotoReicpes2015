@@ -1,3 +1,8 @@
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+
+<?php include PATH_HEADER;  ?>  
+<!--end top-->
+
 <!--  Email the contact us form -->
 <?php
 
@@ -153,7 +158,7 @@ if(isset ($_POST['send'])){
      echo $result;
      ?>
 </body>
-<?php
        
+<?php       
         include PATH_FOOTER;
 ?>

@@ -1,5 +1,7 @@
-<?php include ('../../View/Shared/header.php'); ?>
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 
+<?php include PATH_HEADER;  ?>  
+<!--end top-->
 		<div id="login">
 
 		<h2><span class="fontawesome-lock"></span>Register</h2>
@@ -21,7 +23,7 @@
 				<p><input type="email" id="email" value="" onBlur="if(this.value=='')this.value='email'" onFocus="if(this.value=='email')this.value=''"></p>
 
 				<p><a href="#" class="btn btn-primary" role="button">Register</a></p>
-				<p><a href="../../View/Admin/index.php">Return</a></p>
+				<p><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Return</a></p>
 
 			</fieldset>
 
@@ -30,5 +32,4 @@
 	</div> 
 	<!-- end login -->
 
-
-	<?php include ('../../View/Shared/footer.php') ?>
+<?php  include PATH_FOOTER; ?>

@@ -3,9 +3,12 @@
 class Database{
     //Database class to create a database connection object(Php Data Object)    
     
-    private static $dsn='mysql:host=lotus.arvixe.com;dbname=gotorecipes_db';
-    private static $username = 'admin_gotorecipe';
-    private static $password ='recipe';
+//    private static $dsn='mysql:host=lotus.arvixe.com;dbname=gotorecipes_db';
+//    private static $username = 'admin_gotorecipe';
+//    private static $password ='recipe';
+    private static $dsn='mysql:host=localhost;dbname=gotorecipes_db';
+    private static $username = 'root';
+    private static $password ='';
         
     //reference to db connection
     private static $dbCon;

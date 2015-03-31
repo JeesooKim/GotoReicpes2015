@@ -99,4 +99,6 @@ require(PATH_MODEL_LOCATION_DB);
     </table> 
 </form>
         
-<?php include ('../../Shared/footer.php') ?>
+<?php       
+        include PATH_FOOTER;
+?>
