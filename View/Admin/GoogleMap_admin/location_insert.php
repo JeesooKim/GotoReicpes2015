@@ -1,5 +1,4 @@
 <?php
-require('../../../view/shared/header.php');
 require('../../../model/database.php');
 require('../../../model/locations.php');
 require('../../../model/location_db.php');
@@ -21,10 +20,12 @@ if(isset($_POST['location_insert'])){
     }
     else{
         echo  'Missing data fields.';
+        exit();
     }
 }
 ?>
 
+<?php include('../../../view/shared/header.php'); ?>
 <ol class="breadcrumb">
         <li><a href="../../../View/Admin/index.php">Admin Panel</a></li>
         <li><a href="../../../View/Admin/GoogleMap_admin/location_admin.php">Locations</a></li>
@@ -43,6 +44,7 @@ if(isset($_POST['location_insert'])){
         <div class="form-group">
             <label for="location_phone">Phone</label>
             <textarea class="form-control" name="location_phone"></textarea>
+            <p class="help-block">Ex. 416-123-4567</p>
         </div>
 
         <div class="form-group">

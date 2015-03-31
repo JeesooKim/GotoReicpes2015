@@ -55,8 +55,6 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right">
-                                <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/register.php">Register</a></li>
-                                <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/login.php">Login</a></li>
                                 <form class="navbar-form navbar-right" role="search">
                                     <div class="form-group">
                                             <input type="text" class="form-control" type="search" placeholder="Search">
@@ -66,7 +64,6 @@
                                 </ul>
                         </div><!-- /.navbar-collapse -->
                                 <ul class="nav navbar-nav">
-                                <li class="active"><a href="<?php echo PATH_VIEW_PUBLIC; ?>/index.php">Home<span class="sr-only">(current)</span></a></li>
                                 <li><a href="#">About Us</a></li>
                                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes <span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
@@ -79,9 +76,9 @@
                                                 <li><a class="ddl_link" href="#">Dinner</a></li>
                                         </ul>
                                 </li>
-                                <li><a href="<?php echo PATH__PUBLIC_IMAGEGALLERY; ?>/imagegallery.php">Gallery</a></li>
+                                <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/register.php">Register</a></li>
+                                <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/login.php">Login</a></li>
                                 <li><a href="#">Events</a></li>
-                                <li><a href="<?php echo  PATH_PUBLIC_CONTACT; ?>/contactus_form.php">Contact Us</a></li>
                                 </ul>
                         
                 </div><!-- /.container-fluid -->

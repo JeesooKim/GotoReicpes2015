@@ -1,5 +1,4 @@
 <?php
-require('../../../view/shared/header.php');
 require('../../../model/database.php');
 require('../../../model/locations.php');
 require('../../../model/location_db.php');
@@ -10,6 +9,7 @@ if(isset($_GET['id'])) {
     $location_id = $_POST['location_id'];
 }
 $map_location = LocationDB::getLocation($location_id);
+$location_id = $map_location->getID();
 $map_location_branch = $map_location->getBranch();
 $map_location_phone = $map_location->getPhone();
 $map_location_street = $map_location->getStreet();
@@ -19,6 +19,7 @@ $map_location_province = $map_location->getProvince();
 $map_location_country = $map_location->getCountry();
 
 if (isset($_POST['location_update'])) {
+    $location_id = $_POST['location_id'];
     $map_location_branch = $_POST['location_branch'];
     $map_location_phone = $_POST['location_phone'];
     $map_location_street = $_POST['location_street'];
@@ -28,19 +29,21 @@ if (isset($_POST['location_update'])) {
     $map_location_country = $_POST['location_country'];
 
     // Validate the entered data
-    if ($map_location_branch != '' || $map_location_phone != '' || $map_location_street != '' || $map_location_postal !='' || $map_location_city !='' ||$map_location_province !='' ||$map_location_country !='') {
-        echo "Missing fields.";
+    if ($location_id != '' || $map_location_branch != '' || $map_location_phone != '' || $map_location_street != '' || $map_location_postal !='' || $map_location_city !='' ||$map_location_province !='' ||$map_location_country !='') {
         $map_location = new Location($map_location_branch, $map_location_phone, $map_location_street, $map_location_postal, $map_location_city, $map_location_province, $map_location_country);
 
-        locationDB::UpdateLocation($map_location, $map_location_id);
+        locationDB::UpdateLocation($map_location, $location_id);
 
         header("Location: location_admin.php");
-    }
+    }else{
+        echo "Missing fields.";
+        exit(); 
+   }
 }
-
 ?>
 
 <!--Update form-->
+<?php include('../../../view/shared/header.php'); ?>
 <div>
     <h1>Update Branch Location: <?php echo $map_location_branch; ?></h1>
 

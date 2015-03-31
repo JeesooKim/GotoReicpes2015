@@ -16,11 +16,10 @@ if(isset($_POST['category'])){
 $categories = ToprecipeDB::getRecipeCategory();
 
 ?>
-
-
-Today's Recipe
-                
+<h1>Today's Recipe</h1>
+<br /><br />                
     <form action="toprecipes.php" method="post">
+        Category : 
         <select name="category">
         <?php 
         echo "<option value='' >All</option>";
@@ -44,10 +43,10 @@ $toprecipes = ToprecipeDB::getTopRecipeByCategory($category_parm);
 
 
 echo "<br />";
-echo '<table border="1">';
+echo '<table class="table" >';
 ?>
 <tr>
-    <th>count</th>
+    <th>Count</th>
     <th>Dish Id</th>
     <th>Dish Name</th>
     <th>Category</th>
@@ -83,6 +82,6 @@ foreach ($toprecipes as $toprecipe) :
     echo "</td>";
     echo "</tr>";
 endforeach;
-
+echo "</table>";
 ?>
 <?php include  PATH_FOOTER; ?>

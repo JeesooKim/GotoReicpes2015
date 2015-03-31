@@ -35,5 +35,5 @@ public static function getDB(){
     }
 }
 
-//$pdo = Database::getDB();
+$pdo = Database::getDB();
 ?>

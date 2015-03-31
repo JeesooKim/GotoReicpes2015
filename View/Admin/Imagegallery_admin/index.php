@@ -114,7 +114,7 @@ if ($action == 'list_images') { //when the page is loaded for the first time
     }
     else {        
        //when file to be uploaded is not blank/null
-        //should upload the new one.s
+        //should upload the new one.
         //the following are when uploading a new file.
         //$img_filename = basename($_FILES['file_upload']['name']); //image file name to be newly uploaded     
         $img_filename =$img_new_filename;
