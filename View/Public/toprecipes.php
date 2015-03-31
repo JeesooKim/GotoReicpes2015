@@ -8,9 +8,24 @@ require(PATH_DATABASE);
 require(PATH_MODEL_TOPRECIPE);
 require(PATH_MODEL_TOPRECIPE_DB);
 
+require('../../Model/category.php');
+require('../../Model/pagenator.php');
+
+$pgSelf = "toprecipes.php";
+$cntPerPage = 5;
+$pgLinkCnt = 5;
+
+if(isset($_GET['pgPage'])){
+    $pgPage = $_GET['pgPage'];
+}else{
+    $pgPage = 1;
+}
+
 $category_parm = "";
-if(isset($_POST['category'])){
-    $category_parm = $_POST['category'];
+$condition = "";
+if(isset($_GET['category'])){
+    $category_parm = $_GET['category'];
+    $condition = "&category=".$category_parm;
 }
 
 $categories = ToprecipeDB::getRecipeCategory();
@@ -18,17 +33,20 @@ $categories = ToprecipeDB::getRecipeCategory();
 ?>
 <h1>Today's Recipe</h1>
 <br /><br />                
-    <form action="toprecipes.php" method="post">
+    <form action="toprecipes.php" method="GET">
         Category : 
         <select name="category">
         <?php 
         echo "<option value='' >All</option>";
         foreach ($categories as $category) : 
+           
+            $catId = $category->getCatID();
+            $catName = $category->getCatName();
             
-            if( !strcmp($category_parm, $category)){
-                echo "<option value='$category' selected >$category</option>";
+            if( !strcmp($category_parm, $catId)){
+                echo "<option value='$catId' selected >$catName</option>";
             }else{
-                echo "<option value='$category'  >$category</option>";
+                echo "<option value='$catId'  >$catName</option>";
             }
         endforeach;
         ?>
@@ -39,7 +57,8 @@ $categories = ToprecipeDB::getRecipeCategory();
 
 <?php
 
-$toprecipes = ToprecipeDB::getTopRecipeByCategory($category_parm);
+$totCnt = ToprecipeDB::getTotCount($category_parm);
+$toprecipesPage = ToprecipeDB::getPageTopRecipeByCategory($category_parm, $cntPerPage, $pgPage);
 
 
 echo "<br />";
@@ -57,7 +76,7 @@ echo '<table class="table" >';
 
 <?php
 
-foreach ($toprecipes as $toprecipe) :
+foreach ($toprecipesPage as $toprecipe) :
     echo "<tr>";
     echo "<td>";
     echo $toprecipe->getCnt();
@@ -83,5 +102,7 @@ foreach ($toprecipes as $toprecipe) :
     echo "</tr>";
 endforeach;
 echo "</table>";
+
+$pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 ?>
 <?php include  PATH_FOOTER; ?>
