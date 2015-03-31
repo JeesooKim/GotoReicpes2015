@@ -1,7 +1,8 @@
-        <?php include('../Shared/header.php'); ?>
-        <!--end top-->
-
-        <?php include('imageslider.php'); ?>
+<?php  include "c:/xampp/htdocs/suzieq/PHP/GotoReicpes2015/config.php";  ?>
+<?php include SITEROOT . "/VIEW/Shared/header.php";  ?>  
+<!--end top-->
+<?php 
+     include(SITEROOT.PATH_VIEW_PUBLIC.'/imageslider.php'); ?>
         <!--end imageslider feature-->
 
 <!-- <ol class="breadcrumb">

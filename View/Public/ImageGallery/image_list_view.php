@@ -1,6 +1,6 @@
 <?php   
-
-include ('../../Shared/header.php'); 
+include $_SERVER["DOCUMENT_ROOT"]."/suzieq/PHP/GotoReicpes2015"."/config.php";  
+include (ROOT.PATH_HEADER); 
 include ('../../Shared/side-menu.php'); 
 
 #File name: image_list_view.php
