@@ -1,7 +1,7 @@
 <?php
 
 define('HOST', 'http://localhost' );
-define('ROOT_FOLDER','/suzieq/PHP/GotoReicpes2015');
+define('ROOT_FOLDER','/GotoReicpes2015');
 
 define("SITEROOT", 'c:/xampp/htdocs/GotoReicpes2015');
 define("SERVERROOT", 'http://localhost/GotoReicpes2015');
@@ -42,14 +42,14 @@ define("PATH_VIEW_SHARED", SERVERROOT."/View/Shared");
 
 //*** View> Admin ***//
 define("PATH_ADMIN_GOOGLEMAP", PATH_VIEW_ADMIN."/GoogleMap_admins" );
-define("PATH__ADMIN_IMAGEGALLERY", PATH_VIEW_ADMIN."/Imagegallery_admin");
-define("PATH__ADMIN_RECIPES", PATH_VIEW_ADMIN."/recipes_admin");
+define("PATH_ADMIN_IMAGEGALLERY", PATH_VIEW_ADMIN."/Imagegallery_admin");
+define("PATH_ADMIN_RECIPES", PATH_VIEW_ADMIN."/recipes_admin");
 
 
 //*** View> Public ***//
 define("PATH_PUBLIC_CONTACT",  PATH_VIEW_PUBLIC."/ContactUs" );
-define("PATH__PUBLIC_IMAGEGALLERY",  PATH_VIEW_PUBLIC."/ImageGallery");
-define("PATH__PUBLIC_RECIPES",  PATH_VIEW_PUBLIC."/Recipes");
+define("PATH_PUBLIC_IMAGEGALLERY",  PATH_VIEW_PUBLIC."/ImageGallery");
+define("PATH_PUBLIC_RECIPES",  PATH_VIEW_PUBLIC."/Recipes");
 
 //*** View> Shared ***//
 define("PATH_HEADER",  SITEROOT. "/View/Shared/header.php");  //SERVERROOT is not working

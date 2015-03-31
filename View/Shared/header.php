@@ -59,7 +59,7 @@
                                 <ul class="nav navbar-nav">
                                     <li class="active"><a href="<?php  echo PATH_VIEW_PUBLIC.'/index.php';?>">Home<span class="sr-only">(current)</span></a></li>
                                     <li><a href="#">About Us</a></li>
-                                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes <span class="caret"></span></a>
+<!--                                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes <span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                                 <li><a class="ddl_link" href="#">Top Recipes</a></li>
                                                 <li><a class="ddl_link" href="#">Newest Recipes</a></li>
@@ -68,12 +68,13 @@
                                                 <li><a class="ddl_link" href="#">Breakfast</a></li>
                                                 <li><a class="ddl_link" href="#">Lunch</a></li>
                                                 <li><a class="ddl_link" href="#">Dinner</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="<?php echo PATH__PUBLIC_IMAGEGALLERY . '/imagegallery.php';?>">Gallery</a></li>
-                                    <li><a href="#">Events</a></li>
-                                    <li><a href="<?php echo  PATH_PUBLIC_CONTACT . '/contactus_form.php';?>">Contact Us</a></li>
-                                </ul>                                 
+                                        </ul></li>
+                                        -->
+                                        <li><a href="<?php echo PATH_PUBLIC_RECIPES . '/recipes.php';?>">Recipes</a></li>
+                                        <li><a href="<?php echo PATH_PUBLIC_IMAGEGALLERY . '/imagegallery.php';?>">Gallery</a></li>
+                                        <li><a href="#">Events</a></li>
+                                       <li><a href="<?php echo  PATH_PUBLIC_CONTACT . '/contactus_form.php';?>">Contact Us</a></li>
+                                </ul>                          
                 </div><!-- /.container-fluid -->
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">

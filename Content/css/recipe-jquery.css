@@ -1,0 +1,31 @@
+	
+#recipeContainer {
+	background: #523C1E;
+	width: 80%;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+.panelContainer{
+	background: #523C1E;
+	width: 80%;
+	margin: 0 auto;
+}
+.panelContainer p{
+	background: #524737;/*Paragraph background color*/
+	padding: 15px;
+	color: #FFE5C3;/*Paragraph font colour*/
+}
+
+h1{
+	margin-left: 150px;
+}
+
+h2{
+	margin-bottom: 2px;
+	padding: 3px 0 2px 25px;
+	background: #D99E50;
+}
+p{
+	margin-top: 0;
+	padding-top: 0;
+}

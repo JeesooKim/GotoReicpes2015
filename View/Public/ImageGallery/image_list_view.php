@@ -22,7 +22,7 @@
 <div id="main">
     <div id="sidebar">
         
-        <p><a href="<?php echo PATH__ADMIN_IMAGEGALLERY. '/index.php'; ?>"> Image Gallery Admin(temporary)</a></p>
+        <p><a href="<?php echo PATH_ADMIN_IMAGEGALLERY. '/index.php'; ?>"> Image Gallery Admin(temporary)</a></p>
 <!--        <h1>Categories</h1>-->
         <ul class="nav">
             <!-- display links for all categories -->
