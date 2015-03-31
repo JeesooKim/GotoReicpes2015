@@ -1,7 +1,11 @@
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+
+
 <?php
-require('../../../model/database.php');
-require('../../../model/locations.php');
-require('../../../model/location_db.php');
+require_once( PATH_DATABASE);  
+require(PATH_MODEL_LOCATIONS);
+require(PATH_MODEL_LOCATION_DB);
+
 
 if(isset($_POST['location_insert'])){
     $location_branch = $_POST['location_branch'];
@@ -25,10 +29,11 @@ if(isset($_POST['location_insert'])){
 }
 ?>
 
-<?php include('../../../view/shared/header.php'); ?>
+<?php include PATH_HEADER;    ?>
+<!--end top-->
 <ol class="breadcrumb">
-        <li><a href="../../../View/Admin/index.php">Admin Panel</a></li>
-        <li><a href="../../../View/Admin/GoogleMap_admin/location_admin.php">Locations</a></li>
+        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
+        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/GoogleMap_admin/location_admin.php">Locations</a></li>
         <li class="active">Insert</li>
     </ol>
 
@@ -77,6 +82,5 @@ if(isset($_POST['location_insert'])){
     </form>
 </div><!-- /main -->
 
-<?php
-include '../../Shared/footer.php';
-?>
+
+<?php include PATH_FOOTER;    ?>

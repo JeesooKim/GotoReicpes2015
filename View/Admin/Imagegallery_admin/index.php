@@ -1,9 +1,11 @@
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+
 <?php
-require('../../../model/database.php');
-require('../../../model/category.php');
-require('../../../model/category_db.php');
-require('../../../model/imagegallery.php');
-require('../../../model/imagegallery_db.php');
+require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
+require_once( PATH_MODEL_CATEGORY);
+require_once( PATH_MODEL_CATEGORY_DB);
+require_once( PATH_MODEL_IMAGEGALLERY);
+require_once( PATH_MODEL_IMAGEGALLERY_DB);
 
 #File name: index.php
 #File for Image Gallery-Admin
@@ -119,7 +121,7 @@ if ($action == 'list_images') { //when the page is loaded for the first time
         //$img_filename = basename($_FILES['file_upload']['name']); //image file name to be newly uploaded     
         $img_filename =$img_new_filename;
         $t_name = $_FILES['file_upload']['tmp_name'];
-        $dir='../../../content/uploads/images/';    //specifies the directory where the file is going to be placed,
+        $dir=PATH_IMAGES . '/';    //specifies the directory where the file is going to be placed,
         $img_path = $dir . $category_name . "/";
         $img_file_path = $dir . $category_name . "/" . $img_filename;
         $img_size =$_FILES["file_upload"]["size"];
@@ -149,7 +151,7 @@ if ($action == 'list_images') { //when the page is loaded for the first time
                  $error .= "Sorry, your file was not uploaded.";
 
                 //header("Location: .?category_id=$category_id");
-                include('../../../Errors/error_uploading.php');            
+                include( PATH_ERRORS . '/error_uploading.php');            
             }
             else if($uploadOK) {      
 
@@ -199,7 +201,7 @@ else if ($action == 'show_upload_form') {
     
     $img_filename = basename($_FILES['file_upload']['name']);
     $t_name = $_FILES['file_upload']['tmp_name'];
-    $dir='../../../content/uploads/images/';    //specifies the directory where the file is going to be placed,
+    $dir=PATH_IMAGES . '/';    //specifies the directory where the file is going to be placed,
     $img_path = $dir . $category_name . "/";
     $img_file_path = $dir . $category_name . "/" . $img_filename;
     
@@ -240,7 +242,7 @@ else if ($action == 'show_upload_form') {
      //Check if $uploadOK is set to 0 by an error             
     if (!$uploadOK) {        
         $error .= "Sorry, your file was not uploaded.";
-        include('../../../Errors/error.php');    
+        include(PATH_ERRORS. '/error.php');    
     }
     else if($uploadOK) {       
         // if everything is ok, try to upload file        

@@ -1,7 +1,9 @@
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+
 <?php
-require('../../../model/database.php');
-require('../../../model/imagesliders.php');
-require('../../../model/imageslider_db.php');
+require_once( PATH_DATABASE);  
+require(PATH_MODEL_IMAGESLIDERS);
+require(PATH_MODEL_IMAGESLIDER_DB);
 
 if(isset($_GET['image_id'])) {
     $img_id = $_GET['image_id'];
@@ -23,7 +25,7 @@ if (isset($_POST['imageslider_update'])) {
     //tmp folder
     $t_name = $_FILES['image']['tmp_name'];
     //declaring the folder to be uploaded into
-    $dir = '../../../Content/uploads/images/imageslider';
+    $dir = PATH_IMAGES.'/imageslider';
     //this is the path of the specific image uploaded
     //$path is to be inserted into db
     $img_path = $dir . "/" . $filename;
@@ -43,7 +45,8 @@ if (isset($_POST['imageslider_update'])) {
 ?>
 
 <!--Update form-->
-<?php include('../../../view/shared/header.php'); ?>
+<?php include PATH_HEADER;    ?>
+<!--end top-->
 <div>
     <h1><?php echo $img_name; ?></h1>
 
@@ -68,7 +71,7 @@ if (isset($_POST['imageslider_update'])) {
 </div>
 <!--End of update form-->
 
-<?php
-include '../../Shared/footer.php';
-?>
+
+<?php include PATH_FOOTER;    ?>
+
          

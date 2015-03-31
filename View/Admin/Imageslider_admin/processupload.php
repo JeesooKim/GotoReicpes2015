@@ -1,8 +1,8 @@
 <?php
 
-require('../../../model/database.php');
-require('../../../model/imagesliders.php');
-require('../../../model/imageslider_db.php');
+require_once( PATH_DATABASE);  
+require(PATH_MODEL_IMAGESLIDERS);
+require(PATH_MODEL_IMAGESLIDER_DB);
 
 //file properties
         $file = $_FILES['image']['tmp_name'];

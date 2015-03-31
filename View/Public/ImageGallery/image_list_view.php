@@ -1,6 +1,6 @@
     <?php   
 
-include ('../../Shared/side-menu.php'); 
+//include ('../../Shared/side-menu.php'); 
 
 #File name: image_list_view.php
 #File for Image Gallery-Public
@@ -22,7 +22,7 @@ include ('../../Shared/side-menu.php');
 <div id="main">
     <div id="sidebar">
         
-        <p><a href="<?php echo PATH__ADMIN_IMAGEGALLERY. "/index.php"; ?>" Image Gallery Admin(temporary)</a></p>
+        <p><a href="<?php echo PATH__ADMIN_IMAGEGALLERY. '/index.php'; ?>"> Image Gallery Admin(temporary)</a></p>
 <!--        <h1>Categories</h1>-->
         <ul class="nav">
             <!-- display links for all categories -->
@@ -83,10 +83,6 @@ include ('../../Shared/side-menu.php');
 </div> <!-- end of #content -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-<!--<script src="//blueimp.github.io/Gallery/js/blueimp-gallery.min.js"></script>-->
-<script src="../../Content/js/bootstrap-image-gallery.js"></script>
 <script>
 document.getElementById('links').onclick = function (event) {
     event = event || window.event;

@@ -14,7 +14,7 @@ define('PATH_JS', SERVERROOT.'/Content/js');
 define('PATH_IMAGES',  SERVERROOT.'/Content/uploads/images');
 
 //***** Errors Paths *****//
-define("PATH_ERRORS", "/Errors");
+define("PATH_ERRORS", SERVERROOT."/Errors");
 
 //*****  Model Paths *****//   
 //Note: SERVER ROOT is not working but SITEROOT is working ......why?
@@ -28,6 +28,8 @@ define("PATH_MODEL_LOCATIONS", SITEROOT . "/Model/locations.php");
 define("PATH_MODEL_LOCATION_DB", SITEROOT ."/Model/location_db.php");
 define("PATH_MODEL_TOPRECIPE", SITEROOT ."/Model/toprecipe.php");
 define("PATH_MODEL_TOPRECIPE_DB", SITEROOT ."/Model/toprecipe_db.php");
+define("PATH_MODEL_IMAGESLIDERS", SITEROOT ."/Model/imagesliders.php");
+define("PATH_MODEL_IMAGESLIDER_DB", SITEROOT ."/Model/imageslider_db.php");
 
 
 //****** View Paths ******//

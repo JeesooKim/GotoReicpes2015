@@ -1,9 +1,9 @@
-<?php  include "c:/xampp/htdocs/suzieq/PHP/GotoReicpes2015/config.php";  ?>
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 
 <?php include PATH_HEADER;  ?>  
 <!--end top-->
 <?php 
-     include(PATH_VIEW_PUBLIC.'/imageslider.php'); ?>
+     include(PATH_VIEW_PUBLIC.'/Imageslider/imageslider.php'); ?>
         <!--end imageslider feature-->
 
 <!-- <ol class="breadcrumb">

@@ -1,4 +1,7 @@
-<?php include '../../Shared/header.php'; 
+
+<?php include PATH_HEADER;    ?>
+<!--end top-->
+<?php
 
 #File name: image_edit.php
 #File for Image Gallery-Admin
@@ -66,4 +69,4 @@
     </form>
 </div> <!-- end of #main-->
 
-<?php include '../../Shared/footer.php'; ?>
+<?php include PATH_FOOTER;    ?>

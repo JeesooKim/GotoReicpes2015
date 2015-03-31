@@ -1,7 +1,10 @@
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+
+
 <?php
-require('../../../model/database.php');
-require('../../../model/locations.php');
-require('../../../model/location_db.php');
+require_once( PATH_DATABASE);  
+require(PATH_MODEL_LOCATIONS);
+require(PATH_MODEL_LOCATION_DB);
 
 //delete option
 if(isset($_POST['location_id'])){
@@ -11,10 +14,12 @@ LocationDB::deleteLocation($location_id);
 }
 ?>
 
-<?php include('../../../view/shared/header.php'); ?>
+<?php include PATH_HEADER;    ?>
+<!--end top-->
+
 <div id="main">
     <ol class="breadcrumb">
-        <li><a href="../../../View/Admin/index.php">Admin Panel</a></li>
+        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
         <li class="active">Locations</li>
     </ol>
 
@@ -72,7 +77,6 @@ LocationDB::deleteLocation($location_id);
     </table>
 </div><!--End of main-->
 
-<?php
-require('../../../view/shared/footer.php');
-?>
+
+<?php include PATH_FOOTER;    ?>
                 
