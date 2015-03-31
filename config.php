@@ -30,6 +30,8 @@ define("PATH_MODEL_TOPRECIPE", SITEROOT ."/Model/toprecipe.php");
 define("PATH_MODEL_TOPRECIPE_DB", SITEROOT ."/Model/toprecipe_db.php");
 define("PATH_MODEL_IMAGESLIDERS", SITEROOT ."/Model/imagesliders.php");
 define("PATH_MODEL_IMAGESLIDER_DB", SITEROOT ."/Model/imageslider_db.php");
+define("PATH_MODEL_RECIPE", SITEROOT ."/Model/recipe.php");
+define("PATH_MODEL_RECIPES_DB", SITEROOT ."/Model/recipes_db.php");
 
 
 //****** View Paths ******//
@@ -41,11 +43,13 @@ define("PATH_VIEW_SHARED", SERVERROOT."/View/Shared");
 //*** View> Admin ***//
 define("PATH_ADMIN_GOOGLEMAP", PATH_VIEW_ADMIN."/GoogleMap_admins" );
 define("PATH__ADMIN_IMAGEGALLERY", PATH_VIEW_ADMIN."/Imagegallery_admin");
+define("PATH__ADMIN_RECIPES", PATH_VIEW_ADMIN."/recipes_admin");
 
 
 //*** View> Public ***//
 define("PATH_PUBLIC_CONTACT",  PATH_VIEW_PUBLIC."/ContactUs" );
 define("PATH__PUBLIC_IMAGEGALLERY",  PATH_VIEW_PUBLIC."/ImageGallery");
+define("PATH__PUBLIC_RECIPES",  PATH_VIEW_PUBLIC."/Recipes");
 
 //*** View> Shared ***//
 define("PATH_HEADER",  SITEROOT. "/View/Shared/header.php");  //SERVERROOT is not working
