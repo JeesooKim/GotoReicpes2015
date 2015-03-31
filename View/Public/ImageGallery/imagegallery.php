@@ -1,17 +1,9 @@
 <?php
-include "http://localhost/suzieq/PHP/GotoReicpes2015"."/config.php" ;
-
-require_once ROOT . PATH_MODEL . '/database.php' ;
-require_once ROOT . PATH_MODEL . '/category.php' ;
-require_once ROOT . PATH_MODEL . '/category_db.php' ;
-require_once ROOT . PATH_MODEL . '/imagegallery.php' ;
-require_once ROOT . PATH_MODEL . '/imagegallery_db.php' ;
-
-//require('../../../model/database.php');
-//require('../../../model/category.php');
-//require('../../../model/category_db.php');
-//require('../../../model/imagegallery.php');
-//require('../../../model/imagegallery_db.php');
+require('../../../model/database.php');
+require('../../../model/category.php');
+require('../../../model/category_db.php');
+require('../../../model/imagegallery.php');
+require('../../../model/imagegallery_db.php');
 
 #File name: imagegallery.php
 #File for Image Gallery-Public

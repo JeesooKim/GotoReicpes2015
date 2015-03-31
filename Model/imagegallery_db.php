@@ -12,15 +12,15 @@ class ImageGalleryDB{
     //images in the gallery table are all relate through its cat_id(foreign key) to cat_id of the categories table(primary key)
     //there are five methods in this class to control the data from the gallery and categories tables of the database
     //(1)GetImages() :  to get all the images from the gallery/categories tables
-    //(2)GetImage($img_id): to get a specific image with $img_id
-    //(3)GetImagesByCategory($cat_id) :  to get the images depending on the category selected ($cat_id)
+    //(2)GetImagesByCategory($cat_id) :  to get the images depending on the category selected ($cat_id)
+    //(3)GetImage($img_id): to get a specific image with $img_id
     //(4)deleteImage($img_id) : to delete the image with $img_id
     //(5)addImage($image): to add an image
     
     public static function GetImages(){
         $dbCon =Database::getDB();    //connection to the database
         
-        $sql= 'SELECT * FROM imagegallery INNER JOIN categories ON gallery.cat_id=categories.cat_id';
+        $sql= 'SELECT * FROM gallery INNER JOIN categories ON gallery.cat_id=categories.cat_id';
         $result= $dbCon ->query($sql);   
         $images = array();
         foreach($result as $row){    
@@ -39,7 +39,25 @@ class ImageGalleryDB{
         return $images;                             
         }
     
-        public static function GetImage($img_id){
+    public static function GetImagesByCategory($category_id){
+        //from DB, get the category id from categories table
+        //then get the images from gallery table where cat_id matches  $category_id
+        $dbCon=Database::getDB();
+        //$category = CategoryDB::getCategory($category_id);
+        $sql = "SELECT * FROM imagegallery WHERE cat_id='$category_id'  ORDER BY img_id ";
+
+        $result= $dbCon->query($sql);
+        $images=array();
+        
+        foreach($result as $row){
+            $image = new ImageGallery($row['img_title'], $category_id, $row['img_key'], $row['img_detail'], $row['img_filename'], $row['img_path'], $row['img_size'], $row['img_type'],  $row['img_author'], $row['img_source']);
+            $image->setID($row['img_id']);
+            $images[]= $image;            
+        }
+        return $images;
+    }
+        
+    public static function GetImage($img_id){
         
         //create db connection, 
         //get an image matching with img_id from gallery table 
@@ -62,25 +80,6 @@ class ImageGalleryDB{
         return $image;        
     }
     
-    public static function GetImagesByCategory($category_id){
-        //from DB, get the category id from categories table
-        //then get the images from gallery table where cat_id matches  $category_id
-        $dbCon=Database::getDB();
-        //$category :   CategoryDB::getCategory($category_id);
-        $sql = "SELECT * FROM imagegallery WHERE cat_id='$category_id'  ORDER BY img_id ";
-
-        $result= $dbCon->query($sql);
-        $images=array();
-        
-        foreach($result as $row){
-            $image = new ImageGallery($row['img_title'], $category_id, $row['img_key'], $row['img_detail'], $row['img_filename'], $row['img_path'], $row['img_size'], $row['img_type'],  $row['img_author'], $row['img_source']);
-            $image->setID($row['img_id']);
-            $images[]= $image;            
-        }
-        return $images;
-    }
-        
-        
     public static function deleteImage($img_id){
         $dbCon=Database::getDB();
         $sql="DELETE FROM imagegallery WHERE img_id='$img_id' ";
@@ -96,33 +95,24 @@ class ImageGalleryDB{
         $image = self::GetImage($img_id);   
         
         $sql = "UPDATE imagegallery SET "
-                . "img_title = :img_title, "
-                . "cat_id   = :cat_id, "
-                . "img_key = :img_key, "
-                . "img_detail = :img_detail, "
-                . "img_filename = :img_filename, "
-                . "img_path = :img_path, "
-                . "img_size = :img_size, "
-                . "img_type = :img_type, "
-                . "img_author = :img_author, "
-                . "img_source =  :img_source "
-                . "WHERE img_id = '$img_id' ";
-        //echo '[' . $sql . ']';                               
-        $statement = $dbCon->prepare($sql);
-        $statement -> bindParam(':img_title',$img_title, PDO::PARAM_STR, 100 );
-        $statement -> bindParam(':cat_id', $cat_id,PDO::PARAM_INT );
-        $statement -> bindParam(':img_key',$img_key,PDO::PARAM_STR, 100);
-        $statement -> bindParam(':$img_detail', $img_detail, PDO::PARAM_STR, 110);
-        $statement -> bindParam(':img_filename', $img_filename,PDO::PARAM_STR, 100);
-        $statement -> bindParam(':img_path', $img_path,PDO::PARAM_STR, 100);
-        $statement -> bindParam(':img_size',$img_size,PDO::PARAM_INT);
-        $statement -> bindParam(':img_type',$img_type,PDO::PARAM_STR, 30);
-        $statement -> bindParam(':img_author',$img_author,PDO::PARAM_STR, 100);
-        $statement -> bindParam(':img_source',$img_source,PDO::PARAM_STR, 200);
-                                                            
-        $statement->execute();       
+                . "img_title='$img_title', "
+                . "cat_id= '$cat_id',"
+                . "img_key='$img_key', "
+                . "img_detail='$img_detail', "
+                . "img_filename='$img_filename', "
+                . "img_path='$img_path', "
+                . "img_size='$img_size', "
+                . "img_type='$img_type', "
+                . "img_author='$img_author', "
+                . "img_source='$img_source' "
+                . "WHERE img_id='$img_id' ";
+        echo '[' . $sql . ']';                               
+        //$row_count = $dbCon->exec($sql);
+        //return $row_count;        
+        $dbCon->exec($sql);
+        //echo "data edited the gallery table";
+        //var_dump(debug_backtrace());
         
-        //$dbCon->exec($sql);       
     }
     
     public static function addImage($image){
@@ -147,25 +137,18 @@ class ImageGalleryDB{
         $img_author = $image -> getAuthor();
         $img_source = $image->getSource();
         
-        $sql = "INSERT INTO imagegallery (img_title, cat_id, img_key, img_detail, "
+        $sql = "INSERT INTO imagegallery (img_title,cat_id,img_key, img_detail, "
                                                     . "img_filename, img_path, img_size, img_type,"
                                                     . " img_author, img_source) "
-                                        . "VALUES(:img_title, :cat_id , :img_key, :img_detail, :img_filename, :img_path, "
-                                                        . ":img_size, :img_type, :img_author, :img_source )";
+                                        . "VALUES('$img_title', '$cat_id', '$img_key','$img_detail', "
+                                                        . "'$img_filename', '$img_path', '$img_size', '$img_type', "
+                                                        . " '$img_author','$img_source' )";
+        //$row_count = $dbCon->exec($sql);
+        //return $row_count;        
+        $dbCon->exec($sql);
+        //echo "new data inserted to the gallery table";
+        //var_dump(debug_backtrace());
         
-        $statement = $dbCon->prepare($sql);
-        $statement -> bindParam(':img_title', $img_title, PDO::PARAM_STR, 100 );
-        $statement -> bindParam(':cat_id', $cat_id, PDO::PARAM_INT );
-        $statement -> bindParam(':img_key', $img_key, PDO::PARAM_STR, 100);
-        $statement -> bindParam(':$img_detail', $img_detail, PDO::PARAM_STR, 110);
-        $statement -> bindParam(':img_filename', $img_filename, PDO::PARAM_STR, 100);
-        $statement -> bindParam(':img_path', $img_path, PDO::PARAM_STR, 100);
-        $statement -> bindParam(':img_size', $img_size, PDO::PARAM_INT);
-        $statement -> bindParam(':img_type', $img_type, PDO::PARAM_STR, 30);
-        $statement -> bindParam(':img_author', $img_author, PDO::PARAM_STR, 100);
-        $statement -> bindParam(':img_source', $img_source, PDO::PARAM_STR, 200);
-                                                            
-        $statement->execute();       
     }
 }
 
@@ -227,7 +210,8 @@ public static function CreateThumbs( $pathToImages, $pathToThumbs, $thumbWidth )
             // loop through it, looking for any/all JPG files:
             while (false !== ($fname = readdir( $dir ))) {
                         // parse path for the extension
-                        $info = pathinfo($pathToImages . $fname);                        
+                        $info = pathinfo($pathToImages . $fname);
+                        //echo "<pre>"; var_dump($info); echo "</pre>";
                         // continue only if this is a JPEG, PNG, or GIF image
                         if ( strtolower($info['extension']) == 'jpg' ||  strtolower($info['extension']) == 'png' || strtolower($info['extension']) == 'gif')
                         {
