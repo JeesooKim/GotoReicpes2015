@@ -8,8 +8,48 @@ if(isset($_POST['submit'])){
     //text field name variable
     $img_name = $_POST['img_name'];
     
-    //image name being uploaded
+    
     $filename = basename($_FILES['image']['name']);
+    $file_type = $_FILES['image']['type'];
+    $file_size = $_FILES['image']['size'];
+    $file_error = $_FILES['image']['error'];
+    
+    //validate file extension (ensures file is image)
+    if($_FILES['image']['type'] != 'image/jpeg'
+    &&  $_FILES['image']['type'] != 'image/jpg'
+    &&  $_FILES['image']['type'] != 'image/gif'
+    && $_FILES['image']['type'] != 'image/png')
+    {
+         echo "Please upload only Image file";
+         exit();
+    }
+    
+    //handles error
+    if($file_error > 0){
+        echo "Error : ";
+        switch($file_error){
+            case 1:
+                echo "File exceeded upload_max_filesize";
+                break;
+            case 2:
+                echo "File exceeded max_filesize";
+                break;
+            case 3:
+                echo "File partially uploaded";
+                break;
+            case 4:
+                echo "No file uploaded";
+                break;
+        }
+    }
+    
+    //handle file size. Max size 2MB
+    $max_file_size = 20000000;
+    if($file_size > $max_file_size){
+        echo "File size should not exceed 2mb";
+        exit();
+    }
+    
     //tmp folder
     $t_name = $_FILES['image']['tmp_name'];
     //declaring the folder to be uploaded into

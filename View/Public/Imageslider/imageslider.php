@@ -1,3 +1,8 @@
+<?php
+require('../../../model/database.php');
+require('../../../model/imagesliders.php');
+require('../../../model/imageslider_db.php');
+?>
 <section id="content">
 			<!-- image slider feature -->
 
@@ -13,15 +18,12 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <a href="#"><img src="../../Content/uploads/images/image1.jpg" alt=""></a>
-    </div>
-
-    <div class="item">
-      <a href="#"><img src="../../Content/uploads/images/image2.jpg" alt=""></a>
-    </div>
-
-    <div class="item">
-      <a href="#"><img src="../../Content/uploads/images/image3.jpg" alt=""></a>
+        <?php
+        $imageslider = ImagesliderDB::getImagesliders();
+        foreach ($imageslider as $row):
+            ?>
+        <img src="<?php echo $row->getPath() ?>" alt="<?php echo $row->getName(); ?>" title="<?php echo $row->getName(); ?>" />
+      <?php endforeach; ?>
     </div>
   </div>
 

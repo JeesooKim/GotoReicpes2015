@@ -25,7 +25,6 @@ ImagesliderDB::deleteImageslider($img_id);
     <table class="table table-responsive table-bordered">
         <thead>
         <tr>
-            <th>Image ID</th>
             <th>Name</th>
             <th>Image</th>
             <th></th>
@@ -38,9 +37,8 @@ ImagesliderDB::deleteImageslider($img_id);
         foreach ($imagesliders as $row):
             ?>
             <tr>
-                <td><?php echo $row->getImageID(); ?></td>
                 <td><?php echo $row->getName(); ?></td>
-                <td><?php echo $row->getPath(); ?></td>
+                <td width="500px"><?php echo "<img style='width: 300px' src='".$row->getPath()."' />" ?></td>
                 <td>
                     <a class="btn-link" href="imageslider_update.php?id=<?php echo $row->getImageID(); ?>">
                         <span class="glyphicon glyphicon-edit"></span>

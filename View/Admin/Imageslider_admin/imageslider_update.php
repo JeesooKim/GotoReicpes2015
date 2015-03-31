@@ -6,7 +6,7 @@ require('../../../model/imageslider_db.php');
 if(isset($_GET['image_id'])) {
     $img_id = $_GET['image_id'];
 } else {
-    $img_id = $_POST['image_id'];
+    $img_id = $_POST['img_id'];
 }
 $imageslider = ImagesliderDB::getImageslider($img_id);
 $img_id = $imageslider->getImageID();
@@ -17,6 +17,7 @@ if (isset($_POST['imageslider_update'])) {
     $img_id = $_POST['img_id'];
     //text field name variable
     $img_name = $_POST['img_name'];
+    
     
     //image name being uploaded
     $filename = basename($_FILES['image']['name']);
@@ -32,7 +33,7 @@ if (isset($_POST['imageslider_update'])) {
     if ($img_id != '' || $img_name != '' || $img_path != '') {
         if(move_uploaded_file($t_name,$dir . "/" . $filename)){
             $imageslider = new Imageslider($img_name, $img_path);
-            ImagesliderDB::addImageslider($imageslider);
+            ImagesliderDB::updateImageslider($imageslider, $img_id);
             header("Location: imageslider_admin.php");
     }else{
         echo "Missing fields.";
@@ -48,7 +49,7 @@ if (isset($_POST['imageslider_update'])) {
     <h1><?php echo $img_name; ?></h1>
 
     <form action="imageslider_update.php" method="POST">
-        <input type="hidden" name="image_id" value="<?php echo $img_id; ?>" />
+        <input type="hidden" name="img_id" value="<?php echo $img_id; ?>" />
         
         <div class="form-group">
             <label for="img_name">Name</label>
@@ -56,13 +57,13 @@ if (isset($_POST['imageslider_update'])) {
         </div>
         
         <div class="form-group">
-            <label for="location_branch">File:</label>
+            <label for="image">File:</label>
             <img src="<?php echo $img_path; ?>" alt="<?php echo $img_name; ?>" title="<?php echo $img_name; ?>" />
             <input type="file" name="image" id="image" />
+            <input type="submit" name="imageslider_update" value="Update" />
             <p>Must be less than 512kb. Only JPG, GIF and PNG files.</p>
         </div>
         
-        <button type="submit" class="btn btn-primary" name="imageslider_update">Update</button>
         <a class="btn btn-default" href="imageslider_admin.php">Back to list</a>
     </form>
 </div>
