@@ -36,23 +36,23 @@
                 </tr>
                 <tr>
                     <td><label>Title:</label></td>
-                    <td> <input type="input" name="img_title" /></td>
+                    <td> <input type="text" name="img_title" /></td>
                 </tr>
                 <tr>
                     <td><label>Key Ingredient:</label></td>
-                    <td><input type="input" name="img_key" /></td>
+                    <td><input type="text" name="img_key" /></td>
                 </tr>
                 <tr>
                     <td><label>Description:</label></td>
-                    <td><input type="input" name="img_detail" /></td>
+                    <td><input type="text" name="img_detail" /></td>
                 </tr>
                 <tr>
                     <td><label>Author:</label></td>
-                    <td><input type="input" name="img_author" /></td>
+                    <td><input type="text" name="img_author" /></td>
                 </tr>
                 <tr>
                     <td><label>Source:</label></td>
-                    <td><input type="input" name="img_source" placeholder="http://" /></td>
+                    <td><input type="text" name="img_source" placeholder="http://" /></td>
                 </tr>
                 
         </table>

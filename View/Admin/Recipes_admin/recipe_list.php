@@ -1,19 +1,18 @@
-<?php include PATH_HEADER;    ?>
+<?php  include PATH_HEADER;  ?>  
 <!--end top-->
 <?php
-#File name: image_list.php
-#File for Image Gallery-Admin
+#File name: recipe_list.php
+#File for Recipes-Admin
 #Team Project: PHP project-gotorecipes.com
 #Author: Jeesoo Kim
-#Created :March 16, 2015
-#Modified: March 25,2015
+#Created :March  31, 2015
+#Modified: 
 #Reference: Class material -PDO Class
-
 ?>
 
 <div id="main">
-    <p><a href="?action=show_upload_form">Upload Image</a></p>
-    <h1>Image List</h1>
+    <p><a href="?action=show_insert_form">Insert a New Recipe</a></p>
+    <h1>Recipe List</h1>
     <div id="sidebar">
         <!-- display a list of categories -->
         <h2>Categories :  <?php echo $current_category->getCatName(); ?></h2>
@@ -36,36 +35,38 @@
     <div id="content">
         <!-- display a table of products -->
    
-        <table class="table table-responsive table-bordered"    width="900">
+        <table id="recipe_insert_table"    width="900">
             <thead bgcolor="#a8cb81" >                
                 <tr style="font-variant:small-caps;font-style:normal;color:black;font-size:18px;">
-                    <th>Title</th>
+                    <th>Name</th>
                     <th>Key Ingredient</th>
-                    <th>Description</th>
-                    <th>Author</th>
-                    <th>Source</th>
+                    <th>Number of Serving</th>
+                    <th>Cooking Time</th>
+                    <th>Ingredients</th>
+                    <th>Steps</th>                        
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($images as $image) : ?>
-                <!-- $images = ImageGalleryDB::getImagesByCategory($category_id); from index.php -->
+                <?php foreach ($recipes as $recipe) : ?>
+                <!-- $recipes = RecipeDB::getRecipesByCategory($category_id); from index.php -->
                         <tr>
-                            <td><?php echo $image->getTitle(); ?></td>
-                            <td><?php echo $image->getKeyIngredient(); ?></td>
-                            <td><?php echo $image->getDetail(); ?></td>
-                            <td><?php echo $image->getAuthor(); ?></td>
-                            <td><?php echo $image->getSource(); ?></td>
-                            <td><form action="." method="post" id="edit_image_form">
+                            <td><?php echo $recipe->getRecipeName(); ?></td>
+                            <td><?php echo $recipe->getRecipeKeyIngredient(); ?></td>
+                            <td><?php echo $recipe->getRecipeNumServing(); ?></td>
+                            <td><?php echo $recipe->getRecipeCookTime(); ?></td>
+                            <td><?php echo $recipe->getRecipeIngredients(); ?></td>
+                            <td><?php echo $recipe->getRecipeSteps(); ?></td>
+                            <td><form action="." method="post" id="edit_recipe_form">
                                             <input type="hidden" name="action" value="show_edit_form" />
-                                            <input type="hidden" name="image_id" value="<?php echo $image->getID(); ?>" />
+                                            <input type="hidden" name="recipe_id" value="<?php echo $recipe->getRecipeID(); ?>" />
                                             <input type="hidden" name="category_id" value="<?php echo $current_category->getCatID(); ?>" />
                                             <input type="submit" value="Edit" />
                                     </form></td>
-                            <td><form action="." method="post" id="delete_image_form">
-                                            <input type="hidden" name="action" value="delete_image" />
-                                            <input type="hidden" name="image_id" value="<?php echo $image->getID(); ?>" />
+                            <td><form action="." method="post" id="delete_recipe_form">
+                                            <input type="hidden" name="action" value="delete_recipe" />
+                                            <input type="hidden" name="recipe_id" value="<?php echo $recipe->getRecipeID(); ?>" />
                                             <input type="hidden" name="category_id" value="<?php echo $current_category->getCatID(); ?>" />
                                             <input type="submit" value="Delete" onclick="return confirm('Are you sure to delete?')"/>
                                     </form></td>
@@ -77,4 +78,4 @@
         
     </div><!-- end of #content -->
 </div><!-- end of #main -->
-<?php include PATH_FOOTER;    ?>
+<?php include PATH_FOOTER; ?>

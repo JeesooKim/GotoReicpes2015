@@ -39,27 +39,27 @@
                     <td><input type="file" name="file_upload" value=""/></td>
                 </tr>
                 <tr><td><label>Edit File Name:</label></td>
-                    <td><input type="input" name="img_filename" value="<?php echo$image->getFileName(); ?>"/></td>
+                    <td><input type="text" name="img_filename" value="<?php echo$image->getFileName(); ?>"/></td>
                 </tr>
                 <tr>
                     <td><label>Title:</label></td>
-                    <td> <input type="input" name="img_title"  value="<?php echo $image->getTitle();  ?>"/></td>
+                    <td> <input type="text" name="img_title"  value="<?php echo $image->getTitle();  ?>"/></td>
                 </tr>
                 <tr>
                     <td><label>Key Ingredient:</label></td>
-                    <td><input type="input" name="img_key" value="<?php echo $image->getKeyIngredient(); ?>" /></td>
+                    <td><input type="text" name="img_key" value="<?php echo $image->getKeyIngredient(); ?>" /></td>
                 </tr>
                 <tr>
                     <td><label>Description:</label></td>
-                    <td><input type="input" name="img_detail" value="<?php echo $image->getDetail(); ?>" /></td>
+                    <td><input type="text" name="img_detail" value="<?php echo $image->getDetail(); ?>" /></td>
                 </tr>
                 <tr>
                     <td><label>Author:</label></td>
-                    <td><input type="input" name="img_author" value="<?php echo $image->getAuthor(); ?>"/></td>
+                    <td><input type="text" name="img_author" value="<?php echo $image->getAuthor(); ?>"/></td>
                 </tr>
                 <tr>
                     <td><label>Source:</label></td>
-                    <td><input type="input" name="img_source" value="<?php echo $image->getSource(); ?>" /></td>
+                    <td><input type="text" name="img_source" value="<?php echo $image->getSource(); ?>" /></td>
                 </tr>
                 
         </table>
