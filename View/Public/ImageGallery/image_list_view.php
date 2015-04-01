@@ -55,7 +55,7 @@
                   ?>                   
                     
                        <a href="<?php echo $img_ref; ?>" title ="<?php echo $image->getTitle(); ?>" >
-                             <img src="<?php echo $img_src;  ?>" alt="<?php echo $image->getTitle(); ?>"/>
+                             <img src="<?php echo $img_src;  ?>" alt="<?php echo $image->getTitle(); ?>" title ="<?php echo $image->getTitle(); ?>"/>
                        </a>                          
                 <?php endforeach; ?>            
         </div> <!--  end of #links         -->

@@ -1,3 +1,10 @@
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php
+require_once( SITEROOT.PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
+require_once( SITEROOT.PATH_MODEL_IMAGESLIDERS );
+require_once( SITEROOT.PATH_MODEL_IMAGESLIDER_DB );
+?>
+
 <section id="content">
 			<!-- image slider feature -->
 
@@ -32,3 +39,4 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+</section>
