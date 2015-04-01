@@ -2,8 +2,14 @@
 
 <?php include PATH_HEADER;  ?>  
 <!--end top-->
+
 <?php 
-     include(PATH_VIEW_PUBLIC.'/Imageslider/imageslider.php'); ?>
+    require_once( SITEROOT.PATH_DATABASE );   //SERVER ROOT is not working but SITEROOT is working ......why?
+    require_once( SITEROOT.PATH_MODEL_IMAGESLIDERS );
+    require_once( SITEROOT.PATH_MODEL_IMAGESLIDER_DB );
+    
+     include(PATH_PUBLIC_IMAGESLIDER . '/imageslider.php');
+     ?>
         <!--end imageslider feature-->
 
 <!-- <ol class="breadcrumb">

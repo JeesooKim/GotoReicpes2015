@@ -1,8 +1,16 @@
-        <?php include('../Shared/header.php'); ?>
-        <!--end top-->
+<?php  include "config.php"; ?>
 
-        <?php include('imageslider.php'); ?>
-        <!--end imageslider feature-->
+<?php include PATH_HEADER;  ?>  
+<!--end top-->
+
+
+<?php 
+    require_once( PATH_DATABASE );   //SERVER ROOT is not working but SITEROOT is working ......why?
+    require_once( PATH_MODEL_IMAGESLIDERS );
+    require_once( PATH_MODEL_IMAGESLIDER_DB );
+    include  PATH_PUBLIC_IMAGESLIDER . '/imageslider.php'; 
+?>
+<!--end imageslider feature-->
 
 <!-- <ol class="breadcrumb">
 				<li><a href="#">Home</a></li>
@@ -80,4 +88,4 @@
 </section>
 <!--end content-->
 
-<?php include ('../Shared/footer.php'); ?>
+<?php include PATH_FOOTER; ?>

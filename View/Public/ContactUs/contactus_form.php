@@ -4,9 +4,9 @@
 <!--end top-->
 
 <?php 
-require(PATH_DATABASE);
-require(PATH_MODEL_LOCATIONS);
-require(PATH_MODEL_LOCATION_DB);
+require(SITEROOT.PATH_DATABASE);
+require(SITEROOT.PATH_MODEL_LOCATIONS);
+require(SITEROOT.PATH_MODEL_LOCATION_DB);
 ?>
 
     <div id="content">

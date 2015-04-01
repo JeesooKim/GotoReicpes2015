@@ -2,9 +2,9 @@
 
 
 <?php
-require_once( PATH_DATABASE);  
-require(PATH_MODEL_LOCATIONS);
-require(PATH_MODEL_LOCATION_DB);
+require_once( SITEROOT.PATH_DATABASE);  
+require(SITEROOT.PATH_MODEL_LOCATIONS);
+require(SITEROOT.PATH_MODEL_LOCATION_DB);
 
 
 if(isset($_POST['location_insert'])){

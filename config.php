@@ -18,20 +18,20 @@ define("PATH_ERRORS", SERVERROOT."/Errors");
 
 //*****  Model Paths *****//   
 //Note: SERVER ROOT is not working but SITEROOT is working ......why?
-define("PATH_MODEL",  SITEROOT. "/Model");
-define("PATH_DATABASE", SITEROOT ."/Model/database.php");
-define("PATH_MODEL_CATEGORY",  SITEROOT ."/Model/category.php");
-define("PATH_MODEL_CATEGORY_DB" , SITEROOT ."/Model/category_db.php");
-define("PATH_MODEL_IMAGEGALLERY", SITEROOT ."/Model/imagegallery.php");
-define("PATH_MODEL_IMAGEGALLERY_DB", SITEROOT ."/Model/imagegallery_db.php");
-define("PATH_MODEL_LOCATIONS", SITEROOT . "/Model/locations.php");
-define("PATH_MODEL_LOCATION_DB", SITEROOT ."/Model/location_db.php");
-define("PATH_MODEL_TOPRECIPE", SITEROOT ."/Model/toprecipe.php");
-define("PATH_MODEL_TOPRECIPE_DB", SITEROOT ."/Model/toprecipe_db.php");
-define("PATH_MODEL_IMAGESLIDERS", SITEROOT ."/Model/imagesliders.php");
-define("PATH_MODEL_IMAGESLIDER_DB", SITEROOT ."/Model/imageslider_db.php");
-define("PATH_MODEL_RECIPE", SITEROOT ."/Model/recipe.php");
-define("PATH_MODEL_RECIPES_DB", SITEROOT ."/Model/recipes_db.php");
+define("PATH_MODEL",   "/Model");
+define("PATH_DATABASE", "/Model/database.php");
+define("PATH_MODEL_CATEGORY",  "/Model/category.php");
+define("PATH_MODEL_CATEGORY_DB" , "/Model/category_db.php");
+define("PATH_MODEL_IMAGEGALLERY", "/Model/imagegallery.php");
+define("PATH_MODEL_IMAGEGALLERY_DB", "/Model/imagegallery_db.php");
+define("PATH_MODEL_LOCATIONS",  "/Model/locations.php");
+define("PATH_MODEL_LOCATION_DB", "/Model/location_db.php");
+define("PATH_MODEL_TOPRECIPE", "/Model/toprecipe.php");
+define("PATH_MODEL_TOPRECIPE_DB", "/Model/toprecipe_db.php");
+define("PATH_MODEL_IMAGESLIDERS", "/Model/imagesliders.php");
+define("PATH_MODEL_IMAGESLIDER_DB", "/Model/imageslider_db.php");
+define("PATH_MODEL_RECIPE", "/Model/recipe.php");
+define("PATH_MODEL_RECIPES_DB", "/Model/recipes_db.php");
 
 
 //****** View Paths ******//
@@ -47,9 +47,10 @@ define("PATH_ADMIN_RECIPES", PATH_VIEW_ADMIN."/recipes_admin");
 
 
 //*** View> Public ***//
-define("PATH_PUBLIC_CONTACT",  PATH_VIEW_PUBLIC."/ContactUs" );
-define("PATH_PUBLIC_IMAGEGALLERY",  PATH_VIEW_PUBLIC."/ImageGallery");
-define("PATH_PUBLIC_RECIPES",  PATH_VIEW_PUBLIC."/Recipes");
+define("PATH_PUBLIC_CONTACT",  PATH_VIEW_PUBLIC ."/ContactUs" );
+define("PATH_PUBLIC_IMAGEGALLERY",  PATH_VIEW_PUBLIC ."/ImageGallery");
+define("PATH_PUBLIC_RECIPES",  PATH_VIEW_PUBLIC ."/Recipes");
+define("PATH_PUBLIC_IMAGESLIDER", PATH_VIEW_PUBLIC . "/Imageslider");
 
 //*** View> Shared ***//
 define("PATH_HEADER",  SITEROOT. "/View/Shared/header.php");  //SERVERROOT is not working

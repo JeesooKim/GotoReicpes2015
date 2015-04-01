@@ -4,11 +4,11 @@
 <!--end top-->
 
 <?php
-require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
-require_once( PATH_MODEL_CATEGORY);
-require_once( PATH_MODEL_CATEGORY_DB);
-require_once( PATH_MODEL_RECIPE);
-require_once( PATH_MODEL_RECIPES_DB);
+require_once( SITEROOT.PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
+require_once( SITEROOT.PATH_MODEL_CATEGORY);
+require_once( SITEROOT.PATH_MODEL_CATEGORY_DB);
+require_once( SITEROOT.PATH_MODEL_RECIPE);
+require_once( SITEROOT.PATH_MODEL_RECIPES_DB);
 
 #File name: recipes.php
 #File for Recipes-Public(1/2)

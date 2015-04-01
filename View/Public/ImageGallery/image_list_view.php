@@ -18,7 +18,7 @@
     $categories = CategoryDB::getCategories();
     $images = ImageGalleryDB::GetImagesByCategory($category_id);
  -->
- <div id="content">
+<div id="content">
 <div id="main">
     <div id="sidebar">
         

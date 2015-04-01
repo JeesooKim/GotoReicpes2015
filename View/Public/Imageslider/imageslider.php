@@ -1,8 +1,3 @@
-<?php
-require('../../../model/database.php');
-require('../../../model/imagesliders.php');
-require('../../../model/imageslider_db.php');
-?>
 <section id="content">
 			<!-- image slider feature -->
 
