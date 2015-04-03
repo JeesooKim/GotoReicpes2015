@@ -1,15 +1,15 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 
-<?php include PATH_HEADER;  ?>  
+<?php include SITEROOT. PATH_HEADER;  ?>  
 <!--end top-->
 
 <?php
-require(PATH_DATABASE);
-require(PATH_MODEL_TOPRECIPE);
-require(PATH_MODEL_TOPRECIPE_DB);
+require(SITEROOT.PATH_DATABASE);
+require(SITEROOT.PATH_MODEL_TOPRECIPE);
+require(SITEROOT.PATH_MODEL_TOPRECIPE_DB);
 
-require('../../Model/category.php');
-require('../../Model/pagenator.php');
+require(SITEROOT.PATH_MODEL.'/category.php');
+require(SITEROOT.PATH_MODEL.'/pagenator.php');
 
 $pgSelf = "toprecipes.php";
 $cntPerPage = 5;
@@ -105,4 +105,4 @@ echo "</table>";
 
 $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 ?>
-<?php include  PATH_FOOTER; ?>
+<?php include SITEROOT. PATH_FOOTER; ?>

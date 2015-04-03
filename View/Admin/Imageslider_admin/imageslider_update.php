@@ -1,9 +1,9 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 
 <?php
-require_once( PATH_DATABASE);  
-require(PATH_MODEL_IMAGESLIDERS);
-require(PATH_MODEL_IMAGESLIDER_DB);
+require_once( SITEROOT.PATH_DATABASE);  
+require(SITEROOT.PATH_MODEL_IMAGESLIDERS);
+require(SITEROOT.PATH_MODEL_IMAGESLIDER_DB);
 
 if(isset($_GET['image_id'])) {
     $img_id = $_GET['image_id'];
@@ -46,7 +46,7 @@ if (isset($_POST['imageslider_update'])) {
 ?>
 
 <!--Update form-->
-<?php include PATH_HEADER;    ?>
+<?php include SITEROOT.PATH_HEADER;    ?>
 <!--end top-->
 <div>
     <h1><?php echo $img_name; ?></h1>
@@ -73,6 +73,6 @@ if (isset($_POST['imageslider_update'])) {
 <!--End of update form-->
 
 
-<?php include PATH_FOOTER;    ?>
+<?php include SITEROOT.PATH_FOOTER;    ?>
 
          

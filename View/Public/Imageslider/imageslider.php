@@ -1,14 +1,17 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php   include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+
+<?php include SITEROOT. PATH_HEADER;  ?>  
+<!--end top-->
 <?php
-require_once( SITEROOT.PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
-require_once( SITEROOT.PATH_MODEL_IMAGESLIDERS );
-require_once( SITEROOT.PATH_MODEL_IMAGESLIDER_DB );
+require_once( SITEROOT. PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
+require_once( SITEROOT. PATH_MODEL_IMAGESLIDERS );
+require_once( SITEROOT. PATH_MODEL_IMAGESLIDER_DB );
 ?>
 
 <section id="content">
-			<!-- image slider feature -->
+<!-- image slider feature -->
 
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

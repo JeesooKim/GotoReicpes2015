@@ -1,5 +1,4 @@
-
-<?php include PATH_HEADER;    ?>
+<?php include SITEROOT.PATH_HEADER;    ?>
 <!--end top-->
 <?php
 #File name: image_upload.php
@@ -63,4 +62,4 @@
     
 
 </div>
-<?php include PATH_FOOTER;    ?>
+<?php include SITEROOT.PATH_FOOTER;    ?>

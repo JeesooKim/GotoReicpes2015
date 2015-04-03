@@ -83,4 +83,4 @@ if(isset($_POST['location_insert'])){
 </div><!-- /main -->
 
 
-<?php include PATH_FOOTER;    ?>
+<?php include SITEROOT.PATH_FOOTER;    ?>

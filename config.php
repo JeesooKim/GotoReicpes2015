@@ -32,7 +32,8 @@ define("PATH_MODEL_IMAGESLIDERS", "/Model/imagesliders.php");
 define("PATH_MODEL_IMAGESLIDER_DB", "/Model/imageslider_db.php");
 define("PATH_MODEL_RECIPE", "/Model/recipe.php");
 define("PATH_MODEL_RECIPES_DB", "/Model/recipes_db.php");
-
+define("PATH_MODEL_EVENT",  "/Model/event.php");
+define("PATH_MODEL_EVENTS_DB" ,  "/Model/events_db.php");
 
 //****** View Paths ******//
 define("PATH_VIEW", SERVERROOT. "/View");
@@ -44,17 +45,19 @@ define("PATH_VIEW_SHARED", SERVERROOT."/View/Shared");
 define("PATH_ADMIN_GOOGLEMAP", PATH_VIEW_ADMIN."/GoogleMap_admins" );
 define("PATH_ADMIN_IMAGEGALLERY", PATH_VIEW_ADMIN."/Imagegallery_admin");
 define("PATH_ADMIN_RECIPES", PATH_VIEW_ADMIN."/recipes_admin");
-
+define("PATH_ADMIN_EVENTS", PATH_VIEW_ADMIN."/Events_admin");
 
 //*** View> Public ***//
 define("PATH_PUBLIC_CONTACT",  PATH_VIEW_PUBLIC ."/ContactUs" );
 define("PATH_PUBLIC_IMAGEGALLERY",  PATH_VIEW_PUBLIC ."/ImageGallery");
 define("PATH_PUBLIC_RECIPES",  PATH_VIEW_PUBLIC ."/Recipes");
-define("PATH_PUBLIC_IMAGESLIDER", PATH_VIEW_PUBLIC . "/Imageslider");
+//define("PATH_PUBLIC_IMAGESLIDER", PATH_VIEW_PUBLIC . "/Imageslider");
+define("PATH_PUBLIC_IMAGESLIDER", "View/Public/Imageslider");
+define("PATH_PUBLIC_EVENTS",  PATH_VIEW_PUBLIC . "/Events");
 
 //*** View> Shared ***//
-define("PATH_HEADER",  SITEROOT. "/View/Shared/header.php");  //SERVERROOT is not working
-define("PATH_FOOTER",  SITEROOT. "/View/Shared/footer.php");
+define("PATH_HEADER",   "/View/Shared/header.php");  //SERVERROOT is not working
+define("PATH_FOOTER",   "/View/Shared/footer.php");
 
 //echo HOST . ROOT_FOLDER . PATH_HEADER . "<br/>";
 //echo ROOT. "<br/>";

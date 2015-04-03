@@ -1,8 +1,8 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 <?php
-require_once( PATH_DATABASE);  
-require(PATH_MODEL_IMAGESLIDERS);
-require(PATH_MODEL_IMAGESLIDER_DB);
+require_once( SITEROOT.PATH_DATABASE);  
+require(SITEROOT.PATH_MODEL_IMAGESLIDERS);
+require(SITEROOT.PATH_MODEL_IMAGESLIDER_DB);
 
 //declaring variables from input
 if(isset($_POST['submit'])){
@@ -97,5 +97,5 @@ if(isset($_POST['submit'])){
     
 </div>
 <?php
-     include PATH_FOOTER;   
+     include SITEROOT.PATH_FOOTER;   
 ?>

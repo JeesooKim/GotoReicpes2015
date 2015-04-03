@@ -1,6 +1,6 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 
-<?php include PATH_HEADER;  ?>  
+<?php include SITEROOT.PATH_HEADER;  ?>  
 <!--end top-->
 
 <?php 
@@ -9,7 +9,6 @@ require(SITEROOT.PATH_MODEL_LOCATIONS);
 require(SITEROOT.PATH_MODEL_LOCATION_DB);
 ?>
 
-    <div id="content">
         <h1>Contact Us</h1>
          <?php
      if(isset($_GET['err'])){
@@ -100,5 +99,5 @@ require(SITEROOT.PATH_MODEL_LOCATION_DB);
 </form>
         
 <?php       
-        include PATH_FOOTER;
+        include SITEROOT.PATH_FOOTER;
 ?>

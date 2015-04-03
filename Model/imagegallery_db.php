@@ -112,7 +112,7 @@ class ImageGalleryDB{
         $statement -> bindParam(':img_title',$img_title, PDO::PARAM_STR, 100 );
         $statement -> bindParam(':cat_id', $cat_id,PDO::PARAM_INT );
         $statement -> bindParam(':img_key',$img_key,PDO::PARAM_STR, 100);
-        $statement -> bindParam(':$img_detail', $img_detail, PDO::PARAM_STR, 110);
+        $statement -> bindParam(':img_detail', $img_detail, PDO::PARAM_STR, 110);
         $statement -> bindParam(':img_filename', $img_filename,PDO::PARAM_STR, 100);
         $statement -> bindParam(':img_path', $img_path,PDO::PARAM_STR, 100);
         $statement -> bindParam(':img_size',$img_size,PDO::PARAM_INT);
