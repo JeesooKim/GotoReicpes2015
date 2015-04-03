@@ -34,6 +34,7 @@ define("PATH_MODEL_RECIPE", "/Model/recipe.php");
 define("PATH_MODEL_RECIPES_DB", "/Model/recipes_db.php");
 define("PATH_MODEL_EVENT",  "/Model/event.php");
 define("PATH_MODEL_EVENTS_DB" ,  "/Model/events_db.php");
+define("PATH_MODEL_PAGENATOR", "/Model/pagenator.php");
 
 //****** View Paths ******//
 define("PATH_VIEW", SERVERROOT. "/View");
