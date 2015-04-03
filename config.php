@@ -4,7 +4,7 @@ define('HOST', 'http://localhost' );
 define('ROOT_FOLDER','/GotoReicpes2015');
 
 define("SITEROOT", 'c:/xampp/htdocs/GotoReicpes2015');
-define("SERVERROOT", 'http://localhost:8081/GotoReicpes2015');
+define("SERVERROOT", 'http://localhost/GotoReicpes2015');
 
 //***** Content Paths *****//
 define('PATH_CSS' , SERVERROOT.'/Content/css');
