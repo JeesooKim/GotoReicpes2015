@@ -48,7 +48,7 @@ if (isset($_POST['location_update'])) {
 
 <!--Update form-->
 
-<?php include PATH_HEADER;    ?>
+<?php include SITEROOT.PATH_HEADER;    ?>
 <!--end top-->
 <div>
     <h1>Update Branch Location: <?php echo $map_location_branch; ?></h1>
@@ -94,4 +94,4 @@ if (isset($_POST['location_update'])) {
 </div>
 <!--End of update form-->
 
-<?php include PATH_FOOTER;    ?>
+<?php include SITEROOT.PATH_FOOTER;    ?>

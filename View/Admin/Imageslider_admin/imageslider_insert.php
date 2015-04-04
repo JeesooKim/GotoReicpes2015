@@ -101,5 +101,7 @@ if(isset($_POST['submit'])){
     
 </div>
 <?php
+
      include PATH_FOOTER;   
+     include SITEROOT.PATH_FOOTER;   
 ?>

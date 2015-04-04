@@ -6,7 +6,6 @@ require(SITEROOT.PATH_MODEL_IMAGESLIDERS);
 require(SITEROOT.PATH_MODEL_IMAGESLIDER_DB);
 
 $img_id = "";
-
 if(isset($_GET['image_id'])) {
     $img_id = $_GET['image_id'];
 } elseif(isset($_POST['image_id'])) {
@@ -48,7 +47,7 @@ if (isset($_POST['imageslider_update'])) {
 ?>
 
 <!--Update form-->
-<?php include PATH_HEADER;    ?>
+<?php include SITEROOT.PATH_HEADER;    ?>
 <!--end top-->
 <div id="main">
     <h1>Update this image</h1>
@@ -74,6 +73,6 @@ if (isset($_POST['imageslider_update'])) {
 <!--End of update form-->
 
 
-<?php include PATH_FOOTER;    ?>
+<?php include SITEROOT.PATH_FOOTER;    ?>
 
          

@@ -6,9 +6,9 @@ require_once( SITEROOT.PATH_MODEL_IMAGESLIDER_DB );
 ?>
 
 <section id="content">
-			<!-- image slider feature -->
+<!-- image slider feature -->
 
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

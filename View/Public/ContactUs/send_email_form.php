@@ -1,6 +1,6 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 
-<?php include PATH_HEADER;  ?>  
+<?php include SITEROOT.PATH_HEADER;  ?>  
 <!--end top-->
 
 <!--  Email the contact us form -->
@@ -160,5 +160,5 @@ if(isset ($_POST['send'])){
 </body>
        
 <?php       
-        include PATH_FOOTER;
+        include SITEROOT.PATH_FOOTER;
 ?>

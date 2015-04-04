@@ -14,7 +14,7 @@ ImagesliderDB::deleteImageslider($img_id);
 }
 ?>
 
-<?php include PATH_HEADER;    ?>
+<?php include SITEROOT.PATH_HEADER;    ?>
 <!--end top-->
 
 <div id="main">
@@ -64,6 +64,6 @@ ImagesliderDB::deleteImageslider($img_id);
 </div><!--End of main-->
 
 <?php
-    include PATH_FOOTER;   
+    include SITEROOT.PATH_FOOTER;   
 ?>
                 

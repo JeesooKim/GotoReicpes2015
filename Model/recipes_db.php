@@ -84,24 +84,34 @@ class RecipeDB{
         
         //query to UPDATE the table for the values passed by parameters of this method
         $query = "UPDATE recipes SET "
-                . "dish_id='$dish_id , "                
-                . "dish_name='$dish_name', "
-                . "dish_cat='$cat_id' "
-                . "dish_key= '$dish_key', "
-                . "dish_num_serving = '$dish_num_serving', "
-                . "dish_cook_time= '$dish_cook_time', "
-                . "dish_ingredients = '$dish_ingredients', "
-                . "dish_steps = '$dish_steps' ";
-        $dbCon->exec($query);
+                . "dish_name=:dish_name, "
+                . "dish_cat=:dish_cat, "
+                . "dish_key= :dish_key, "
+                . "dish_num_serving = :dish_num_serving, "
+                . "dish_cook_time= :dish_cook_time, "
+                . "dish_ingredients =:dish_ingredients, "
+                . "dish_steps = :dish_steps "
+                . "WHERE dish_id = '$dish_id' ";
         
+        $statement = $dbCon->prepare($query);
+        $statement -> bindParam(':dish_name',$dish_name, PDO::PARAM_STR, 150 );
+        $statement -> bindParam(':dish_cat', $cat_id,PDO::PARAM_INT );
+        $statement -> bindParam(':dish_key',$dish_key, PDO::PARAM_STR, 100);
+        $statement -> bindParam(':dish_num_serving', $dish_num_serving, PDO::PARAM_INT, 100);
+        $statement -> bindParam(':dish_cook_time', $dish_cook_time,PDO::PARAM_STR, 50);
+        $statement -> bindParam(':dish_ingredients', $dish_ingredients,PDO::PARAM_STR, 250);
+        $statement -> bindParam(':dish_steps',$dish_steps,PDO::PARAM_STR);
+                                                         
+        $statement->execute();                     
     }
+    
      public static function addRecipe($recipe){
          //the parameter is an object of Recipe class
          //connectDB
          $dbCon=Database::getDB();
          
          //get the values of the object ($recipe) from functions/methods of RecipeDB class
-         $dish_id= $recipe -> getRecipeID();
+         //$dish_id= $recipe -> getRecipeID();
          $dish_name = $recipe -> getRecipeName();    
          $dish_cat = $recipe -> getRecipeCategory();
          $dish_key = $recipe -> getRecipeKeyIngredient();
@@ -110,10 +120,20 @@ class RecipeDB{
          $dish_ingredients = $recipe -> getRecipeIngredients();
          $dish_steps= $recipe -> getRecipeSteps();
          
-         //Insert the values of the object into the recipes table
-         $query= "INSERT INTO recipes (dish_id, dish_name, dish_cat, dish_key, dish_num_serving, dish_cook_time, dish_ingredients, dish_steps)"
-                 . "VALUES ($dish_id, '$dish_name', $dish_cat, '$dish_key', '$dish_num_serving', '$dish_cook_time', '$dish_ingredients', '$dish_steps' )";
-         $dbCon->exec($query);           
+        //Insert the values of the object into the recipes table
+         $query= "INSERT INTO recipes (dish_name, dish_cat, dish_key, dish_num_serving, dish_cook_time, dish_ingredients, dish_steps)"
+                 . "VALUES (:dish_name, :dish_cat, :dish_key, :dish_num_serving, :dish_cook_time, :dish_ingredients, :dish_steps )";
+         
+         $statement = $dbCon->prepare($query);
+        $statement -> bindParam(':dish_name',$dish_name, PDO::PARAM_STR, 150 );
+        $statement -> bindParam(':dish_cat', $dish_cat,PDO::PARAM_INT );
+        $statement -> bindParam(':dish_key',$dish_key, PDO::PARAM_STR, 100);
+        $statement -> bindParam(':dish_num_serving', $dish_num_serving, PDO::PARAM_INT, 100);
+        $statement -> bindParam(':dish_cook_time', $dish_cook_time,PDO::PARAM_STR, 50);
+        $statement -> bindParam(':dish_ingredients', $dish_ingredients,PDO::PARAM_STR, 250);
+        $statement -> bindParam(':dish_steps',$dish_steps,PDO::PARAM_STR);
+                                                         
+        $statement->execute();                  
     }
 }
 

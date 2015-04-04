@@ -18,7 +18,7 @@
     $categories = CategoryDB::getCategories();
     $images = ImageGalleryDB::GetImagesByCategory($category_id);
  -->
-<div id="content">
+ 
 <div id="main">
     <div id="sidebar">
         
@@ -36,12 +36,8 @@
         </ul>
     </div> <!-- end of #sidebar -->
     
-    
-    <!--    <div id="content">
-       <h1><?php echo $current_category->getCatName(); ?></h1>
-    
--->
-
+       <!--h1><!--?php echo $current_category->getCatName(); ?></h1>
+   
 <!-- The container for the list of example images -->
 <div id="links">    
                 <?php 
@@ -61,8 +57,6 @@
         </div> <!--  end of #links         -->
     
     <br>
-</div>
-
 <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body 
                 https://github.com/blueimp/Gallery/blob/master/README.md#description -->
                     <div id="blueimp-gallery" class="blueimp-gallery">
@@ -80,7 +74,7 @@
                 
 <!--    </div>  end of #content -->
 </div> <!-- end #main -->
-</div> <!-- end of #content -->
+  
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->
 <script>
@@ -92,10 +86,9 @@ document.getElementById('links').onclick = function (event) {
         links = this.getElementsByTagName('a');
     blueimp.Gallery(links, options);
 };
-</script>
- 
+</script> 
 <!-- END of FILE image_list_view-->
+
 <!-- START of footer include in image_list_view-->
-<?php include (PATH_FOOTER); ?>
- 
+<?php include SITEROOT.PATH_FOOTER; ?> 
 <!-- END of 'footer include' in image_list_view-->

@@ -1,4 +1,4 @@
-<?php include PATH_HEADER;    ?>
+<?php include SITEROOT.PATH_HEADER;    ?>
 <!--end top-->
 <?php
 #File name: image_list.php
@@ -77,4 +77,4 @@
         
     </div><!-- end of #content -->
 </div><!-- end of #main -->
-<?php include PATH_FOOTER;    ?>
+<?php include SITEROOT.PATH_FOOTER;    ?>

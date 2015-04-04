@@ -83,5 +83,5 @@ so, the following variables are already defined when they are called
 </div> <!-- end #main -->
 <!-- END of FILE recipe_list_view-->
 <!-- START of footer include in recipe_list_view-->
-<?php include PATH_FOOTER; ?>
+<?php include SITEROOT.PATH_FOOTER; ?>
  

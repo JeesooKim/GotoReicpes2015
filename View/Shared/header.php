@@ -44,7 +44,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="<?php echo  PATH_VIEW_PUBLIC; ?>/index.php">                     
+                                <a class="navbar-brand" href="<?php echo  SERVERROOT; ?>/index.php">                     
                                      <img id="logo" src="<?php echo  PATH_IMAGES."/logo.jpg"; ?>" alt="gotorecipes" />
                         </div><!-- end of "navbar-header-->
 
@@ -57,7 +57,7 @@
                         </div><!-- /.navbar-collapse -->
                         
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="<?php  echo PATH_VIEW_PUBLIC.'/index.php';?>">Home<span class="sr-only">(current)</span></a></li>
+                                    <li class="active"><a href="<?php  echo SERVERROOT.'/index.php';?>">Home<span class="sr-only">(current)</span></a></li>
                                     <li><a href="#">About Us</a></li>
 <!--                                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes <span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
@@ -72,7 +72,7 @@
                                         -->
                                         <li><a href="<?php echo PATH_PUBLIC_RECIPES . '/recipes.php';?>">Recipes</a></li>
                                         <li><a href="<?php echo PATH_PUBLIC_IMAGEGALLERY . '/imagegallery.php';?>">Gallery</a></li>
-                                        <li><a href="#">Events</a></li>
+                                        <li><a href="<?php echo PATH_PUBLIC_EVENTS . '/events.php';?>">Events</a></li>
                                        <li><a href="<?php echo  PATH_PUBLIC_CONTACT . '/contactus_form.php';?>">Contact Us</a></li>
                                 </ul>
                             <form class="navbar-form navbar-right" role="search">

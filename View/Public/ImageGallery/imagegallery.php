@@ -1,6 +1,6 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 
-<?php include PATH_HEADER;  ?>  
+<?php include SITEROOT.PATH_HEADER;  ?>  
 <!--end top-->
 
 <?php
