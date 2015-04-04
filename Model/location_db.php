@@ -68,8 +68,16 @@ class LocationDB {
              VALUES
                  ('$branch', '$phone', '$street', '$postal', '$city', '$province', '$country')";
 
-        $row_count = $db->exec($query);
-        return $row_count;
+        $statement = $db->prepare($query);
+        $statement -> bindParam(':branch',$map_location_branch, PDO::PARAM_STR, 100 );
+        $statement -> bindParam(':phone', $map_location_phone,PDO::PARAM_STR, 100 );
+        $statement -> bindParam(':street',$map_location_street,PDO::PARAM_STR, 100);
+        $statement -> bindParam(':postal', $map_location_postal, PDO::PARAM_STR, 110);
+        $statement -> bindParam(':city', $map_location_city,PDO::PARAM_STR, 100);
+        $statement -> bindParam(':province', $map_location_province,PDO::PARAM_STR, 100);
+        $statement -> bindParam(':country',$map_location_country,PDO::PARAM_STR, 100);
+                                                            
+        $statement->execute(); 
     }
 
     
@@ -88,8 +96,16 @@ class LocationDB {
                                               phone = '$map_location_phone',
                                               street = '$map_location_street',
                                               postal = '$map_location_postal', city = '$map_location_city', province = '$map_location_province', country = '$map_location_country' WHERE id = '$location_id' ";
-        $row_count = $db->exec($query);
-        return $row_count;
+        $statement = $db->prepare($query);
+        $statement -> bindParam(':branch',$map_location_branch, PDO::PARAM_STR, 100 );
+        $statement -> bindParam(':phone', $map_location_phone,PDO::PARAM_STR, 100 );
+        $statement -> bindParam(':street',$map_location_street,PDO::PARAM_STR, 100);
+        $statement -> bindParam(':postal', $map_location_postal, PDO::PARAM_STR, 110);
+        $statement -> bindParam(':city', $map_location_city,PDO::PARAM_STR, 100);
+        $statement -> bindParam(':province', $map_location_province,PDO::PARAM_STR, 100);
+        $statement -> bindParam(':country',$map_location_country,PDO::PARAM_STR, 100);
+                                                            
+        $statement->execute(); 
 
     }
 }

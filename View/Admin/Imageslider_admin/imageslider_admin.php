@@ -1,10 +1,10 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
 
 
 <?php
-require_once( PATH_DATABASE);  
-require(PATH_MODEL_IMAGESLIDERS);
-require(PATH_MODEL_IMAGESLIDER_DB);
+require_once( SITEROOT.PATH_DATABASE);  
+require(SITEROOT.PATH_MODEL_IMAGESLIDERS);
+require(SITEROOT.PATH_MODEL_IMAGESLIDER_DB);
 
 //delete option
 if(isset($_POST['image_id'])){
@@ -45,7 +45,7 @@ ImagesliderDB::deleteImageslider($img_id);
                 <td><?php echo $row->getName(); ?></td>
                 <td width="500px"><?php echo "<img style='width: 300px' src='".$row->getPath()."' />" ?></td>
                 <td>
-                    <a class="btn-link" href="imageslider_update.php?id=<?php echo $row->getImageID(); ?>">
+                    <a class="btn-link" href="imageslider_update.php?image_id=<?php echo $row->getImageID(); ?>">
                         <span class="glyphicon glyphicon-edit"></span>
                     </a>
                 </td>

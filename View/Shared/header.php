@@ -74,14 +74,12 @@
                                         <li><a href="<?php echo PATH_PUBLIC_IMAGEGALLERY . '/imagegallery.php';?>">Gallery</a></li>
                                         <li><a href="#">Events</a></li>
                                        <li><a href="<?php echo  PATH_PUBLIC_CONTACT . '/contactus_form.php';?>">Contact Us</a></li>
-                                </ul>                          
+                                </ul>
+                            <form class="navbar-form navbar-right" role="search">
+                                <input type="text" class="form-control" type="search" placeholder="Search . . .">
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </form>
                 </div><!-- /.container-fluid -->
-                <form class="navbar-form navbar-right" role="search">
-                    <div class="form-group">
-                            <input type="text" class="form-control" type="search" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
         </nav>
         <!--end top_nav-->
 </header>

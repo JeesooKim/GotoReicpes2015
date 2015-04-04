@@ -305,3 +305,13 @@ header{
     margin: auto;
     background-color: #FDF9F0;
 }
+
+/*      Admin Features layout       */
+#main{
+    padding: 0 30px 30px 30px;
+    width: 900px;
+}
+
+.map{
+    padding: 15px;
+}

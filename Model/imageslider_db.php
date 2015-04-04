@@ -59,8 +59,11 @@ class ImagesliderDB {
              VALUES
                  ('$img_name', '$img_path')";
 
-        $row_count = $db->exec($query);
-        return $row_count;
+        $statement = $db->prepare($query);
+        $statement -> bindParam(':name',$img_name, PDO::PARAM_STR, 100 );
+        $statement -> bindParam(':path', $img_path,PDO::PARAM_STR, 100 );
+                                                            
+        $statement->execute(); 
     }
 
     //function updating the imageslider table
@@ -75,9 +78,12 @@ class ImagesliderDB {
 
         //sql update statement
         $query = "UPDATE imageslider SET name = '$img_name', path = '$img_path' WHERE image_id = '$img_id'";
-        $row_count = $db->exec($query);
-        return $row_count;
-
+        
+        $statement = $db->prepare($query);
+        $statement -> bindParam(':name',$img_name, PDO::PARAM_STR, 100 );
+        $statement -> bindParam(':path', $img_path,PDO::PARAM_STR, 100 );
+                                                            
+        $statement->execute(); 
     }
 }
 ?>

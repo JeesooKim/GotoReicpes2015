@@ -1,8 +1,10 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
+
+
 <?php
-require_once( PATH_DATABASE);  
-require(PATH_MODEL_IMAGESLIDERS);
-require(PATH_MODEL_IMAGESLIDER_DB);
+require_once( SITEROOT.PATH_DATABASE);  
+require(SITEROOT.PATH_MODEL_IMAGESLIDERS);
+require(SITEROOT.PATH_MODEL_IMAGESLIDER_DB);
 
 //declaring variables from input
 if(isset($_POST['submit'])){
@@ -93,6 +95,8 @@ if(isset($_POST['submit'])){
         <input type="file" name="image" id="image" />
         <input type="submit" name="submit" value="Upload" />
         <p>Must be less than 512kb. Only JPG, GIF and PNG files.</p>
+        
+        <a class="btn btn-default" href="imageslider_admin.php">Back to list</a>
     </form>
     
 </div>

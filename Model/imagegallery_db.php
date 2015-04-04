@@ -84,7 +84,7 @@ class ImageGalleryDB{
     public static function deleteImage($img_id){
         $dbCon=Database::getDB();
         $sql="DELETE FROM imagegallery WHERE img_id='$img_id' ";
-        $row_count = $dbCon-> exec($sql);
+        $row_count = $dbCon->exec($sql);
         return $row_count;
         
     }

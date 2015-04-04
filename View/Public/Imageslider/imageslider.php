@@ -1,5 +1,5 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php
+<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  
+
 require_once( SITEROOT.PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
 require_once( SITEROOT.PATH_MODEL_IMAGESLIDERS );
 require_once( SITEROOT.PATH_MODEL_IMAGESLIDER_DB );
