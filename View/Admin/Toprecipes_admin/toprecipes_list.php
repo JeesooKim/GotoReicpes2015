@@ -1,4 +1,4 @@
-<?php include PATH_HEADER;  ?>  
+<?php include PATH_HEADER_ADMIN;  ?>  
 <!--end top-->
 
 <h1>Today's Recipe</h1>
@@ -91,6 +91,6 @@ endforeach;
 
 $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 
-include  PATH_FOOTER; 
+include  PATH_FOOTER_ADMIN; 
 
 ?>

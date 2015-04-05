@@ -1,14 +1,9 @@
 <?php   include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-
 <?php include PATH_HEADER;  ?>  
-
 <?php    
-    include  'c:/xampp/htdocs/GotoReicpes2015/View/Public/Imageslider/imageslider.php';    
+    include PATH_PUBLIC_IMAGESLIDER. '/imageslider.php';    
     ?>
 <!--end imageslider feature-->
-
-
-<p>***Below Image Slider (this is a comment)***</p>
 <!-- <ol class="breadcrumb">
 				<li><a href="#">Home</a></li>
 			</ol> --> <!--breadcrumb sitemap-->

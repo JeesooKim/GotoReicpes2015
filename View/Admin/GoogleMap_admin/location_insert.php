@@ -30,7 +30,7 @@ if(isset($_POST['location_insert'])){
 }
 ?>
 
-<?php include PATH_HEADER;    ?>
+<?php include PATH_HEADER_ADMIN;    ?>
 <!--end top-->
 <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
@@ -84,4 +84,4 @@ if(isset($_POST['location_insert'])){
 </div><!-- /main -->
 
 
-<?php include PATH_FOOTER;    ?>
+<?php include PATH_FOOTER_ADMIN;    ?>

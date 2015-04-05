@@ -48,7 +48,7 @@ if (isset($_POST['imageslider_update'])) {
 ?>
 
 <!--Update form-->
-<?php include PATH_HEADER;    ?>
+<?php include PATH_HEADER_ADMIN;    ?>
 <!--end top-->
 <div id="main">
     <h1>Update this image</h1>
@@ -74,6 +74,6 @@ if (isset($_POST['imageslider_update'])) {
 <!--End of update form-->
 
 
-<?php include PATH_FOOTER;    ?>
+<?php include PATH_FOOTER_ADMIN;    ?>
 
          

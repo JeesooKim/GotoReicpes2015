@@ -43,10 +43,13 @@ define("PATH_VIEW_PUBLIC", SERVERROOT."/View/Public");
 define("PATH_VIEW_SHARED", SERVERROOT."/View/Shared");
 
 //*** View> Admin ***//
-define("PATH_ADMIN_GOOGLEMAP", PATH_VIEW_ADMIN."/GoogleMap_admins" );
+define("PATH_ADMIN_INDEX", PATH_VIEW_ADMIN );
+define("PATH_ADMIN_GOOGLEMAP", PATH_VIEW_ADMIN."/GoogleMap_admin" );
 define("PATH_ADMIN_IMAGEGALLERY", PATH_VIEW_ADMIN."/Imagegallery_admin");
 define("PATH_ADMIN_RECIPES", PATH_VIEW_ADMIN."/recipes_admin");
 define("PATH_ADMIN_EVENTS", PATH_VIEW_ADMIN."/Events_admin");
+define("PATH_ADMIN_IMAGESLIDER", PATH_VIEW_ADMIN."/Imageslider_admin");
+define("PATH_ADMIN_TOPRECIPES", PATH_VIEW_ADMIN. "/Toprecipes_admin");
 
 //*** View> Public ***//
 define("PATH_PUBLIC_CONTACT",  PATH_VIEW_PUBLIC ."/ContactUs" );
@@ -59,6 +62,8 @@ define("PATH_PUBLIC_EVENTS",  PATH_VIEW_PUBLIC . "/Events");
 //*** View> Shared ***//
 define("PATH_HEADER",  SITEROOT. "/View/Shared/header.php");  //SERVERROOT is not working
 define("PATH_FOOTER",  SITEROOT.  "/View/Shared/footer.php");
+define("PATH_HEADER_ADMIN",  SITEROOT. "/View/Shared/header_admin.php");  //SERVERROOT is not working
+define("PATH_FOOTER_ADMIN",  SITEROOT.  "/View/Shared/footer_admin.php");
 
 //echo HOST . ROOT_FOLDER . PATH_HEADER . "<br/>";
 //echo ROOT. "<br/>";

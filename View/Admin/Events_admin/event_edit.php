@@ -56,4 +56,4 @@
     </form>
 </div> <!-- end of #main-->
 
-<?php include PATH_FOOTER; ?>
+<?php include PATH_FOOTER_ADMIN; ?>

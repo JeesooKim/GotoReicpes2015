@@ -1,4 +1,4 @@
-<?php  include PATH_HEADER;  ?>  
+<?php  include PATH_HEADER_AMDIN;  ?>  
 <!--end top-->
 <?php
 #File name: recipe_insert.php
@@ -65,4 +65,4 @@
     
 
 </div>
-<?php include PATH_FOOTER; ?>
+<?php include PATH_FOOTER_ADMIN; ?>

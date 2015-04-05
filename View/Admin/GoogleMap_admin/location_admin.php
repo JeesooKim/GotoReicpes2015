@@ -15,7 +15,7 @@ LocationDB::deleteLocation($location_id);
 }
 ?>
 
-<?php include SITEROOT.PATH_HEADER;    ?>
+<?php include PATH_HEADER_ADMIN;    ?>
 <!--end top-->
 
 <div id="main">
@@ -81,5 +81,5 @@ LocationDB::deleteLocation($location_id);
 </div><!--End of main-->
 
 
-<?php include PATH_FOOTER;    ?>
+<?php include PATH_FOOTER_ADMIN;    ?>
                 

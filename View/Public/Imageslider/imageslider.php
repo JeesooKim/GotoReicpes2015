@@ -21,10 +21,10 @@ require_once( PATH_MODEL_IMAGESLIDER_DB );
   <div class="carousel-inner" role="listbox">
     <div class="item active">
         <?php
-        $imageslider = ImagesliderDB::getImagesliders();
-        foreach ($imageslider as $row):
-            ?>
-        <img src="<?php echo $row->getPath() ?>" alt="<?php echo $row->getName(); ?>" title="<?php echo $row->getName(); ?>" />
+                $imageslider = ImagesliderDB::getImagesliders();
+                foreach ($imageslider as $row):
+                ?>
+        <img src="<?php echo $row->getPath(); ?>" alt="<?php echo $row->getName(); ?>" title="<?php echo $row->getName(); ?>" />
       <?php endforeach; ?>
     </div>
   </div>

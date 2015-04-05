@@ -75,7 +75,7 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
-<?php include PATH_HEADER;    ?>
+<?php include PATH_HEADER_ADMIN;    ?>
 <!--end top-->
 <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
@@ -103,5 +103,5 @@ if(isset($_POST['submit'])){
 </div>
 <?php
 
-     include PATH_FOOTER;   
+     include PATH_FOOTER_ADMIN;   
      ?>

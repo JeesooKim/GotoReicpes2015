@@ -52,4 +52,4 @@
     
 
 </div>
-<?php include PATH_FOOTER; ?>
+<?php include PATH_FOOTER_ADMIN; ?>

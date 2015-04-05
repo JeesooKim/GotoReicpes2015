@@ -12,7 +12,7 @@
         #Modified: 
         #Reference: Class material -PDO Class
         
-        include PATH_HEADER; ?>
+        include PATH_HEADER_ADMIN; ?>
 <?php
 error_reporting();
 $error = '';
