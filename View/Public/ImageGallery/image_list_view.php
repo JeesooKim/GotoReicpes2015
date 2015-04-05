@@ -1,7 +1,4 @@
     <?php   
-
-//include ('../../Shared/side-menu.php'); 
-
 #File name: image_list_view.php
 #File for Image Gallery-Public
 #Team Project: gotorecipes
@@ -75,7 +72,7 @@
 <!--    </div>  end of #content -->
 </div> <!-- end #main -->
   
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script-->
 <!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->
 <script>
 document.getElementById('links').onclick = function (event) {
@@ -90,5 +87,5 @@ document.getElementById('links').onclick = function (event) {
 <!-- END of FILE image_list_view-->
 
 <!-- START of footer include in image_list_view-->
-<?php include SITEROOT.PATH_FOOTER; ?> 
+<?php include PATH_FOOTER; ?> 
 <!-- END of 'footer include' in image_list_view-->

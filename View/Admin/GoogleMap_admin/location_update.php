@@ -1,10 +1,11 @@
-<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
 
 
 <?php
-require_once( SITEROOT.PATH_DATABASE);  
-require(SITEROOT.PATH_MODEL_LOCATIONS);
-require(SITEROOT.PATH_MODEL_LOCATION_DB);
+require_once( PATH_DATABASE);  
+require( PATH_MODEL_LOCATIONS);
+require(PATH_MODEL_LOCATION_DB);
 
 
 if(isset($_GET['id'])) {
@@ -48,7 +49,7 @@ if (isset($_POST['location_update'])) {
 
 <!--Update form-->
 
-<?php include SITEROOT.PATH_HEADER;    ?>
+<?php include PATH_HEADER;    ?>
 <!--end top-->
 <div>
     <h1>Update Branch Location: <?php echo $map_location_branch; ?></h1>
@@ -94,4 +95,4 @@ if (isset($_POST['location_update'])) {
 </div>
 <!--End of update form-->
 
-<?php include SITEROOT.PATH_FOOTER;    ?>
+<?php include PATH_FOOTER;    ?>

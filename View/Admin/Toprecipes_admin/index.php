@@ -1,10 +1,10 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  
 
-require(SITEROOT.PATH_DATABASE);
-require(SITEROOT.PATH_MODEL_TOPRECIPE);
-require(SITEROOT.PATH_MODEL_TOPRECIPE_DB);
-require(SITEROOT.PATH_MODEL_CATEGORY);
-require(SITEROOT.PATH_MODEL_PAGENATOR);
+require(PATH_DATABASE);
+require(PATH_MODEL_TOPRECIPE);
+require(PATH_MODEL_TOPRECIPE_DB);
+require(PATH_MODEL_CATEGORY);
+require(PATH_MODEL_PAGENATOR);
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];

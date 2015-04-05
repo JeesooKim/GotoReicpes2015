@@ -1,5 +1,4 @@
-<?php include SITEROOT.PATH_HEADER;    ?>
-<!--end top-->
+<?php include PATH_HEADER;    ?>
 <?php
 
 #File name: image_edit.php
@@ -68,4 +67,4 @@
     </form>
 </div> <!-- end of #main-->
 
-<?php include SITEROOT.PATH_FOOTER;    ?>
+<?php include PATH_FOOTER;    ?>

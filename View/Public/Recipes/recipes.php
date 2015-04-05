@@ -1,14 +1,10 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-
-<?php include SITEROOT.PATH_HEADER;  ?>  
-<!--end top-->
-
 <?php
-require_once( SITEROOT.PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
-require_once( SITEROOT.PATH_MODEL_CATEGORY);
-require_once( SITEROOT.PATH_MODEL_CATEGORY_DB);
-require_once( SITEROOT.PATH_MODEL_RECIPE);
-require_once( SITEROOT.PATH_MODEL_RECIPES_DB);
+require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
+require_once( PATH_MODEL_CATEGORY);
+require_once( PATH_MODEL_CATEGORY_DB);
+require_once( PATH_MODEL_RECIPE);
+require_once( PATH_MODEL_RECIPES_DB);
 
 #File name: recipes.php
 #File for Recipes-Public(1/2)
@@ -21,9 +17,11 @@ require_once( SITEROOT.PATH_MODEL_RECIPES_DB);
 //connect to db
 //bring data here
 //display the data
-
 //For selected recipes....depending on category,    list of recipes will be rendered.
-//get the recipes object,,,RECIPEDB::GetRecipes()
+//get the recipes object,,,RECIPEDB::GetRecipes() 
+
+ include PATH_HEADER; 
+?><?php
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];

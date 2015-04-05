@@ -1,10 +1,10 @@
 <?php
 
 define('HOST', 'http://localhost' );
-define('ROOT_FOLDER','/GotorecipesGITHUB/GotoReicpes2015');
+define('ROOT_FOLDER', '/GotoReicpes2015');
 
-define("SITEROOT", 'C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/');
-define("SERVERROOT", 'http://localhost/GotorecipesGITHUB/GotoReicpes2015');
+define("SITEROOT", 'c:/xampp/htdocs/GotoReicpes2015');
+define("SERVERROOT", 'http://localhost/GotoReicpes2015');
 
 //***** Content Paths *****//
 define('PATH_CSS' , SERVERROOT.'/Content/css');
@@ -12,29 +12,29 @@ define('PATH_FONTS', SERVERROOT.'/Content/fonts');
 define('PATH_JS', SERVERROOT.'/Content/js');
 //define("PATH_UPLOADS", "/Content/uploads");
 define('PATH_IMAGES',  SERVERROOT.'/Content/uploads/images');
-
+define('PATH_UPLOADS_IMAGES',  SITEROOT . '/Content/uploads/images');  //SERVERROOT is not working for filesystem
 //***** Errors Paths *****//
 define("PATH_ERRORS", SERVERROOT."/Errors");
 
 //*****  Model Paths *****//   
 //Note: SERVER ROOT is not working but SITEROOT is working ......why?
-define("PATH_MODEL",   "/Model");
-define("PATH_DATABASE", "/Model/database.php");
-define("PATH_MODEL_CATEGORY",  "/Model/category.php");
-define("PATH_MODEL_CATEGORY_DB" , "/Model/category_db.php");
-define("PATH_MODEL_IMAGEGALLERY", "/Model/imagegallery.php");
-define("PATH_MODEL_IMAGEGALLERY_DB", "/Model/imagegallery_db.php");
-define("PATH_MODEL_LOCATIONS",  "/Model/locations.php");
-define("PATH_MODEL_LOCATION_DB", "/Model/location_db.php");
-define("PATH_MODEL_TOPRECIPE", "/Model/toprecipe.php");
-define("PATH_MODEL_TOPRECIPE_DB", "/Model/toprecipe_db.php");
-define("PATH_MODEL_IMAGESLIDERS", "/Model/imagesliders.php");
-define("PATH_MODEL_IMAGESLIDER_DB", "/Model/imageslider_db.php");
-define("PATH_MODEL_RECIPE", "/Model/recipe.php");
-define("PATH_MODEL_RECIPES_DB", "/Model/recipes_db.php");
-define("PATH_MODEL_EVENT",  "/Model/event.php");
-define("PATH_MODEL_EVENTS_DB" ,  "/Model/events_db.php");
-define("PATH_MODEL_PAGENATOR", "/Model/pagenator.php");
+define("PATH_MODEL",   SITEROOT. "/Model");
+define("PATH_DATABASE", SITEROOT. "/Model/database.php");
+define("PATH_MODEL_CATEGORY", SITEROOT.  "/Model/category.php");
+define("PATH_MODEL_CATEGORY_DB" , SITEROOT. "/Model/category_db.php");
+define("PATH_MODEL_IMAGEGALLERY", SITEROOT. "/Model/imagegallery.php");
+define("PATH_MODEL_IMAGEGALLERY_DB", SITEROOT. "/Model/imagegallery_db.php");
+define("PATH_MODEL_LOCATIONS",  SITEROOT. "/Model/locations.php");
+define("PATH_MODEL_LOCATION_DB", SITEROOT. "/Model/location_db.php");
+define("PATH_MODEL_TOPRECIPE", SITEROOT. "/Model/toprecipe.php");
+define("PATH_MODEL_TOPRECIPE_DB", SITEROOT. "/Model/toprecipe_db.php");
+define("PATH_MODEL_IMAGESLIDERS", SITEROOT. "/Model/imagesliders.php");
+define("PATH_MODEL_IMAGESLIDER_DB", SITEROOT. "/Model/imageslider_db.php");
+define("PATH_MODEL_RECIPE",SITEROOT.  "/Model/recipe.php");
+define("PATH_MODEL_RECIPES_DB", SITEROOT. "/Model/recipes_db.php");
+define("PATH_MODEL_EVENT",  SITEROOT. "/Model/event.php");
+define("PATH_MODEL_EVENTS_DB" , SITEROOT.  "/Model/events_db.php");
+define("PATH_MODEL_PAGENATOR", SITEROOT. "/Model/pagenator.php");
 
 //****** View Paths ******//
 define("PATH_VIEW", SERVERROOT. "/View");
@@ -57,8 +57,8 @@ define("PATH_PUBLIC_IMAGESLIDER", "View/Public/Imageslider");
 define("PATH_PUBLIC_EVENTS",  PATH_VIEW_PUBLIC . "/Events");
 
 //*** View> Shared ***//
-define("PATH_HEADER",   "/View/Shared/header.php");  //SERVERROOT is not working
-define("PATH_FOOTER",   "/View/Shared/footer.php");
+define("PATH_HEADER",  SITEROOT. "/View/Shared/header.php");  //SERVERROOT is not working
+define("PATH_FOOTER",  SITEROOT.  "/View/Shared/footer.php");
 
 //echo HOST . ROOT_FOLDER . PATH_HEADER . "<br/>";
 //echo ROOT. "<br/>";

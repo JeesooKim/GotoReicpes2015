@@ -1,9 +1,10 @@
-<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
 
 <?php
-require_once( SITEROOT.PATH_DATABASE);  
-require(SITEROOT.PATH_MODEL_IMAGESLIDERS);
-require(SITEROOT.PATH_MODEL_IMAGESLIDER_DB);
+require_once( PATH_DATABASE);  
+require(PATH_MODEL_IMAGESLIDERS);
+require(PATH_MODEL_IMAGESLIDER_DB);
 
 $img_id = "";
 if(isset($_GET['image_id'])) {
@@ -47,7 +48,7 @@ if (isset($_POST['imageslider_update'])) {
 ?>
 
 <!--Update form-->
-<?php include SITEROOT.PATH_HEADER;    ?>
+<?php include PATH_HEADER;    ?>
 <!--end top-->
 <div id="main">
     <h1>Update this image</h1>
@@ -73,6 +74,6 @@ if (isset($_POST['imageslider_update'])) {
 <!--End of update form-->
 
 
-<?php include SITEROOT.PATH_FOOTER;    ?>
+<?php include PATH_FOOTER;    ?>
 
          

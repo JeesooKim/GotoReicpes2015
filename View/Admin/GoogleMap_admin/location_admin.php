@@ -1,10 +1,11 @@
-<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
 
 
 <?php
-require_once( SITEROOT.PATH_DATABASE);  
-require(SITEROOT.PATH_MODEL_LOCATIONS);
-require(SITEROOT.PATH_MODEL_LOCATION_DB);
+require_once( PATH_DATABASE);  
+require(PATH_MODEL_LOCATIONS);
+require(PATH_MODEL_LOCATION_DB);
 
 //delete option
 if(isset($_POST['location_id'])){
@@ -80,5 +81,5 @@ LocationDB::deleteLocation($location_id);
 </div><!--End of main-->
 
 
-<?php include SITEROOT.PATH_FOOTER;    ?>
+<?php include PATH_FOOTER;    ?>
                 

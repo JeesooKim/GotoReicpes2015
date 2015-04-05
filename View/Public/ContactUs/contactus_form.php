@@ -1,12 +1,10 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-
-<?php include SITEROOT.PATH_HEADER;  ?>  
-<!--end top-->
-
 <?php 
-require(SITEROOT.PATH_DATABASE);
-require(SITEROOT.PATH_MODEL_LOCATIONS);
-require(SITEROOT.PATH_MODEL_LOCATION_DB);
+require_once(PATH_DATABASE);
+require_once(PATH_MODEL_LOCATIONS);
+require_once(PATH_MODEL_LOCATION_DB);
+
+include PATH_HEADER;
 ?>
 
         <h1>Contact Us</h1>
@@ -99,5 +97,5 @@ require(SITEROOT.PATH_MODEL_LOCATION_DB);
 </form>
         
 <?php       
-        include SITEROOT.PATH_FOOTER;
+        include PATH_FOOTER;
 ?>

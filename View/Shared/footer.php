@@ -10,6 +10,6 @@
                         </ul>
                 </nav>
 </footer> <!--end footer-->
-</div> <!-- end of #container from head.php-->
+</div> <!-- end of #container-->
 </body>
 </html>

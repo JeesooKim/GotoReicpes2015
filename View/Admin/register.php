@@ -1,6 +1,6 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 
-<?php include SITEROOT.PATH_HEADER;  ?>  
+<?php include PATH_HEADER;  ?>  
 <!--end top-->
 		<div id="login">
 
@@ -32,4 +32,4 @@
 	</div> 
 	<!-- end login -->
 
-<?php  include SITEROOT.PATH_FOOTER; ?>
+<?php  include PATH_FOOTER; ?>

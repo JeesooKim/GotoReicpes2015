@@ -1,7 +1,7 @@
-<?php //   include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php   include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 
-<?php //include PATH_HEADER;  ?>  
-<!--end top-->
+<?php include PATH_HEADER;  ?>  
+
 <?php    
     include  'c:/xampp/htdocs/GotoReicpes2015/View/Public/Imageslider/imageslider.php';    
     ?>

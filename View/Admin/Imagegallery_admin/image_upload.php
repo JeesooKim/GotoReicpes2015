@@ -1,5 +1,5 @@
-<?php include SITEROOT.PATH_HEADER;    ?>
-<!--end top-->
+<?php include PATH_HEADER;    ?>
+
 <?php
 #File name: image_upload.php
 #File for Image Gallery-Admin
@@ -62,4 +62,4 @@
     
 
 </div>
-<?php include SITEROOT.PATH_FOOTER;    ?>
+<?php include PATH_FOOTER;    ?>

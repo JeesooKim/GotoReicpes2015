@@ -1,6 +1,7 @@
-<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  
+//include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
 
-<?php include SITEROOT.PATH_HEADER;  ?>  
+<?php include PATH_HEADER;  ?>  
 <!--end top-->
 
 <?php   
@@ -11,6 +12,6 @@
         echo "<h1>ADMIN PANEL</h1>";
         
 		
-         include SITEROOT.PATH_FOOTER; 
+         include PATH_FOOTER; 
 ?>
                

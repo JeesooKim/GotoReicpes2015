@@ -1,4 +1,4 @@
-<?php  include SITEROOT.PATH_HEADER;  ?>  
+<?php  include PATH_HEADER;  ?>  
 <!--end top-->
 <?php
 #File name: recipe_edit.php
@@ -64,4 +64,4 @@
     </form>
 </div> <!-- end of #main-->
 
-<?php include SITEROOT.PATH_FOOTER; ?>
+<?php include PATH_FOOTER; ?>

@@ -1,6 +1,6 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 
-<?php include SITEROOT.PATH_HEADER;  ?>  
+<?php include PATH_HEADER;  ?>  
 <!--end top-->
 
 
@@ -22,4 +22,4 @@
 
 		</form>
 
-<?php  include SITEROOT.PATH_FOOTER; ?>
+<?php  include PATH_FOOTER; ?>

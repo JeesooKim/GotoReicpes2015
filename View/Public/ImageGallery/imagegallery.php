@@ -1,15 +1,10 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-
-<?php include SITEROOT.PATH_HEADER;  ?>  
-<!--end top-->
-
 <?php
-require_once( SITEROOT.PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
-require_once( SITEROOT.PATH_MODEL_CATEGORY);
-require_once( SITEROOT.PATH_MODEL_CATEGORY_DB);
-require_once( SITEROOT.PATH_MODEL_IMAGEGALLERY);
-require_once( SITEROOT.PATH_MODEL_IMAGEGALLERY_DB);
-
+require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
+require_once( PATH_MODEL_CATEGORY);
+require_once( PATH_MODEL_CATEGORY_DB);
+require_once( PATH_MODEL_IMAGEGALLERY);
+require_once( PATH_MODEL_IMAGEGALLERY_DB);
 
 #File name: imagegallery.php
 #File for Image Gallery-Public
@@ -26,6 +21,9 @@ require_once( SITEROOT.PATH_MODEL_IMAGEGALLERY_DB);
 //For selected images....depending on category,    list of images will be rendered.
 //get the imagesobject,,,ImageGalleryDB::getPath()
 
+include PATH_HEADER; 
+?>
+<?php   
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {

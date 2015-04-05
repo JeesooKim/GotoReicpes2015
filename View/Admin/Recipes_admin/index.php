@@ -1,10 +1,10 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  
 
-require_once( SITEROOT. PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
-require_once( SITEROOT. PATH_MODEL_CATEGORY);
-require_once( SITEROOT. PATH_MODEL_CATEGORY_DB);
-require_once( SITEROOT. PATH_MODEL_RECIPE);
-require_once( SITEROOT. PATH_MODEL_RECIPES_DB);
+require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
+require_once( PATH_MODEL_CATEGORY);
+require_once( PATH_MODEL_CATEGORY_DB);
+require_once( PATH_MODEL_RECIPE);
+require_once( PATH_MODEL_RECIPES_DB);
 
 #File name: index.php
 #File for Recipes-Admin

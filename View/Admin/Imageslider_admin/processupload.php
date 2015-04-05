@@ -1,8 +1,8 @@
 <?php
 
-require_once( SITEROOT.PATH_DATABASE);  
-require(SITEROOT.PATH_MODEL_IMAGESLIDERS);
-require(SITEROOT.PATH_MODEL_IMAGESLIDER_DB);
+require_once( PATH_DATABASE);  
+require(PATH_MODEL_IMAGESLIDERS);
+require(PATH_MODEL_IMAGESLIDER_DB);
 
 //file properties
         $file = $_FILES['image']['tmp_name'];
