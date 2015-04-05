@@ -7,7 +7,14 @@ require_once(PATH_MODEL_LOCATION_DB);
 include PATH_HEADER;
 ?>
 
-        <h1>Contact Us</h1>
+<div id='main'>
+<ol class="breadcrumb">
+        <li><a href="<?php echo SERVERROOT; ?>/index.php">Home</a></li>
+        <li class="active">Contact Us</li>
+                
+        <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
+    </ol>
+    <br/>
          <?php
      if(isset($_GET['err'])){
         echo $_GET['err'];
@@ -95,7 +102,7 @@ include PATH_HEADER;
         </tr>
     </table> 
 </form>
-        
+</div><!-- end of #main -->
 <?php       
         include PATH_FOOTER;
 ?>

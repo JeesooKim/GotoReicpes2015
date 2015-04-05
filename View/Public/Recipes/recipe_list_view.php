@@ -21,21 +21,34 @@ so, the following variables are already defined when they are called
  -->
        
 <div id="main">
-    <div id="sidebar">
-        
+    <ol class="breadcrumb">
+        <li><a href="<?php echo SERVERROOT; ?>/index.php">Home</a></li>
+        <li class="active">Recipes</li>
+        <li class="active"><?php echo $current_category->getCatName(); ?></li>        
+        <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
+    </ol>
+    <br/>
+    
+    
+    <div id="sidebar">        
         <a href="<?php echo PATH_ADMIN_RECIPES;?>/index.php">Recipes Admin(temporary)</a>
         <br/>
-<!--        <h1>Categories</h1>-->
-        <ul class="nav">
-            <!-- display links for all categories -->
-            <?php foreach($categories as $category) : ?>
-                <li>
-                    <a href="?category_id=<?php echo $category->getCatID(); ?>">
-                        <?php echo $category->getCatName(); ?>
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+        
+        <!-- form to select category ;dropdown list-->
+<form action='recipes.php' method='GET' >
+        <input type='hidden' name='action' value='list_view_recipes'/>
+        Category: 
+        <select name='category_id'>
+            <option value='0'><?php echo $current_category->getCatName(); ?></option>
+            <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
+            <?php foreach ($categories as $category) : ?>
+                <option value='<?php echo $category->getCatID(); ?>'><?php echo $category->getCatName(); ?></option>
+           <?php endforeach; ?>
+        </select>
+        <input type='submit' value='Go' />
+    </form>        
+        
+        <br/>
     </div> <!-- end of #sidebar -->
   
 <!-- The container for the list of example recipes -->
@@ -46,8 +59,7 @@ so, the following variables are already defined when they are called
 <link rel="stylesheet" href="<?php echo PATH_CSS; ?>/recipe-jquery.css" />	
  <!-- End  Style and JavaScripts for Recipes-->
  
-<div class="recipeContainer">
-    <h1> <?php echo $current_category->getCatName() ; ?></h1>
+<div class="recipeContainer">    
                              
                  <div class="panelContainer">
                    <?php foreach ($recipes as $recipe) : ?>

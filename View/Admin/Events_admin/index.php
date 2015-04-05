@@ -112,7 +112,7 @@ else if ($action == 'show_insert_form') {
      EventsDB::addEvent($eventObj);                                   
          
       // Display the Events List
-      header("Location: .");         
+     header("Location: .");         
     }    
      //****************** Inserting a new Event ends ******************//
     ?>

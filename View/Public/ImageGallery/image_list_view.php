@@ -17,24 +17,34 @@
  -->
  
 <div id="main">
+     <ol class="breadcrumb">
+        <li><a href="<?php echo SERVERROOT; ?>/index.php">Home</a></li>
+        <li class="active">Image Gallery</li>
+        <li class="active"><?php echo $current_category->getCatName(); ?></li>        
+        <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
+    </ol>
+    <br/>
+    
     <div id="sidebar">
         
         <p><a href="<?php echo PATH_ADMIN_IMAGEGALLERY. '/index.php'; ?>"> Image Gallery Admin(temporary)</a></p>
-<!--        <h1>Categories</h1>-->
-        <ul class="nav">
-            <!-- display links for all categories -->
-            <?php foreach($categories as $category) : ?>
-                <li>
-                    <a href="?category_id=<?php echo $category->getCatID(); ?>">
-                        <?php echo $category->getCatName(); ?>
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div> <!-- end of #sidebar -->
-    
-       <!--h1><!--?php echo $current_category->getCatName(); ?></h1>
-   
+        
+        <br/>        
+        <!-- dropdown -->
+        <form action='imagegallery.php' method='GET' >
+        <input type='hidden' name='action' value='list_view_images'/>
+        Category: 
+        <select name='category_id'>
+            <option value='0'><?php echo $current_category->getCatName(); ?></option>
+            <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
+            <?php foreach ($categories as $category) : ?>
+                <option value='<?php echo $category->getCatID(); ?>'><?php echo $category->getCatName(); ?></option>
+           <?php endforeach; ?>
+        </select>
+        <input type='submit' value='Go' />
+    </form>        
+        
+          <br/>
 <!-- The container for the list of example images -->
 <div id="links">    
                 <?php 

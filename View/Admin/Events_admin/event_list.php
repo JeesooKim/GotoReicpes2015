@@ -12,6 +12,11 @@
 
 
 <div id="main">
+    <ol class="breadcrumb">
+        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
+        <li class="active">Image Gallery</li>
+    </ol>
+    <br/>
     <p><a href="?action=show_insert_form">Insert a New Event</a></p>
     <h1>Events List</h1>
     <div id="sidebar">

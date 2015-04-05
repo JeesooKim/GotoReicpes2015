@@ -11,28 +11,32 @@
 ?>
 
 <div id="main">
-    <p><a href="?action=show_upload_form">Upload Image</a></p>
-    <h1>Image List</h1>
+    <ol class="breadcrumb">
+        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
+        <li class="active">Image Gallery</li>
+        <li class="active">Current Category :  <?php echo $current_category->getCatName(); ?></li>      
+    </ol>
+    <br/>
+    
     <div id="sidebar">
-        <!-- display a list of categories -->
-        <h2>Categories :  <?php echo $current_category->getCatName(); ?></h2>
-        <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
-        <br/>
-        
-        <ul class="nav">
+        <br/>            
+    <p><a href="?action=show_upload_form">Upload Image</a></p>
+    <br/>
+    <form action='.' method='GET' >
+        <input type='hidden' name='action' value='list_images'/>
+        Category: 
+        <select name='category_id'>
+            <option value='0'><?php echo $current_category->getCatName(); ?></option>
+            <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
             <?php foreach ($categories as $category) : ?>
-                <!-- $categories : an object of Category class from $categories = CategoryDB::getCategories();  of index.php-->
-                <li>
-                    <a href="?category_id=<?php echo $category->getCatID(); ?>">  <!-- get category's id -->
-                        <?php echo $category->getCatName(); ?>    <!-- get category's name -->
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-        <br />        
+                <option value='<?php echo $category->getCatID(); ?>'><?php echo $category->getCatName(); ?></option>
+           <?php endforeach; ?>
+        </select>
+        <input type='submit' value='Go' />
+    </form>   
     </div> <!-- end of #sidebar -->
-
-    <div id="content">
+<br/>
+    <!--div id="content">
         <!-- display a table of products -->
    
         <table class="table table-responsive table-bordered"    width="900">
@@ -74,6 +78,6 @@
         </tbody>                
         </table>        
         
-    </div><!-- end of #content -->
+    <!--/div><!-- end of #content -->
 </div><!-- end of #main -->
 <?php include PATH_FOOTER_ADMIN;    ?>
