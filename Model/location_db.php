@@ -1,7 +1,5 @@
 <?php
 class LocationDB {
-	//use category and product class
-	//four static method
     public static function getLocations() {
         $db = Database::getDB();
         $query = 'SELECT * FROM location';
@@ -22,7 +20,6 @@ class LocationDB {
         return $locations;
     }
 
-    //accept product id
     public static function getLocation($location_id) {
         $db = Database::getDB();
         $query = "SELECT * FROM location

@@ -1,13 +1,12 @@
-<?php   include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php   //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php"; ?>
+
+
 <?php include PATH_HEADER;  ?>  
 <?php    
     include PATH_PUBLIC_IMAGESLIDER. '/imageslider.php';    
     ?>
 <!--end imageslider feature-->
-<!-- <ol class="breadcrumb">
-				<li><a href="#">Home</a></li>
-			</ol> --> <!--breadcrumb sitemap-->
-
 
         <div id="content-recipes">
 

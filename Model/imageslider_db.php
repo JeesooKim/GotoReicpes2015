@@ -18,7 +18,6 @@ class ImagesliderDB {
         return $imagesliders;
     }
 
-    //accept product id
     public static function getImageslider($img_id) {
         //calling the database
         $db = Database::getDB();
