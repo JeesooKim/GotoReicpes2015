@@ -73,7 +73,7 @@ define("PATH_PUBLIC_EVENTS",  PATH_VIEW_PUBLIC . "/Events");
 define("PATH_HEADER",  SITEROOT. "/View/Shared/header.php");  //SERVERROOT is not working
 define("PATH_FOOTER",  SITEROOT.  "/View/Shared/footer.php");
 define("PATH_HEADER_ADMIN",  SITEROOT. "/View/Shared/header_admin.php");  //SERVERROOT is not working
-define("PATH_FOOTER_ADMIN",  SITEROOT.  "/View/Shared/footer_admin.php");
+define("PATH_FOOTER_ADMIN",  SITEROOT. "/View/Shared/footer_admin.php");
 
 //echo HOST . ROOT_FOLDER . PATH_HEADER . "<br/>";
 //echo ROOT. "<br/>";

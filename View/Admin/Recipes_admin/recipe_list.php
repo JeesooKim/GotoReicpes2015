@@ -22,8 +22,10 @@
     <div id='sidebar'>
     <br/>
     <p><a href="?action=show_insert_form">Insert a New Recipe</a></p>
-    <br/>
-            
+    <hr/>   
+    
+     
+    
     <form action='.' method='GET' >
         <input type='hidden' name='action' value='list_recipes'/>
         Category: 
@@ -39,10 +41,26 @@
     </div><!-- end of #sidebar -->
     <br/>
     
+    <!-- The following is for Recipes -->
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.6/css/jquery.dataTables.css">  
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>  
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
+    <!-- Recipes data tables CDN --> 
+    
+    <script>
+        $(document).ready( function () { 
+            $('#recipeTB').DataTable();}
+                );
+            </script>
+    
+    
     <!--div id="content">
         <!-- display a table of products -->
-   
-        <table id="recipe_insert_table"    width="900">
+        <table id="recipeTB" class="display">   
+        <!-- table id="recipe_insert_table"    width="900" -->
             <thead bgcolor="#a8cb81" >                
                 <tr style="font-variant:small-caps;font-style:normal;color:black;font-size:18px;">
                     <th>Name</th>
@@ -51,8 +69,8 @@
                     <th>Cooking Time</th>
                     <th>Ingredients</th>
                     <th>Steps</th>    
-                    <th>Current Rating</th> 
-                    <th>Votes</th> 
+<!--                    <th>Current Rating</th> 
+                    <th>Votes</th> -->
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
                 </tr>
@@ -67,14 +85,15 @@
                             <td><?php echo $recipe->getRecipeCookTime(); ?></td>
                             <td><?php echo $recipe->getRecipeIngredients(); ?></td>
                             <td><?php echo $recipe->getRecipeSteps(); ?></td>
-                            <td><?php echo $recipe->getTotal(); ?></td>
-                            <td><?php echo $recipe->getVotes(); ?></td>
-                            <td><form action="." method="post" id="edit_recipe_form">
+<!--                            <td><?php //echo $recipe->getTotal(); ?></td>
+                            <td><?php //echo $recipe->getVotes(); ?></td>-->
+                            <td>
+                                <form action="." method="post" id="edit_recipe_form">
                                             <input type="hidden" name="action" value="show_edit_form" />
                                             <input type="hidden" name="recipe_id" value="<?php echo $recipe->getRecipeID(); ?>" />
                                             <input type="hidden" name="category_id" value="<?php echo $current_category->getCatID(); ?>" />
                                             <input type="submit" value="Edit" />
-                                    </form></td>
+                                 </form></td>
                             <td><form action="." method="post" id="delete_recipe_form">
                                             <input type="hidden" name="action" value="delete_recipe" />
                                             <input type="hidden" name="recipe_id" value="<?php echo $recipe->getRecipeID(); ?>" />
@@ -82,10 +101,9 @@
                                             <input type="submit" value="Delete" onclick="return confirm('Are you sure to delete?')"/>
                                     </form></td>
                         </tr>     
-                <?php endforeach; ?>
-                        
+                <?php endforeach; ?>                        
         </tbody>                
-        </table>        
+        </table>     
         
     <!--/div><!-- end of #content -->
 </div><!-- end of #main -->

@@ -74,26 +74,31 @@ class RecipeDB{
         
         //query to delete the object of the given id, $dish)id
         $query="DELETE FROM recipes WHERE dish_id='$dish_id' ";
-        $row_count= exec($query);
-        return $row_count;
+        
+        $dbCon->exec($query);
+        //$row_count= exec($query);
+        //return $row_count;
     }
     
     public static function editRecipe( $dish_id,  $dish_name, $cat_id, $dish_key, $dish_num_serving, $dish_cook_time, $dish_ingredients, $dish_steps){
         //connect to DB
         $dbCon=Database::getDB();
-        
+                echo $dish_ingredients ."<br/>";
+        echo $dish_steps;
         $query = "UPDATE recipes SET "
-                . "dish_name=$dish_name, "
-                . "dish_cat=$cat_id, "
-                . "dish_key= $dish_key, "
-                . "dish_num_serving =$dish_num_serving, "
-                . "dish_cook_time=$dish_cook_time, "
-                . "dish_ingredients = $dish_ingredients, "
-                . "dish_steps = $dish_steps "
-                . "WHERE dish_id = '$dish_id' ";
+                . "dish_name='$dish_name', "
+                . "dish_cat='$cat_id', "
+                . "dish_key='$dish_key', "
+                . "dish_num_serving ='$dish_num_serving', "
+                . "dish_cook_time='$dish_cook_time', "
+                . "dish_ingredients = '$dish_ingredients', "
+                . "dish_steps = '$dish_steps' "
+                . "WHERE dish_id =$dish_id ";
                                                                  
-        $statement->exec($query);           
+        $dbCon->exec($query);           
         
+        echo $dish_ingredients ."<br/>";
+        echo $dish_steps;
         //query to UPDATE the table for the values passed by parameters of this method
 //        $query = "UPDATE recipes SET "
 //                . "dish_name=:dish_name, "
@@ -163,6 +168,8 @@ class RecipeDB{
 }
 
 class Validation{
+    
+    
     
 }
 

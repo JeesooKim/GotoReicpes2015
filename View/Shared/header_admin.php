@@ -29,6 +29,8 @@
                     <script src="//blueimp.github.io/Gallery/js/bootstrap-image-gallery.js"></script>
                     <script src="<?php echo PATH_JS; ?>/bootstrap-image-gallery.js"></script>
                     <!-- Image Gallery CDN-->
+                    
+                    
 </head> 
 <body>
  
