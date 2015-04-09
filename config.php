@@ -24,6 +24,8 @@ define("PATH_MODEL",   SITEROOT. "/Model");
 define("PATH_DATABASE", SITEROOT. "/Model/database.php");
 define("PATH_MODEL_CATEGORY", SITEROOT.  "/Model/category.php");
 define("PATH_MODEL_CATEGORY_DB" , SITEROOT. "/Model/category_db.php");
+define("PATH_MODEL_FAQS", SITEROOT.  "/Model/faqs.php");
+define("PATH_MODEL_FAQ_DB" , SITEROOT. "/Model/faq_db.php");
 define("PATH_MODEL_IMAGEGALLERY", SITEROOT. "/Model/imagegallery.php");
 define("PATH_MODEL_IMAGEGALLERY_DB", SITEROOT. "/Model/imagegallery_db.php");
 define("PATH_MODEL_LOCATIONS",  SITEROOT. "/Model/locations.php");
@@ -53,9 +55,11 @@ define("PATH_ADMIN_IMAGEGALLERY", PATH_VIEW_ADMIN."/Imagegallery_admin");
 define("PATH_ADMIN_RECIPES", PATH_VIEW_ADMIN."/recipes_admin");
 define("PATH_ADMIN_EVENTS", PATH_VIEW_ADMIN."/Events_admin");
 define("PATH_ADMIN_IMAGESLIDER", PATH_VIEW_ADMIN."/Imageslider_admin");
+define("PATH_ADMIN_FAQ", PATH_VIEW_ADMIN. "/faq_admin");
 define("PATH_ADMIN_TOPRECIPES", PATH_VIEW_ADMIN. "/Toprecipes_admin");
 
 //*** View> Public ***//
+define("PATH_PUBLIC_FAQ",  PATH_VIEW_PUBLIC ."/FAQ" );
 define("PATH_PUBLIC_CONTACT",  PATH_VIEW_PUBLIC ."/ContactUs" );
 define("PATH_PUBLIC_IMAGEGALLERY",  PATH_VIEW_PUBLIC ."/ImageGallery");
 define("PATH_PUBLIC_RECIPES",  PATH_VIEW_PUBLIC ."/Recipes");

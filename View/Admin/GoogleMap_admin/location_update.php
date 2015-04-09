@@ -1,5 +1,5 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
+<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
 
 
 <?php
@@ -51,7 +51,7 @@ if (isset($_POST['location_update'])) {
 
 <?php include PATH_HEADER_ADMIN;    ?>
 <!--end top-->
-<div>
+<div id="main">
     <h1>Update Branch Location: <?php echo $map_location_branch; ?></h1>
 
     <form action="location_update.php" method="POST">

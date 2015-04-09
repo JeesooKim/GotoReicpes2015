@@ -47,8 +47,8 @@ if(isset($_POST['submit'])){
         }
     }
     
-    //handle file size. Max size 2MB
-    $max_file_size = 20000000;
+    //handle file size. Max size 5MB
+    $max_file_size = 50000000;
     if($file_size > $max_file_size){
         echo "File size should not exceed 2mb";
         exit();
@@ -95,7 +95,7 @@ if(isset($_POST['submit'])){
         File:
         <input type="file" name="image" id="image" />
         <input type="submit" name="submit" value="Upload" />
-        <p>Must be less than 512kb. Only JPG, GIF and PNG files.</p>
+        <p>Must be less than 5MB. Only JPG, GIF and PNG files.</p>
         
         <a class="btn btn-default" href="imageslider_admin.php">Back to list</a>
     </form>

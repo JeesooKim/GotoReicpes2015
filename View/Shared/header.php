@@ -74,6 +74,7 @@
                                         <li><a href="<?php echo PATH_PUBLIC_IMAGEGALLERY . '/imagegallery.php';?>">Gallery</a></li>
                                         <li><a href="<?php echo PATH_PUBLIC_EVENTS . '/events.php';?>">Events</a></li>
                                        <li><a href="<?php echo  PATH_PUBLIC_CONTACT . '/contactus_form.php';?>">Contact Us</a></li>
+                                       
                                 </ul>
                             <form class="navbar-form navbar-right" role="search">
                                 <input type="text" class="form-control" type="search" placeholder="Search . . .">
