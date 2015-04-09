@@ -75,13 +75,13 @@ class EventsDB{
         
         //query to UPDATE the table for the values passed by parameters of this method
         $query = "UPDATE events SET "
-                . "event_name=:eventName, "
-                . "event_start=:eventStart, "
-                . "event_end =:eventEnd, "
-                . "event_location =:eventLocation, "
-                . "event_detail=:eventDetail "
-                . "event_contactName =:eventContactName, "
-                . "event_contactEmail =:eventContactEmail "
+                . "event_name=$eventName, "
+                . "event_start=$eventStart, "
+                . "event_end = $eventEnd, "
+                . "event_location = $eventLoc, "
+                . "event_detail=$eventDetail "
+                . "event_contactName =$eventContactName, "
+                . "event_contactEmail =$eventContactEmail "
                 . "WHERE eventId='$eventId' ";
         echo $eventId .',' . $eventName .',' .  $eventStart .',' .  $eventEnd .',' .  $eventLoc .',' .  $eventDetail .',' .  $eventContactName .',' .  
                 $eventContactEmail;
@@ -94,24 +94,25 @@ class EventsDB{
 //        $statement -> bindParam(":eventContactName", $eventContactName,PDO::PARAM_STR);
 //        $statement -> bindParam(":eventContactEmail", $eventContactEmail,PDO::PARAM_STR);
         //$statement -> bindParam(":event_id", $eventId, PDO::PARAM_INT);
-        
-        $statement -> bindValue(":eventName" , $eventName);
-        $statement -> bindValue(":eventStart", $eventStart );
-        $statement -> bindValue(":eventEnd", $eventEnd);
-        $statement -> bindValue(":eventLocation", $eventLoc);
-        $statement -> bindValue(":eventDetail", $eventDetail);
-        $statement -> bindValue(":eventContactName", $eventContactName);
-        $statement -> bindValue(":eventContactEmail", $eventContactEmail);
-                                   
-        echo "<pre>";
-        var_dump($statement);
-        echo "</pre>";
-       
-        //http://www.phpeveryday.com/articles/PDO-Insert-and-Update-Statement-Use-Prepared-Statement-P552.html
-        $statement->execute();
-         echo "<pre>";
-        var_dump($statement);
-        echo "</pre>";
+//        
+//        $statement -> bindValue(":eventName" , $eventName);
+//        $statement -> bindValue(":eventStart", $eventStart );
+//        $statement -> bindValue(":eventEnd", $eventEnd);
+//        $statement -> bindValue(":eventLocation", $eventLoc);
+//        $statement -> bindValue(":eventDetail", $eventDetail);
+//        $statement -> bindValue(":eventContactName", $eventContactName);
+//        $statement -> bindValue(":eventContactEmail", $eventContactEmail);
+//                                   
+//        echo "<pre>";
+//        var_dump($statement);
+//        echo "</pre>";
+//       
+//        //http://www.phpeveryday.com/articles/PDO-Insert-and-Update-Statement-Use-Prepared-Statement-P552.html
+//        $statement->execute();
+//         echo "<pre>";
+//        var_dump($statement);
+//        echo "</pre>";
+//           $statement->execute();
        } 
        catch (Exception $ex) {
            $err= $ex->getMessage();
