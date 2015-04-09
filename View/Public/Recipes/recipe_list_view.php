@@ -7,7 +7,7 @@
 #Created :March 31, 2015
 #Modified: 
 #Reference: Class material -PDO Class
-#this file is to show the list of (cateforized) recipes according to the category selected
+#this file is to show the list of (categorized) recipes according to the category selected
 #category: breakfast, lunch, dinner, pastry, and beverages
 ?>
 <!-- END of 'header include' in recipe_list_view-->
@@ -44,7 +44,7 @@ so, the following variables are already defined when they are called
     
     <div id="sidebar">        
         <a href="<?php echo PATH_ADMIN_RECIPES;?>/index.php">Recipes Admin(temporary)</a>
-        <br/>
+        <br/><br/>
         
         <!-- form to select category ;dropdown list-->
 <form action='recipes.php' method='GET' >
@@ -67,21 +67,35 @@ so, the following variables are already defined when they are called
 
 <!-- The following is stylesheet and javascript for Recipes -->
 <!-- <script type="text/javascript" src="jquery-1.11.1.min.js"></script>-->
-<script type="text/javascript" src="<?php echo PATH_JS; ?>/recipe-jquery.js"></script>
-<link rel="stylesheet" href="<?php echo PATH_CSS; ?>/recipe-jquery.css" />	
+<!--script type="text/javascript" src="<?php //echo PATH_JS; ?>/recipe-jquery.js"></script>
+<link rel="stylesheet" href="<?php //echo PATH_CSS; ?>/recipe-jquery.css" /-->
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!--link rel="stylesheet" href="/resources/demos/style.css"-->
+    <script>
+    $(function() {
+    $( "#accordion" ).accordion();
+    });
+    </script>
+
+
  <!-- End  Style and JavaScripts for Recipes-->
  
-<div class="recipeContainer">    
-                             
-                 <div class="panelContainer">
+ <div id="accordion">
+<!--<div class="recipeContainer">
+                 <div class="panelContainer">-->
                    <?php foreach ($recipes as $recipe) : ?>
-                            <h2> <!-- Name of recipes-->
+                            <h3> <!-- Name of recipes-->
                                    <?php
                                              $rec = $recipe -> getRecipeName();
                                              echo $rec . "<br/>";
                                    ?>
-                            </h2> 
-                            <p class="contentBox">
+                            </h3> 
+<div>
+    <p>
+<!--        <p class="contentBox">-->
                                 <!-- displays the content of the recipes: 
                                     Key Ingredient, Number Serving, Cooking TIme, Ingredients, and Steps-->
                                    Key Ingredient : 
@@ -99,7 +113,7 @@ so, the following variables are already defined when they are called
                                    Steps:
                                           <?php echo $recipe-> getRecipeSteps(); ?>      
                                    <br/>
-                                   
+                                   <hr/>
                             <form action="recipes.php" method="POST">
                                 <input type="hidden" name="dish_id" value="<?php echo $recipe->getRecipeID(); ?>"/>
                                 <input type="hidden" name="vote_up" value="<?php echo $recipe-> getVotes(); ?>"/>
@@ -108,11 +122,13 @@ so, the following variables are already defined when they are called
                                    <input type="submit" name="votes" value="Yes" />
                                    <?php echo $recipe-> getVotes(); ?>
                             </form>
-                            </p>
+                            <!--</p>-->       
+    </p>
+</div>
+                            
                     <?php endforeach; ?>   
-                 </div><!-- end of .panelContainer -->
-                
- </div> <!--  end of .recipeContainer        -->
+                 <!--/div><!-- end of .panelContainer -->                
+ <!--/div> <!--  end of .recipeContainer        -->
    
 </div> <!-- end #main -->
 <!-- END of FILE recipe_list_view-->

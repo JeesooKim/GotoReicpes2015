@@ -1,10 +1,12 @@
 <?php
 
 define('HOST', 'http://localhost' );
-define('ROOT_FOLDER', 'GotorecipesGITHUB/GotoReicpes2015');
+//define('ROOT_FOLDER', 'GotorecipesGITHUB/GotoReicpes2015');
+define('ROOT_FOLDER', 'GotoReicpes2015');
 
-define("SITEROOT", 'C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015');
-define("SERVERROOT", 'http://localhost/GotorecipesGITHUB/GotoReicpes2015');
+//define("SITEROOT", 'C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015');
+define("SITEROOT", 'C:/xampp/htdocs/GotoReicpes2015');
+define("SERVERROOT", 'http://localhost/GotoReicpes2015');
 
 //***** Content Paths *****//
 define('PATH_CSS' , SERVERROOT.'/Content/css');
