@@ -18,7 +18,6 @@ class ImagesliderDB {
         return $imagesliders;
     }
 
-    //accept product id
     public static function getImageslider($img_id) {
         //calling the database
         $db = Database::getDB();
@@ -60,8 +59,8 @@ class ImagesliderDB {
                  ('$img_name', '$img_path')";
 
         $statement = $db->prepare($query);
-        $statement -> bindParam(':name',$img_name, PDO::PARAM_STR, 100 );
-        $statement -> bindParam(':path', $img_path,PDO::PARAM_STR, 100 );
+        $statement -> bindParam(':name',$img_name, PDO::PARAM_STR, 255 );
+        $statement -> bindParam(':path', $img_path,PDO::PARAM_STR, 255 );
                                                             
         $statement->execute(); 
     }
@@ -80,8 +79,8 @@ class ImagesliderDB {
         $query = "UPDATE imageslider SET name = '$img_name', path = '$img_path' WHERE image_id = '$img_id'";
         
         $statement = $db->prepare($query);
-        $statement -> bindParam(':name',$img_name, PDO::PARAM_STR, 100 );
-        $statement -> bindParam(':path', $img_path,PDO::PARAM_STR, 100 );
+        $statement -> bindParam(':name',$img_name, PDO::PARAM_STR, 255 );
+        $statement -> bindParam(':path', $img_path,PDO::PARAM_STR, 255 );
                                                             
         $statement->execute(); 
     }

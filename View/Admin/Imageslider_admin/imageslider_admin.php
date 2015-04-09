@@ -1,5 +1,5 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
+<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
 
 
 <?php
@@ -44,7 +44,7 @@ ImagesliderDB::deleteImageslider($img_id);
             ?>
             <tr>
                 <td><?php echo $row->getName(); ?></td>
-                <td width="500px"><?php echo "<img style='width: 300px' src='".$row->getPath()."' />" ?></td>
+                <td width="500px"><?php echo "<img style='width: 300px' src='" . SERVERROOT . "/" .$row->getPath()."' />" ?></td>
                 <td>
                     <a class="btn-link" href="imageslider_update.php?image_id=<?php echo $row->getImageID(); ?>">
                         <span class="glyphicon glyphicon-edit"></span>

@@ -1,42 +1,30 @@
-<?php // include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  
+<?php include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  
 
-require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
+require_once( PATH_DATABASE);
 require_once( PATH_MODEL_IMAGESLIDERS );
 require_once( PATH_MODEL_IMAGESLIDER_DB );
 ?>
-
+    <link href="<?php echo  PATH_CSS; ?>/responsiveslides.css" rel="stylesheet" type="text/css" />
+    <script src="<?php echo PATH_RSLIDER.'/responsiveslides.min.js' ?>"></script>
+  
 <section id="content">
 <!-- image slider feature -->
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
+    <ul class="rslides">
         <?php
-                $imageslider = ImagesliderDB::getImagesliders();
-                foreach ($imageslider as $row):
-                ?>
-        <img src="<?php echo $row->getPath(); ?>" alt="<?php echo $row->getName(); ?>" title="<?php echo $row->getName(); ?>" />
-      <?php endforeach; ?>
-    </div>
-  </div>
+        $imageslider = ImagesliderDB::getImagesliders();
+        foreach ($imageslider as $row):
+        ?>
+        <li><img src="<?php echo SERVERROOT . "/" . $row->getPath(); ?>"</li>
+        <?php endforeach; ?>
+    </ul>   
 
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-</section>
+<script>
+    //credit to: http://responsiveslides.com/ for imageslider template
+    $(function () {
+        $(".rslides").responsiveSlides({
+        auto: true,
+        pager: false,
+        speed: 50
+      });
+    });
+</script>

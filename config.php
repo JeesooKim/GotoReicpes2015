@@ -1,15 +1,17 @@
 <?php
 
 define('HOST', 'http://localhost' );
-define('ROOT_FOLDER', '/GotoReicpes2015');
+define('ROOT_FOLDER', 'GotorecipesGITHUB/GotoReicpes2015');
 
-define("SITEROOT", 'c:/xampp/htdocs/GotoReicpes2015');
-define("SERVERROOT", 'http://localhost/GotoReicpes2015');
+define("SITEROOT", 'C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015');
+define("SERVERROOT", 'http://localhost/GotorecipesGITHUB/GotoReicpes2015');
 
 //***** Content Paths *****//
 define('PATH_CSS' , SERVERROOT.'/Content/css');
 define('PATH_FONTS', SERVERROOT.'/Content/fonts');
 define('PATH_JS', SERVERROOT.'/Content/js');
+define('PATH_RSLIDER', SERVERROOT.'/Content/js');
+define('PATH_CKEDITOR', SERVERROOT.'/Content/ckeditor');
 //define("PATH_UPLOADS", "/Content/uploads");
 define('PATH_IMAGES',  SERVERROOT.'/Content/uploads/images');
 define('PATH_UPLOADS_IMAGES',  SITEROOT . '/Content/uploads/images');  //SERVERROOT is not working for filesystem
@@ -22,10 +24,14 @@ define("PATH_MODEL",   SITEROOT. "/Model");
 define("PATH_DATABASE", SITEROOT. "/Model/database.php");
 define("PATH_MODEL_CATEGORY", SITEROOT.  "/Model/category.php");
 define("PATH_MODEL_CATEGORY_DB" , SITEROOT. "/Model/category_db.php");
+define("PATH_MODEL_FAQS", SITEROOT.  "/Model/faqs.php");
+define("PATH_MODEL_FAQ_DB" , SITEROOT. "/Model/faq_db.php");
 define("PATH_MODEL_IMAGEGALLERY", SITEROOT. "/Model/imagegallery.php");
 define("PATH_MODEL_IMAGEGALLERY_DB", SITEROOT. "/Model/imagegallery_db.php");
 define("PATH_MODEL_LOCATIONS",  SITEROOT. "/Model/locations.php");
 define("PATH_MODEL_LOCATION_DB", SITEROOT. "/Model/location_db.php");
+define("PATH_MODEL_REVIEWS",  SITEROOT. "/Model/reviews.php");
+define("PATH_MODEL_REVIEWS_DB", SITEROOT. "/Model/reviews_db.php");
 define("PATH_MODEL_TOPRECIPE", SITEROOT. "/Model/toprecipe.php");
 define("PATH_MODEL_TOPRECIPE_DB", SITEROOT. "/Model/toprecipe_db.php");
 define("PATH_MODEL_IMAGESLIDERS", SITEROOT. "/Model/imagesliders.php");
@@ -49,9 +55,11 @@ define("PATH_ADMIN_IMAGEGALLERY", PATH_VIEW_ADMIN."/Imagegallery_admin");
 define("PATH_ADMIN_RECIPES", PATH_VIEW_ADMIN."/recipes_admin");
 define("PATH_ADMIN_EVENTS", PATH_VIEW_ADMIN."/Events_admin");
 define("PATH_ADMIN_IMAGESLIDER", PATH_VIEW_ADMIN."/Imageslider_admin");
+define("PATH_ADMIN_FAQ", PATH_VIEW_ADMIN. "/faq_admin");
 define("PATH_ADMIN_TOPRECIPES", PATH_VIEW_ADMIN. "/Toprecipes_admin");
 
 //*** View> Public ***//
+define("PATH_PUBLIC_FAQ",  PATH_VIEW_PUBLIC ."/FAQ" );
 define("PATH_PUBLIC_CONTACT",  PATH_VIEW_PUBLIC ."/ContactUs" );
 define("PATH_PUBLIC_IMAGEGALLERY",  PATH_VIEW_PUBLIC ."/ImageGallery");
 define("PATH_PUBLIC_RECIPES",  PATH_VIEW_PUBLIC ."/Recipes");

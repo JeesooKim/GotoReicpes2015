@@ -1,5 +1,5 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
+<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
 
 <?php
 require_once( PATH_DATABASE);  
@@ -62,7 +62,7 @@ if (isset($_POST['imageslider_update'])) {
         </div>
         
         <div class="form-group">
-            <img style="width:650px;" src="<?php echo $img_path; ?>" alt="<?php echo $img_name; ?>" title="<?php echo $img_name; ?>" />
+            <img style="width:650px;" src="<?php echo  SERVERROOT . "/" . $img_path; ?>" alt="<?php echo $img_name; ?>" title="<?php echo $img_name; ?>" />
             <input type="file" name="image" id="image" />
             <input type="submit" name="imageslider_update" value="Update" />
             <p>Must be less than 512kb. Only JPG, GIF and PNG files.</p>
