@@ -7,7 +7,7 @@
 #March 2015
 #Reference: Class material -PDO Class
 
-include  $_SERVER["DOCUMENT_ROOT"] . "/project2015_Mar24_forWEB/View/Shared/header.php"; 
+include  PATH_HEADER_ADMIN; 
 
 ini_set('display_errors', 'on');
 //error_reporting(E_All);
@@ -24,4 +24,4 @@ ini_set('display_errors', 'on');
     
         
 </div>
-<?php include $_SERVER["DOCUMENT_ROOT"]. '/project2015_Mar24_forWEB/View/Shared/footer.php'; ?>
+<?php include PATH_FOOTER_ADMIN; ?>

@@ -128,27 +128,40 @@ else if ($action == 'show_insert_form') {
     $recipe_ingredients = $_POST['recipe_ingredients'];
     $recipe_steps =$_POST['recipe_steps'];    
     
+    //*************Validation ***********************//
     if($category_id == null || empty($category_id)){
         $error .= "Please choose the category";
+        $valid = false;
         
     }
     if($recipe_name == null || empty($recipe_name)){
         $error .= "Enter the name of the recipe";
+        $valid= false;
         
     }
     if($recipe_key == null || empty($recipe_key)){
         $error .= "Enter the key ingredient of the recipe";
+        $valid=false;
         
     }
     if($recipe_ingredients == null || empty($recipe_ingredients)){
         $error .= "Enter the ingredients of the recipe";
+        $valid=false;
         
     }
     if($recipe_steps == null || empty($recipe_steps)){
         $error .= "Enter the steps of the recipe";
+        $valid=false;
         
     }
-    if($error == "" || empty($error)){   
+    
+    //*****************validation ********************//
+    if(!$valid){
+        $error .= "Sorry, your recipe was not inserted.";
+        include(PATH_ERRORS. '/error.php'); 
+        
+    }
+    else if($valid){   
     
     $current_category = CategoryDB::getCategory($category_id);   //Category object having name and id properties
     $category_name=$current_category->getCatName();
@@ -168,13 +181,6 @@ else if ($action == 'show_insert_form') {
     
     // Display the Recipe List page for the current category
     header("Location: .?category_id=$category_id");         
-    }
-    else{
-        header("location:recipe_insert.php?err=".$error);
-    }
-
-
-
-//****************** Inserting a new Recipe ends ******************//
+    }//****************** Inserting a new Recipe ends ******************//
 }
     ?>

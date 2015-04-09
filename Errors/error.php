@@ -1,4 +1,4 @@
-<?php include('../../../view/shared/header.php'); ?>
+<?php include PATH_HEADER_ADMIN; ?>
 
 <?php 
 //just to see errors display
@@ -10,4 +10,4 @@ error_reporting(E_All);
     <h1 class="top">Error</h1>
     <p><?php echo $error; ?></p>
 </div>
-<?php include('../../../view/shared/footer.php'); ?>
+<?php include PATH_FOOTER_ADMIN; ?>
