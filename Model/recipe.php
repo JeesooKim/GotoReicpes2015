@@ -12,9 +12,9 @@ class Recipe{
     //$dish_id : PRIMARY KEY of the table
     //$dish_cat : category(cat_id in the table) is a foreign key related to the primary key of the categories table
     
-    private $dish_id, $dish_name, $dish_cat, $dish_key, $dish_num_serving, $dish_cook_time, $dish_ingredients, $dish_steps;
+    private $dish_id, $dish_name, $dish_cat, $dish_key, $dish_num_serving, $dish_cook_time, $dish_ingredients, $dish_steps, $votes;
     
-    public function __construct($dish_name, $dish_cat, $dish_key, $dish_num_serving, $dish_cook_time, $dish_ingredients, $dish_steps){
+    public function __construct($dish_name, $dish_cat, $dish_key, $dish_num_serving, $dish_cook_time, $dish_ingredients, $dish_steps, $votes){
         
         $this-> dish_name=$dish_name;
         $this-> dish_cat=$dish_cat;
@@ -22,7 +22,8 @@ class Recipe{
         $this-> dish_num_serving=$dish_num_serving;
         $this-> dish_cook_time=$dish_cook_time;
         $this-> dish_ingredients = $dish_ingredients;
-        $this-> dish_steps=$dish_steps;
+        $this-> dish_steps= $dish_steps;
+        $this-> votes= $votes;
     }
     
     public function getRecipeID(){
@@ -74,11 +75,18 @@ class Recipe{
         $this-> dish_ingredients =$value;
     }
     
-    
     public function getRecipeSteps(){
         return $this-> dish_steps;
     }
     public function setRecipeSteps($value){
         $this-> dish_steps =$value;    
     }
+    
+    public function getVotes(){
+        return $this-> votes;
+    }
+    public function setVotes($value){
+        $this-> votes =$value;    
+    }
+    
 }

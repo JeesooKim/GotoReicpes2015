@@ -27,10 +27,10 @@ class RecipeDB{
                 foreach($result as $row){
                     //instantiating a Category object from data queried above 
                     $category = new Category($row['cat_id'], $row['cat_name']);
-                    $category_id=$category->getCatID();                    
+                    $category_id=$category->getCatID();          
                      
                     //instantiating a Recipe object
-                    $recipe= new Recipe($row['dish_name'], $category_id, $row['dish_key'], $row['dish_num_serving'], $row['dish_cook_time'], $row['dish_ingredients'], $row['dish_steps'] );
+                    $recipe= new Recipe($row['dish_name'], $category_id, $row['dish_key'], $row['dish_num_serving'], $row['dish_cook_time'], $row['dish_ingredients'], $row['dish_steps'], $row['votes'] );
                     $recipe->setRecipeID($row['dish_id']);
                     $recipes[] =$recipe; //adding each recipe to the array of recipes as an element
                 }
@@ -48,7 +48,7 @@ class RecipeDB{
         $category_id=$row['dish_cat'];
         $category= CategoryDB::getCategory($category_id);
         
-        $recipe = new Recipe($row['dish_name'], $category_id, $row['dish_key'], $row['dish_num_serving'], $row['dish_cook_time'], $row['dish_ingredients'], $row['dish_steps']);
+        $recipe = new Recipe($row['dish_name'], $category_id, $row['dish_key'], $row['dish_num_serving'], $row['dish_cook_time'], $row['dish_ingredients'], $row['dish_steps'], $row['votes']);
         $recipe->setRecipeID($dish_id);
         
         return $recipe;  //return an object of the Recipe class 
@@ -61,7 +61,7 @@ class RecipeDB{
         $recipes= array();
         
         foreach($result as $row){
-            $recipe=new Recipe($row['dish_name'] , $cat_id, $row['dish_key'], $row['dish_num_serving'], $row['dish_cook_time'], $row['dish_ingredients'], $row['dish_steps']);
+            $recipe=new Recipe($row['dish_name'] , $cat_id, $row['dish_key'], $row['dish_num_serving'], $row['dish_cook_time'], $row['dish_ingredients'], $row['dish_steps'], $row['votes']);
             $recipe->setRecipeID($row['dish_id']);
             $recipes[]= $recipe;
         }        
@@ -103,6 +103,19 @@ class RecipeDB{
         $statement -> bindParam(':dish_steps',$dish_steps,PDO::PARAM_STR);
                                                          
         $statement->execute();                     
+    }
+    
+    public static function plusVote($dish_id, $votes){
+        $dbCon=Database::getDB();   
+        $votes++;
+        
+        //query to UPDATE the table for the values passed by parameters of this method
+        $query = "UPDATE recipes SET votes =:votes WHERE dish_id = $dish_id ";
+        
+        $statement = $dbCon->prepare($query);
+        $statement -> bindParam(':votes',$votes, PDO::PARAM_INT);
+        
+        $statement->execute(); 
     }
     
      public static function addRecipe($recipe){

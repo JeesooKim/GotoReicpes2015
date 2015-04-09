@@ -1,15 +1,16 @@
 <?php
 //this has dish (dish_id as foreign key in recipe table that links to vote table)
 //total of 8 properties with methods to be pased with value in a single class called Vote
-class Vote {
-    private $id, $dish, $vote_up, $review;
+class Review {
+    private $id, $name, $rating, $review;
 
-    public function __construct($id, $dish, $vote_up, $review) {
+    public function __construct($id, $name, $rating, $review) {
         $this->id = $id;
-        $this->dish = $dish;
-        $this->vote_up = $vote_up;
+        $this->name = $name;
+        $this->rating = $rating;
         $this->review = $review;
     }
+    
     
     public function getID() {
         return $this->id;
@@ -19,20 +20,20 @@ class Vote {
         $this->id = $value;
     }
     
-    public function getDish() {
-        return $this->dish;
+    public function getName() {
+        return $this->name;
     }
 
-    public function setDish($value) {
-        $this->dish = $value;
+    public function setName($value) {
+        $this->name = $value;
     }
     
-    public function getVoteUp() {
-        return $this->vote_up;
+    public function getRating() {
+        return $this->rating;
     }
 
-    public function setVoteUp($value) {
-        $this->vote_up = $value;
+    public function setRating($value) {
+        $this->rating = $value;
     }
     
     public function getReview() {

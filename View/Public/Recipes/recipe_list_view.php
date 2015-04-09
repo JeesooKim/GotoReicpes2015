@@ -20,6 +20,18 @@ so, the following variables are already defined when they are called
     $recipes = RrecipeDB::GetRecipesByCategory($category_id);
  -->
        
+ <?php
+                                    if(isset($_POST['flag'])){
+                                        $dish_id = $_POST['dish_id'];
+                                        $vote_up = $_POST['vote_up'];
+                                        
+                                        //$votes = new RecipeDB($dish_id, $vote_up);
+                                        RecipeDB::plusVote($dish_id, $vote_up);
+                                    }
+                                
+                                
+                                    ?>
+ 
 <div id="main">
     <ol class="breadcrumb">
         <li><a href="<?php echo SERVERROOT; ?>/index.php">Home</a></li>
@@ -85,7 +97,17 @@ so, the following variables are already defined when they are called
                                           <?php echo $recipe-> getRecipeIngredients(); ?>
                                    <br/>
                                    Steps:
-                                          <?php echo $recipe-> getRecipeSteps(); ?>                   
+                                          <?php echo $recipe-> getRecipeSteps(); ?>      
+                                   <br/>
+                                   
+                            <form action="recipes.php" method="POST">
+                                <input type="hidden" name="dish_id" value="<?php echo $recipe->getRecipeID(); ?>"/>
+                                <input type="hidden" name="vote_up" value="<?php echo $recipe-> getVotes(); ?>"/>
+                                <input type="hidden" name="flag" value="1234"/>
+                                   Recommend?
+                                   <input type="submit" name="votes" value="Yes" />
+                                   <?php echo $recipe-> getVotes(); ?>
+                            </form>
                             </p>
                     <?php endforeach; ?>   
                  </div><!-- end of .panelContainer -->

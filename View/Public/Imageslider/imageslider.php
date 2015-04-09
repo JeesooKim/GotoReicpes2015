@@ -4,7 +4,6 @@ require_once( PATH_DATABASE);
 require_once( PATH_MODEL_IMAGESLIDERS );
 require_once( PATH_MODEL_IMAGESLIDER_DB );
 ?>
-<?php include PATH_HEADER;  ?>  
     <link href="<?php echo  PATH_CSS; ?>/responsiveslides.css" rel="stylesheet" type="text/css" />
     <script src="<?php echo PATH_RSLIDER.'/responsiveslides.min.js' ?>"></script>
   
@@ -15,7 +14,7 @@ require_once( PATH_MODEL_IMAGESLIDER_DB );
         $imageslider = ImagesliderDB::getImagesliders();
         foreach ($imageslider as $row):
         ?>
-        <li><a href="#"><img src="<?php echo SERVERROOT . "/" . $row->getPath(); ?>"</a></li>
+        <li><img src="<?php echo SERVERROOT . "/" . $row->getPath(); ?>"</li>
         <?php endforeach; ?>
     </ul>   
 

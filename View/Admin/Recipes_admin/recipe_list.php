@@ -50,7 +50,9 @@
                     <th>Number of Serving</th>
                     <th>Cooking Time</th>
                     <th>Ingredients</th>
-                    <th>Steps</th>                        
+                    <th>Steps</th>    
+                    <th>Current Rating</th> 
+                    <th>Votes</th> 
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
                 </tr>
@@ -65,6 +67,8 @@
                             <td><?php echo $recipe->getRecipeCookTime(); ?></td>
                             <td><?php echo $recipe->getRecipeIngredients(); ?></td>
                             <td><?php echo $recipe->getRecipeSteps(); ?></td>
+                            <td><?php echo $recipe->getTotal(); ?></td>
+                            <td><?php echo $recipe->getVotes(); ?></td>
                             <td><form action="." method="post" id="edit_recipe_form">
                                             <input type="hidden" name="action" value="show_edit_form" />
                                             <input type="hidden" name="recipe_id" value="<?php echo $recipe->getRecipeID(); ?>" />
