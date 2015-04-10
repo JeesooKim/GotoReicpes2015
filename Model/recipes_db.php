@@ -127,7 +127,7 @@ class RecipeDB{
         $votes++;
         
         //query to UPDATE the table for the values passed by parameters of this method
-        $query = "UPDATE recipes SET votes =:votes WHERE dish_id = $dish_id ";
+        $query = "UPDATE recipes SET votes =:votes WHERE dish_id = $dish_id ORDER BY votes";
         
         $statement = $dbCon->prepare($query);
         $statement -> bindParam(':votes',$votes, PDO::PARAM_INT);

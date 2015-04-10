@@ -29,15 +29,34 @@ FaqDB::deleteQuestion($q_id);
         <a href="faq_insert.php">Add a new Question & Answer</a>
     </article>
 
-    <table class="table table-responsive table-bordered">
-        <thead>
-        <tr>
-            <th>Question</th>
-            <th>Answer</th>
-            <th></th>
-            <th></th>
-        </tr>
-        </thead>
+    <!-- The following is for Recipes -->
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.6/css/jquery.dataTables.css">  
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>  
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
+    <!-- Recipes data tables CDN --> 
+    
+    <script>
+        $(document).ready( function () { 
+            $('#recipeTB').DataTable();}
+                );
+            </script>
+    
+    
+    <!--div id="content">
+        <!-- display a table of products -->
+        <table id="recipeTB" class="display">   
+        <!-- table id="recipe_insert_table"    width="900" -->
+            <thead bgcolor="#a8cb81" >                
+                <tr style="font-variant:small-caps;font-style:normal;color:black;font-size:18px;">
+                    <th>Question</th>
+                    <th>Answer</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
         <tbody>
         <?php
         $faq = FaqDB::getFAQs();

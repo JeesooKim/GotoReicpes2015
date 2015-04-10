@@ -57,7 +57,7 @@ if(isset($_POST['submit'])){
     //tmp folder
     $t_name = $_FILES['image']['tmp_name'];
     //declaring the folder to be uploaded into
-    $dir = PATH_IMAGES.'/imageslider';
+    $dir = PATH_IMAGES_IMAGESLIDER;
     //this is the path of the specific image uploaded
     //$path is to be inserted into db
     $img_path = $dir . "/" . $filename;
@@ -65,7 +65,8 @@ if(isset($_POST['submit'])){
     if($img_name != ' ' || $img_path != ' '){
     //validating the file being uploaded from tmp folder to $dir folder
     if(move_uploaded_file($t_name,$dir . "/" . $filename)){
-        $imageslider = new Imageslider($img_name, $img_path);
+        //here we are storing the image name and file name to the db (not the path)
+        $imageslider = new Imageslider($img_name, $filename);
         ImagesliderDB::addImageslider($imageslider);
         header("Location: imageslider_admin.php");
     }else{
@@ -102,6 +103,5 @@ if(isset($_POST['submit'])){
     
 </div>
 <?php
-
-     include PATH_FOOTER_ADMIN;   
-     ?>
+    include PATH_FOOTER_ADMIN;   
+?>

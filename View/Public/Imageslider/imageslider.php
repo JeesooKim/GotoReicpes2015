@@ -1,4 +1,4 @@
-<?php include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  
+<?php //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  
 
 require_once( PATH_DATABASE);
 require_once( PATH_MODEL_IMAGESLIDERS );
@@ -14,7 +14,7 @@ require_once( PATH_MODEL_IMAGESLIDER_DB );
         $imageslider = ImagesliderDB::getImagesliders();
         foreach ($imageslider as $row):
         ?>
-        <li><img src="<?php echo SERVERROOT . "/" . $row->getPath(); ?>"</li>
+        <li><?php echo "<img src='" . $row->getPath()."' />" ?></li>
         <?php endforeach; ?>
     </ul>   
 

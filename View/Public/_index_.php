@@ -11,13 +11,10 @@
     
      include(PATH_PUBLIC_IMAGESLIDER . '/imageslider.php');
      ?>
-        <!--end imageslider feature-->
 
-<!-- <ol class="breadcrumb">
-				<li><a href="#">Home</a></li>
-			</ol> --> <!--breadcrumb sitemap-->
-
-
+<?php
+include(PATH_SIDEMENU);
+?>
         <div id="content-recipes">
 
         <div class="left-row">

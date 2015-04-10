@@ -1,5 +1,7 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php"; ?>
+<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php"; 
+
+?>
 
 
 <?php include PATH_HEADER;  ?>  
