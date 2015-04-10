@@ -154,20 +154,6 @@ class VolunteerDB {
         return $result;
     } 
 
-    public static function getNewVolunteerId( $event_id, $job_id ) { 
-        $db = Database::getDB();
-        
-        $query = "select max(id)+1 from volunteer
-                  WHERE event_id = '$event_id' and job_id = '$job_id'";
-
-        $count = $db->query($query);
-        //convert result into array
-        $row = $count->fetch();
-        $result = $row[0];
-
-        return $result;
-    } 
-
     public static function getPageVolunteerByEventidJobid($event_id, $job_id, $cntPerPage, $pgPage) {
 
         $offset = ($pgPage - 1) * $cntPerPage; 
@@ -216,12 +202,13 @@ class VolunteerDB {
         $name = $volunteer->getName();
         $phone = $volunteer->getPhone();
         $email = $volunteer->getEmail();
-        
+        $regist_date = $volunteer->getRegistDate();
+
         $query =
             "INSERT INTO eventjob
                  (event_id,job_id,id,name,phone,email,regist_date)
              VALUES
-                 ('$event_id', '$job_id', '$id', '$name', '$phone','$email', now() )";
+                 ('$event_id', '$job_id', '$id', '$name', '$phone','$email', '$regist_date' )";
 
         $row_count = $db->exec($query);
         return $row_count;
