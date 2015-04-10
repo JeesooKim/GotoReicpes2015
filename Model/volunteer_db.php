@@ -1,39 +1,13 @@
 <?php
 class VolunteerDB {
 
-    public static function getEventStart() {
-        $db = Database::getDB();
-        $query = 'select event_start from events';
-        $result = $db->query($query);
-        $eventstarts = array();
-        foreach ($result as $row) {
-            $eventstart = $row['event_start'];
-            
-            $eventstarts[] = $eventstart;
-        }
-        return $eventstarts;
-    }
-
-    public static function getEventEnd($event_start) {
-        $db = Database::getDB();
-        $query = "select event_end from events where event_start='$event_start'";
-        $result = $db->query($query);
-        $eventends = array();
-        foreach ($result as $row) {
-            $eventend = $row['event_start'];
-            
-            $eventends[] = $eventend;
-        }
-        return $eventends;
-    }
-
-    public static function getTotEventCount( $eventstart, $eventend ) { 
+    public static function getTotEventCount( $event_date ) { 
         $db = Database::getDB();
         
         $query = "select COUNT(*) from events ";
  
-        if( $filter != "" ){
-            $query .= "where event_start <= '$eventstart' and event_end <= '$eventend'";
+        if( $event_date != "" ){
+            $query .= "where date_format(event_start,'%m/%d/%Y') <= '$event_date' and date_format(event_end,'%m/%d/%Y') >= '$event_date'";
         }
 
         $count = $db->query($query);
@@ -44,7 +18,7 @@ class VolunteerDB {
         return $result;
     } 
 
-    public static function getPageEventByEventdate($evnetstart, $eventend, $cntPerPage, $pgPage) {
+    public static function getPageEventByEventdate($event_date,  $cntPerPage, $pgPage) {
 
         $offset = ($pgPage - 1) * $cntPerPage; 
         
@@ -52,16 +26,16 @@ class VolunteerDB {
         $query = "select event_id, event_name, event_start, event_end, event_location, "
                 ."event_detail, event_contactName, event_contactEmail from events ";
  
-        if( $filter != "" ){
-            $query .= "where event_start <= '$eventstart' and event_end <= '$eventend'";
+        if( $event_date != "" ){
+            $query .= "where date_format(event_start,'%m/%d/%Y') <= '$event_date' and date_format(event_end,'%m/%d/%Y') >= '$event_date'";
         }
 
         $query .= " LIMIT ".$cntPerPage." OFFSET ".$offset;
 
         $result = $db->query($query);
-        $evnets = array();
+        $events = array();
         foreach ($result as $row) {
-            $event = new Evnet(
+            $event = new Event(
                                    $row['event_id'],
                                    $row['event_name'],
                                    $row['event_start'],
@@ -80,7 +54,7 @@ class VolunteerDB {
         $db = Database::getDB();
         
         $query = "select COUNT(*) from eventjob
-                  WHERE event_id = '$event_id'";
+                  WHERE event_id = '$event_id' ";
 
         $count = $db->query($query);
         //convert result into array
@@ -97,16 +71,16 @@ class VolunteerDB {
         $db = Database::getDB();
         $query = "select event_id,job_id,job_title,job_time,regist_date from eventjob ";
  
-        if( $filter != "" ){
-            $query .= "where event_id = '$event_id'";
+        if( $event_id != "" ){
+            $query .= "where event_id = '$event_id' ";
         }
 
         $query .= " LIMIT ".$cntPerPage." OFFSET ".$offset;
 
         $result = $db->query($query);
-        $evnets = array();
+        $eventjobs = array();
         foreach ($result as $row) {
-            $eventjob = new Evnetjob(
+            $eventjob = new Eventjob(
                                    $row['event_id'],
                                    $row['job_id'],
                                    $row['job_title'],
@@ -185,9 +159,9 @@ class VolunteerDB {
         $offset = ($pgPage - 1) * $cntPerPage; 
         
         $db = Database::getDB();
-        $query = "select event_id,job_id,id,name,phone,email,regist_date from eventjob ";
+        $query = "select event_id,job_id,id,name,phone,email,hire_yes_no,regist_date from volunteer ";
  
-        if( $filter != "" ){
+        if( $event_id != "" ){
             $query .= "where event_id = '$event_id' and job_id = '$job_id'";
         }
 
@@ -203,6 +177,7 @@ class VolunteerDB {
                                    $row['name'],
                                    $row['phone'],
                                    $row['email'],
+                                   $row['hire_yes_no'],
                                    $row['regist_date']
                     );
             $volunteers[] = $volunteer;
@@ -263,6 +238,18 @@ class VolunteerDB {
         return $row_count;
     }
 
+    public static function updateVolunteerHireYN($event_id, $job_id, $id, $hire_yes_no ) {
+        $db = Database::getDB();
+        
+        $query = "UPDATE volunteer SET "
+                . "hire_yes_no = '$hire_yes_no' "
+                . "WHERE event_id = $event_id "
+                . "and job_id = $job_id "
+                . "and id = $id ";
+
+        $row_count = $db->exec($query);
+        return $row_count;
+    }
         
 }
 ?>

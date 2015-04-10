@@ -141,9 +141,9 @@ class Eventjob{
 
 class Volunteer{
     
-    private $event_id, $job_id, $id, $name, $phone, $email, $regist_date;
+    private $event_id, $job_id, $id, $name, $phone, $email, $hire_yes_no, $regist_date;
     
-    public function __construct($event_id, $job_id, $id, $name, $phone, $email, $regist_date){
+    public function __construct($event_id, $job_id, $id, $name, $phone, $email, $hire_yes_no, $regist_date){
         
         $this->event_id=$event_id;
         $this->job_id=$job_id;
@@ -151,6 +151,7 @@ class Volunteer{
         $this->name=$name;
         $this->phone=$phone;
         $this->email=$email;
+        $this->hire_yes_no=$hire_yes_no;
         $this->regist_date=$regist_date;
     }
  
@@ -200,6 +201,14 @@ class Volunteer{
     
     public function setEmail($value){
         $this->email=$value;
+    }    
+
+    public function getHireYesNo(){
+        return $this->hire_yes_no;
+    }
+    
+    public function setHireYesNo($value){
+        $this->hire_yes_no=$value;
     }    
 
     public function getRegistDate(){

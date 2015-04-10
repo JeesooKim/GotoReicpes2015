@@ -45,6 +45,8 @@ define("PATH_MODEL_RECIPE",SITEROOT.  "/Model/recipe.php");
 define("PATH_MODEL_RECIPES_DB", SITEROOT. "/Model/recipes_db.php");
 define("PATH_MODEL_EVENT",  SITEROOT. "/Model/event.php");
 define("PATH_MODEL_EVENTS_DB" , SITEROOT.  "/Model/events_db.php");
+define("PATH_MODEL_VOLUNTEER",  SITEROOT. "/Model/volunteer.php");
+define("PATH_MODEL_VOLUNTEER_DB" , SITEROOT.  "/Model/volunteer_db.php");
 define("PATH_MODEL_PAGENATOR", SITEROOT. "/Model/pagenator.php");
 
 //****** View Paths ******//
@@ -78,5 +80,7 @@ define("PATH_FOOTER",  SITEROOT.  "/View/Shared/footer.php");
 define("PATH_SIDEMENU",  SITEROOT. "/View/Shared/side-menu.php");
 define("PATH_HEADER_ADMIN",  SITEROOT. "/View/Shared/header_admin.php");  //SERVERROOT is not working
 define("PATH_FOOTER_ADMIN",  SITEROOT. "/View/Shared/footer_admin.php");
+define("PATH_HEADER_IFRAME_ADMIN",  SITEROOT. "/View/Shared/header_iframe_admin.php");  //SERVERROOT is not working
+define("PATH_FOOTER_IFRAME_ADMIN",  SITEROOT. "/View/Shared/footer_iframe_admin.php");
 
 ?>
