@@ -66,13 +66,23 @@ p{
 }
 
 /* for page content to push down footer */
+.container-footer{
+    margin: auto;
+    width: 1100px;
+}
 
-#container {
+.navbar-fixed-bottom{
+    margin-top: 5px;
+    padding-bottom: 15px;
+    height: 80px;
+}
+
+.container {
         margin: 0 auto -60px;
         padding-bottom: 60px;
         min-height: 100%;
         height: auto !important;
-	width: 1200px;
+	width: 1100px;
 	background-color: #FDF9F0;
 	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 }
@@ -141,12 +151,7 @@ header{
 
 /*----------end top----------*/
 
-.left-row{
-	float: left;
-	margin: 0 0 100px 0;
-	background-color: #FDF9F0;
-	width: 600px;
-}
+
 
 .btn-primary{
 	margin-right: auto;
