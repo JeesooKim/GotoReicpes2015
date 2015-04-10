@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-4"> 
                 <!--Image from: ca.daiyafoods.com/recipes -->
-                <img style="width:500px;" src="Content/uploads/images/top-mac_cheese-2-640.png" alt="" />
+                <img style="width:500px; margin: 30px;" src="Content/uploads/images/top-mac_cheese-2-640.png" alt="" />
             </div>
 
         
