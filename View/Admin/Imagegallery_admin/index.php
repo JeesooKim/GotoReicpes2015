@@ -46,7 +46,9 @@ if ($action == 'list_images') { //when the page is loaded for the first time
     // Display the image list
     include('image_list.php');
     
-} else if ($action == 'delete_image') {
+} 
+// ------------------- DELETE image---------------------
+else if ($action == 'delete_image') {
     // Get the IDs
     $img_id = $_POST['image_id'];
     $category_id = $_POST['category_id'];
@@ -57,9 +59,12 @@ if ($action == 'list_images') { //when the page is loaded for the first time
     // Display the Image List page for the current category
     header("Location: .?category_id=$category_id");
     
-} else if ($action == 'show_edit_form') {
+} 
+// ------------------- EDIT image--------------------
+//******************Editing Image Gallery starts ******************//
+else if ($action == 'show_edit_form') {
     // this action is triggered by line 50 of image_list.php 
-    //******************Editing Image Gallery starts ******************//
+    
     // Get the IDs
     $img_id = $_POST['image_id'];     //gets the id of the selected image
     $category_id = $_POST['category_id']; //get the category of the selected image
@@ -151,7 +156,8 @@ if ($action == 'list_images') { //when the page is loaded for the first time
                  $error .= "Sorry, your file was not uploaded.";
 
                 //header("Location: .?category_id=$category_id");
-                include( PATH_ERRORS . '/error_uploading.php');            
+                //include( PATH_ERRORS . '/error_uploading.php');  
+                 echo $error;
             }
             else if($uploadOK) {      
 
@@ -242,7 +248,8 @@ else if ($action == 'show_upload_form') {
      //Check if $uploadOK is set to 0 by an error             
     if (!$uploadOK) {        
         $error .= "Sorry, your file was not uploaded.";
-        include(PATH_ERRORS. '/error.php');    
+        //include(PATH_ERRORS. '/error.php');    
+        echo $erro;
     }
     else if($uploadOK) {       
         // if everything is ok, try to upload file        

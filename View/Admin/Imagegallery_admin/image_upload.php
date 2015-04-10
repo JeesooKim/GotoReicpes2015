@@ -11,8 +11,16 @@
 ?>
 
 <div id="main">
+    <ol class="breadcrumb">
+        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
+        <li class="active">Recipes</li>
+        <li class="active">Upload Image</li>        
+        <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
+    </ol>
+    <br/>
     <p><a href="index.php?action=list_images">View Image List</a></p>
-    <h1>Upload Image</h1>
+    <hr/>
+    
 
      <form action="index.php" method="post" enctype="multipart/form-data">         
           <table class="table table-responsive table-bordered">                
