@@ -36,7 +36,7 @@ if (isset($_POST['imageslider_update'])) {
     // Validate the entered data
     //if ($img_id != '' || $img_name != '' || $img_path != '') {
         if(move_uploaded_file($t_name,$dir . "/" . $filename)){
-            $imageslider = new Imageslider($img_name, $img_path);
+            $imageslider = new Imageslider($img_name, $filename);
             ImagesliderDB::updateImageslider($imageslider, $img_id);
             header("Location: imageslider_admin.php");
     }else{
@@ -62,7 +62,7 @@ if (isset($_POST['imageslider_update'])) {
         </div>
         
         <div class="form-group">
-            <img style="width:650px;" src="<?php echo  $img_path; ?>" alt="<?php echo $img_name; ?>" title="<?php echo $img_name; ?>" />
+            <img style="width:650px;" src="<?php echo PATH_IMAGES.'/imageslider/'.$img_path; ?>" alt="<?php echo $img_name; ?>" title="<?php echo $img_name; ?>" />
             <input type="file" name="image" id="image" />
             <input type="submit" name="imageslider_update" value="Update" />
             <p>Must be less than 512kb. Only JPG, GIF and PNG files.</p>

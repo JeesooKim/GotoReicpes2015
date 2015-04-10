@@ -14,7 +14,7 @@ require_once( PATH_MODEL_IMAGESLIDER_DB );
         $imageslider = ImagesliderDB::getImagesliders();
         foreach ($imageslider as $row):
         ?>
-        <li><?php echo "<img src='" . $row->getPath()."' />" ?></li>
+        <li><?php echo "<img src='" . PATH_IMAGES.'/imageslider/' . $row->getPath()."' />" ?></li>
         <?php endforeach; ?>
     </ul>   
 
