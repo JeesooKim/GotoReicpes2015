@@ -1,7 +1,7 @@
 <?php 
 
 #File name: error_uploading.php
-#File for Image Gallery
+#File for Image Gallery/Recipes
 #Team Project: gotorecipes
 #Author: Jeesoo Kim
 #March 2015

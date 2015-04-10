@@ -23,7 +23,11 @@
         
     <p><a href="index.php?action=list_recipes">View Recipe List</a></p>
     <hr/>
-           
+    <?php
+        if(isset($_GET['err'])){
+            echo $_GET['err'];
+        }
+    ?>
     <br/>
     <h2><b>* Required</b></h2>
     <br/>

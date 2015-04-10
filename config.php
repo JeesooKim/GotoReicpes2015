@@ -1,12 +1,13 @@
 <?php
 
 define('HOST', 'http://localhost' );
-define('ROOT_FOLDER', 'GotorecipesGITHUB/GotoReicpes2015');
-//define('ROOT_FOLDER', 'GotoReicpes2015');
+//define('ROOT_FOLDER', 'GotorecipesGITHUB/GotoReicpes2015');
+define('ROOT_FOLDER', 'GotoReicpes2015');
 
-define("SITEROOT", 'C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015');
-//define("SITEROOT", 'C:/xampp/htdocs/GotoReicpes2015');
-define("SERVERROOT", 'http://localhost/GotorecipesGITHUB/GotoReicpes2015');
+//define("SITEROOT", 'C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015');
+//define("SERVERROOT", 'http://localhost/GotorecipesGITHUB/GotoReicpes2015');
+define("SITEROOT", 'C:/xampp/htdocs/GotoReicpes2015');
+define("SERVERROOT", 'http://localhost/GotoReicpes2015');
 
 //***** Content Paths *****//
 define('PATH_CSS' , SERVERROOT.'/Content/css');
@@ -18,6 +19,7 @@ define('PATH_CKEDITOR', SERVERROOT.'/Content/ckeditor');
 define('PATH_IMAGES',  SERVERROOT.'/Content/uploads/images');
 define('PATH_IMAGES_IMAGESLIDER',  SITEROOT.'/Content/uploads/images/imageslider');
 define('PATH_UPLOADS_IMAGES',  SITEROOT . '/Content/uploads/images');  //SERVERROOT is not working for filesystem
+
 //***** Errors Paths *****//
 define("PATH_ERRORS", SERVERROOT."/Errors");
 
@@ -77,11 +79,4 @@ define("PATH_SIDEMENU",  SITEROOT. "/View/Shared/side-menu.php");
 define("PATH_HEADER_ADMIN",  SITEROOT. "/View/Shared/header_admin.php");  //SERVERROOT is not working
 define("PATH_FOOTER_ADMIN",  SITEROOT. "/View/Shared/footer_admin.php");
 
-//echo HOST . ROOT_FOLDER . PATH_HEADER . "<br/>";
-//echo ROOT. "<br/>";
-//echo ROOT.PATH_HEADER . "<br/>";
-//echo PATH__PUBLIC_IMAGEGALLERY , "<br/>";
-//echo ROOT.PATH_CSS . "<br/>";
-//echo ROOT.PATH_JS . "<br/>"; 
-//echo "imsges" .  PATH_IMAGES; 
 ?>

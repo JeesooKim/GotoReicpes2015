@@ -96,7 +96,11 @@ else if ($action == 'show_edit_form') {
     $recipe_ingredients=$_POST['recipe_ingredients'];
     $recipe_steps =$_POST['recipe_steps'];  
     
-   //Edit a Recipe    
+    //--- Start Validation !!!
+    
+    //--- End Validation!!!
+    
+   //Edit a Recipe if validation passes
     try{
       RecipeDB::editRecipe($recipe_id, $recipe_name,$category_id,$recipe_key,$recipe_num_serving,$recipe_cook_time,$recipe_ingredients,$recipe_steps);
        }
@@ -129,36 +133,42 @@ else if ($action == 'show_insert_form') {
     $recipe_steps =$_POST['recipe_steps'];    
     
     //*************Validation ***********************//
+    $valid =true;
     if($category_id == null || empty($category_id)){
-        $error .= "Please choose the category";
+        $error .= "Please choose the category<br/>";
         $valid = false;
         
     }
     if($recipe_name == null || empty($recipe_name)){
-        $error .= "Enter the name of the recipe";
+        $error .= "Enter the name of the recipe<br/>";
         $valid= false;
         
     }
     if($recipe_key == null || empty($recipe_key)){
-        $error .= "Enter the key ingredient of the recipe";
+        $error .= "Enter the key ingredient of the recipe<br/>";
         $valid=false;
         
     }
     if($recipe_ingredients == null || empty($recipe_ingredients)){
-        $error .= "Enter the ingredients of the recipe";
+        $error .= "Enter the ingredients of the recipe<br/>";
         $valid=false;
         
     }
     if($recipe_steps == null || empty($recipe_steps)){
-        $error .= "Enter the steps of the recipe";
+        $error .= "Enter the steps of the recipe<br/>";
         $valid=false;
         
     }
     
+    
     //*****************validation ********************//
     if(!$valid){
-        $error .= "Sorry, your recipe was not inserted.";
-        include(PATH_ERRORS. '/error.php'); 
+        $error .= "Sorry, your recipe was not inserted.<br/>";
+        //include(PATH_ERRORS. '/error.php'); 
+        //echo $error;
+        if($error != ""){
+            header("location:index.php?action=show_insert_form&err=".$error);
+    }
         
     }
     else if($valid){   
