@@ -1,4 +1,4 @@
-<?php include PATH_HEADER_ADMIN;  ?>  
+<?php include PATH_HEADER;  ?>  
 <!--end top-->
 <script  src="<?php echo PATH_JS; ?>/calendar.js"></script>
 <script  src="<?php echo PATH_JS; ?>/calendar_jquery.js"></script>

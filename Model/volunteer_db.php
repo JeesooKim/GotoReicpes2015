@@ -218,10 +218,10 @@ class VolunteerDB {
         $email = $volunteer->getEmail();
         
         $query =
-            "INSERT INTO eventjob
-                 (event_id,job_id,id,name,phone,email,regist_date)
+            "INSERT INTO volunteer
+                 (event_id,job_id,id,name,phone,email,hire_yes_no,regist_date)
              VALUES
-                 ('$event_id', '$job_id', '$id', '$name', '$phone','$email', now() )";
+                 ('$event_id', '$job_id', '$id', '$name', '$phone','$email', '', now() )";
 
         $row_count = $db->exec($query);
         return $row_count;
