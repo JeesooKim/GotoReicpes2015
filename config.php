@@ -47,6 +47,8 @@ define("PATH_MODEL_EVENT",  SITEROOT. "/Model/event.php");
 define("PATH_MODEL_EVENTS_DB" , SITEROOT.  "/Model/events_db.php");
 define("PATH_MODEL_VOLUNTEER",  SITEROOT. "/Model/volunteer.php");
 define("PATH_MODEL_VOLUNTEER_DB" , SITEROOT.  "/Model/volunteer_db.php");
+define("PATH_MODEL_SITEMAP", SITEROOT. "/Model/sitemap.php");
+define("PATH_MODEL_SITEMAP_DB", SITEROOT. "/Model/sitemap_db.php");
 define("PATH_MODEL_PAGENATOR", SITEROOT. "/Model/pagenator.php");
 
 //****** View Paths ******//
