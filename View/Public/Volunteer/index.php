@@ -42,6 +42,6 @@ if ($action == 'event_list') {
     include('event_list.php');
 
     
-    include  PATH_FOOTER_ADMIN; 
+    include  PATH_FOOTER; 
 }
 ?>
