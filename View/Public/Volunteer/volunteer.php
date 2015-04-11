@@ -36,10 +36,16 @@ if ($action == 'show_add_form') {
     $phone = $_GET['phone'];
     $email = $_GET['email'];
 
-    $volunteer = new Volunteer($event_id, $job_id, $id, $name, $phone, $email);
+    $volunteer = new Volunteer($event_id, $job_id, $id, $name, $phone, $email, '', '');
     VolunteerDB::addVolunteer($volunteer);
     
-    header("Location: ./volunteer.php?pgPage=$pgPage&category=$category");
+    header('Location: ./volunteer.php?action=show_result&name="$name"');
+    
+}else if ($action == 'show_result') {
+    
+    $name = $_GET['name'];
+    echo "Thank you [". $name. "]. You are registered.";
+    
 }
 
 

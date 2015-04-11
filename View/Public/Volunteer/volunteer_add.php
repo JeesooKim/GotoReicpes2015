@@ -1,4 +1,4 @@
-<?php include PATH_HEADER_IFRAME_ADMIN;  ?>  
+<?php include PATH_HEADER_IFRAME;  ?>  
 <!--end top-->
 
 <form action="./volunteer.php" method="get" id="volunteer_add_form" target="volunteer">
@@ -38,6 +38,6 @@
 
 <?php
 
-include  PATH_FOOTER_IFRAME_ADMIN; 
+include  PATH_FOOTER_IFRAME; 
 
 ?>

@@ -1,4 +1,4 @@
-<?php include PATH_HEADER_IFRAME_ADMIN;  ?>  
+<?php include PATH_HEADER_IFRAME;  ?>  
 <!--end top-->
 
 <table class="table" >
@@ -35,7 +35,7 @@ foreach ($eventjobadminPage as $eventjob) :
     echo "<td>";
 
 ?>
-        <input type="hidden" name="action"      value="volunteer_list" />
+        <input type="hidden" name="action"      value="show_add_form" />
         <input type="hidden" name="event_id"     value="<?php echo $eventjob->getEventId(); ?>" />
         <input type="hidden" name="job_id"    value="<?php echo $eventjob->getJobId(); ?>" />
         <input type="hidden" name="pgPage"      value="<?php echo $pgPage; ?>" />
@@ -57,6 +57,6 @@ echo "<br /><br />";
 echo '<iframe src="./blank.php" name="volunteer" width="100%" height="400" scrolling="no"></iframe>';
 
 
-include  PATH_FOOTER_IFRAME_ADMIN; 
+include  PATH_FOOTER_IFRAME; 
 
 ?>
