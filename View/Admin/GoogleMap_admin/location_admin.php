@@ -34,7 +34,7 @@ LocationDB::deleteLocation($location_id);
             <div class="col-md-12">
 
                 <article>
-                    <h4>Branch Locations</h4>
+                    <h4 class="page-header">Branch Locations</h4>
                     <a href="location_insert.php">Add new branch</a>
                 </article>
                 <!-- display a table of products -->
@@ -59,7 +59,7 @@ LocationDB::deleteLocation($location_id);
                 foreach ($locations as $row):
                     ?>
                     <ul>
-                        <li><iframe class="map" width="325" height="250" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=<?php echo $row->getStreet(),$row->getPostal(),$row->getCountry();?>&amp;aq=&amp;sspn=0.111915,0.295601&amp;ie=UTF8&amp;hq=&amp;hnear=<?php echo $row->getStreet(),$row->getPostal(),$row->getCountry();?>&amp;t=m&amp;z=12&amp;output=embed" w></iframe></li>
+                        <li style="display:inline; float:left; margin-right:8px;"><iframe class="map" width="325" height="250" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=<?php echo $row->getStreet(),$row->getPostal(),$row->getCountry();?>&amp;aq=&amp;sspn=0.111915,0.295601&amp;ie=UTF8&amp;hq=&amp;hnear=<?php echo $row->getStreet(),$row->getPostal(),$row->getCountry();?>&amp;t=m&amp;z=12&amp;output=embed" w></iframe></li>
                     </ul>  
                     <tr>
                         <td><?php echo $row->getBranch(); ?></td>

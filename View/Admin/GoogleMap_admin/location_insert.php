@@ -7,6 +7,7 @@ require_once( PATH_DATABASE);
 require(PATH_MODEL_LOCATIONS);
 require(PATH_MODEL_LOCATION_DB);
 
+$error="";
 
 if(isset($_POST['location_insert'])){
     $location_branch = $_POST['location_branch'];
@@ -17,29 +18,45 @@ if(isset($_POST['location_insert'])){
     $location_province = $_POST['location_province'];
     $location_country = $_POST['location_country'];
     
-
-    if($location_branch != ' ' || $location_phone != ' ' || $location_street !=' ' || $location_postal !=' ' || $location_city !=' ' || $location_province !=' ' || $location_country !=' '){
-        $map_location = new Location($location_branch, $location_phone, $location_street, $location_postal, $location_city, $location_province, $location_country);
-        LocationDB::AddLocation($map_location);
-        header("Location: location_admin.php");
+    //validation for text fields
+    $pattern_postal = "/^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$/";
+    $pattern_phone = "/^[0-9]{8, 12}$/";
+    if(!preg_match($pattern_postal,$location_postal)){
+        $error .= "Please enter valid Canadian postal code <br />";
     }
+    if(!preg_match($pattern_phone,$location_phone )){
+        $error .= "Please enter phone with number only <br />";
+    }
+    
     else{
-        echo  'Missing data fields.';
-        exit();
+            if($location_branch != ' ' || $location_phone != ' ' || $location_street !=' ' || $location_postal !=' ' || $location_city !=' ' || $location_province !=' ' || $location_country !=' '){
+                $map_location = new Location($location_branch, $location_phone, $location_street, $location_postal, $location_city, $location_province, $location_country);
+                LocationDB::AddLocation($map_location);
+                header("Location: location_admin.php");
+            }
+            else{
+                echo  'Missing data fields.';
+                exit();
+            }
+        }
     }
-}
+
 ?>
 
 <?php include PATH_HEADER_ADMIN;    ?>
 <!--end top-->
-<ol class="breadcrumb">
-        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/GoogleMap_admin/location_admin.php">Locations</a></li>
-        <li class="active">Insert</li>
-    </ol>
 
-<div id="main">
-    <h1>Insert a branch</h1>
+
+    <?php include PATH_SIDEMENU;    ?>
+
+    <div class="row">
+                <div class="col-md-12">
+        <h1 class="page-header">Insert a branch</h1>
+
+        <?php
+        //display error from validation
+         echo "<h3 style='color:red;'>" . $error . "</h3>";
+        ?>
 
     <form action="location_insert.php" method="post">
         <div class="form-group">
@@ -49,7 +66,7 @@ if(isset($_POST['location_insert'])){
 
         <div class="form-group">
             <label for="location_phone">Phone</label>
-            <textarea class="form-control" name="location_phone"></textarea>
+            <input type="text" class="form-control" name="location_phone">
             <p class="help-block">Ex. 416-123-4567</p>
         </div>
 
@@ -81,7 +98,7 @@ if(isset($_POST['location_insert'])){
         <button type="submit" class="btn btn-primary" name="location_insert">Submit</button>
         <a class="btn btn-default" href="location_admin.php">Back to list</a>
     </form>
-</div><!-- /main -->
+            </div>
 
 
 <?php include PATH_FOOTER_ADMIN;    ?>

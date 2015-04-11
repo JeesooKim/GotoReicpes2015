@@ -2,6 +2,10 @@
     width: 1000px;
 }
 
+.page-header{
+    font-size: 1.5em;
+}
+
 #logo{
     width: 180px;
 }
@@ -21,7 +25,7 @@
 #sidebar-wrapper {
     margin-left: -150px;
     left: 70px;
-    width: 150px;
+    width: 160px;
     background: #222;
     position: fixed;
     height: 100%;
@@ -111,16 +115,20 @@
     background: none;
 }
 
+.form-group .form-control{
+    width: 180px;
+}
+
 #main_icon
 {
     float:right;
-    padding-right: 25px;
+    padding-right: 15px;
     padding-top:20px;
 }
 .sub_icon
 {
     float:right;
-    padding-right: 25px;
+    padding-right: 15px;
     padding-top:10px;
 }
 .content-header {

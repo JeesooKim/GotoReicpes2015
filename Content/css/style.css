@@ -115,6 +115,10 @@ body{
 	width: 150px;
 }
 
+.form-control{
+    width: 40px;
+}
+
 .btn-default{
 	margin-right: 40px;
 }
