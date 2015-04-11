@@ -82,7 +82,5 @@ define("PATH_HEADER_ADMIN",  SITEROOT. "/View/Shared/header_admin.php");  //SERV
 define("PATH_FOOTER_ADMIN",  SITEROOT. "/View/Shared/footer_admin.php");
 define("PATH_HEADER_IFRAME_ADMIN",  SITEROOT. "/View/Shared/header_iframe_admin.php");  //SERVERROOT is not working
 define("PATH_FOOTER_IFRAME_ADMIN",  SITEROOT. "/View/Shared/footer_iframe_admin.php");
-define("PATH_HEADER_IFRAME",  SITEROOT. "/View/Shared/header_iframe.php");  //SERVERROOT is not working
-define("PATH_FOOTER_IFRAME",  SITEROOT. "/View/Shared/footer_iframe.php");
 
 ?>

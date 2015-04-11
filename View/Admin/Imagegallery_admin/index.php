@@ -1,4 +1,5 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
 
 <?php
 require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
