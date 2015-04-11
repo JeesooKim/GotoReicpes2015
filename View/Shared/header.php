@@ -21,20 +21,20 @@
                     <script src="<?php echo PATH_JS; ?>/bootstrap.min.js"></script>                    
 
                     <!-- The following is for Image Gallery -->                    
-                    <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
-                    <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/bootstrap-image-gallery.css"> 
-                    <!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->                    
-                    <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-                    <script src="//blueimp.github.io/Gallery/js/blueimp-gallery.min.js"></script>
-                    <script src="//blueimp.github.io/Gallery/js/bootstrap-image-gallery.js"></script>
-                    <script src="<?php echo PATH_JS; ?>/bootstrap-image-gallery.js"></script>
-                    <!-- Image Gallery CDN-->
+                        <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+                        <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/bootstrap-image-gallery.css"> 
+                        <!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->                    
+                        <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+                        <script src="//blueimp.github.io/Gallery/js/blueimp-gallery.min.js"></script>
+                        <script src="//blueimp.github.io/Gallery/js/bootstrap-image-gallery.js"></script>
+                        <script src="<?php echo PATH_JS; ?>/bootstrap-image-gallery.js"></script>
+                        <!-- Image Gallery CDN-->
 </head> 
 <body>
  
 <div class="container">
 <header>
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">

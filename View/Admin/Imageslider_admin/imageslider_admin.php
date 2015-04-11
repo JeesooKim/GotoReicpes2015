@@ -18,32 +18,13 @@ ImagesliderDB::deleteImageslider($img_id);
 <?php include PATH_HEADER_ADMIN;    ?>
 <!--end top-->
 
-<div id="main">
-    <ol class="breadcrumb">
-        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>        
-        <li class="active">Imageslider</li>
-    </ol>
+
+    <?php include PATH_SIDEMENU;    ?>
 
     <article>
         <a href="imageslider_insert.php">Add new image</a>
     </article>
 
-    <!-- The following is for Recipes -->
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.6/css/jquery.dataTables.css">  
-    <!-- jQuery -->
-    <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>  
-    <!-- DataTables -->
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
-    <!-- Recipes data tables CDN --> 
-    
-    <script>
-        $(document).ready( function () { 
-            $('#recipeTB').DataTable();}
-                );
-            </script>
-    
-    
     <!--div id="content">
         <!-- display a table of products -->
         <table id="recipeTB" class="display">   

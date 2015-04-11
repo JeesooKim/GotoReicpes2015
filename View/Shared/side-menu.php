@@ -1,15 +1,4 @@
-<script>
-    
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-});
-
-</script>
-
-<div id="wrapper" class="active">
-      
-      <!-- Sidebar -->
+<!-- Sidebar -->
             <!-- Sidebar -->
       <div id="sidebar-wrapper">
       <ul id="sidebar_menu" class="sidebar-nav">
@@ -20,7 +9,13 @@
           <li><a>link2<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         </ul>
       </div>
-          
-      
-      
-    </div>
+</div>
+
+<script>
+    
+$("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+});
+
+</script>
