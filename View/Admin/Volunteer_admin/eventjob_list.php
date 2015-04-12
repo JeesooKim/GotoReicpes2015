@@ -54,7 +54,7 @@ $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt
 
 echo "<br /><br />";
   
-echo '<iframe src="./blank.php" name="volunteer" width="100%" height="400" scrolling="no"></iframe>';
+echo '<iframe src="./ref/blank.php" name="volunteer" width="100%" height="400" scrolling="no"></iframe>';
 
 
 include  PATH_FOOTER_IFRAME_ADMIN; 
