@@ -60,7 +60,7 @@ if ($action == 'sitemaps_list') {
     if(!$valid){
         $error .= "Sorry, your menu was not inserted.<br/>";
         if($error != ""){
-            header("location:index.php?action=show_insert_form&menu_level=$menu_level&menu_name&$menu_name&upper_menu=$upper_menu&url=$url&err=".$error);
+            header("location:index.php?action=show_insert_form&menu_level=$menu_level&menu_name=$menu_name&upper_menu=$upper_menu&url=$url&err=".$error);
         }
     }
     else if($valid){

@@ -53,11 +53,11 @@
                 
                 <tr>
                     <td><label>Menu Name *:</label></td>
-                    <td> <input type="text" name="menu_name" /></td>
+                    <td> <input type="text" name="menu_name" value="<?php echo $menu_name; ?>/></td>
                 </tr>
                 <tr>
                     <td><label>URL *:</label></td>
-                    <td><input type="text" name="url" /></td>
+                    <td><input type="text" name="url" value="<?php echo $url; ?>/></td>
                 </tr>
                 <tr>
                     <td><label>Menu Level:</label></td>

@@ -36,15 +36,37 @@ if ($action == 'show_add_form') {
     $phone = $_GET['phone'];
     $email = $_GET['email'];
 
-    $volunteer = new Volunteer($event_id, $job_id, $id, $name, $phone, $email, '', '');
-    VolunteerDB::addVolunteer($volunteer);
+    //*************Validation ***********************//
+    $valid =true;
+    if($name == null || empty($name)){
+        $error .= "Enter your full name<br/>";
+        $valid = false;
+        
+    }
+    if($phone == null || empty($phone)){
+        $error .= "Enter your phone number<br/>";
+        $valid= false;
+    }
+    if($email == null || empty($email)){
+        $error .= "Enter your email <br/>";
+        $valid= false;
+    }    //*****************validation ********************//
+    if(!$valid){
+        $error .= "Sorry, you was not inserted.<br/>";
+        if($error != ""){
+            header("location: ./volunteer.php?action=show_add_form&name=$name&phone=$phone&email=$email&url=$url&err=".$error);
+        }
+    }
+    else if($valid){
     
-    header('Location: ./volunteer.php?action=show_result&name="$name"');
-    
+        $volunteer = new Volunteer($event_id, $job_id, $id, $name, $phone, $email, '', '');
+        VolunteerDB::addVolunteer($volunteer);
+
+        header('Location: ./volunteer.php?action=show_result&name=$name');
+    }    
 }else if ($action == 'show_result') {
     
-    $name = $_GET['name'];
-    echo "Thank you [". $name. "]. You are registered.";
+    echo "Thank you. You are registered.";
     
 }
 
