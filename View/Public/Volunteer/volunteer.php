@@ -13,6 +13,7 @@ require(PATH_MODEL_VOLUNTEER);
 require(PATH_MODEL_VOLUNTEER_DB);
 require(PATH_MODEL_PAGENATOR);
 
+//Get action
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
@@ -21,12 +22,14 @@ if (isset($_POST['action'])) {
     $action = 'show_add_form';
 }
 
+//Get event_id
 if(isset($_GET['event_id'])){
     $event_id = $_GET['event_id'];
 }else{
     $event_id = "1";
 }
 
+//Get job_id
 if(isset($_GET['job_id'])){
     $job_id = $_GET['job_id'];
 }else{
@@ -39,7 +42,9 @@ if ($action == 'show_add_form') {
     
 }else if ($action == 'add_volunteer') {
 
+    //Get id data from database
     $id = VolunteerDB::getNewVolunteerId($event_id, $job_id);
+    //Get name, phone and email
     $name = $_GET['name'];
     $phone = $_GET['phone'];
     $email = $_GET['email'];
@@ -68,6 +73,7 @@ if ($action == 'show_add_form') {
     else if($valid){
     
         $volunteer = new Volunteer($event_id, $job_id, $id, $name, $phone, $email, '', '');
+        //Add Volunteer to database
         VolunteerDB::addVolunteer($volunteer);
 
         header('Location: ./volunteer.php?action=show_result&name=$name');

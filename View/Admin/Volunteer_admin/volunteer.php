@@ -30,11 +30,14 @@ if ($action == 'volunteer_list') {
     $category_parm = "";
     $condition = "&action=".$action;
 
+    // Get the current page
     if(isset($_GET['pgPage'])){
         $pgPage = $_GET['pgPage'];
     }else{
         $pgPage = 1;
     }
+    
+    // Get the event_id and condition
     if(isset($_GET['event_id'])){
         $event_id = $_GET['event_id'];
         $condition = "&event_id=".$event_id;
@@ -42,6 +45,7 @@ if ($action == 'volunteer_list') {
         $event_id = "1";
     }
 
+    // Get the job_id and condition
     if(isset($_GET['job_id'])){
         $job_id = $_GET['job_id'];
         $condition = "&job_id=".$job_id;
@@ -49,11 +53,11 @@ if ($action == 'volunteer_list') {
         $job_id = "1";
     }
 
-    //$categories = ToprecipeDB::getRecipeCategory();
+    // Get totCnt and eventadminPage data
     $totCnt = VolunteerDB::getTotVolunteerCount($event_id, $job_id );
     $volunteeradminPage = VolunteerDB::getPageVolunteerByEventidJobid($event_id, $job_id, $cntPerPage, $pgPage);
 
-    // Display the toprecipes list
+    // Display the volunteer list
     include('volunteer_list.php');
 
     
@@ -67,13 +71,16 @@ if ($action == 'volunteer_list') {
         $hire_yes_no = '';
     }
 
+    //Get event_id, job_id, id, pgPage
     $event_id = $_GET['event_id'];
     $job_id = $_GET['job_id'];
     $id = $_GET['id'];
     $pgPage = $_GET['pgPage'];
 
+    //Update volunteerHireYn data
     VolunteerDB::updateVolunteerHireYN($event_id, $job_id, $id, $hire_yes_no);
     
+    // Display the volunteer page for the current category
     header("Location: ./volunteer.php?pgPage=$pgPage&category=$category");
 }
 

@@ -26,6 +26,7 @@ $pgSelf = "toprecipes.php";
 $cntPerPage = 5;
 $pgLinkCnt = 5;
 
+// Get the current page
 if(isset($_GET['pgPage'])){
     $pgPage = $_GET['pgPage'];
 }else{
@@ -34,11 +35,14 @@ if(isset($_GET['pgPage'])){
 
 $category_parm = "";
 $condition = "";
+
+// Get the current category
 if(isset($_GET['category'])){
     $category_parm = $_GET['category'];
     $condition = "&category=".$category_parm;
 }
 
+// Get the category list data
 $categories = ToprecipeDB::getRecipeCategory();
 
 ?>
@@ -68,6 +72,7 @@ $categories = ToprecipeDB::getRecipeCategory();
 
 <?php
 
+//Get totCan and totrecipespage data
 $totCnt = ToprecipeDB::getTotCount($category_parm);
 $toprecipesPage = ToprecipeDB::getPageTopRecipeByCategory($category_parm, $cntPerPage, $pgPage);
 
@@ -86,7 +91,7 @@ echo '<table class="table" >';
 </tr>
 
 <?php
-
+//Display toprecipe list data
 foreach ($toprecipesPage as $toprecipe) :
     echo "<tr>";
     echo "<td>";
@@ -114,6 +119,7 @@ foreach ($toprecipesPage as $toprecipe) :
 endforeach;
 echo "</table>";
 
+//Display Page link list data
 $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 ?>
 <?php include PATH_FOOTER; ?>

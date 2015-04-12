@@ -30,11 +30,13 @@ if ($action == 'eventjob_list') {
     $category_parm = "";
     $condition = "&action=".$action;
 
+    // Get the current page
     if(isset($_GET['pgPage'])){
         $pgPage = $_GET['pgPage'];
     }else{
         $pgPage = 1;
     }
+    // Get the event_id and condition
     if(isset($_GET['event_id'])){
         $event_id = $_GET['event_id'];
         $condition = "&event_id=".$event_id;
@@ -42,11 +44,11 @@ if ($action == 'eventjob_list') {
         $event_id = "1";
     }
 
-    //$categories = ToprecipeDB::getRecipeCategory();
+    // Get totCnt and eventadminPage data
     $totCnt = VolunteerDB::getTotEventjobCount($event_id);
     $eventjobadminPage = VolunteerDB::getPageEventjobByEventid($event_id, $cntPerPage, $pgPage);
 
-    // Display the toprecipes list
+    // Display the eventjob list
     include('eventjob_list.php');
 
     

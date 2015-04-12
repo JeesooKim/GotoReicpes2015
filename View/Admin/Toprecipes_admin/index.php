@@ -14,6 +14,7 @@ require(PATH_MODEL_TOPRECIPE_DB);
 require(PATH_MODEL_CATEGORY);
 require(PATH_MODEL_PAGENATOR);
 
+// Get the current action value
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
@@ -31,16 +32,18 @@ if ($action == 'toprecipes_list') {
     $category_parm = "";
     $condition = "&action=".$action;
 
+    // Get the current page
     if(isset($_GET['pgPage'])){
         $pgPage = $_GET['pgPage'];
     }else{
         $pgPage = 1;
     }
+    // Get the current category
     if(isset($_GET['category'])){
         $category_parm = $_GET['category'];
         $condition = "&category=".$category_parm;
     }
-
+    // Get categories, totCnt and toprecipesadminPage data
     $categories = ToprecipeDB::getRecipeCategory();
     $totCnt = ToprecipeDB::getTotCountByAdmin($category_parm);
     $toprecipesadminPage = ToprecipeDB::getPageTopRecipeByCategoryByAdmin($category_parm, $cntPerPage, $pgPage);
@@ -49,7 +52,7 @@ if ($action == 'toprecipes_list') {
     include('toprecipes_list.php');
     
 }else if ($action == 'update_toprecipes') {
-
+    // Get the disy_yn
     if (isset($_POST['disp_yn'])) {
         $disp_yn = $_POST['disp_yn'];
     } else if (isset($_GET['disp_yn'])) {
@@ -57,21 +60,21 @@ if ($action == 'toprecipes_list') {
     } else {
         $disp_yn = '';
     }
-    
+    // Get the dish_id, category and pgPage
     $dish_id = $_GET['dish_id'];
     $category = $_GET['category'];
     $pgPage = $_GET['pgPage'];
 
-    
+    // Delete Toprecipes data
     ToprecipeDB::deleteTopRecipes($dish_id);
 
     if ($disp_yn == "" ){
         
         $toprecipedisplay = new TopRecipeDisplay($dish_id,"N");
-
+        // Add Toprecipes data
         ToprecipeDB::addTopRecipes($toprecipedisplay);
     }
-    
+    // Display the toprecipes list page for the current category
     header("Location: .?pgPage=$pgPage&category=$category");
 }
 ?>

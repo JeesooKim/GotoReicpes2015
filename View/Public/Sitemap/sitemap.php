@@ -25,24 +25,25 @@ require(PATH_MODEL_SITEMAP_DB);
 <br /><br />                
 <?php
 
+//Get max manu_level data
 $max_level = SitemapDB::getMaxMenuLevel();
 
 $totmenus = array();
 
 for ($menu_level = 0; $menu_level <= $max_level-1; $menu_level++) {
-
+    //Get all menu data from the database
     $totmenus[$menu_level] = SitemapDB::getMenuListByLevel($menu_level+1);
 }
 
 echo "<table>";
 
-// 1 Level
+// Display 1 Level menus
 foreach ($totmenus[0] as $menu_1) :
 echo "<tr>";
     echo "<td><a href=".$menu_1->getUrl().">". $menu_1->getMenuName() .'</a></td>';
     echo "<td>";
 
-    // 2 Level
+    // Display 2 Level menus
     if($max_level >= 2) {
         echo "<table>";
         foreach ($totmenus[1] as $menu_2) :
@@ -51,7 +52,7 @@ echo "<tr>";
                 echo "<td><a href=".$menu_2->getUrl().">". $menu_2->getMenuName() .'</a></td>';
                 echo "<td>";
 
-                // 3 Level
+                // Display 3 Level menus
                 if($max_level >= 3) {
                 
                     echo "<table>";
@@ -60,7 +61,7 @@ echo "<tr>";
                             echo "<tr>";
                             echo "<td><a href=".$menu_3->getUrl().">". $menu_3->getMenuName() .'</a></td>';
                             echo "<td>";
-                            // 4 Level
+                            // Display 4 Level menus
                             if($max_level >= 4) {
                 
                                 echo "<table>";
