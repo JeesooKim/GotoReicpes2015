@@ -82,7 +82,11 @@ define("PATH_FOOTER",  SITEROOT.  "/View/Shared/footer.php");
 define("PATH_SIDEMENU",  SITEROOT. "/View/Shared/side-menu.php");
 define("PATH_HEADER_ADMIN",  SITEROOT. "/View/Shared/header-admin.php");  //SERVERROOT is not working
 define("PATH_FOOTER_ADMIN",  SITEROOT. "/View/Shared/footer-admin.php");
-define("PATH_HEADER_IFRAME_ADMIN",  SITEROOT. "/View/Shared/header_iframe_admin.php");  //SERVERROOT is not working
-define("PATH_FOOTER_IFRAME_ADMIN",  SITEROOT. "/View/Shared/footer_iframe_admin.php");
+
+//*** Volunteer ***//
+define("PATH_HEADER_IFRAME",  "./ref/header-iframe.php");  //SERVERROOT is not working
+define("PATH_FOOTER_IFRAME",  "./ref/footer-iframe.php");
+define("PATH_HEADER_IFRAME_ADMIN",  "./ref/header-admin-iframe.php");  //SERVERROOT is not working
+define("PATH_FOOTER_IFRAME_ADMIN",  "./ref/footer-admin-iframe.php");
 
 ?>

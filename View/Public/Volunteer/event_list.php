@@ -1,5 +1,15 @@
 <?php include PATH_HEADER;  ?>  
 <!--end top-->
+<?php
+#File name: event_list.php
+#File for Volunteer
+#Team Project: PHP project-gotorecipes.com
+#Author: Jaden (Ju Won) Lee @Humber College 2015
+#Created: April 12 2015
+#Modified: 
+#Reference: Class material -PDO Class
+?>
+
 <script  src="<?php echo PATH_JS; ?>/calendar.js"></script>
 <script  src="<?php echo PATH_JS; ?>/calendar_jquery.js"></script>
 
@@ -64,6 +74,6 @@ endforeach;
 
     echo "<br /><br />";
     
-    echo '<iframe src="./blank.php" name="eventjob" width="100%" height="800" scrolling="no"></iframe>';
+    echo '<iframe src="./ref/blank.php" name="eventjob" width="100%" height="800" scrolling="no"></iframe>';
 
 ?>

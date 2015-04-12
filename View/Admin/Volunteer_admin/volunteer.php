@@ -1,5 +1,13 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  
 
+#File name: volunteer.php
+#File for Volunteer_admin
+#Team Project: PHP project-gotorecipes.com
+#Author: Jaden (Ju Won) Lee @Humber College 2015
+#Created: April 12 2015
+#Modified: 
+#Reference: Class material -PDO Class
+
 require(PATH_DATABASE);
 require(PATH_MODEL_VOLUNTEER);
 require(PATH_MODEL_VOLUNTEER_DB);
@@ -22,11 +30,14 @@ if ($action == 'volunteer_list') {
     $category_parm = "";
     $condition = "&action=".$action;
 
+    // Get the current page
     if(isset($_GET['pgPage'])){
         $pgPage = $_GET['pgPage'];
     }else{
         $pgPage = 1;
     }
+    
+    // Get the event_id and condition
     if(isset($_GET['event_id'])){
         $event_id = $_GET['event_id'];
         $condition = "&event_id=".$event_id;
@@ -34,6 +45,7 @@ if ($action == 'volunteer_list') {
         $event_id = "1";
     }
 
+    // Get the job_id and condition
     if(isset($_GET['job_id'])){
         $job_id = $_GET['job_id'];
         $condition = "&job_id=".$job_id;
@@ -41,11 +53,11 @@ if ($action == 'volunteer_list') {
         $job_id = "1";
     }
 
-    //$categories = ToprecipeDB::getRecipeCategory();
+    // Get totCnt and eventadminPage data
     $totCnt = VolunteerDB::getTotVolunteerCount($event_id, $job_id );
     $volunteeradminPage = VolunteerDB::getPageVolunteerByEventidJobid($event_id, $job_id, $cntPerPage, $pgPage);
 
-    // Display the toprecipes list
+    // Display the volunteer list
     include('volunteer_list.php');
 
     
@@ -59,13 +71,16 @@ if ($action == 'volunteer_list') {
         $hire_yes_no = '';
     }
 
+    //Get event_id, job_id, id, pgPage
     $event_id = $_GET['event_id'];
     $job_id = $_GET['job_id'];
     $id = $_GET['id'];
     $pgPage = $_GET['pgPage'];
 
+    //Update volunteerHireYn data
     VolunteerDB::updateVolunteerHireYN($event_id, $job_id, $id, $hire_yes_no);
     
+    // Display the volunteer page for the current category
     header("Location: ./volunteer.php?pgPage=$pgPage&category=$category");
 }
 

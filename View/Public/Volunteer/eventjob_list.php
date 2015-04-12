@@ -1,6 +1,14 @@
 <?php include PATH_HEADER_IFRAME;  ?>  
 <!--end top-->
-
+<?php
+#File name: eventjob_list.php
+#File for Volunteer
+#Team Project: PHP project-gotorecipes.com
+#Author: Jaden (Ju Won) Lee @Humber College 2015
+#Created: April 12 2015
+#Modified: 
+#Reference: Class material -PDO Class
+?>
 <table class="table" >
     <tr>
     <th>Event Id</th>
@@ -54,7 +62,7 @@ $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt
 
 echo "<br /><br />";
   
-echo '<iframe src="./blank.php" name="volunteer" width="100%" height="400" scrolling="no"></iframe>';
+echo '<iframe src="./ref/blank.php" name="volunteer" width="100%" height="400" scrolling="no"></iframe>';
 
 
 include  PATH_FOOTER_IFRAME; 

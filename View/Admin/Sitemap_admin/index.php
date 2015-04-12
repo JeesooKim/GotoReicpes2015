@@ -1,10 +1,18 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  
 
+#File name: index.php
+#File for Sitemap_admin
+#Team Project: PHP project-gotorecipes.com
+#Author: Jaden (Ju Won) Lee @Humber College 2015
+#Created: April 12 2015
+#Modified: 
+#Reference: Class material -PDO Class
+
 require(PATH_DATABASE);
 require(PATH_MODEL_SITEMAP);
 require(PATH_MODEL_SITEMAP_DB);
 require(PATH_MODEL_PAGENATOR);
-
+// Get the current action value
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
@@ -14,13 +22,14 @@ if (isset($_POST['action'])) {
 }
 
 if ($action == 'sitemaps_list') {
-
+    // Get the current menu_level
     if(isset($_GET['menu_level'])){
         $menu_level = $_GET['menu_level'];
     }else{
         $menu_level = "1";
     }
 
+    // Get levels and menus data
     $levels = SitemapDB::getLevelList();
     $menus  = SitemapDB::getMenuListByLevel($menu_level);
 
@@ -32,13 +41,15 @@ if ($action == 'sitemaps_list') {
     $upper_menu = $_GET['upper_menu'];
     $menu_level = $_GET['menu_level'];
     $parent_menu_level = $_GET['parent_menu_level'];
-    
+
+    // Get parent menu data
     $parent_menus = SitemapDB::getMenuListByLevel($parent_menu_level);
     include('sitemap_insert.php');
 
     
 } else if ($action == 'add_sitemap') {
 
+    // Get the current menu_level, menu_name, upper_menu, url
     $menu_level = $_POST['menu_level'];
     $menu_name  = $_POST['menu_name'];
     $upper_menu = $_POST['upper_menu'];
@@ -74,6 +85,7 @@ if ($action == 'sitemaps_list') {
     }
 } else if ($action == 'show_edit_form') {
 
+    // Get the id, menu_level, menu_name, upper_menu, url, parent_menu_level
     $id = $_GET['id'];
     $menu_level = $_GET['menu_level'];
     $menu_name  = $_GET['menu_name'];
@@ -81,10 +93,12 @@ if ($action == 'sitemaps_list') {
     $url        = $_GET['url'];
     $parent_menu_level = $_GET['parent_menu_level'];
     
+    // Get parent menu data
     $parent_menus = SitemapDB::getMenuListByLevel($parent_menu_level);
     include('sitemap_edit.php');
 } else if ($action == 'edit_sitemap') {
 
+    // Get the id, menu_level, menu_name, upper_menu, url
     $id         = $_GET['id'];
     $menu_level = $_GET['menu_level'];
     $menu_name  = $_GET['menu_name'];
@@ -113,6 +127,7 @@ if ($action == 'sitemaps_list') {
     else if($valid){
         
         $menu = new Menu($id, $menu_level, $menu_name, $upper_menu, $url);
+        // Update the menu data
         SitemapDB::updateMenu($menu);
 
         // Display the Menu List page for the current level
@@ -122,10 +137,10 @@ if ($action == 'sitemaps_list') {
     
 }else if ($action == 'delete_sitemap') {
 
-    // Get the IDs
+    // Get the id, menu_level
     $id = $_GET['id'];
     $menu_level = $_GET['menu_level'];;
-    // Delete the recipe
+    // Delete the menu
     SitemapDB::deleteMenu($id);
 
     // Display the Recipe List page for the current category
