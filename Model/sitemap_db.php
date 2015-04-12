@@ -34,6 +34,24 @@ class SitemapDB {
         return $menus;
     }
 
+    public static function getChildMenuList( $id ) {
+        $db = Database::getDB();
+        $query = 'select id,menu_level,menu_name,upper_menu,url from sitemap ';
+        
+        if( $menu_level != "" ){
+            $query .= "where upper_menu = $id order by id ";
+        }
+
+        $result = $db->query($query);
+        $menus = array();
+        foreach ($result as $row) {
+            $menu = new Menu( $row['id'], $row['menu_level'], $row['menu_name'], $row['upper_menu'], $row['url']);
+            
+            $menus[] = $menu;
+        }
+        return $menus;
+    }
+
     public static function getNewMenuId() { 
         $db = Database::getDB();
         
@@ -93,5 +111,20 @@ echo "query=[".$query."]";
         $row_count = $db->exec($query);
         return $row_count;
     }
+    
+    public static function getMaxMenuLevel() { 
+        $db = Database::getDB();
+        
+        $query = "select max(menu_level) from sitemap ";
+
+        $count = $db->query($query);
+        //convert result into array
+        $row = $count->fetch();
+        $result = $row[0];
+
+        return $result;
+    } 
+
+    
 }
 ?>
