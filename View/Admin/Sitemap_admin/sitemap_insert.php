@@ -2,13 +2,12 @@
 
 <?php
 #File name: sitemap_insert.php
-#File for Sitemap_Admin
+#File for Sitemap_admin
 #Team Project: PHP project-gotorecipes.com
-#Author: Jaden Lee @Humber College 2015
-#Created :March 31, 2015
+#Author: Jaden (Ju Won) Lee @Humber College 2015
+#Created: April 12 2015
 #Modified: 
 #Reference: Class material -PDO Class
-
 ?>
 
 <div id="main">

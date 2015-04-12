@@ -1,6 +1,14 @@
 <?php include PATH_HEADER_ADMIN;  ?>  
 <!--end top-->
-
+<?php
+#File name: sitemap_list.php
+#File for Sitemap_admin
+#Team Project: PHP project-gotorecipes.com
+#Author: Jaden (Ju Won) Lee @Humber College 2015
+#Created: April 12 2015
+#Modified: 
+#Reference: Class material -PDO Class
+?>
 <h1>Sitemap Admin</h1>
 
 <br /><br />                

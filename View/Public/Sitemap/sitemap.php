@@ -2,6 +2,16 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 <?php  //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
 
+    <?php
+#File name: sitemap.php
+#File for Sitemap
+#Team Project: PHP project-gotorecipes.com
+#Author: Jaden (Ju Won) Lee @Humber College 2015
+#Created: April 12 2015
+#Modified: 
+#Reference: Class material -PDO Class
+?>
+
 <?php include PATH_HEADER;  ?>  
 <!--end top-->
 

@@ -1,5 +1,13 @@
 <?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  
 
+#File name: eventjob.php
+#File for Volunteer
+#Team Project: PHP project-gotorecipes.com
+#Author: Jaden (Ju Won) Lee @Humber College 2015
+#Created: April 12 2015
+#Modified: 
+#Reference: Class material -PDO Class
+
 require(PATH_DATABASE);
 require(PATH_MODEL_VOLUNTEER);
 require(PATH_MODEL_VOLUNTEER_DB);

@@ -1,5 +1,15 @@
 <?php include PATH_HEADER;  ?>  
 <!--end top-->
+<?php
+#File name: event_list.php
+#File for Volunteer
+#Team Project: PHP project-gotorecipes.com
+#Author: Jaden (Ju Won) Lee @Humber College 2015
+#Created: April 12 2015
+#Modified: 
+#Reference: Class material -PDO Class
+?>
+
 <script  src="<?php echo PATH_JS; ?>/calendar.js"></script>
 <script  src="<?php echo PATH_JS; ?>/calendar_jquery.js"></script>
 
