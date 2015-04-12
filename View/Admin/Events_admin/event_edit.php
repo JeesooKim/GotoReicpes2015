@@ -24,25 +24,24 @@
     });
     
 </script>
+<div id="sidebar">
+       <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
+    </div> <!-- end of #sidebar -->
 
 <div id="main">
     <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li class="active">Events</li>
+        <li class="active"><a href="<?php echo PATH_ADMIN_EVENTS; ?>/index.php">Events</a></li>
         <li class="active">Edit Event</li>
     </ol>
-    <br/>
-    <div id="sidebar">
-       <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
-    </div> <!-- end of #sidebar -->
-    <p><a href="index.php?action=list_events">View Events List</a></p>   
-    <hr/>
-    
+        
+    <p><!--a href="index.php?action=list_events">View Events List</a--></p>   
+        
 <!--     <form action="index.php" method="post" >      this is the original line. for the purpose of debugging the below line is added-->
      <form action="." method="post" >      
          <input type="hidden" name="eventId" value="<?php echo $event->getEventID(); ?>" />
          
-         <?php echo "<br/>Event ID in event_edit.php" . $event->getEventID() . "<br/>"; ?>
+         <?php //echo "<br/>Event ID in event_edit.php" . $event->getEventID() . "<br/>"; ?>
          
           <table> 
                  <tr>

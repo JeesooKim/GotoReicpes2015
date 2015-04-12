@@ -9,19 +9,25 @@
 #Modified: 
 #Reference: Class material -PDO Class
 ?>
+    
+    <script>
+        $(document).ready( function () { 
+            $('#recipeTB').DataTable();}
+                );
+    </script>
+            
+    <div id='sidebar'>   
+        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
+    </div><!-- end of #sidebar -->
 
 <div id="main">
      
     <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li class="active">Recipes</li>
+        <li class="active"><a href="<?php echo PATH_ADMIN_RECIPES; ?>/index.php">Recipes</a></li>
         <li class="active">Current Category :  <?php echo $current_category->getCatName(); ?></li>        
         <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
     </ol>
-    <br/>
-    <div id='sidebar'>   
-        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
-    </div><!-- end of #sidebar -->
     
     <a href="?action=show_insert_form">Insert a New Recipe</a>      
     <hr/>
@@ -41,20 +47,6 @@
     
     <br/>
     
-    <!-- The following is for Recipes -->
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.6/css/jquery.dataTables.css">  
-    <!-- jQuery -->
-    <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>  
-    <!-- DataTables -->
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
-    <!-- Recipes data tables CDN --> 
-    
-    <script>
-        $(document).ready( function () { 
-            $('#recipeTB').DataTable();}
-                );
-            </script>
     
     
     <!--div id="content">

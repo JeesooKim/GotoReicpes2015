@@ -73,6 +73,13 @@ else if ($action == 'show_edit_form') {
     $event_contactName =$_POST['eventContactName'] ;
     $event_contactEmail =$_POST['eventContactEmail'];  
    
+    //---- Validation starts ------//  
+    //
+    //---- Validation ends -------//
+    
+    
+    
+    
     //Edit a Event
     EventsDB::editEvent($event_id, $event_name, $event_start, $event_end, $event_loc, $event_detail, $event_contactName ,$event_contactEmail);
     
@@ -93,6 +100,11 @@ else if ($action == 'show_insert_form') {
     $event_contactName =$_POST['eventContactName'] ;
     $event_contactEmail =$_POST['eventContactEmail'];   
    
+    
+    //---- Validation starts ------//  
+    //
+    //---- Validation ends -------//
+    
     // if everything is ok, (Validation)
     //instantiate a new event pbject, and try to insert a new event    
      $eventObj = new Event($event_name, $event_start, $event_end, $event_loc, $event_detail, $event_contactName ,$event_contactEmail);

@@ -23,18 +23,18 @@
     });
     
 </script>
-
+<div id="sidebar">
+       <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
+    </div> <!-- end of #sidebar -->
+    
 <div id="main">
     <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
+        <li class="active"><a href="<?php echo PATH_ADMIN_EVENTS; ?>/index.php">Events</a></li>
         <li class="active">Insert a New Event</li>
     </ol>
-    <br/>
-    <div id="sidebar">
-       <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
-    </div> <!-- end of #sidebar -->
-    <hr/>
-    <p><a href="index.php?action=list_events">View Events List</a></p>
+    
+    <p><!--a href="index.php?action=list_events">View Events List</a--></p>
    
    
      <form action="index.php" method="post" >         

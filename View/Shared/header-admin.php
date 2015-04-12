@@ -34,12 +34,7 @@
                 <script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>  
                 <!-- DataTables -->
                 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
-                <!-- Recipes data tables CDN --> 
-            <script>
-                $(document).ready( function () { 
-                    $('#recipeTB').DataTable();}
-                        );
-            </script>
+                <!-- Recipes data tables CDN -->             
 </head> 
 <body>
 

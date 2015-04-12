@@ -9,19 +9,17 @@
 #Reference: Class material -PDO Class
 
 ?>
-
+<div id="sidebar">
+        
+        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
+    </div> <!-- end of #sidebar -->         
 <div id="main">
     <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li class="active">Image Gallery</li>
+        <li class="active"><a href="<?php echo PATH_ADMIN_IMAGEGALLERY; ?>/index.php">Image Gallery</a></li>  
         <li class="active">Current Category :  <?php echo $current_category->getCatName(); ?></li>      
     </ol>
-    <br/>
     
-    <div id="sidebar">
-        
-        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
-    </div> <!-- end of #sidebar -->             
     <p><a href="?action=show_upload_form">Upload Image</a></p>
     <hr/>
     <!-- dropdown category-->

@@ -47,7 +47,7 @@ if ($action == 'list_recipes') { //when the page is loaded for the first time
     include('recipe_list.php');
     
 } 
-// ------------------- DELETE recipe---------------------
+// -------------------< DELETE recipe >---------------------
 
 else if ($action == 'delete_recipe') {
     // Get the IDs
@@ -62,11 +62,9 @@ else if ($action == 'delete_recipe') {
     
 } 
 
-//------------EDIT recipe ----------------------------
+//--------------------< EDIT recipe >----------------------
 else if ($action == 'show_edit_form') {
-    // this action is triggered by line 60 of recipe_list.php 
-    // 
-    //******************Editing a Recipe starts ******************//
+    // this action is triggered by line 60 of recipe_list.php     
     // Get the IDs
     $recipe_id = $_POST['recipe_id'];     //gets the id of the selected recipe
     $category_id = $_POST['category_id']; //get the category of the selected recipe
@@ -94,7 +92,7 @@ else if ($action == 'show_edit_form') {
     $recipe_ingredients=$_POST['recipe_ingredients'];
     $recipe_steps =$_POST['recipe_steps'];  
     
-    //--- Start Validation ---//
+    //-------------- Start Validation ----------------//
     $valid =true;
     if($category_id == null || empty($category_id)){
         $error .= "Please choose the category<br/>";
@@ -120,7 +118,7 @@ else if ($action == 'show_edit_form') {
         $error .= "Enter the steps of the recipe<br/>";
         $valid=false;        
     }    
-    //--- End Validation (EDIT) ---//
+    //------------------- End Validation (EDIT) ---//
     if(!$valid){
         $error .= "Sorry, your recipe was not edited.<br/>";
         //include(PATH_ERRORS. '/error.php'); 
@@ -137,9 +135,9 @@ else if ($action == 'show_edit_form') {
    // Display the Image List page for the current category
    header("Location: .?category_id=$category_id");
     
-}  //******************Editing Image Gallery ends ******************//
-// 
-//************ Insert Recipe starts ***********//   
+}  
+//******************Editing Image Gallery ends ******************// 
+//**************** Insert Recipe starts ***********//   
 else if ($action == 'show_insert_form') {
     
      
@@ -157,7 +155,7 @@ else if ($action == 'show_insert_form') {
     $recipe_ingredients = $_POST['recipe_ingredients'];
     $recipe_steps =$_POST['recipe_steps'];    
     
-    //*************Validation ***********************//
+    //*************Validation starts***********************//
     $valid =true;
     if($category_id == null || empty($category_id)){
         $error .= "Please choose the category<br/>";
@@ -181,12 +179,9 @@ else if ($action == 'show_insert_form') {
     }
     if($recipe_steps == null || empty($recipe_steps)){
         $error .= "Enter the steps of the recipe<br/>";
-        $valid=false;
-        
-    }
-    
-    
-    //*****************validation ********************//
+        $valid=false;        
+    }       
+    //*****************validation ends********************//
     if(!$valid){
         $error .= "Sorry, your recipe was not inserted.<br/>";
         //include(PATH_ERRORS. '/error.php'); 

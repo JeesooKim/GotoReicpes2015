@@ -9,23 +9,7 @@
 #Modified: 
 #Reference: Class material -PDO Class
 ?>
-
-
-<div id="main">
-    <ol class="breadcrumb">
-        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li class="active">Events</li>
-        <li class="active">Events List</li>
-    </ol>
-    <br/>
-    <p><a href="?action=show_insert_form">Insert a New Event</a></p>
-    <hr/>
-    
-    <div id="sidebar">
-       <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
-    </div> <!-- end of #sidebar -->
-    
-    <script>
+ <script>
     
     $(document).ready(function() {
 
@@ -38,8 +22,20 @@
     });
     </script>
     
-    <div id='calendar'></div>
-    <br/><br/>
+<div id="sidebar">
+       <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
+    </div>
+<!-- end of #sidebar -->
+<div id="main">
+    <ol class="breadcrumb">
+        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
+        <li class="active"><a href="<?php echo PATH_ADMIN_EVENTS; ?>/index.php">Events</a></li>
+        <li class="active">Events List</li>
+    </ol>
+    
+    <!-- div id='calendar'></div -->    
+    <p><a href="?action=show_insert_form">Insert a New Event</a></p>
+    <hr/>
     <table width="900">
 <!--     <table id="event_insert_table" width="900">-->
             <thead bgcolor="#a8cb81" >                
@@ -77,7 +73,7 @@
                             <td><form action="." method="post" id="delete_event_form">
                                             <input type="hidden" name="action" value="delete_event" />
                                             <input type="hidden" name="event_id" value="<?php echo $event->getEventID(); ?>" />                                            
-                                            <input type="submit" value="Delete" />
+                                            <input type="submit" value="Delete" onclick="return confirm('Are you sure to delete?')" />
                                     </form>                                       
                              </td>
                         </tr>     

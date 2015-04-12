@@ -10,21 +10,19 @@
 #Reference: Class material -PDO Class
 
 ?>
-
+ <div id='sidebar'>   
+        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
+    </div><!-- end of #sidebar -->
+    
 <div id="main">
     <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li class="active">Recipes</li>
+        <li class="active"><a href="<?php echo PATH_ADMIN_RECIPES; ?>/index.php">Recipes</a></li>
         <li class="active">Edit Recipe</li>        
         <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
     </ol>
     <br/>
-    <div id='sidebar'>   
-        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
-    </div><!-- end of #sidebar -->
-    
-    <p><a href="index.php?action=list_recipes">View Recipe List</a></p>
-    <hr/>
+   
     
     <form action="index.php" method="post" >      
          <input type="hidden" name="recipe_id" value="<?php echo $recipe->getRecipeID(); ?>" />
