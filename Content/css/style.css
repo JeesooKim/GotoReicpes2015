@@ -262,3 +262,22 @@ body{
     margin: auto;
     background-color: #FDF9F0;
 }
+
+/*      Homepage box buttons        */
+.box1{
+    background-color: #ff0000;
+}
+.box2{
+    background-color: #5ce638;
+}
+.box3{
+    background-color: #006699;
+}
+.box1, .box2, .box3{
+    width: 200px;
+    height: 200px;
+    padding: 50px;
+    color: #ffffff;
+    font-size: 2em;
+    text-align: center;
+}
