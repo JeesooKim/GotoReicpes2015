@@ -15,14 +15,31 @@
     <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
         <li class="active">Events</li>
+        <li class="active">Events List</li>
     </ol>
     <br/>
     <p><a href="?action=show_insert_form">Insert a New Event</a></p>
-    <h1>Events List</h1>
+    <hr/>
+    
     <div id="sidebar">
-        
+       <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
     </div> <!-- end of #sidebar -->
     
+    <script>
+    
+    $(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+    })
+
+    });
+    </script>
+    
+    <div id='calendar'></div>
+    <br/><br/>
     <table width="900">
 <!--     <table id="event_insert_table" width="900">-->
             <thead bgcolor="#a8cb81" >                
@@ -61,11 +78,7 @@
                                             <input type="hidden" name="action" value="delete_event" />
                                             <input type="hidden" name="event_id" value="<?php echo $event->getEventID(); ?>" />                                            
                                             <input type="submit" value="Delete" />
-                                            <!-- this delete button is not working -->
-                                    </form>
-                                        <a href="index.php?action=delete_event&event_id=<?php echo $event->getEventID(); ?>" >delete</a>
-                                        <!-- this link is not working -->
-                                        
+                                    </form>                                       
                              </td>
                         </tr>     
                 <?php endforeach; ?>                        

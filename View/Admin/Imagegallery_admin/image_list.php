@@ -19,29 +19,44 @@
     <br/>
     
     <div id="sidebar">
-        <br/>            
+        
+        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
+    </div> <!-- end of #sidebar -->             
     <p><a href="?action=show_upload_form">Upload Image</a></p>
-    <br/>
+    <hr/>
+    <!-- dropdown category-->
     <form action='.' method='GET' >
         <input type='hidden' name='action' value='list_images'/>
         Category: 
         <select name='category_id'>
-            <option value='0'><?php echo $current_category->getCatName(); ?></option>
-            <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
+            <!--option value='0'><?php //echo $current_category->getCatName(); ?></option>
+            <  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
             <?php foreach ($categories as $category) : ?>
                 <option value='<?php echo $category->getCatID(); ?>'><?php echo $category->getCatName(); ?></option>
            <?php endforeach; ?>
         </select>
         <input type='submit' value='Go' />
     </form>   
-    </div> <!-- end of #sidebar -->
+    
 <br/>
+
+
+    <script>
+        $(document).ready( function () { 
+            $('#imageGalleryTB').DataTable(
+                    {
+                        "pageLength": 5
+                        
+                    });}
+                );
+            </script>
     <!--div id="content">
         <!-- display a table of products -->
    
-        <table class="table table-responsive table-bordered"    width="900">
+        <table id="imageGalleryTB" class="display"><!--class="table table-responsive table-bordered"    width="900"-->
             <thead bgcolor="#a8cb81" >                
                 <tr style="font-variant:small-caps;font-style:normal;color:black;font-size:18px;">
+                    <th></th>
                     <th>Title</th>
                     <th>Key Ingredient</th>
                     <th>Description</th>
@@ -55,6 +70,7 @@
                 <?php foreach ($images as $image) : ?>
                 <!-- $images = ImageGalleryDB::getImagesByCategory($category_id); from index.php -->
                         <tr>
+                            <td><img src="<?php echo PATH_IMAGES . "/" . $current_category->getCatName() . "/thumbnails/" . $image->getFileName();?>" /></td>
                             <td><?php echo $image->getTitle(); ?></td>
                             <td><?php echo $image->getKeyIngredient(); ?></td>
                             <td><?php echo $image->getDetail(); ?></td>

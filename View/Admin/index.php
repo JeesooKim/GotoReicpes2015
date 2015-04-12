@@ -4,7 +4,7 @@
 <?php include PATH_HEADER_ADMIN;  ?>  
 <?php    
 
-        echo "<h1>ADMIN PANEL</h1>";
+        //echo "<h1>ADMIN PANEL</h1>";
         
         include PATH_VIEW_SHARED . '/side-menu.php';  
         ?>

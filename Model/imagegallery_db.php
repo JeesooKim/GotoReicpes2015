@@ -82,52 +82,54 @@ class ImageGalleryDB{
         
         
     public static function deleteImage($img_id){
+        try{
         $dbCon=Database::getDB();
-        $sql="DELETE FROM imagegallery WHERE img_id='$img_id' ";
-        $row_count = $dbCon->exec($sql);
-        return $row_count;
-        
+        $sql="DELETE FROM imagegallery WHERE img_id=".$img_id;
+        $q = $dbCon->prepare($sql);
+        $q->execute();
+        //$row_count = $dbCon->exec($sql);
+        //return $row_count; 
+        } 
+        catch (Exception $ex) {
+            $err= $ex->getMessage();
+             echo $err;
+             die();
+        }        
     }
     
     public static function editImage($img_id,$img_title,$img_key, $img_detail, $img_filename,$img_path, $img_size, $img_type , $img_author,$img_source, $cat_id){
         //the parameter $image for this method is supposed to be an object initiated by the ImageGallery class
-        
+        try{
         $dbCon= Database::getDB();       
         $image = self::GetImage($img_id);   
         
         $sql = "UPDATE imagegallery SET "
-                . "img_title =$img_title, "
-                . "cat_id   = $cat_id, "
-                . "img_key =$img_key, "
-                . "img_detail = $img_detail, "
-                . "img_filename =$img_filename, "
-                . "img_path =$img_path, "
-                . "img_size = $img_size, "
-                . "img_type = $img_type, "
-                . "img_author = $img_author, "
-                . "img_source =  $img_source "
-                . "WHERE img_id = '$img_id' ";
+                . "img_title =?, "
+                . "cat_id   = ?, "
+                . "img_key = ?, "
+                . "img_detail = ?, "
+                . "img_filename = ?, "
+                . "img_path = ?, "
+                . "img_size = ?, "
+                . "img_type = ?, "
+                . "img_author = ?, "
+                . "img_source = ? "
+                . "WHERE img_id = ?";
         
-         $dbCon->exec($sql); 
-        //echo '[' . $sql . ']';                               
-//        $statement = $dbCon->prepare($sql);
-//        $statement -> bindParam(':img_title',$img_title, PDO::PARAM_STR, 100 );
-//        $statement -> bindParam(':cat_id', $cat_id,PDO::PARAM_INT );
-//        $statement -> bindParam(':img_key',$img_key,PDO::PARAM_STR, 100);
-//        $statement -> bindParam(':img_detail', $img_detail, PDO::PARAM_STR, 110);
-//        $statement -> bindParam(':img_filename', $img_filename,PDO::PARAM_STR, 100);
-//        $statement -> bindParam(':img_path', $img_path,PDO::PARAM_STR, 100);
-//        $statement -> bindParam(':img_size',$img_size,PDO::PARAM_INT);
-//        $statement -> bindParam(':img_type',$img_type,PDO::PARAM_STR, 30);
-//        $statement -> bindParam(':img_author',$img_author,PDO::PARAM_STR, 100);
-//        $statement -> bindParam(':img_source',$img_source,PDO::PARAM_STR, 200);
-//                                                            
-//        $statement->execute();                   
+         //$dbCon->exec($sql); 
+         $statement = $dbCon->prepare($query);        
+         $statement->execute(array(            
+             $img_title,$cat_id,$img_key,$img_detail,$img_filename,$img_path,$img_size,$img_type,$img_author,$img_source,$img_id));  
+         }
+          catch(PDOException $e){
+              $err= $e->getMessage();
+              echo $err;
+          }
     }
     
     public static function addImage($image){
         //the parameter $image for this method is supposed to be an object initiated by the ImageGallery class
-        
+        try{
         $dbCon= Database::getDB();       
         
         $img_title= $image ->getTitle();
@@ -165,7 +167,12 @@ class ImageGalleryDB{
         $statement -> bindParam(':img_author', $img_author, PDO::PARAM_STR, 100);
         $statement -> bindParam(':img_source', $img_source, PDO::PARAM_STR, 200);
                                                             
-        $statement->execute();       
+        $statement->execute(); 
+        }
+          catch(PDOException $e){
+              $err= $e->getMessage();
+              echo $err;
+          }
     }
 }
 

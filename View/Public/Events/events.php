@@ -34,11 +34,46 @@ if ($action == 'list_view_events') {
         // the following is inside of this curly bracket , action 'list_view_events
 ?>
 
+<!-- -->
+<!-- jQuery Full Calendar -->
+                    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.css' />
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js'></script>
+                    <script src='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.js'></script>
+                    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.print.css' />
+                    <!-- jQuery full Calendar CDN-->
+    <script>
+    
+    $(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+        
+    })
+
+    });
+    </script>
+<!-- -->
+
+
 <div id="main">
+    <ol class="breadcrumb">
+        <li><a href="<?php echo SERVERROOT; ?>/index.php">Home</a></li>
+        <li class="active">Events</li>
+        
+    </ol>
+    <br/>
+    
     <div id="sidebar">        
-        <p><a href="<?php echo PATH_ADMIN_EVENTS; ?>/index.php">Events Admin(temporary)</a></p>        
+       <!-- a href="<?php //echo PATH_ADMIN_EVENTS; ?>/index.php">Events Admin(temporary)</a-->       
     </div><!-- end of #sidebar -->
     
+    
+    <div id='calendar'></div>
+    <br/><br/>
+
     
     
     <?php foreach ($events as $event) : ?>

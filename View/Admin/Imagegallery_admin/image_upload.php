@@ -13,11 +13,15 @@
 <div id="main">
     <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li class="active">Recipes</li>
+        <li class="active">Image Gallery</li>
         <li class="active">Upload Image</li>        
         <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
     </ol>
     <br/>
+     <div id="sidebar">        
+        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
+     </div> <!-- end of #sidebar -->            
+    
     <p><a href="index.php?action=list_images">View Image List</a></p>
     <hr/>
     

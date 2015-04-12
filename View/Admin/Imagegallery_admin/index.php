@@ -1,5 +1,4 @@
-<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 
 <?php
 require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
@@ -67,19 +66,27 @@ else if ($action == 'show_edit_form') {
     // this action is triggered by line 50 of image_list.php 
     
     // Get the IDs
-    $img_id = $_POST['image_id'];     //gets the id of the selected image
-    $category_id = $_POST['category_id']; //get the category of the selected image
+    //gets the id of the selected image
+    $img_id = $_POST['image_id'];   
+    //get the category of the selected image
+    $category_id = $_POST['category_id']; 
+    //the category object of the selected image to get the name of the category below
+    $current_category = CategoryDB::getCategory($category_id); 
+    //name of the current category for the selected image
+    $category_name=$current_category->getCatName();
+    
     $categories = CategoryDB::getCategories();
     $image=ImageGalleryDB::GetImage($img_id);
   
+    //including the following file to get the form for edit
     include('image_edit.php');
     
 }else if($action=='Edit_Image'){        
     
-    $img_id = $_POST['image_id'];
-    $category_id = $_POST['category_id'];      
-    $current_category = CategoryDB::getCategory($category_id);   //Category object having name and id properties
-    $category_name=$current_category->getCatName();
+    $img_id = $_POST['image_id'];   //gets the id of the image
+    $category_id = $_POST['category_id']; //gets the category id of the image
+    $current_category = CategoryDB::getCategory($category_id);   //Category object having name and id properties for the selected image
+    $category_name=$current_category->getCatName(); //category name for the selected image
     
     $image = ImageGalleryDB::GetImage($img_id);
     $img_path=$image->getPath();
@@ -100,22 +107,24 @@ else if ($action == 'show_edit_form') {
          //$image_filename_from_DB == $img_filename) 
          //$img_filename = $image_filename_from_DB;
     if($img_new_filename === NULL || empty($img_new_filename)){
-        $img_filename =  $img_edit_filename;
+        $img_filename =  $img_edit_filename; //new image file name is to be replace by the name in edit page if any
+        //in order to get the value for $img_type, the followings are needed
+        $dir=PATH_UPLOADS_IMAGES . '/';  
         $img_file_path = $dir . $category_name . "/" . $img_filename;
-        $img_type = pathinfo($img_file_path, PATHINFO_EXTENSION);  //holds the file extension of the file    
+        $img_type = pathinfo($img_file_path, PATHINFO_EXTENSION);  //holds the file extension of the file  
+//        
+//        $fp      = fopen($t_name, 'r');
+//        $img_content = fread($fp, filesize($t_name));
+//        $img_content = addslashes($img_content);
+//        fclose($fp);
+    
           if(!get_magic_quotes_gpc())
             {
                 $img_filename = addslashes($img_filename);
             }       
             
-        try{
-                ImageGalleryDB::editImage($img_id, $img_title,$img_key, $img_detail, $img_filename, $img_path, $img_size, $img_type , $img_author,$img_source, $category_id);                        
-          }
-          catch(PDOException $e){
-              $err= $e->getMessage();
-              echo $err;
-          }
-
+            ImageGalleryDB::editImage($img_id, $img_title,$img_key, $img_detail, $img_filename, $img_path, $img_size, $img_type , $img_author,$img_source, $category_id);                        
+          
           // Display the Image List page for the current category
           header("Location: .?category_id=$category_id");
 
@@ -127,11 +136,17 @@ else if ($action == 'show_edit_form') {
         //$img_filename = basename($_FILES['file_upload']['name']); //image file name to be newly uploaded     
         $img_filename =$img_new_filename;
         $t_name = $_FILES['file_upload']['tmp_name'];
-        $dir=PATH_IMAGES . '/';    //specifies the directory where the file is going to be placed,
+        $dir=PATH_UPLOADS_IMAGES . '/';    //specifies the directory where the file is going to be placed,
         $img_path = $dir . $category_name . "/";
         $img_file_path = $dir . $category_name . "/" . $img_filename;
         $img_size =$_FILES["file_upload"]["size"];
-        $img_type = pathinfo($img_file_path, PATHINFO_EXTENSION);  //holds the file extension of the file    
+        $img_type = pathinfo($img_file_path, PATHINFO_EXTENSION);  //holds the file extension of the file  
+        
+        $fp      = fopen($t_name, 'r');
+        $img_content = fread($fp, filesize($t_name));
+        $img_content = addslashes($img_content);
+        fclose($fp);
+        
           if(!get_magic_quotes_gpc())
             {
                 $img_filename = addslashes($img_filename);
@@ -168,15 +183,8 @@ else if ($action == 'show_edit_form') {
                       $pathToThumbs = $img_path . "thumbnails/" ;
                       $thumbWidth = 150;   //in dpi              
                       ImageEdit::CreateThumbs($pathToImages, $pathToThumbs, $thumbWidth );
-
-                      try{
-                                ImageGalleryDB::editImage($img_id, $img_title,$img_key, $img_detail, $img_filename,$img_path, $img_size, $img_type , $img_author,$img_source, $category_id);                        
-                      }
-                      catch(PDOException $e){
-                          $err= $e->getMessage();
-                          echo $err;
-                      }
-
+                      ImageGalleryDB::editImage($img_id, $img_title,$img_key, $img_detail, $img_filename,$img_path, $img_size, $img_type , $img_author,$img_source, $category_id);                        
+                      
                       // Display the Image List page for the current category
                       header("Location: .?category_id=$category_id");
 
@@ -217,10 +225,10 @@ else if ($action == 'show_upload_form') {
     //$img_type=$_FILES['file_upload']['type'];
     
     //http://www.php-mysql-tutorial.com/wikis/mysql-tutorials/uploading-files-to-mysql-database.aspx    
-    //$fp      = fopen($t_name, 'r');
-    //$img_content = fread($fp, filesize($t_name));
-    //$img_content = addslashes($img_content);
-   // fclose($fp);
+    $fp      = fopen($t_name, 'r');
+    $img_content = fread($fp, filesize($t_name));
+    $img_content = addslashes($img_content);
+    fclose($fp);
 
     if(!get_magic_quotes_gpc())
     {
@@ -265,15 +273,8 @@ else if ($action == 'show_upload_form') {
               $pathToThumbs = $img_path . "thumbnails/" ;
               $thumbWidth = 100;   //in dpi              
               ImageEdit::CreateThumbs($pathToImages, $pathToThumbs, $thumbWidth );
-              
-              try{
-                        ImageGalleryDB::addImage($imageObj);                                           
-              }
-              catch(PDOException $e){
-                  $err= $e->getMessage();
-                  echo $err;
-              }
-              
+              ImageGalleryDB::addImage($imageObj);                                           
+                            
               // Display the Image List page for the current category
               header("Location: .?category_id=$category_id");
               
@@ -281,8 +282,7 @@ else if ($action == 'show_upload_form') {
                  $error.= 'upload fail.<br/>';                      
           }
     }
-    
-     //******************Uploading (Inserting) Image Gallery ends ******************//
+         //******************Uploading (Inserting) Image Gallery ends ******************//
     //Ref: http://www.w3schools.com/php/php_file_upload.asp  Feb 25,2015
 }
 

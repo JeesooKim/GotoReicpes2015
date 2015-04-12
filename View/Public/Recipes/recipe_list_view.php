@@ -43,8 +43,8 @@ so, the following variables are already defined when they are called
     
     
     <div id="sidebar">        
-        <a href="<?php echo PATH_ADMIN_RECIPES;?>/index.php">Recipes Admin(temporary)</a>
-        <br/><br/>
+        <!--a href="<?php //echo PATH_ADMIN_RECIPES;?>/index.php">Recipes Admin(temporary)</a>
+        <br/><br/-->
         
         <!-- form to select category ;dropdown list-->
 <form action='recipes.php' method='GET' >

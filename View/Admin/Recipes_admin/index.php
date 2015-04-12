@@ -33,7 +33,7 @@ if ($action == 'list_recipes') { //when the page is loaded for the first time
 // 
     // Get the current category ID
     if(!isset($_GET['category_id'])) {
-        $category_id = 0; //default category id=1 (when the category is not been set/selected
+        $category_id = 1; //default category id=1 (when the category is not been set/selected
     }else
     {
        $category_id = $_GET['category_id'];   
@@ -78,16 +78,14 @@ else if ($action == 'show_edit_form') {
   
     include('recipe_edit.php');
     
-}else if($action=='Edit Recipe'){        
-    
+}else if($action=='Edit Recipe'){  
     
     $recipe_id = $_POST['recipe_id'];
     $category_id = $_POST['category_id'];      
     $current_category = CategoryDB::getCategory($category_id);   //Category object having name and id properties
     $category_name=$current_category->getCatName();
     
-    $recipe = RecipeDB::GetRecipe($recipe_id);
-   
+    $recipe = RecipeDB::GetRecipe($recipe_id);   
     
     $recipe_name = $_POST['recipe_name'];    
     $recipe_key=$_POST['recipe_key'];
@@ -96,19 +94,46 @@ else if ($action == 'show_edit_form') {
     $recipe_ingredients=$_POST['recipe_ingredients'];
     $recipe_steps =$_POST['recipe_steps'];  
     
-    //--- Start Validation !!!
-    
-    //--- End Validation!!!
-    
-   //Edit a Recipe if validation passes
-    try{
-      RecipeDB::editRecipe($recipe_id, $recipe_name,$category_id,$recipe_key,$recipe_num_serving,$recipe_cook_time,$recipe_ingredients,$recipe_steps);
-       }
-    catch(PDOException $e){
-       $err= $e->getMessage();
-       echo $err;
+    //--- Start Validation ---//
+    $valid =true;
+    if($category_id == null || empty($category_id)){
+        $error .= "Please choose the category<br/>";
+        $valid = false;
+        
+    }
+    if($recipe_name == null || empty($recipe_name)){
+        $error .= "Enter the name of the recipe<br/>";
+        $valid= false;
+        
+    }
+    if($recipe_key == null || empty($recipe_key)){
+        $error .= "Enter the key ingredient of the recipe<br/>";
+        $valid=false;
+        
+    }
+    if($recipe_ingredients == null || empty($recipe_ingredients)){
+        $error .= "Enter the ingredients of the recipe<br/>";
+        $valid=false;
+        
+    }
+    if($recipe_steps == null || empty($recipe_steps)){
+        $error .= "Enter the steps of the recipe<br/>";
+        $valid=false;        
     }    
-          
+    //--- End Validation (EDIT) ---//
+    if(!$valid){
+        $error .= "Sorry, your recipe was not edited.<br/>";
+        //include(PATH_ERRORS. '/error.php'); 
+        //echo $error;
+        if($error != ""){
+            header("location:index.php?action=show_edit_form&err=".$error);
+    }
+        
+    }
+    else if($valid){  
+   //Edit a Recipe if validation passes
+    RecipeDB::editRecipe($recipe_id, $recipe_name,$category_id,$recipe_key,$recipe_num_serving,$recipe_cook_time,$recipe_ingredients,$recipe_steps);
+    } 
    // Display the Image List page for the current category
    header("Location: .?category_id=$category_id");
     
@@ -180,14 +205,7 @@ else if ($action == 'show_insert_form') {
      //$current_category = CategoryDB::getCategory($category_id);       
      //$current category...is a category Object...not a string         
      $recipeObj = new Recipe($recipe_name , $category_id, $recipe_key,$recipe_num_serving, $recipe_cook_time, $recipe_ingredients, $recipe_steps);
-
-      try{
-           RecipeDB::addRecipe($recipeObj);                                           
-      }
-      catch(PDOException $e){
-          $err= $e->getMessage();
-          echo $err;
-      }
+     RecipeDB::addRecipe($recipeObj);                                           
     
     // Display the Recipe List page for the current category
     header("Location: .?category_id=$category_id");         

@@ -25,11 +25,8 @@
     </ol>
     <br/>
     
-    <div id="sidebar">
-        
-        <p><a href="<?php echo PATH_ADMIN_IMAGEGALLERY. '/index.php'; ?>"> Image Gallery Admin(temporary)</a></p>
-        
-        <br/>        
+    <div id="sidebar">        
+        <!--a href="<?php //echo PATH_ADMIN_IMAGEGALLERY. '/index.php'; ?>"> Image Gallery Admin(temporary)</a-->
         <!-- dropdown -->
         <form action='imagegallery.php' method='GET' >
         <input type='hidden' name='action' value='list_view_images'/>

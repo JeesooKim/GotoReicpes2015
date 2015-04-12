@@ -12,8 +12,19 @@
 ?>
 
 <div id="main">
-    <p><a href="index.php?action=list_images">View Image List</a></p>
-    <h1>Edit Image</h1>
+     <ol class="breadcrumb">
+        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
+        <li class="active">Gallery</li>
+        <li class="active">Edit Image</li>
+        
+    </ol>
+    <br/>
+    <div id='sidebar'>   
+        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
+    </div> <!-- end of #sidebar -->
+    
+    <a href="?action=show_insert_form">Insert a New Recipe</a> &nbsp;|&nbsp;   <a href="index.php?action=list_images">View Image List</a>
+    <hr/>    
 
      <form action="index.php" method="post" enctype="multipart/form-data">      
          <input type="hidden" name="image_id" value="<?php echo $image->getID(); ?>" />

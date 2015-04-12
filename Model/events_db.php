@@ -53,14 +53,13 @@ class EventsDB{
         $dbCon=Database::getDB();
         
         //query to delete the object of the given id, $dish_id
-        $query="DELETE FROM events WHERE event_id=". $eventId;
-        
-        //echo '[' . $query . ']';     
-        $ex = $dbCon->prepare($query);
-        $ex -> execute();
-                //$dbCon -> exec($query);  //now it's working  April 10 
+        $query="DELETE FROM events WHERE event_id=".$eventId;
+        $q = $dbCon->prepare($query);
+        $q->execute();
+            
         //$row_count= exec($query);
-        //return $row_count;            
+        //return $row_count;
+        //$dbCon->exec($query);  
         } 
         catch (Exception $ex) {
             $err= $ex->getMessage();
@@ -76,45 +75,20 @@ class EventsDB{
            $dbCon=Database::getDB();
         
         //query to UPDATE the table for the values passed by parameters of this method
+        //http://www.phpeveryday.com/articles/PDO-Insert-and-Update-Statement-Use-Prepared-Statement-P552.html
         $query = "UPDATE events SET "
-                . "event_name=$eventName, "
-                . "event_start=$eventStart, "
-                . "event_end = $eventEnd, "
-                . "event_location = $eventLoc, "
-                . "event_detail=$eventDetail "
-                . "event_contactName =$eventContactName, "
-                . "event_contactEmail =$eventContactEmail "
-                . "WHERE eventId='$eventId' ";
-        echo $eventId .',' . $eventName .',' .  $eventStart .',' .  $eventEnd .',' .  $eventLoc .',' .  $eventDetail .',' .  $eventContactName .',' .  
-                $eventContactEmail;
-           $statement = $dbCon->prepare($query);        
-//        $statement -> bindParam(":eventName" ,$eventName, PDO::PARAM_STR );
-//        $statement -> bindParam(":eventStart", $eventStart,PDO::PARAM_STR );
-//        $statement -> bindParam(":eventEnd", $eventEnd, PDO::PARAM_STR);
-//        $statement -> bindParam(":eventLocation", $eventLoc, PDO::PARAM_STR);
-//        $statement -> bindParam(":eventDetail", $eventDetail,PDO::PARAM_STR);
-//        $statement -> bindParam(":eventContactName", $eventContactName,PDO::PARAM_STR);
-//        $statement -> bindParam(":eventContactEmail", $eventContactEmail,PDO::PARAM_STR);
-        //$statement -> bindParam(":event_id", $eventId, PDO::PARAM_INT);
-//        
-//        $statement -> bindValue(":eventName" , $eventName);
-//        $statement -> bindValue(":eventStart", $eventStart );
-//        $statement -> bindValue(":eventEnd", $eventEnd);
-//        $statement -> bindValue(":eventLocation", $eventLoc);
-//        $statement -> bindValue(":eventDetail", $eventDetail);
-//        $statement -> bindValue(":eventContactName", $eventContactName);
-//        $statement -> bindValue(":eventContactEmail", $eventContactEmail);
-//                                   
-//        echo "<pre>";
-//        var_dump($statement);
-//        echo "</pre>";
-//       
-//        //http://www.phpeveryday.com/articles/PDO-Insert-and-Update-Statement-Use-Prepared-Statement-P552.html
-//        $statement->execute();
-//         echo "<pre>";
-//        var_dump($statement);
-//        echo "</pre>";
-//           $statement->execute();
+                . "event_name=?, "
+                . "event_start=?, "
+                . "event_end =?, "
+                . "event_location =?, "
+                . "event_detail=?, "
+                . "event_contactName =?, "
+                . "event_contactEmail =? "
+                . "WHERE event_id=?";
+               
+        $statement = $dbCon->prepare($query);        
+        $statement->execute(array(               
+               $eventName,$eventStart,$eventEnd,$eventLoc,$eventDetail,$eventContactName,$eventContactEmail,$eventId));  
        } 
        catch (Exception $ex) {
            $err= $ex->getMessage();

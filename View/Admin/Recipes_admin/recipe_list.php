@@ -11,6 +11,7 @@
 ?>
 
 <div id="main">
+     
     <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
         <li class="active">Recipes</li>
@@ -18,27 +19,26 @@
         <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
     </ol>
     <br/>
+    <div id='sidebar'>   
+        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
+    </div><!-- end of #sidebar -->
     
-    <div id='sidebar'>
-    <br/>
-    <p><a href="?action=show_insert_form">Insert a New Recipe</a></p>
-    <hr/>   
-    
-     
-    
+    <a href="?action=show_insert_form">Insert a New Recipe</a>      
+    <hr/>
+    <!-- dropdown category -->
     <form action='.' method='GET' >
         <input type='hidden' name='action' value='list_recipes'/>
         Category: 
         <select name='category_id'>
-            <option value='0'><?php echo $current_category->getCatName(); ?></option>
-            <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
+            <!--option value='0'><?php //echo $current_category->getCatName(); ?></option>
+            <  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
             <?php foreach ($categories as $category) : ?>
                 <option value='<?php echo $category->getCatID(); ?>'><?php echo $category->getCatName(); ?></option>
            <?php endforeach; ?>
         </select>
         <input type='submit' value='Go' />
     </form>        
-    </div><!-- end of #sidebar -->
+    
     <br/>
     
     <!-- The following is for Recipes -->

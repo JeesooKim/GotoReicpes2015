@@ -9,10 +9,35 @@
 
 ?>
 
-<div id="main">
-    <p><a href="index.php?action=list_events">View Events List</a></p>    
-    <h1>Edit Event</h1>
 
+<!-- jQuery datetime picker for Admin-Event-->
+<link rel="stylesheet" type="text/css" href="<?php echo PATH_CSS; ?>/event_dtpick/jquery.datetimepicker.css" />
+<script src="<?php echo PATH_JS; ?>/event_dtpick/jquery.js"></script>
+<script src="<?php echo PATH_JS; ?>/event_dtpick/jquery.datetimepicker.js"></script>
+<!-- event datetime picker -->
+                    
+<script>
+    
+    $(function(){
+	$('#datetimepickerS').datetimepicker();
+        $('#datetimepickerE').datetimepicker();
+    });
+    
+</script>
+
+<div id="main">
+    <ol class="breadcrumb">
+        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
+        <li class="active">Events</li>
+        <li class="active">Edit Event</li>
+    </ol>
+    <br/>
+    <div id="sidebar">
+       <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
+    </div> <!-- end of #sidebar -->
+    <p><a href="index.php?action=list_events">View Events List</a></p>   
+    <hr/>
+    
 <!--     <form action="index.php" method="post" >      this is the original line. for the purpose of debugging the below line is added-->
      <form action="." method="post" >      
          <input type="hidden" name="eventId" value="<?php echo $event->getEventID(); ?>" />
@@ -26,11 +51,11 @@
                 </tr>
                 <tr>
                     <td><label>Start:</label></td>
-                    <td><input type="text" name="eventStart" value="<?php echo $event->getEventStart(); ?>" /></td>
+                    <td><input id="datetimepickerS" type="text" name="eventStart" value="<?php echo $event->getEventStart(); ?>" /></td>
                 </tr>
                 <tr>
                     <td><label>End:</label></td>
-                    <td><input type="text" name="eventEnd" value="<?php echo $event->getEventEnd(); ?>" /></td>
+                    <td><input id="datetimepickerE" type="text" name="eventEnd" value="<?php echo $event->getEventEnd(); ?>" /></td>
                 </tr>
                 <tr>
                     <td><label>Location:</label></td>

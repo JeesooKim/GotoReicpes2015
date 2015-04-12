@@ -69,57 +69,50 @@ class RecipeDB{
     }    
      
     public static function deleteRecipe($dish_id){
+        try{
         //connect to DB
         $dbCon=Database::getDB();
         
         //query to delete the object of the given id, $dish)id
-        $query="DELETE FROM recipes WHERE dish_id='$dish_id' ";
+        $query="DELETE FROM recipes WHERE dish_id=".$dish_id;
+        $q = $dbCon->prepare($query);
+        $q->execute();
         
-        $dbCon->exec($query);
+        //$dbCon->exec($query);
         //$row_count= exec($query);
         //return $row_count;
+        }catch (Exception $ex){
+            $err= $ex->getMessage();
+             echo $err;
+             die();
+        }
     }
     
     public static function editRecipe( $dish_id,  $dish_name, $cat_id, $dish_key, $dish_num_serving, $dish_cook_time, $dish_ingredients, $dish_steps){
-        //connect to DB
+        try{
+       
+      //connect to DB
         $dbCon=Database::getDB();
-                echo $dish_ingredients ."<br/>";
-        echo $dish_steps;
+         
         $query = "UPDATE recipes SET "
-                . "dish_name='$dish_name', "
-                . "dish_cat='$cat_id', "
-                . "dish_key='$dish_key', "
-                . "dish_num_serving ='$dish_num_serving', "
-                . "dish_cook_time='$dish_cook_time', "
-                . "dish_ingredients = '$dish_ingredients', "
-                . "dish_steps = '$dish_steps' "
-                . "WHERE dish_id =$dish_id ";
+                . "dish_name=?,"
+                . "dish_cat=?, "
+                . "dish_key=?, "
+                . "dish_num_serving = ?, "
+                . "dish_cook_time= ?, "
+                . "dish_ingredients =?, "
+                . "dish_steps = ? "
+                . "WHERE dish_id = ?";
                                                                  
-        $dbCon->exec($query);           
-        
-        echo $dish_ingredients ."<br/>";
-        echo $dish_steps;
-        //query to UPDATE the table for the values passed by parameters of this method
-//        $query = "UPDATE recipes SET "
-//                . "dish_name=:dish_name, "
-//                . "dish_cat=:dish_cat, "
-//                . "dish_key= :dish_key, "
-//                . "dish_num_serving = :dish_num_serving, "
-//                . "dish_cook_time= :dish_cook_time, "
-//                . "dish_ingredients =:dish_ingredients, "
-//                . "dish_steps = :dish_steps "
-//                . "WHERE dish_id = '$dish_id' ";
-//        
-//        $statement = $dbCon->prepare($query);
-//        $statement -> bindParam(':dish_name',$dish_name, PDO::PARAM_STR, 150 );
-//        $statement -> bindParam(':dish_cat', $cat_id,PDO::PARAM_INT );
-//        $statement -> bindParam(':dish_key',$dish_key, PDO::PARAM_STR, 100);
-//        $statement -> bindParam(':dish_num_serving', $dish_num_serving, PDO::PARAM_INT, 100);
-//        $statement -> bindParam(':dish_cook_time', $dish_cook_time,PDO::PARAM_STR, 50);
-//        $statement -> bindParam(':dish_ingredients', $dish_ingredients,PDO::PARAM_STR, 250);
-//        $statement -> bindParam(':dish_steps',$dish_steps,PDO::PARAM_STR);
-//                                                         
-//        $statement->execute();                     
+        $statement=$dbCon->prepare($query);           
+        $statement->execute(array(
+            $dish_name,$cat_id,$dish_key,$dish_num_serving,$dish_cook_time,$dish_ingredients,$dish_steps,$dish_id));    
+        }
+        catch (Exception $ex) {
+           $err= $ex->getMessage();
+           echo $err;
+           die();
+       } 
     }
     
     public static function plusVote($dish_id, $votes){
@@ -137,6 +130,7 @@ class RecipeDB{
     
      public static function addRecipe($recipe){
          //the parameter is an object of Recipe class
+        try{
          //connectDB
          $dbCon=Database::getDB();
          
@@ -163,7 +157,13 @@ class RecipeDB{
         $statement -> bindParam(':dish_ingredients', $dish_ingredients,PDO::PARAM_STR, 250);
         $statement -> bindParam(':dish_steps',$dish_steps,PDO::PARAM_STR);
                                                          
-        $statement->execute();                  
+        $statement->execute();  
+        }
+        catch (Exception $ex) {
+           $err= $ex->getMessage();
+           echo $err;
+           die();
+        }        
     }
 }
 
