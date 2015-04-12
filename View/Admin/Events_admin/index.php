@@ -12,8 +12,7 @@
         #Modified: 
         #Reference: Class material -PDO Class
         
-        include PATH_HEADER_ADMIN; ?>
-<?php
+
 error_reporting();
 $error = '';
 $action ="";
@@ -46,7 +45,7 @@ else if ($action == 'delete_event') {
     EventsDB::deleteEvent($event_id);     
      
     // Display the Events List page
-    header("Location:event_list.php");
+    header("Location:index.php");
     exit();
     
 }
@@ -65,46 +64,123 @@ else if ($action == 'show_edit_form') {
     $event_id = $_POST['eventId'];
     
     //$event = EventsDB::GetEvent($event_id);      
-    $event_name = $_POST['eventName'];    
-    $event_start=$_POST['eventStart'];
-    $event_end=$_POST['eventEnd'];    
-    $event_loc=$_POST['eventLoc'];
+    $event_name = $_POST['eventName'];  //Required
+    $event_start=$_POST['eventStart'];  //Required
+    $event_end=$_POST['eventEnd'];      //Required
+    $event_loc=$_POST['eventLoc'];      //Required
     $event_detail=$_POST['eventDetail'];
-    $event_contactName =$_POST['eventContactName'] ;
-    $event_contactEmail =$_POST['eventContactEmail'];  
+    $event_contactName =$_POST['eventContactName'] ;  //Required
+    $event_contactEmail =$_POST['eventContactEmail']; //Required 
    
-    //---- Validation starts ------//  
-    //
-    //---- Validation ends -------//
+    //---- Validation starts (Edit)------//  
+    $valid=true;
+    if($event_name == null || empty($event_name)){
+        $valid=false;
+        $error .="Please enter the <em>name</em> of the event.<br/>";       
+    }
     
+    if($event_start == null || empty($event_start)){
+        $valid=false;
+        $error .="Please enter the time to <em>start</em>.<br/>";       
+    }
     
+     if($event_end == null || empty($event_end)){
+        $valid=false;
+        $error .="Please enter the time to <em>end</em>.<br/>";       
+    }
     
-    
+     if($event_loc == null || empty($event_loc)){
+        $valid=false;
+        $error .="Please enter the <em>location</em> of the event.<br/>";       
+    }    
+     if($event_contactName == null || empty($event_contactName)){
+        $valid=false;
+        $error .="Please enter the contact <em>Person</em>.<br/>";       
+    }
+    if($event_contactEmail == null || empty($event_contactEmail)){
+        $valid=false;
+        $error .="Please enter the <em>email</em> to contact.<br/>";       
+    }
+    //---------- Validation ends(Edit)---------------//
+    if(!$valid){
+        $error .= "Sorry the event is not edited.<br/>";
+        if($error != ""){
+        header("location:index.php?action=show_edit_form&err=".$error);
+        }
+    }
+    elseif($valid){        
     //Edit a Event
     EventsDB::editEvent($event_id, $event_name, $event_start, $event_end, $event_loc, $event_detail, $event_contactName ,$event_contactEmail);
     
     // Display the Event List page
-    header("Location:event_list.php");
-    
+    header("Location:index.php");        
+    } 
 }  //******************Editing ends ******************//
- //************Insert  a new event starts ***********//   
-else if ($action == 'show_insert_form') {       
+
+//************Insert  a new event starts ***********//   
+else if ($action == 'show_insert_form') {  
+    
+    
+    
     include('event_insert.php');    
-}else if ($action == 'Insert Event') {    
+}else if ($action == 'Insert Event') { 
+    $event_id = $_POST['eventId'];
     
-    $event_name = $_POST['eventName'];    
-    $event_start=$_POST['eventStart'];
-    $event_end=$_POST['eventEnd'];    
-    $event_loc=$_POST['eventLoc'];
+    //$event = EventsDB::GetEvent($event_id);      
+    $event_name = $_POST['eventName'];  //Required
+    $event_start=$_POST['eventStart'];  //Required
+    $event_end=$_POST['eventEnd'];      //Required
+    $event_loc=$_POST['eventLoc'];      //Required
     $event_detail=$_POST['eventDetail'];
-    $event_contactName =$_POST['eventContactName'] ;
-    $event_contactEmail =$_POST['eventContactEmail'];   
-   
-    
-    //---- Validation starts ------//  
+    $event_contactName =$_POST['eventContactName'] ;  //Required
+    $event_contactEmail =$_POST['eventContactEmail']; //Required 
     //
-    //---- Validation ends -------//
+    //---- Validation starts (Insert) ------//  
+    $valid=true;
+    if($event_name == null || empty($event_name)){        
+        $valid=false;
+        $error .="Please enter the <em>name</em> of the event.<br/>";       
+    }
     
+    if($event_start == null || empty($event_start)){        
+        $valid=false;
+        $error .="Please enter the time to <em>start</em>.<br/>";       
+    }
+    
+     if($event_end == null || empty($event_end)){         
+        $valid=false;
+        $error .="Please enter the time to <em>end</em>.<br/>";       
+    }
+    
+     if($event_loc == null || empty($event_loc)){         
+        $valid=false;
+        $error .="Please enter the <em>location</em> of the event.<br/>";       
+    }    
+     if($event_contactName == null || empty($event_contactName)){              
+        $valid=false;
+        $error .="Please enter the contact <em>Person</em>.<br/>";       
+    }
+    
+    if($event_contactEmail == null || empty($event_contactEmail)){        
+        $valid=false;
+        $error .="Please enter the <em>email</em> to contact.<br/>";        
+    }
+    else if(!filter_var($event_contactEmail ,FILTER_VALIDATE_EMAIL)){
+            $valid = false;     
+            $error .= " Please enter a <em>valid</em> email<br/>";
+        }       
+   //---- Validation ends (Insert) -------//
+        
+    if(!$valid){
+        $error .= "<br/>Sorry the event is not inserted yet.<br/>";
+        if($error != ""){
+        
+        
+        header("location:index.php?action=show_insert_form&err=".$error);
+        
+        }
+    }
+    elseif($valid){  
     // if everything is ok, (Validation)
     //instantiate a new event pbject, and try to insert a new event    
      $eventObj = new Event($event_name, $event_start, $event_end, $event_loc, $event_detail, $event_contactName ,$event_contactEmail);
@@ -113,7 +189,7 @@ else if ($action == 'show_insert_form') {
          
       // Display the Events List
      //header("Location: .");         
-     header("Location:event_list.php");
-    }    
-     //****************** Inserting a new Event ends ******************//
-    ?>
+     header("Location:index.php");
+    } 
+}//****************** Inserting a new Event ends ******************//
+?>

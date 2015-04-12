@@ -1,3 +1,4 @@
+<?php  include PATH_HEADER_ADMIN;  ?> 
 <?php
 #File name: event_insert.php
 #File for Events-Admin (3/4)
@@ -23,6 +24,7 @@
     });
     
 </script>
+
 <div id="sidebar">
        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
     </div> <!-- end of #sidebar -->
@@ -33,26 +35,33 @@
         <li class="active"><a href="<?php echo PATH_ADMIN_EVENTS; ?>/index.php">Events</a></li>
         <li class="active">Insert a New Event</li>
     </ol>
-    
+    <?php
+        if(isset($_GET['err'])){
+            echo $_GET['err'];
+        }
+    ?>
+    <br/>
+    <h2><b>* Required</b></h2>
+    <br/>
     <p><!--a href="index.php?action=list_events">View Events List</a--></p>
    
    
      <form action="index.php" method="post" >         
           <table>   
                 <tr>
-                    <td><label>Name:</label></td>
-                    <td> <input type="text" name="eventName" /></td>
+                    <td><label>Name *:</label></td>
+                    <td> <input type="text" name="eventName"  /></td>
                 </tr>
                 <tr>
-                    <td><label>Start:</label></td>
+                    <td><label>Start *:</label></td>
                     <td><input id="datetimepickerS" type="text" name="eventStart" /></td>
                 </tr>
                 <tr>
-                    <td><label>End:</label></td>
-                    <td><input id="datetimepickerE" type="text" name="eventEnd" /></td>
+                    <td><label>End *:</label></td>
+                    <td><input id="datetimepickerE" type="text" name="eventEnd"  /></td>
                 </tr>
                 <tr>
-                    <td><label>Location:</label></td>
+                    <td><label>Location *:</label></td>
                     <td><input type="text" name="eventLoc" /></td>
                 </tr>
                 <tr>
@@ -60,11 +69,11 @@
                     <td><input type="text" name="eventDetail" /></td>
                 </tr>
                 <tr>
-                    <td><label>Contact Person Name:</label></td>
-                    <td><input type="text" name="eventContactName" /></td>
+                    <td><label>Contact Person Name *:</label></td>
+                    <td><input type="text" name="eventContactName"  /></td>
                 </tr>
                  <tr>
-                    <td><label>Contact Person Email:</label></td>
+                    <td><label>Contact Person Email *:</label></td>
                     <td><input type="text" name="eventContactEmail" /></td>
                 </tr>
                 

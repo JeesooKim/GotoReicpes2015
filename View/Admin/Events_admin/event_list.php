@@ -1,4 +1,4 @@
-<?php   ?>  
+<?php include PATH_HEADER_ADMIN;  ?>  
 <!--end top-->
 <?php
 #File name: event_list.php
@@ -9,17 +9,11 @@
 #Modified: 
 #Reference: Class material -PDO Class
 ?>
- <script>
-    
-    $(document).ready(function() {
-
-    // page is now ready, initialize the calendar...
-
-    $('#calendar').fullCalendar({
-        // put your options and callbacks here
-    })
-
-    });
+  
+    <script>
+        $(document).ready( function () { 
+            $('#eventsTB').DataTable();}
+                );
     </script>
     
 <div id="sidebar">
@@ -33,10 +27,11 @@
         <li class="active">Events List</li>
     </ol>
     
+    
     <!-- div id='calendar'></div -->    
     <p><a href="?action=show_insert_form">Insert a New Event</a></p>
     <hr/>
-    <table width="900">
+    <table id="eventsTB"">
 <!--     <table id="event_insert_table" width="900">-->
             <thead bgcolor="#a8cb81" >                
                 <tr style="font-variant:small-caps;font-style:normal;color:black;font-size:18px;">
@@ -65,10 +60,10 @@
                             <td><?php echo $event ->getEventContactName(); ?></td>
                             <td><?php echo $event ->getEventContactEmail(); ?></td>
                             <td><form action="." method="post" id="edit_event_form">
-                                            <input type="hidden" name="action" value="show_edit_form" />
-                                            <input type="hidden" name="eventId" value="<?php echo $event->getEventID(); ?>" />                                            
-                                            <input type="submit" value="Edit" />
-                                    </form>
+                                    <input type="hidden" name="action" value="show_edit_form" />
+                                    <input type="hidden" name="eventId" value="<?php echo $event->getEventID(); ?>" />                                            
+                                    <input type="submit" value="Edit_Event" />
+                                </form>
                             </td>
                             <td><form action="." method="post" id="delete_event_form">
                                             <input type="hidden" name="action" value="delete_event" />

@@ -1,5 +1,4 @@
 <?php  include PATH_HEADER_ADMIN;  ?>  
-<!--end top-->
 <?php
 #File name: recipe_list.php
 #File for Recipes-Admin
@@ -36,8 +35,8 @@
         <input type='hidden' name='action' value='list_recipes'/>
         Category: 
         <select name='category_id'>
-            <!--option value='0'><?php //echo $current_category->getCatName(); ?></option>
-            <  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
+            <option value='0'><?php echo $current_category->getCatName(); ?></option>
+            <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
             <?php foreach ($categories as $category) : ?>
                 <option value='<?php echo $category->getCatID(); ?>'><?php echo $category->getCatName(); ?></option>
            <?php endforeach; ?>
@@ -45,9 +44,7 @@
         <input type='submit' value='Go' />
     </form>        
     
-    <br/>
-    
-    
+    <br/>  
     
     <!--div id="content">
         <!-- display a table of products -->

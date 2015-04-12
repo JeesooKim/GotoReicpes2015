@@ -1,5 +1,4 @@
-<?php  include PATH_HEADER_ADMIN;  ?>  
-
+<?php  include PATH_HEADER_ADMIN;  ?> 
 <?php
 #File name: recipe_insert.php
 #File for Recipes-Admin
@@ -10,8 +9,7 @@
 #Reference: Class material -PDO Class
 
 ?>
-<div id='sidebar'>
-   
+<div id='sidebar'>   
         <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
 </div> <!-- end of #sidebar -->   
     
@@ -35,7 +33,7 @@
      <form action="index.php" method="POST" >         
           <table>                
                 <tr>
-                    <td><label>Category * :</label></td>
+                    <td><label>Category *:</label></td>
                     <td> 
                         <!--$categories = CategoryDB::getCategories();-->
                         <select name="category_id">
@@ -52,11 +50,11 @@
                 
                 <tr>
                     <td><label>Name *:</label></td>
-                    <td> <input type="text" name="recipe_name" /></td>
+                    <td> <input type="text" name="recipe_name" Required/></td>
                 </tr>
                 <tr>
                     <td><label>Key Ingredient *:</label></td>
-                    <td><input type="text" name="recipe_key" /></td>
+                    <td><input type="text" name="recipe_key" Required/></td>
                 </tr>
                 <tr>
                     <td><label>Number of Serving:</label></td>
@@ -68,11 +66,11 @@
                 </tr>
                 <tr>
                     <td><label>Ingredients *:</label></td>
-                    <td><textarea name="recipe_ingredients" ></textarea></td>
+                    <td><textarea name="recipe_ingredients" Required></textarea></td>
                 </tr>
                 <tr>
                     <td><label>Steps *:</label></td>
-                    <td><textarea name="recipe_steps" ></textarea></td>
+                    <td><textarea name="recipe_steps" Required></textarea></td>
                 </tr>
                 
                 
