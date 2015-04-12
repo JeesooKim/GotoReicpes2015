@@ -47,7 +47,7 @@
 </tr>
 
 <?php
-
+//Display toprecipe list
 foreach ($toprecipesadminPage as $toprecipe) :
     echo "<tr>";
     echo "<td>";
@@ -75,7 +75,7 @@ foreach ($toprecipesadminPage as $toprecipe) :
     <form action="." method="get" id="update_toprecipes_form">
 <?php
     echo "<td>";
-
+    //Check displayYesNo 
     if( $toprecipe->getDispYn() != "N") {
         echo "<input type=checkbox name=disp_yn checked>";
     }else{
@@ -96,7 +96,7 @@ endforeach;
 </table>
 
 <?php
-
+//Get pages link list
 $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 
 include  PATH_FOOTER_ADMIN; 

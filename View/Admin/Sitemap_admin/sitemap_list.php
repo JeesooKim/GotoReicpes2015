@@ -16,6 +16,7 @@
         Menu Level : 
         <select name="menu_level">
         <?php 
+        //Display menu_level list
         foreach ($levels as $row) : 
 
             $level = $row->getLevelId();
@@ -51,6 +52,7 @@
 </tr>
 
 <?php
+//Display menu list
 foreach ($menus as $menu) :
     echo "<tr>";
     echo "<td>";

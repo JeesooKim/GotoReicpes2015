@@ -17,6 +17,7 @@
     <p><a href="index.php?action=sitemaps_list">View Sitemap List</a></p>
     <hr/>
     <?php
+        //Get the error information
         if(isset($_GET['err'])){
             echo $_GET['err'];
         }
