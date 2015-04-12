@@ -51,8 +51,13 @@ if (isset($_POST['location_update'])) {
 
 <?php include PATH_HEADER_ADMIN;    ?>
 <!--end top-->
-<div id="main">
-    <h1>Update Branch Location: <?php echo $map_location_branch; ?></h1>
+
+
+    <?php include PATH_SIDEMENU;    ?>
+
+    <div class="row">
+                <div class="col-md-12">
+    <h1 class="page-header">Update Branch Location: <?php echo $map_location_branch; ?></h1>
 
     <form action="location_update.php" method="POST">
         <input type="hidden" name="location_id" value="<?php echo $location_id; ?>" />

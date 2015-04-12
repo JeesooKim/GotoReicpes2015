@@ -10,6 +10,22 @@
 <!--end imageslider feature-->
 
         <div id="content-recipes">
+            <div class="col-md-4">
+                <div class="box1">
+                    <p>Top Recipes</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box2">
+                    <p>Recipe Search</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box3">
+                    <p>Events</p>
+                </div>
+            </div>
+            
             <div class="col-md-4"> 
                 <h1 class="h1-title">Welcome</h1>
                 <h3>We love food and we love cooking. If you have a recipe you’d like to share, we’d love to hear from you!</h3>
