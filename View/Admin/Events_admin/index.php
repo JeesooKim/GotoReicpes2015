@@ -41,19 +41,14 @@ if ($action == 'list_events') { //when the page is loaded for the first time
 // ********************* DELETE ********************************
 else if ($action == 'delete_event') {
     
-    echo "What is my action:". $action;
-    
-    
     // Get the IDs
     $event_id = $_POST['event_id'];
    
-     echo "*****************" . $event_id;
     // Delete the event
     EventsDB::deleteEvent($event_id);
-     echo "query supposed to be excuted";
-     
+        
     // Display the Events List page
-    //header("Location: .");
+    header("Location:event_list.php?action=delete_event");
     
 }
 // ********************* EDIT **************************************
@@ -112,7 +107,7 @@ else if ($action == 'show_insert_form') {
      EventsDB::addEvent($eventObj);                                   
          
       // Display the Events List
-     header("Location: .");         
+     header("Location:index.php?action=list_events");         
     }    
      //****************** Inserting a new Event ends ******************//
     ?>

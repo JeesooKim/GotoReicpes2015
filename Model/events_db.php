@@ -53,12 +53,14 @@ class EventsDB{
         $dbCon=Database::getDB();
         
         //query to delete the object of the given id, $dish_id
-        $query="DELETE FROM events WHERE event_id=$eventId ";
+        $query="DELETE FROM events WHERE event_id=". $eventId;
         
-        echo '[' . $query . ']';       
-        $row_count= exec($query);
-        return $row_count;
-            
+        //echo '[' . $query . ']';     
+        $ex = $dbCon->prepare($query);
+        $ex -> execute();
+                //$dbCon -> exec($query);  //now it's working  April 10 
+        //$row_count= exec($query);
+        //return $row_count;            
         } 
         catch (Exception $ex) {
             $err= $ex->getMessage();

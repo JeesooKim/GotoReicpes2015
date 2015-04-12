@@ -22,7 +22,7 @@ class Event{
     
     public function __construct($eventName, $eventStart, $eventEnd, $eventLoc, $eventDetail, $eventContactName, $eventContactEmail){
          
-        $this->even_name = $eventName;
+        $this->event_name = $eventName;
         $this->event_start =$eventStart; 
         $this->event_end= $eventEnd;
         $this->event_location= $eventLoc;
@@ -39,10 +39,10 @@ class Event{
     }
     
     public function getEventName(){
-        return $this->even_name;
+        return $this->event_name;
     }
     public function setEventName($value){
-        $this->even_name=$value;
+        $this->event_name=$value;
     }
     
     public function getEventStart(){

@@ -14,7 +14,7 @@
 <div id="main">
     <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li class="active">Image Gallery</li>
+        <li class="active">Events</li>
     </ol>
     <br/>
     <p><a href="?action=show_insert_form">Insert a New Event</a></p>
@@ -61,7 +61,7 @@
                                             <input type="hidden" name="action" value="delete_event" />
                                             <input type="hidden" name="event_id" value="<?php echo $event->getEventID(); ?>" />                                            
                                             <input type="submit" value="Delete" />
-                                            <!-- this delete button isi not working -->
+                                            <!-- this delete button is not working -->
                                     </form>
                                         <a href="index.php?action=delete_event&event_id=<?php echo $event->getEventID(); ?>" >delete</a>
                                         <!-- this link is not working -->

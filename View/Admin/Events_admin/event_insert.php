@@ -12,7 +12,7 @@
     <p><a href="index.php?action=list_events">View Events List</a></p>
     <h1>Insert a New Event</h1>
 
-     <form action="index.php" method="post" >         
+     <form action="index.php" method="Post" >         
           <table>   
                 <tr>
                     <td><label>Name:</label></td>
