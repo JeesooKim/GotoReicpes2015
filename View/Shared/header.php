@@ -70,11 +70,22 @@
                                                 <li><a class="ddl_link" href="#">Dinner</a></li>
                                         </ul></li>
                                         -->
-                                        <li><a href="<?php echo PATH_PUBLIC_RECIPES . '/recipes.php';?>">Recipes</a></li>
+                                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a class="ddl_link" href="<?php echo PATH_PUBLIC_RECIPES . '/recipes.php';?>">Recipes</a></li>
+                                            <li><a class="ddl_link" href="<?php echo  PATH_PUBLIC_TOPRECIPES . '/toprecipes.php';?>">Today Recipes</a></li>
+                                        </ul></li>
                                         <li><a href="<?php echo PATH_PUBLIC_IMAGEGALLERY . '/imagegallery.php';?>">Gallery</a></li>
-                                        <li><a href="<?php echo PATH_PUBLIC_EVENTS . '/events.php';?>">Events</a></li>
-                                       <li><a href="<?php echo  PATH_PUBLIC_CONTACT . '/contactus_form.php';?>">Contact Us</a></li>
-                                       
+                                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a class="ddl_link" href="<?php echo PATH_PUBLIC_EVENTS . '/events.php';?>">Event Calendar</a></li>
+                                            <li><a class="ddl_link" href="<?php echo  PATH_PUBLIC_VOLUNTEER . '/index.php';?>">Volunteer Sign Up</a></li>
+                                        </ul></li>
+                                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a class="ddl_link" href="<?php echo  PATH_PUBLIC_CONTACT . '/contactus_form.php';?>">Contact Us</a></li>
+                                            <li><a class="ddl_link" href="<?php echo  PATH_PUBLIC_SITEMAP . '/sitemap.php';?>">Sitemap</a></li>
+                                        </ul></li>                                       
                                 </ul>
                             <form class="navbar-form navbar-right" role="search">
                                 <input type="text" class="form-control" type="search" placeholder="Search . . .">
