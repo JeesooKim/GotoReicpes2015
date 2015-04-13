@@ -19,19 +19,26 @@ class EventsDB{
     //(5)addEvent(): method for adding(inserting) an event
     
     public static function GetEvents(){
-                $dbCon = Database::getDB();
-                
-                $query= "SELECT * FROM events";
-                $result = $dbCon->query($query);
-                $events = array();
-                foreach($result as $row){                               
-                     
-                    //instantiating a Recipe object
-                    $event= new Event($row['event_name'], $row['event_start'], $row['event_end'], $row['event_location'], $row['event_detail'], $row['event_contactName'], $row['event_contactEmail'] );
-                    $event->setEventID($row['event_id']);
-                    $events[] =$event; //adding each event to the array of events as an element
-                }
-                return $events; //return an array        
+        //connect to the database
+        $dbCon = Database::getDB();
+
+        //query to retrieve events
+        $query= "SELECT * FROM events";
+        
+        //execute the query
+        $result = $dbCon->query($query);
+        
+        //list of events
+        $events = array();        
+        
+        foreach($result as $row){                               
+
+        //instantiating a event object
+        $event= new Event($row['event_name'], $row['event_start'], $row['event_end'], $row['event_location'], $row['event_detail'], $row['event_contactName'], $row['event_contactEmail'] );
+        $event->setEventID($row['event_id']);
+        $events[] =$event; //adding each event to the array of events as an element
+        }
+        return $events; //return an array        
     }
     
     public static function GetEvent($eventId){

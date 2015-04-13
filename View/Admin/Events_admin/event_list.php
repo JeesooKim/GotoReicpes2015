@@ -10,12 +10,13 @@
 #Reference: Class material -PDO Class
 ?>
   
-    <script>
-        $(document).ready( function () { 
-            $('#eventsTB').DataTable();}
-                );
-    </script>
+<script>
+$(document).ready( function () { 
+    $('#eventsTB').DataTable();}
+        );
+</script>
     
+
 <div id="sidebar">
        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
     </div>

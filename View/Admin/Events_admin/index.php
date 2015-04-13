@@ -30,8 +30,9 @@ if (isset($_POST['action'])) {
 if ($action == 'list_events') { //when the page is loaded for the first time
 // First thing to do is to get event data
     
+        
     $events = EventsDB::GetEvents();
-
+    
     // Display the list of events
     include('event_list.php');
     

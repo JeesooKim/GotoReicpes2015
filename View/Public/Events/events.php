@@ -34,27 +34,16 @@ if ($action == 'list_view_events') {
         // the following is inside of this curly bracket , action 'list_view_events
 ?>
 
-<!-- -->
-<!-- jQuery Full Calendar -->
-                    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.css' />
-                    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-                    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js'></script>
-                    <script src='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.js'></script>
-                    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.print.css' />
-                    <!-- jQuery full Calendar CDN-->
-    <script>
-    
-    $(document).ready(function() {
-
-    // page is now ready, initialize the calendar...
-
-    $('#calendar').fullCalendar({
-        // put your options and callbacks here
-        
-    })
-
-    });
-    </script>
+<!--CDN for  jQuery Accordion-->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<!--link rel="stylesheet" href="/resources/demos/style.css"-->
+<script>
+$(function() {
+$( "#accordion" ).accordion();
+});
+</script>
 <!-- -->
 
 
@@ -70,51 +59,49 @@ if ($action == 'list_view_events') {
        <!-- a href="<?php //echo PATH_ADMIN_EVENTS; ?>/index.php">Events Admin(temporary)</a-->       
     </div><!-- end of #sidebar -->
     
-    
-    <div id='calendar'></div>
-    <br/><br/>
-
-    
-    
+ <div id="accordion">
     <?php foreach ($events as $event) : ?>
-                            <h2> <!-- Name of event-->
-                                   <?php
-                                             $eve = $event -> getEventName();
-                                             echo $eve . "<br/>";
-                                   ?>
-                            </h2> 
-                            <p class="contentBox">
-                                <!-- displays the content of the event: 
-                                    Key Ingredient, Number Serving, Cooking TIme, Ingredients, and Steps-->
-                                   Event Start Date and Time : 
-                                          <?php echo $event->getEventStart();  ?>
-                                   <br />
-                                   Event End Date and Time:
-                                          <?php echo $event->getEventEnd(); ?>
-                                   <br/>
-                                   Event Location;
-                                         <?php echo $event->getEventLocation(); ?>
-                                   <br/>
-                                   Event Detail:
-                                          <?php echo $event->getEventDetail(); ?>
-                                   <br/>
-                                   Event Contact Person:
-                                          <?php echo $event->getEventContactName(); ?>    
-                                   <br/>
-                                   Email to Contact:
-                                          <?php echo $event->getEventContactEmail(); ?> 
-                            </p>
-                    <?php endforeach; ?>   
-    
-    
+    <h3> <!-- Name of event-->
+        <?php echo $event -> getEventName(); ?> : 
+        <?php 
+        
+            $start =$event->getEventStart();   //returns 2015-05-11 10:00:00.000000
+            $start = substr($start, 0,16);
+            echo $start;  ?>
+        
+    </h3> 
+     <div>
+         <p>
+             <!--p class="contentBox">
+            <!-- displays the content of the event: 
+            Key Ingredient, Number Serving, Cooking TIme, Ingredients, and Steps-->
+            <?php
+            $end =$event->getEventEnd();   //returns 2015-05-11 10:00:00.000000
+            $end = substr($end, 0,16);
+             ?>
+            
+           When : <?php echo $start;  ?> ~ <?php echo $end; ?>
+           <br/><br/>
+           Where: <?php echo $event->getEventLocation(); ?>
+           <br/><br/>
+           What:  <?php echo $event->getEventDetail(); ?>
+           <br/><br/>
+           Contact: <?php echo $event->getEventContactName(); ?>  by Email : 
+           
+           <?php echo $event->getEventContactEmail(); ?> 
+            <!--/p -->             
+         </p>         
+     </div>    
+<?php endforeach; ?>   
+</div><!-- end of #accordion -->   
 </div><!-- end of #main -->
         
 <?php
 } //end of action 'list_view_events
 ?>
-        <!-- END of FILE events_view-->
-        <!-- START of footer -->
-        <?php include PATH_FOOTER; ?>
+<!-- END of FILE events_view-->
+<!-- START of footer -->
+<?php include PATH_FOOTER; ?>
 
 
         
