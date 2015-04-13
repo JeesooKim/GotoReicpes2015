@@ -222,7 +222,7 @@ class VolunteerDB {
                  (event_id,job_id,id,name,phone,email,hire_yes_no,regist_date)
              VALUES
                  ('$event_id', '$job_id', '$id', '$name', '$phone','$email', '', now() )";
-
+echo "[". $query. "]";
         $row_count = $db->exec($query);
         return $row_count;
     }

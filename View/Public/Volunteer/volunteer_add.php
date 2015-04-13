@@ -18,6 +18,9 @@
 <br />
 <form action="./volunteer.php" method="get" id="volunteer_add_form" target="volunteer">
     <input type="hidden" name="action" value="add_volunteer" />
+    <input type="hidden" name="event_id"    value="<?php echo $event_id; ?>" />
+    <input type="hidden" name="job_id"      value="<?php echo $job_id; ?>" />
+
     <table>
         <tr>
             <td>

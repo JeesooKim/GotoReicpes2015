@@ -41,7 +41,9 @@ if ($action == 'sitemaps_list') {
     $upper_menu = $_GET['upper_menu'];
     $menu_level = $_GET['menu_level'];
     $parent_menu_level = $_GET['parent_menu_level'];
-
+    $menu_name = "";
+    $url = "";
+    
     // Get parent menu data
     $parent_menus = SitemapDB::getMenuListByLevel($parent_menu_level);
     include('sitemap_insert.php');

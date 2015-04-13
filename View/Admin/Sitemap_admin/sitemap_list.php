@@ -16,6 +16,7 @@
         Menu Level : 
         <select name="menu_level">
         <?php 
+        //Display menu_level list
         foreach ($levels as $row) : 
 
             $level = $row->getLevelId();
@@ -44,13 +45,14 @@
     <th>Menu_Level</th>
     <th>Menu_Name</th>
     <th>URL</th>
-    <th>Parent_Menu</th>
+    <th>Parent_Menu_Id</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
 </tr>
 
 <?php
+//Display menu list
 foreach ($menus as $menu) :
     echo "<tr>";
     echo "<td>";
@@ -88,7 +90,7 @@ foreach ($menus as $menu) :
             <input type="hidden" name="action" value="delete_sitemap" />
             <input type="hidden" name="id"     value="<?php echo $menu->getId(); ?>" />
             <input type="hidden" name="menu_level"  value="<?php echo $menu->getMenuLevel(); ?>" />
-            <input type="submit" value="Delete" />
+            <input type="submit" value="Delete" onclick="return confirm('Are you sure to delete?')"/>
         </form>
 
         </td>

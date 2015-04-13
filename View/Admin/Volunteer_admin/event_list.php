@@ -33,6 +33,8 @@
 </tr>
 
 <?php
+
+//Display event list
 foreach ($eventadminPage as $event) :
     echo "<tr>";
     echo "<td>";
@@ -68,7 +70,7 @@ endforeach;
 </table>
 
 <?php
-
+    //Display page link list
     $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 
     echo "<br /><br />";

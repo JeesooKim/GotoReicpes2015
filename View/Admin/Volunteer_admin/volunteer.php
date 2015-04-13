@@ -81,7 +81,7 @@ if ($action == 'volunteer_list') {
     VolunteerDB::updateVolunteerHireYN($event_id, $job_id, $id, $hire_yes_no);
     
     // Display the volunteer page for the current category
-    header("Location: ./volunteer.php?pgPage=$pgPage&category=$category");
+    header("Location: ./volunteer.php?event_id=$event_id&job_id=$job_id&pgPage=$pgPage");
 }
 
 

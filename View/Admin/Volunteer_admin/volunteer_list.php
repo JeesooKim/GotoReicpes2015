@@ -19,6 +19,7 @@
 </tr>
 
 <?php
+//Display volunteer list
 foreach ($volunteeradminPage as $volunteer) :
     echo "<tr>";
     echo "<td>";
@@ -36,6 +37,7 @@ foreach ($volunteeradminPage as $volunteer) :
 ?>
 <form action="./volunteer.php" method="get" id="volunteer_update_form" target="volunteer">
 <?php
+    //Check hire_yes_no value
     echo "<td>";
     if( $volunteer->getHireYesNo() == "Y") {
         echo "<input type=checkbox name=hire_yes_no checked>";
@@ -58,7 +60,7 @@ endforeach;
 </table>
 
 <?php
-
+//Display page link list
 $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 
 include  PATH_FOOTER_IFRAME_ADMIN; 

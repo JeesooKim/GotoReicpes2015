@@ -20,6 +20,7 @@
 </tr>
 
 <?php
+//Display eventjob list
 foreach ($eventjobadminPage as $eventjob) :
     echo "<tr>";
     echo "<td>";
@@ -58,6 +59,7 @@ endforeach;
 
 <?php
 
+//Display page link list
 $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 
 echo "<br /><br />";

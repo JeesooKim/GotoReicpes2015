@@ -19,7 +19,7 @@ class ToprecipeDB {
         $db = Database::getDB();
         
         $query = "select COUNT(*) from ( "
-                 ."select  (select count(cmt_id) from comments where dish_id = a.dish_id ) cnt, dish_id,"
+                 ."select  votes cnt, dish_id,"
 		 ."dish_name, (select cat_name from categories where cat_id = a.dish_cat) dish_cat,"
                  ."dish_key, dish_num_serving, dish_cook_time "
                  .",(select display_yes_no from top_recipes where dish_id = a.dish_id ) disp_yn "
@@ -46,7 +46,7 @@ class ToprecipeDB {
         
         $db = Database::getDB();
         $query = "select * from ( "
-                 ."select  (select count(cmt_id) from comments where dish_id = a.dish_id ) cnt, dish_id,"
+                 ."select  votes cnt, dish_id,"
 		 ."dish_name, (select cat_name from categories where cat_id = a.dish_cat) dish_cat,"
                  ."dish_key, dish_num_serving, dish_cook_time "
                  .",(select display_yes_no from top_recipes where dish_id = a.dish_id ) disp_yn "
@@ -82,7 +82,7 @@ class ToprecipeDB {
         $db = Database::getDB();
         
         $query = "select COUNT(*) from ( "
-                 ."select  (select count(cmt_id) from comments where dish_id = a.dish_id ) cnt, dish_id,"
+                 ."select  votes cnt, dish_id,"
 		 ."dish_name, (select cat_name from categories where cat_id = a.dish_cat) dish_cat,"
                  ."dish_key, dish_num_serving, dish_cook_time "
                  .",(select display_yes_no from top_recipes where dish_id = a.dish_id ) disp_yn "
@@ -109,7 +109,7 @@ class ToprecipeDB {
         
         $db = Database::getDB();
         $query = "select * from ( "
-                 ."select  (select count(cmt_id) from comments where dish_id = a.dish_id ) cnt, dish_id,"
+                 ."select  votes cnt, dish_id,"
 		 ."dish_name, (select cat_name from categories where cat_id = a.dish_cat) dish_cat,"
                  ."dish_key, dish_num_serving, dish_cook_time "
                  .",(select display_yes_no from top_recipes where dish_id = a.dish_id ) disp_yn "

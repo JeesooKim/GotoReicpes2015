@@ -75,6 +75,9 @@ define("PATH_PUBLIC_RECIPES",  PATH_VIEW_PUBLIC ."/Recipes");
 //define("PATH_PUBLIC_IMAGESLIDER", PATH_VIEW_PUBLIC . "/Imageslider");
 define("PATH_PUBLIC_IMAGESLIDER", "View/Public/Imageslider");
 define("PATH_PUBLIC_EVENTS",  PATH_VIEW_PUBLIC . "/Events");
+define("PATH_PUBLIC_TOPRECIPES",  PATH_VIEW_PUBLIC ."/Toprecipes");
+define("PATH_PUBLIC_VOLUNTEER",  PATH_VIEW_PUBLIC ."/Volunteer");
+define("PATH_PUBLIC_SITEMAP",  PATH_VIEW_PUBLIC ."/Sitemap");
 
 //*** View> Shared ***//
 define("PATH_HEADER",  SITEROOT. "/View/Shared/header.php");  //SERVERROOT is not working
