@@ -44,7 +44,11 @@ if ($action == 'show_add_form') {
 
     //Get id data from database
     $id = VolunteerDB::getNewVolunteerId($event_id, $job_id);
-    //Get name, phone and email
+    if( $id == '') {
+        $id = 1;
+    }
+    
+//Get name, phone and email
     $name = $_GET['name'];
     $phone = $_GET['phone'];
     $email = $_GET['email'];
@@ -71,12 +75,12 @@ if ($action == 'show_add_form') {
         }
     }
     else if($valid){
-    
+
         $volunteer = new Volunteer($event_id, $job_id, $id, $name, $phone, $email, '', '');
         //Add Volunteer to database
         VolunteerDB::addVolunteer($volunteer);
 
-        header('Location: ./volunteer.php?action=show_result&name=$name');
+        //header('Location: ./volunteer.php?action=show_result&name=$name');
     }    
 }else if ($action == 'show_result') {
     
