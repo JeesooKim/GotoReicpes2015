@@ -66,6 +66,8 @@ define("PATH_ADMIN_EVENTS", PATH_VIEW_ADMIN."/Events_admin");
 define("PATH_ADMIN_IMAGESLIDER", PATH_VIEW_ADMIN."/Imageslider_admin");
 define("PATH_ADMIN_FAQ", PATH_VIEW_ADMIN. "/faq_admin");
 define("PATH_ADMIN_TOPRECIPES", PATH_VIEW_ADMIN. "/Toprecipes_admin");
+define("PATH_ADMIN_VOLUNTEER", PATH_VIEW_ADMIN. "/Volunteer_admin");
+define("PATH_ADMIN_SITEMAP", PATH_VIEW_ADMIN. "/Sitemap_admin");
 
 //*** View> Public ***//
 define("PATH_PUBLIC_FAQ",  PATH_VIEW_PUBLIC ."/FAQ" );

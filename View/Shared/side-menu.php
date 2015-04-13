@@ -11,6 +11,8 @@
           <li><a href="<?php echo PATH_ADMIN_GOOGLEMAP .'/location_admin.php';?>">Location<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
           <li><a href="<?php echo PATH_ADMIN_RECIPES . '/index.php';?>">Recipes<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
           <li><a href="<?php echo PATH_ADMIN_TOPRECIPES . '/index.php';?> ">Top Recipes<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+          <li><a href="<?php echo PATH_ADMIN_VOLUNTEER . '/index.php';?> ">Volunteer<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+          <li><a href="<?php echo PATH_ADMIN_SITEMAP . '/index.php';?> ">Sitemap<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
           <li><a>Volunteer<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
           <li><a>FAQ<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
           <li><a>Live Chat<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
