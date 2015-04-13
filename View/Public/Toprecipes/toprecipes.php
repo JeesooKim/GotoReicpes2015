@@ -81,7 +81,7 @@ echo "<br />";
 echo '<table class="table" >';
 ?>
 <tr>
-    <th>Count</th>
+    <th>Recommendation</th>
     <th>Dish Id</th>
     <th>Dish Name</th>
     <th>Category</th>
