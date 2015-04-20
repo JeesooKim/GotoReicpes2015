@@ -1,4 +1,6 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php"; ?>
+<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php"; 
+
+?>
 <!-- Sidebar -->
       <div id="sidebar-wrapper">
       <ul id="sidebar_menu" class="sidebar-nav">

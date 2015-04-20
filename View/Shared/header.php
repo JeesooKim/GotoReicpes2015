@@ -52,7 +52,7 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right">                                    
                                 <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/register.php">Register</a></li>
-                                <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/login.php">Login</a></li>                                
+                                <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/login_index.php">Login</a></li>                                
                                 </ul>
                         </div><!-- /.navbar-collapse -->
                         
@@ -78,7 +78,7 @@
                                         <li><a href="<?php echo PATH_PUBLIC_IMAGEGALLERY . '/imagegallery.php';?>">Gallery</a></li>
                                         <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a class="ddl_link" href="<?php echo PATH_PUBLIC_EVENTS . '/events.php';?>">Event Calendar</a></li>
+                                            <li><a class="ddl_link" href="<?php echo PATH_PUBLIC_EVENTS . '/events.php';?>">Events List</a></li>
                                             <li><a class="ddl_link" href="<?php echo  PATH_PUBLIC_VOLUNTEER . '/index.php';?>">Volunteer Sign Up</a></li>
                                         </ul></li>
                                         <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact<span class="caret"></span></a>

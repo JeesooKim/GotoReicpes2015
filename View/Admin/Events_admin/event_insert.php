@@ -1,4 +1,4 @@
-<?php  include PATH_HEADER_ADMIN;  ?> 
+<?php include PATH_HEADER_ADMIN;  ?> 
 <?php
 #File name: event_insert.php
 #File for Events-Admin (3/4)

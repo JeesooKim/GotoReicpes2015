@@ -1,5 +1,5 @@
 <?php include PATH_HEADER_ADMIN;  ?>  
-<!--end top-->
+
 <?php
 #File name: event_list.php
 #File for Events-Admin(2/4)
