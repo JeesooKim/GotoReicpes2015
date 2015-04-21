@@ -100,6 +100,16 @@ else if ($action == 'show_edit_form') {
     $img_edit_filename =$_POST['img_filename'];  //file name from the edit page, 
     $img_new_filename = basename($_FILES['file_upload']['name']); //get the file name if there is any file browsed for uploading
     
+    
+    /********* Required field validation *********/     
+    if($img_title === NULL || empty($img_title)){
+     $error .= "Please enter the title of the image.";
+    }
+    if($img_key === NULL || empty($img_key)){
+     $error .= "Please enter the key ingredient for the image file.";
+    }
+    /****** required field validaton (end) *************/
+    
      // if both are the same, new name is the same as the old one.
     //otherwise, the new name should be the one from the new one to be uploaded.    
         //when file upload is blank, that is the file should be the same as old on in DB
@@ -238,6 +248,15 @@ else if ($action == 'show_upload_form') {
     //check if image file is an actual image or fake one
     //echo "Image type $img_type";
     
+    /********* Required field validation *********/     
+    if($img_title === NULL || empty($img_title)){
+     $error .= "Please enter the title of the image.";
+    }
+    if($img_key === NULL || empty($img_key)){
+     $error .= "Please enter the key ingredient for the image file.";
+    }
+    /****** required field validaton (end) *************/    
+    
  /**************   Image File Validation****************/       
     //$uploadOk is the variable to store the validation result.   True/False
     $isImage =ImageFileValidation::isImage($t_name) ; 
@@ -285,5 +304,4 @@ else if ($action == 'show_upload_form') {
          //******************Uploading (Inserting) Image Gallery ends ******************//
     //Ref: http://www.w3schools.com/php/php_file_upload.asp  Feb 25,2015
 }
-
 ?>
