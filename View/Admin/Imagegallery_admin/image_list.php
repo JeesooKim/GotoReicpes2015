@@ -54,7 +54,7 @@
         <table id="imageGalleryTB" class="display"><!--class="table table-responsive table-bordered"    width="900"-->
             <thead bgcolor="#a8cb81" >                
                 <tr style="font-variant:small-caps;font-style:normal;color:black;font-size:18px;">
-                    <th></th>
+                    <th>Img</th>
                     <th>Title</th>
                     <th>Key Ingredient</th>
                     <th>Description</th>
@@ -68,7 +68,7 @@
                 <?php foreach ($images as $image) : ?>
                 <!-- $images = ImageGalleryDB::getImagesByCategory($category_id); from index.php -->
                         <tr>
-                            <td><img src="<?php echo PATH_IMAGES . "/" . $current_category->getCatName() . "/thumbnails/" . $image->getFileName();?>" /></td>
+                            <td><a href="<?php echo PATH_IMAGES . "/" . $current_category->getCatName() . "/" . $image->getFileName();?>"><img src="<?php echo PATH_IMAGES . "/" . $current_category->getCatName() . "/thumbnails/" . $image->getFileName();?>" alt="<?php echo $image->getTitle();?>" title="<?php echo $image->getTitle();?>"/></a></td>
                             <td><?php echo $image->getTitle(); ?></td>
                             <td><?php echo $image->getKeyIngredient(); ?></td>
                             <td><?php echo $image->getDetail(); ?></td>
