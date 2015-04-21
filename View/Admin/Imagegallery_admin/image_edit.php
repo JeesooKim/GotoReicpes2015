@@ -65,7 +65,7 @@
                 </tr>
                 <tr>
                     <td><label>Source:</label></td>
-                    <td><input type="text" name="img_source" value="<?php echo $image->getSource(); ?>" /></td>
+                    <td><input type="text" name="img_source" value="<?php echo $image->getSource(); ?>" placeholder="http://" /></td>
                 </tr>
                 
         </table>
