@@ -1,8 +1,4 @@
-    <?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
-
-    <?php
+<?php
 #File name: sitemap.php
 #File for Sitemap
 #Team Project: PHP project-gotorecipes.com
@@ -12,13 +8,13 @@
 #Reference: Class material -PDO Class
 ?>
 
-<?php include PATH_HEADER;  ?>  
+<?php include "../../../View/Shared/_Layout/header.php";  ?>  
 <!--end top-->
 
 <?php
-require(PATH_DATABASE);
-require(PATH_MODEL_SITEMAP);
-require(PATH_MODEL_SITEMAP_DB);
+require("../../../Model/database.php");
+require("../../../Model/sitemap.php");
+require("../../../Model/sitemap_db.php");
 
 ?>
 <h1>Sitemap</h1>
@@ -100,4 +96,4 @@ endforeach;
 echo "</table>";
 
 ?>
-<?php include PATH_FOOTER; ?>
+<?php include "../../../View/Shared/footer.php";  ?>  
