@@ -56,7 +56,7 @@
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a class="ddl_link" href="./View/Public/Recipes/recipes.php">Recipes</a></li>
-                                    <li><a class="ddl_link" href="./View/Public/Toprecipes//toprecipes.php">Today Recipes</a></li>
+                                    <li><a class="ddl_link" href="./View/Public/Toprecipes/toprecipes.php">Today Recipes</a></li>
                                 </ul></li>
                                 <li><a href="./View/Public/ImageGallery/imagegallery.php">Gallery</a></li>
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>
