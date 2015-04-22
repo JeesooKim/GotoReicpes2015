@@ -1,4 +1,4 @@
-<?php include PATH_HEADER_IFRAME;  ?>  
+<?php include './ref/header-iframe.php';  ?>  
 <!--end top-->
 <?php
 #File name: volunteer_add.php
@@ -56,6 +56,6 @@
 
 <?php
 
-include  PATH_FOOTER_IFRAME; 
+include './ref/footer-iframe.php'; 
 
 ?>

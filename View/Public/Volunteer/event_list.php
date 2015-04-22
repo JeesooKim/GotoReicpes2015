@@ -1,4 +1,4 @@
-<?php include PATH_HEADER;  ?>  
+<?php include '../../../View/Shared/header.php';  ?>  
 <!--end top-->
 <?php
 #File name: event_list.php
@@ -10,8 +10,8 @@
 #Reference: Class material -PDO Class
 ?>
 
-<script  src="<?php echo PATH_JS; ?>/calendar.js"></script>
-<script  src="<?php echo PATH_JS; ?>/calendar_jquery.js"></script>
+<script  src="../../../Content/js/calendar.js"></script>
+<script  src="../../../Content/js/calendar_jquery.js"></script>
 
 <h1>Today's Recipe</h1>
 <br /><br />                
