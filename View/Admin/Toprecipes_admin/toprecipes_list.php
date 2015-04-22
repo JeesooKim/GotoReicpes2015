@@ -1,4 +1,4 @@
-<?php include PATH_HEADER_ADMIN;  ?>  
+<?php include '../../Shared/header-admin.php';  ?>  
 <!--end top-->
 <?php
 #File name: toprecipes_list.php
@@ -105,9 +105,6 @@ endforeach;
 //Get pages link list
 $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 
-?>
-</div>
-<?php
-include  PATH_FOOTER_ADMIN; 
+include  '../../Shared/footer-admin.php'; 
 
 ?>
