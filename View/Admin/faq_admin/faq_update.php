@@ -1,7 +1,7 @@
 <?php
-require_once( PATH_DATABASE);  
-require(PATH_MODEL_FAQS);
-require(PATH_MODEL_FAQ_DB);
+require('../../../Model/database.php');
+require('../../../Model/faqs.php');
+require('../../../Model/faq_db.php');
 
 
 if(isset($_GET['id'])) {
@@ -35,7 +35,7 @@ if (isset($_POST['faq_update'])) {
 
 <!--Update form-->
 
-<?php include '../../Shared/header-admin.php';    ?>
+<?php include '../../Shared/_Layout/header-admin.php';    ?>
 <!--end top-->
 <div id="main">
     <h1>Update: <?php echo $faq_question; ?></h1>
@@ -58,5 +58,4 @@ if (isset($_POST['faq_update'])) {
     </form>
 </div>
 <!--End of update form-->
-
-<?php include PATH_FOOTER_ADMIN;    ?>
+<?php include '../../Shared/_Layout/footer-admin.php';  ?> 

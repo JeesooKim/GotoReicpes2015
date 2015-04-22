@@ -13,7 +13,7 @@
         <link href="../../../Content/css/bootstrap.css" rel="stylesheet" />
         <link href="../../../Content/css/style.css" rel="stylesheet" type="text/css" />
         <link href="../../../Content/css/reset.css" rel="stylesheet" type="text/css" />
-
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -75,7 +75,7 @@
                                     <li><a class="ddl_link" href="../../Public/Recipes/recipes.php">Recipes</a></li>
                                     <li><a class="ddl_link" href="../../Public/Toprecipes//toprecipes.php">Today Recipes</a></li>
                                 </ul></li>
-                                <li><a href="../../Public/ImageGallery/imagegallery.php">Gallery</a></li>
+                            <li><a href="../../Public/ImageGallery/imagegallery.php">Gallery</a></li>
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a class="ddl_link" href="../../Public/Events/events.php">Events List</a></li>

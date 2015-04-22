@@ -1,4 +1,5 @@
-<?php  include '../../Shared/header-admin.php';  ?>  
+<?php  include '../../Shared/_Layout/header-admin.php';  
+?>  
 
 <?php
 #File name: sitemap_insert.php
@@ -9,6 +10,10 @@
 #Modified: 
 #Reference: Class material -PDO Class
 ?>
+
+<div id='sidebar'>   
+        <?php include '../../Shared/_Layout/side-menu.php';  ?>
+    </div><!-- end of #sidebar -->
 
 <div id="main">
     
@@ -73,4 +78,4 @@
     
 
 </div>
-<?php include '../../Shared/footer-admin.php'; ?>
+<?php include '../../Shared/_Layout/footer-admin.php'; ?>

@@ -1,4 +1,4 @@
-<?php include '../../Shared/header-admin.php';  ?>  
+<?php include '../../Shared/_Layout/header-admin.php';  ?>  
 <?php
 #File name: event_list.php
 #File for Volunteer_admin
@@ -9,8 +9,8 @@
 #Reference: Class material -PDO Class
 ?>
 <!--end top-->
-<script  src="<?php echo PATH_JS; ?>/calendar.js"></script>
-<script  src="<?php echo PATH_JS; ?>/calendar_jquery.js"></script>
+<script  src="../../../Content/js/calendar.js"></script>
+<script  src="../../../Content/js/calendar_jquery.js"></script>
 
 <h1>Today's Recipe</h1>
 <br /><br />                

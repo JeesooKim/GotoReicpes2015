@@ -1,7 +1,7 @@
 <?php
-require_once( PATH_DATABASE);  
-require(PATH_MODEL_FAQS);
-require(PATH_MODEL_FAQ_DB);
+require('../../../Model/database.php');
+require('../../../Model/faqs.php');
+require('../../../Model/faq_db.php');
 
 //delete option
 if(isset($_POST['q_id'])){
@@ -11,12 +11,12 @@ FaqDB::deleteQuestion($q_id);
 }
 ?>
 
-<?php include '../../Shared/header-admin.php';    ?>
+<?php include '../../Shared/_Layout/header-admin.php';    ?>
 <!--end top-->
 
 <div id="main">
     <ol class="breadcrumb">
-        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
+        <li><a href="../index.php">Admin Panel</a></li>
         <li class="active">FAQ</li>
     </ol>
 
@@ -80,7 +80,5 @@ FaqDB::deleteQuestion($q_id);
     </table>
 </div><!--End of main-->
 
-
-<?php include PATH_FOOTER_ADMIN;    ?>
                 
-
+<?php include '../../Shared/_Layout/footer-admin.php';  ?>  

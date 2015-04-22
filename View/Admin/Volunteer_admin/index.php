@@ -6,10 +6,11 @@
 #Created: April 12 2015
 #Modified: 
 #Reference: Class material -PDO Class
-require(PATH_DATABASE);
-require(PATH_MODEL_VOLUNTEER);
-require(PATH_MODEL_VOLUNTEER_DB);
-require(PATH_MODEL_PAGENATOR);
+
+require('../../../Model/database.php');
+require('../../../Model/volunteer.php');
+require('../../../Model/volunteer_db.php');
+require('../../../Model/pagenator.php');
 
 // Get the current action value
 if (isset($_POST['action'])) {
@@ -50,7 +51,6 @@ if ($action == 'event_list') {
     // Display the event list
     include('event_list.php');
 
-    
-    include  PATH_FOOTER_ADMIN; 
+    include '../../Shared/_Layout/footer-admin.php';
 }
 ?>
