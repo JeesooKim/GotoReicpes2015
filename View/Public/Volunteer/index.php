@@ -51,6 +51,6 @@ if ($action == 'event_list') {
     include('event_list.php');
 
     
-    include '../../../View/Shared/footer.php'; 
+    include '../../../View/Shared/_Layout/footer.php'; 
 }
 ?>
