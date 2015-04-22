@@ -1,4 +1,4 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  
+<?php
 
 #File name: index.php
 #File for Volunteer
@@ -8,10 +8,10 @@
 #Modified: 
 #Reference: Class material -PDO Class
 
-require(PATH_DATABASE);
-require(PATH_MODEL_VOLUNTEER);
-require(PATH_MODEL_VOLUNTEER_DB);
-require(PATH_MODEL_PAGENATOR);
+require("../../../Model/database.php");
+require("../../../Model/volunteer.php");
+require("../../../Model/volunteer_db.php");
+require("../../../Model/pagenator.php");
 
 //Get the action 
 if (isset($_POST['action'])) {
@@ -52,6 +52,6 @@ if ($action == 'event_list') {
     include('event_list.php');
 
     
-    include  PATH_FOOTER; 
 }
 ?>
+<?php include "../../../View/Shared/footer.php";  ?>  
