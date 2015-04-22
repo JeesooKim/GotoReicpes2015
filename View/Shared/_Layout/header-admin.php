@@ -41,7 +41,7 @@
             <nav class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="../../Admin//index.php">                     
+                        <a class="navbar-brand" href="../../Admin/index.php">                     
                             <img id="logo" src="../../../Content/uploads/images/logo.jpg" alt="gotorecipes" title="Homepage" /></a>
                     </div><!-- end of "navbar-header-->
                     <!-- Collect the nav links, forms, and other content for toggling -->

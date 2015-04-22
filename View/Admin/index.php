@@ -2,7 +2,7 @@
 include('session.php');
 ?>
 
-<?php include '../Shared/footer-admin.php'; ?>  
+<?php include '../Shared/header-admin.php'; ?>  
 
 <?php
 //echo "<h1>ADMIN PANEL</h1>";

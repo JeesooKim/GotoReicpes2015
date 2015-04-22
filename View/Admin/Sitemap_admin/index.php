@@ -7,10 +7,11 @@
 #Modified: 
 #Reference: Class material -PDO Class
 
-require(PATH_DATABASE);
-require(PATH_MODEL_SITEMAP);
-require(PATH_MODEL_SITEMAP_DB);
-require(PATH_MODEL_PAGENATOR);
+require_once( '../../../Model/database.php');
+require_once( '../../../Model/sitemap.php');
+require_once( '../../../Model/sitemap_db.php');
+require_once( '../../../Model/pagenator.php');
+
 // Get the current action value
 if (isset($_POST['action'])) {
     $action = $_POST['action'];

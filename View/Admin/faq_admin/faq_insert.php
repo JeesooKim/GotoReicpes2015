@@ -1,8 +1,7 @@
 <?php
-require_once( PATH_DATABASE);  
-require(PATH_MODEL_FAQS);
-require(PATH_MODEL_FAQ_DB);
-
+require('../../../Model/database.php');
+require('../../../Model/faqs.php');
+require('../../../Model/faq_db.php');
 
 if(isset($_POST['faq_insert'])){
     $faq_question = $_POST['question'];
@@ -24,8 +23,8 @@ if(isset($_POST['faq_insert'])){
 <?php include '../../Shared/header-admin.php';    ?>
 <!--end top-->
 <ol class="breadcrumb">
-        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/faq_admin/faq_index.php">FAQ</a></li>
+        <li><a href="../index.php">Admin Panel</a></li>
+        <li><a href="../faq_admin/faq_index.php">FAQ</a></li>
         <li class="active">Add new question & answer</li>
     </ol>
 
@@ -48,6 +47,4 @@ if(isset($_POST['faq_insert'])){
         <a class="btn btn-default" href="faq_index.php">Back to list</a>
     </form>
 </div><!-- /main -->
-
-
-<?php include PATH_FOOTER_ADMIN;    ?>
+<?php include '../../Shared/_Layout/footer-admin.php';  ?> 

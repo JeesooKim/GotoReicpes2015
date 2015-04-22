@@ -1,4 +1,5 @@
-<?php include '../../Shared/header-admin.php';  ?>  
+<?php include '../../Shared/_Layout/header-admin.php';  
+?>  
 <!--end top-->
 <?php
 #File name: sitemap_list.php
@@ -11,6 +12,9 @@
 ?>
 <h1>Sitemap Admin</h1>
 
+<div id='sidebar'>   
+        <?php include '../../Shared/_Layout/side-menu.php';  ?>
+    </div><!-- end of #sidebar -->
 <br /><br />                
     <form action="." method="GET">
         Menu Level : 
@@ -112,4 +116,4 @@ endforeach;
 ?>
 </table>
 
-<?php include '../../Shared/footer-admin.php'; ?>
+<?php include '../../Shared/_Layout/footer-admin.php'; ?>
