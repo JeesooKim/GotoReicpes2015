@@ -1,4 +1,4 @@
-<?php include '../../Shared/header-admin.php';  ?>  
+<?php include '../../Shared/_Layout/header-admin.php';  ?>  
 <!--end top-->
 <?php
 #File name: eventjob_list.php
@@ -67,6 +67,6 @@ echo "<br /><br />";
 echo '<iframe src="./ref/blank.php" name="volunteer" width="100%" height="400" scrolling="no"></iframe>';
 
 
-include  PATH_FOOTER_IFRAME_ADMIN; 
+include  './ref/footer-admin-iframe.php';
 
 ?>
