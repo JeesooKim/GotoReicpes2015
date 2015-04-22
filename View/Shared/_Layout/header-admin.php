@@ -41,8 +41,8 @@
             <nav class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">                     
-                            <img id="logo" src="<?php echo PATH_IMAGES . "/logo.jpg"; ?>" alt="gotorecipes" title="Homepage" /></a>
+                        <a class="navbar-brand" href="../../Admin//index.php">                     
+                            <img id="logo" src="../../../Content/uploads/images/logo.jpg" alt="gotorecipes" title="Homepage" /></a>
                     </div><!-- end of "navbar-header-->
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -50,7 +50,7 @@
                             <div id="profile" style="color: white;">
 <!--                                <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b> -->
                                 <br/>
-                                <b id="logout"><a href="<?php echo PATH_VIEW_ADMIN; ?>/logout.php">Log Out</a></b>
+                                <b id="logout"><a href="../../Admin/logout.php">Log Out</a></b>
                             </div>
 
 <!--
