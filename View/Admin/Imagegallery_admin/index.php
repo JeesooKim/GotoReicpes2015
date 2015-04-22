@@ -279,7 +279,7 @@ else if ($action == 'show_upload_form') {
             // Display the Image List page for the current category
             header("Location: .?category_id=$category_id");
         } else {
-            $error.= 'upload fail.<br/>';
+            $error.= 'Moving file_upload fail.<br/>';
         }
     }
     //******************Uploading (Inserting) Image Gallery ends ******************//
