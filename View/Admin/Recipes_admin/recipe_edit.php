@@ -1,4 +1,4 @@
-<?php  include PATH_HEADER_ADMIN;  ?>  
+<?php  include '../../Shared/header-admin.php';  ?>  
 
 <?php
 #File name: recipe_edit.php
@@ -74,5 +74,4 @@
         <br />
     </form>
 </div> <!-- end of #main-->
-
-<?php include PATH_FOOTER_ADMIN; ?>
+<?php include '../../Shared/footer-admin.php'; ?>

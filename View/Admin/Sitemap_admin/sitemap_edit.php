@@ -1,4 +1,4 @@
-<?php  include PATH_HEADER_ADMIN;  ?>  
+<?php  include '../../Shared/header-admin.php';  ?>  
 
 <?php
 #File name: sitemap_edit.php
@@ -74,4 +74,4 @@
     
 
 </div>
-<?php include PATH_FOOTER_ADMIN; ?>
+<?php include '../../Shared/footer-admin.php'; ?>

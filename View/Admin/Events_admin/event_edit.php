@@ -1,4 +1,4 @@
-<?php  include PATH_HEADER_ADMIN;  ?>
+<?php  include '../../Shared/header-admin.php';  ?>
 <?php
 #File name: event_edit.php
 #File for Events-Admin (4/4)
@@ -12,9 +12,9 @@
 
 
 <!-- jQuery datetime picker for Admin-Event-->
-<link rel="stylesheet" type="text/css" href="<?php echo PATH_CSS; ?>/event_dtpick/jquery.datetimepicker.css" />
-<script src="<?php echo PATH_JS; ?>/event_dtpick/jquery.js"></script>
-<script src="<?php echo PATH_JS; ?>/event_dtpick/jquery.datetimepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../Content/css/event_dtpick/jquery.datetimepicker.css" />
+<script src="../../../Content/js/event_dtpick/jquery.js"></script>
+<script src="../../../Content/js/event_dtpick/jquery.datetimepicker.js"></script>
 <!-- event datetime picker -->
                     
 <script>
@@ -26,13 +26,13 @@
     
 </script>
 <div id="sidebar">
-       <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
+       <?php include '../../Shared/side-menu.php';  ?> 
     </div> <!-- end of #sidebar -->
 
 <div id="main">
     <ol class="breadcrumb">
-        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li class="active"><a href="<?php echo PATH_ADMIN_EVENTS; ?>/index.php">Events</a></li>
+        <li><a href="../index.php">Admin Panel</a></li>
+        <li class="active"><a href="../Events_admin/index.php">Events</a></li>
         <li class="active">Edit Event</li>
     </ol>
         
@@ -81,4 +81,4 @@
     </form>
 </div> <!-- end of #main-->
 
-<?php include PATH_FOOTER_ADMIN; ?>
+<?php include '../../Shared/footer-admin.php'; ?>

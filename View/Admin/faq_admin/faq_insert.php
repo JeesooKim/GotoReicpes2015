@@ -1,7 +1,3 @@
-<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
-
-
 <?php
 require_once( PATH_DATABASE);  
 require(PATH_MODEL_FAQS);
@@ -25,7 +21,7 @@ if(isset($_POST['faq_insert'])){
 }
 ?>
 
-<?php include PATH_HEADER_ADMIN;    ?>
+<?php include '../../Shared/header-admin.php';    ?>
 <!--end top-->
 <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>

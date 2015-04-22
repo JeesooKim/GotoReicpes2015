@@ -1,7 +1,3 @@
-<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
-
-
 <?php
 require_once( PATH_DATABASE);  
 require(PATH_MODEL_IMAGESLIDERS);
@@ -15,7 +11,7 @@ ImagesliderDB::deleteImageslider($img_id);
 }
 ?>
 
-<?php include PATH_HEADER_ADMIN;    ?>
+<?php include '../../Shared/header-admin.php';    ?>
 <!--end top-->
 
 
@@ -64,7 +60,5 @@ ImagesliderDB::deleteImageslider($img_id);
     </table>
 </div><!--End of main-->
 
-<?php
-    include PATH_FOOTER_ADMIN;   
-?>
+<?php include '../../Shared/footer-admin.php'; ?>
                 

@@ -1,8 +1,7 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 <?php
-        require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
-        require_once( PATH_MODEL_EVENT);
-        require_once( PATH_MODEL_EVENTS_DB);
+        require_once( '../../../Model/database.php');   //SERVER ROOT is not working but SITEROOT is working ......why?
+        require_once( '../../../Model/event.php');
+        require_once( '../../../Model/events_db.php');
 
         #File name: index.php
         #File for Events-Admin (1/4)

@@ -1,7 +1,3 @@
-<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
-
-
 <?php
 require_once( PATH_DATABASE);  
 require(PATH_MODEL_FAQS);
@@ -39,7 +35,7 @@ if (isset($_POST['faq_update'])) {
 
 <!--Update form-->
 
-<?php include PATH_HEADER_ADMIN;    ?>
+<?php include '../../Shared/header-admin.php';    ?>
 <!--end top-->
 <div id="main">
     <h1>Update: <?php echo $faq_question; ?></h1>

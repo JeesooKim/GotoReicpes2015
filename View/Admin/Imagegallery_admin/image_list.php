@@ -1,4 +1,4 @@
-<?php include PATH_HEADER_ADMIN;    ?>
+<?php include '../../Shared/header-admin.php';    ?>
 <?php
 #File name: image_list.php
 #File for Image Gallery-Admin
@@ -94,4 +94,4 @@
         
     <!--/div><!-- end of #content -->
 </div><!-- end of #main -->
-<?php include PATH_FOOTER_ADMIN;    ?>
+<?php include '../../Shared/footer-admin.php'; ?>

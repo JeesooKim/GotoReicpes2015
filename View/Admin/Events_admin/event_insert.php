@@ -1,4 +1,4 @@
-<?php include PATH_HEADER_ADMIN;  ?> 
+<?php include '../../Shared/header-admin.php';  ?> 
 <?php
 #File name: event_insert.php
 #File for Events-Admin (3/4)
@@ -86,4 +86,4 @@
     
 
 </div>
-<?php include PATH_FOOTER_ADMIN; ?>
+<?php include '../../Shared/footer-admin.php'; ?>

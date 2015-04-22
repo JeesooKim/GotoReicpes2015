@@ -1,6 +1,5 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  
-
-#File name: eventjob.php
+<?php  
+##File name: eventjob.php
 #File for Volunteer_admin
 #Team Project: PHP project-gotorecipes.com
 #Author: Jaden (Ju Won) Lee @Humber College 2015

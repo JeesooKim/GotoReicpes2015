@@ -1,4 +1,4 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  
+<?php  
 
 #File name: volunteer.php
 #File for Volunteer_admin

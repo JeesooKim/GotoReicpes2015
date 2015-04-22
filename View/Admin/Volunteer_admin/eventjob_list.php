@@ -1,4 +1,4 @@
-<?php include PATH_HEADER_IFRAME_ADMIN;  ?>  
+<?php include '../../Shared/header-admin.php';  ?>  
 <!--end top-->
 <?php
 #File name: eventjob_list.php

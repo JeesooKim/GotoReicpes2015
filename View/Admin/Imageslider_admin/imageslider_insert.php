@@ -1,7 +1,3 @@
-<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
-
-
 <?php
 require_once( PATH_DATABASE);  
 require(PATH_MODEL_IMAGESLIDERS);
@@ -76,7 +72,7 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
-<?php include PATH_HEADER_ADMIN;    ?>
+<?php include '../../Shared/header-admin.php';    ?>
 <!--end top-->
 <ol class="breadcrumb">
         <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
@@ -102,6 +98,4 @@ if(isset($_POST['submit'])){
     </form>
     
 </div>
-<?php
-    include PATH_FOOTER_ADMIN;   
-?>
+<?php include '../../Shared/footer-admin.php'; ?>

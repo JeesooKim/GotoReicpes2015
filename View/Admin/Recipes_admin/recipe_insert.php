@@ -1,4 +1,4 @@
-<?php  include PATH_HEADER_ADMIN;  ?> 
+<?php  include '../../Shared/header-admin.php';  ?> 
 <?php
 #File name: recipe_insert.php
 #File for Recipes-Admin
@@ -82,4 +82,4 @@
     
 
 </div>
-<?php include PATH_FOOTER_ADMIN; ?>
+<?php include '../../Shared/footer-admin.php'; ?>

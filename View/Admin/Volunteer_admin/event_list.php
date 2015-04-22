@@ -1,4 +1,4 @@
-<?php include PATH_HEADER_ADMIN;  ?>  
+<?php include '../../Shared/header-admin.php';  ?>  
 <?php
 #File name: event_list.php
 #File for Volunteer_admin

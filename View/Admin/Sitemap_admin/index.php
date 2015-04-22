@@ -1,5 +1,4 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  
-
+<?php 
 #File name: index.php
 #File for Sitemap_admin
 #Team Project: PHP project-gotorecipes.com

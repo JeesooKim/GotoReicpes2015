@@ -1,9 +1,4 @@
-<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  include "config.php"; ?>
-<?php  //include "GotoReicpes2015/config.php";  ?>
-
-
-<?php include PATH_HEADER;  ?>  
+<?php include '/View/Shared/header.php';  ?>  
 <?php    
     include PATH_PUBLIC_IMAGESLIDER. '/imageslider.php';    
     ?>
