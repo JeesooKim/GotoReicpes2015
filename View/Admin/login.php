@@ -32,8 +32,8 @@ if(isset($_POST['submit'])){
                    //To protect MySQL injection for Security purpose
                    $username =stripslashes($username);   //stripslashes(): Un-quotes a quoted string.
                    $password=stripslashes($password);
-                   $username= mysql_real_escape_string($username); //Escapes special characters in a string for use in an SQL statement
-                   $password=  mysql_real_escape_string($password);//Returns an escaped string. 
+//                   $username= mysql_real_escape_string($username); //Escapes special characters in a string for use in an SQL statement
+//                   $password=  mysql_real_escape_string($password);//Returns an escaped string. 
 
                    
                    //******* call and bring the user info from db*************//
