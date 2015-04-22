@@ -10,12 +10,12 @@
               <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
         <![endif]-->        
 
-        <link href="<?php echo PATH_CSS; ?>/admin-css.css" rel="stylesheet" />
-        <link href="<?php echo PATH_CSS; ?>/bootstrap.css" rel="stylesheet" />
-        <link href="<?php echo PATH_CSS; ?>/reset.css" rel="stylesheet" type="text/css" /><!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <link href="../../Content/css/admin-css.css" rel="stylesheet" />
+        <link href="../../Content/css/bootstrap.css" rel="stylesheet" />
+        <link href="../../Content/css/reset.css" rel="stylesheet" type="text/css" /><!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="<?php echo PATH_JS; ?>/bootstrap.min.js"></script>                    
+        <script src="../../Content/js/bootstrap.min.js"></script>                    
 
         <!-- The following is for Image Gallery -->                    
         <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
@@ -24,7 +24,7 @@
         <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
         <script src="//blueimp.github.io/Gallery/js/blueimp-gallery.min.js"></script>
         <script src="//blueimp.github.io/Gallery/js/bootstrap-image-gallery.js"></script>
-        <script src="<?php echo PATH_JS; ?>/bootstrap-image-gallery.js"></script>
+        <script src="../../Content/js/bootstrap-image-gallery.js"></script>
         <!-- Image Gallery CDN-->
 
         <!-- The following is for tables in admin view -->
@@ -41,8 +41,8 @@
             <nav class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">                     
-                            <img id="logo" src="<?php echo PATH_IMAGES . "/logo.jpg"; ?>" alt="gotorecipes" title="Homepage" /></a>
+                        <a class="navbar-brand" href="../../View/Admin/index.php">                     
+                            <img id="logo" src="../../Content/uploads/images/logo.jpg"; ?>" alt="gotorecipes" title="Homepage" /></a>
                     </div><!-- end of "navbar-header-->
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -50,12 +50,12 @@
                             <div id="profile" style="color: white;">
 <!--                                <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b> -->
                                 <br/>
-                                <b id="logout"><a href="<?php echo PATH_VIEW_ADMIN; ?>/logout.php">Log Out</a></b>
+                                <b id="logout"><a href="../../View/Admin/logout.php">Log Out</a></b>
                             </div>
 
 <!--
-                            <li><a href="<?php //echo PATH_VIEW_ADMIN; ?>/register.php">Register</a></li>
-                            <li><a href="<?php //echo PATH_VIEW_ADMIN; ?>/login.php">Login</a></li>                                -->
+                            <li><a href="../../View/Admin/register.php">Register</a></li>
+                            <li><a href="../../View/Admin/login.php">Login</a></li>                                -->
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
