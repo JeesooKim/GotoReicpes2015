@@ -1,4 +1,4 @@
-<?php  include '../../Shared/header-admin.php';  ?>
+<?php  include '../../Shared/_Layout/header-admin.php';  ?>
 <?php
 #File name: event_edit.php
 #File for Events-Admin (4/4)
@@ -26,7 +26,7 @@
     
 </script>
 <div id="sidebar">
-       <?php include '../../Shared/side-menu.php';  ?> 
+       <?php include '../../Shared/_Layout/side-menu.php';  ?> 
     </div> <!-- end of #sidebar -->
 
 <div id="main">
@@ -81,4 +81,4 @@
     </form>
 </div> <!-- end of #main-->
 
-<?php include '../../Shared/footer-admin.php'; ?>
+<?php include '../../Shared/_Layout/footer-admin.php'; ?>

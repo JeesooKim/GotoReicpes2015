@@ -1,7 +1,3 @@
-<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
-
 <?php
 #File name: toprecipes.php
 #File for Toprecipes
@@ -12,7 +8,7 @@
 #Reference: Class material -PDO Class
 ?>
 
-<?php include "../../../View/Shared/header.php";  ?>  
+<?php include "../../../View/Shared/_Layout/header.php";  ?>  
 <!--end top-->
 
 <?php

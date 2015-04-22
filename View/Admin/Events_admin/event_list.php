@@ -1,4 +1,4 @@
-<?php include '../../Shared/header-admin.php';  ?>  
+<?php include '../../Shared/_Layout/header-admin.php';  ?>  
 
 <?php
 #File name: event_list.php
@@ -18,13 +18,13 @@ $(document).ready( function () {
     
 
 <div id="sidebar">
-       <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?> 
+       <?php include '../../Shared/_Layout/side-menu.php';  ?> 
     </div>
 <!-- end of #sidebar -->
 <div id="main">
     <ol class="breadcrumb">
-        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li class="active"><a href="<?php echo PATH_ADMIN_EVENTS; ?>/index.php">Events</a></li>
+        <li><a href="../index.php">Admin Panel</a></li>
+        <li class="active"><a href="../Events_admin/index.php">Events</a></li>
         <li class="active">Events List</li>
     </ol>
     
@@ -77,4 +77,4 @@ $(document).ready( function () {
         </tbody>                
         </table>        
         </div><!-- end of #main -->
-<?php include '../../Shared/footer-admin.php'; ?>
+<?php include '../../Shared/_Layout/footer-admin.php'; ?>

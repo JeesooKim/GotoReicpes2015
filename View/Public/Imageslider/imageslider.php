@@ -1,11 +1,11 @@
 <?php //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  
 
-require_once( PATH_DATABASE);
-require_once( PATH_MODEL_IMAGESLIDERS );
-require_once( PATH_MODEL_IMAGESLIDER_DB );
+require_once( '../../../Model/database.php' );
+require_once( '../../../Model/imagesliders.php' );
+require_once( '../../../Model/imageslider_db.php' );
 ?>
-    <link href="<?php echo  PATH_CSS; ?>/responsiveslides.css" rel="stylesheet" type="text/css" />
-    <script src="<?php echo PATH_RSLIDER.'/responsiveslides.min.js' ?>"></script>
+    <link href="../.././Content/css/responsiveslides.css" rel="stylesheet" type="text/css" />
+    <script src="../../../Content/js/responsiveslides.min.js"></script>
   
 <section id="content">
 <!-- image slider feature -->
@@ -14,7 +14,7 @@ require_once( PATH_MODEL_IMAGESLIDER_DB );
         $imageslider = ImagesliderDB::getImagesliders();
         foreach ($imageslider as $row):
         ?>
-        <li><?php echo "<img src='" . PATH_IMAGES.'/imageslider/' . $row->getPath()."' />" ?></li>
+        <li><?php echo '<img src="../../../Content/uploads/images/imageslider/' . $row->getPath(). '"  '; ?></li>
         <?php endforeach; ?>
     </ul>   
 

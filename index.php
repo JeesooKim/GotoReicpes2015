@@ -1,6 +1,6 @@
-<?php include 'View/Shared/header.php';  ?>  
+<?php include './View/Shared/header.php';  ?>  
 <?php    
-    include 'View/Public/Imageslider/imageslider.php';    
+    include './View/Public/Imageslider/imageslider.php';    
     ?>
 <!--end imageslider feature-->
 
@@ -29,11 +29,11 @@
             </div>
             <div class="col-md-4"> 
                 <!--Image from: ca.daiyafoods.com/recipes -->
-                <img style="width:500px; margin: 30px;" src="Content/uploads/images/top-mac_cheese-2-640.png" alt="" />
+                <img style="width:500px; margin: 30px;" src="./Content/uploads/images/top-mac_cheese-2-640.png" alt="" />
             </div>
 
         
 
         </div> <!--/end #content-recipes-->
 
-<?php include 'View/Shared/footer.php'; ?>
+<?php include './View/Shared/footer.php'; ?>
