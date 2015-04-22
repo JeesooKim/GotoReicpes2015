@@ -1,4 +1,4 @@
-<?php  include '../../Shared/header-admin.php';  ?>  
+<?php  include '../../Shared/_Layout/header-admin.php';  ?>  
 <?php
 #File name: recipe_list.php
 #File for Recipes-Admin
@@ -16,14 +16,14 @@
     </script>
             
     <div id='sidebar'>   
-        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
+        <?php include '../../Shared/_Layout/side-menu.php';  ?>
     </div><!-- end of #sidebar -->
 
 <div id="main">
      
     <ol class="breadcrumb">
-        <li><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Admin Panel</a></li>
-        <li class="active"><a href="<?php echo PATH_ADMIN_RECIPES; ?>/index.php">Recipes</a></li>
+        <li><a href="../index.php">Admin Panel</a></li>
+        <li class="active"><a href="../Recipes_admin/index.php">Recipes</a></li>
         <li class="active">Current Category :  <?php echo $current_category->getCatName(); ?></li>        
         <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
     </ol>
@@ -94,4 +94,4 @@
         
     <!--/div><!-- end of #content -->
 </div><!-- end of #main -->
-<?php include '../../Shared/footer-admin.php'; ?>
+<?php include '../../Shared/_Layout/footer-admin.php'; ?>
