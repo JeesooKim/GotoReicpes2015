@@ -17,7 +17,7 @@ if (isset($_SESSION['login_user'])) {
 }
 ?>
 
-<?php include '../Shared/header-admin.php'; ?>  
+<?php include '../Shared/_Layout_adminIndex/header.php'; ?>  
 
 
 <h2><span class="fontawesome-lock"></span>User Login</h2>
@@ -67,4 +67,4 @@ if (isset($_SESSION['login_user'])) {
 </div><!-- end of $login--> 
 
 
-<?php include '../Shared/footer-admin.php'; ?>
+<?php include '../Shared/_Layout_adminIndex/footer.php'; ?>

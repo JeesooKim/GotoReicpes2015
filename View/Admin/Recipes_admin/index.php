@@ -120,9 +120,7 @@ else if ($action == 'show_edit_form') {
     }    
     //------------------- End Validation (EDIT) ---//
     if(!$valid){
-        $error .= "Sorry, your recipe was not edited.<br/>";
-        //include(PATH_ERRORS. '/error.php'); 
-        //echo $error;
+        $error .= "Sorry, your recipe was not edited.<br/>";        
         if($error != ""){
             header("location:index.php?action=show_edit_form&err=".$error);
     }

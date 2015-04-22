@@ -6,7 +6,7 @@
     <ul class="sidebar-nav" id="sidebar">     
         <li><a href="./Events_admin/index.php">Events<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         <li><a href="./Imageslider_admin/imageslider_admin.php">Image Slider<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-        <li><a href="./Imagegallery_admin/index.php">Gallery<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+        <li><a href="./Imagegallery_admiin/index.php">Gallery<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         <li><a href="./GoogleMap_admin/location_admin.php">Location<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         <li><a href="./Recipes_admin/index.php">Recipes<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         <li><a href="./Toprecipes_admin/index.php">Top Recipes<span class="sub_icon glyphicon glyphicon-link"></span></a></li>

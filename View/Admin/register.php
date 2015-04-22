@@ -1,4 +1,4 @@
-<?php include '../Shared/header.php';  ?>  
+<?php include '../Shared/_Layout_adminIndex/header.php';  ?>  
 <!--end top-->
 		<div id="login">
 
@@ -21,7 +21,7 @@
 				<p><input type="email" id="email" value="" onBlur="if(this.value=='')this.value='email'" onFocus="if(this.value=='email')this.value=''"></p>-->
 
 				<p><a href="#" class="btn btn-primary" role="button">Register</a></p>
-				<p><a href="<?php echo PATH_VIEW_ADMIN; ?>/index.php">Return</a></p>
+				<p><a href="../../index.php">Return</a></p>
 
 			</fieldset>
 
@@ -30,4 +30,4 @@
 	</div> 
 	<!-- end login -->
 
-<?php  include '../Shared/header.php'; ?>
+<?php  include '../Shared/_Layout_adminIndex/footer.php'; ?>

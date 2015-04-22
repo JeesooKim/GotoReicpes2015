@@ -1,4 +1,4 @@
-<?php include '../../../Shared/header-admin.php';  ?> 
+<?php include '../../Shared/_Layout/header-admin.php';  ?> 
 <?php
 #File name: event_insert.php
 #File for Events-Admin (3/4)
@@ -11,8 +11,8 @@
 
 <!-- jQuery datetime picker for Admin-Event-->
 <link rel="stylesheet" type="text/css" href="../../../Content/css/event_dtpick/jquery.datetimepicker.css" />
-<script src="../../../Contet/js/event_dtpick/jquery.js"></script>
-<script src="../../../Contet/js/event_dtpick/jquery.datetimepicker.js"></script>
+<script src="../../../Content/js/event_dtpick/jquery.js"></script>
+<script src="../../../Content/js/event_dtpick/jquery.datetimepicker.js"></script>
 <!-- event datetime picker -->
                     
 
@@ -32,7 +32,7 @@
 <div id="main">
     <ol class="breadcrumb">
         <li><a href="../index.php">Admin Panel</a></li>
-        <li class="active"><a href="../Events_admin//index.php">Events</a></li>
+        <li class="active"><a href="../Events_admin/index.php">Events</a></li>
         <li class="active">Insert a New Event</li>
     </ol>
     <?php

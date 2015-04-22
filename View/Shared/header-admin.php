@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!-- This header is only for the Admin index.php --> 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
         <link href="../../Content/css/reset.css" rel="stylesheet" type="text/css" /><!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="<?php echo PATH_JS; ?>/bootstrap.min.js"></script>                    
+        <script src="../../Content/js/bootstrap.min.js"></script>                    
 
         <!-- The following is for Image Gallery -->                    
         <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
@@ -41,7 +41,7 @@
             <nav class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="../Admin//index.php">                     
+                        <a class="navbar-brand" href="../Admin/index.php">                     
                             <img id="logo" src="../../Content/uploads/images/logo.jpg" alt="gotorecipes" title="Homepage" /></a>
                     </div><!-- end of "navbar-header-->
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,12 +50,12 @@
                             <div id="profile" style="color: white;">
 <!--                                <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b> -->
                                 <br/>
-                                <b id="logout"><a href="../Admin//logout.php">Log Out</a></b>
+                                <b id="logout"><a href="../Admin/logout.php">Log Out</a></b>
                             </div>
 
-<!--
-                            <li><a href="<?php //echo PATH_VIEW_ADMIN; ?>/register.php">Register</a></li>
-                            <li><a href="<?php //echo PATH_VIEW_ADMIN; ?>/login.php">Login</a></li>                                -->
+                            <!--
+                                                        <li><a href="<?php //echo PATH_VIEW_ADMIN;  ?>/register.php">Register</a></li>
+                                                        <li><a href="<?php //echo PATH_VIEW_ADMIN;  ?>/login.php">Login</a></li>                                -->
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->

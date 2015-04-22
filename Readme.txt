@@ -14,8 +14,8 @@ Domain: www.gotorecipes.webelementz.com
 
 
 Login info for admin:
-User:
-Password:
+User: admin	
+Password: admin1
 
 
 

@@ -112,7 +112,7 @@ else if ($action == 'show_edit_form') {
     if ($img_new_filename === NULL || empty($img_new_filename)) {
         $img_filename = $img_edit_filename; //new image file name is to be replaced by the name in edit page if any
         //in order to get the value for $img_type, the followings are needed
-        $dir = PATH_UPLOADS_IMAGES . '/';
+        $dir = '../../../Content/uploads/images/';
         $img_file_path = $dir . $category_name . "/" . $img_filename;
         $img_type = pathinfo($img_file_path, PATHINFO_EXTENSION);  //holds the file extension of the file  
 //        
@@ -136,7 +136,7 @@ else if ($action == 'show_edit_form') {
         //$img_filename = basename($_FILES['file_upload']['name']); //image file name to be newly uploaded     
         $img_filename = $img_new_filename;
         $t_name = $_FILES['file_upload']['tmp_name'];
-        $dir = PATH_UPLOADS_IMAGES . '/';    //specifies the directory where the file is going to be placed,
+        $dir = '../../../Content/uploads/images/';    //specifies the directory where the file is going to be placed,
         $img_path = $dir . $category_name . "/";
         $img_file_path = $dir . $category_name . "/" . $img_filename;
         $img_size = $_FILES["file_upload"]["size"];
@@ -209,7 +209,7 @@ else if ($action == 'show_upload_form') {
 
     $img_filename = basename($_FILES['file_upload']['name']);
     $t_name = $_FILES['file_upload']['tmp_name'];
-    $dir = PATH_UPLOADS_IMAGES . '/';    //specifies the directory where the file is going to be placed,
+    $dir = '../../../Content/uploads/images/';    //specifies the directory where the file is going to be placed,
     $img_path = $dir . $category_name . "/";
     $img_file_path = $dir . $category_name . "/" . $img_filename;
 

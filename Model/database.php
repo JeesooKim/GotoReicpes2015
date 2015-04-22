@@ -26,7 +26,7 @@ public static function getDB(){
                     }
                     catch(PDOException $e){
                         $error_message= $e->getMessage();
-                        include PATH_ERRORS. '/database_error.php';
+                        include '../Errors/database_error.php';
                         exit();
                     }
             }  

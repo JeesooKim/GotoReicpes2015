@@ -11,7 +11,9 @@ FaqDB::deleteQuestion($q_id);
 }
 ?>
 
-<?php include '../../Shared/_Layout/header-admin.php';    ?>
+<?php include '../../Shared/_Layout/header-admin.php';?> 
+<?php include '../../Shared/_Layout/side-menu.php';  ?>
+
 <!--end top-->
 
 <div id="main">
