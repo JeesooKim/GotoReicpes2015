@@ -1,7 +1,7 @@
 <?php
-require_once( PATH_DATABASE);  
-require(PATH_MODEL_IMAGESLIDERS);
-require(PATH_MODEL_IMAGESLIDER_DB);
+require_once( '../../../Model/database.php');
+require_once( '../../../Model/imagesliders.php');
+require_once( '../../../Model/imageslider_db.php');
 
 $img_id = "";
 if(isset($_GET['image_id'])) {
@@ -49,7 +49,7 @@ if (isset($_POST['imageslider_update'])) {
 <!--end top-->
 
 
-    <?php include PATH_SIDEMENU;    ?>
+    <?php include '../../Shared/_Layout/side-menu.php';    ?>
 <!--end top-->
 <div id="main">
     <h1>Update this image</h1>
@@ -74,5 +74,5 @@ if (isset($_POST['imageslider_update'])) {
 </div>
 <!--End of update form-->
 
-<?php include '../../Shared/footer-admin.php'; ?>
+<?php include '../../Shared/_Layout/footer-admin.php'; ?>
          
