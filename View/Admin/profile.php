@@ -24,9 +24,6 @@ include('session.php');
             The above two values are stored in db. Here is displayed to see what we get.
             <br/>
             <b id="logout"><a href="logout.php">Log Out</a></b>
-        </div>
-        
-        
-        
+        </div>           
     </body>
 </html>

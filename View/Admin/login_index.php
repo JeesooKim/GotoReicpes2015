@@ -1,4 +1,3 @@
-<?php include "c:/xampp/htdocs/GotoReicpes2015/config.php"; ?>
 <?php
 #FILE name: login_index.php
 #Content: login form (HTML)
@@ -18,7 +17,7 @@ if (isset($_SESSION['login_user'])) {
 }
 ?>
 
-<?php include PATH_HEADER; ?>  
+<?php include '../Shared/header.php'; ?>  
 
 
 <h2><span class="fontawesome-lock"></span>User Login</h2>
@@ -68,4 +67,4 @@ if (isset($_SESSION['login_user'])) {
 </div><!-- end of $login--> 
 
 
-<?php include PATH_FOOTER; ?>
+<?php include '../Shared/footer.php'; ?>

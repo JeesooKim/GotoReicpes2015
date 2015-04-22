@@ -1,6 +1,4 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-
-<?php include PATH_HEADER;  ?>  
+<?php include '../Shared/header.php';  ?>  
 <!--end top-->
 		<div id="login">
 
@@ -32,4 +30,4 @@
 	</div> 
 	<!-- end login -->
 
-<?php  include PATH_FOOTER; ?>
+<?php  include '../Shared/header.php'; ?>

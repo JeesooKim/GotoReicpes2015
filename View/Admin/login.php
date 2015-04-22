@@ -1,6 +1,3 @@
-<?php //  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-
-
 <?php
 
 #FILE name: login.php

@@ -1,16 +1,13 @@
 <?php
-include "c:/xampp/htdocs/GotoReicpes2015/config.php";
-//include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  
-
 include('session.php');
 ?>
 
-<?php include PATH_HEADER_ADMIN; ?>  
+<?php include '../Shared/footer-admin.php'; ?>  
 
 <?php
 //echo "<h1>ADMIN PANEL</h1>";
 
-include PATH_VIEW_SHARED . '/side-menu.php';
+include '../Shared/side-menu.php';
 ?>
-<?php include PATH_FOOTER_ADMIN; ?>
+<?php include '../Shared/footer-admin.php'; ?>
                
