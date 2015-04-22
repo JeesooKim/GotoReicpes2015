@@ -1,10 +1,9 @@
 <?php
-
-require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
-require_once( PATH_MODEL_CATEGORY);
-require_once( PATH_MODEL_CATEGORY_DB);
-require_once( PATH_MODEL_IMAGEGALLERY);
-require_once( PATH_MODEL_IMAGEGALLERY_DB);
+require_once( '../../../Model/database.php');
+require_once( '../../../Model/category.php');
+require_once( '../../../Model/category_db.php');
+require_once( '../../../Model/imagegallery.php');
+require_once( '../../../Model/imagegallery_db.php');
 
 #File name: index.php
 #File for Image Gallery-Admin
