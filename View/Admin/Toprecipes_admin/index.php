@@ -1,5 +1,4 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  
-
+<?php  
 #File name: index.php
 #File for Toprecipes_admin
 #Team Project: PHP project-gotorecipes.com
@@ -8,11 +7,11 @@
 #Modified: 
 #Reference: Class material -PDO Class
 
-require(PATH_DATABASE);
-require(PATH_MODEL_TOPRECIPE);
-require(PATH_MODEL_TOPRECIPE_DB);
-require(PATH_MODEL_CATEGORY);
-require(PATH_MODEL_PAGENATOR);
+require('../../../Model/database.php');
+require('../../../Model/toprecipe.php');
+require('../../../Model/toprecipe_db.php');
+require('../../../Model/category.php');
+require('../../../Model/pagenator.php');
 
 // Get the current action value
 if (isset($_POST['action'])) {
