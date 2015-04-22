@@ -13,7 +13,7 @@
         <link href="./Content/css/bootstrap.css" rel="stylesheet" />
         <link href="./Content/css/style.css" rel="stylesheet" type="text/css" />
         <link href="./Content/css/reset.css" rel="stylesheet" type="text/css" />
-
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
