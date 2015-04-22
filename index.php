@@ -1,6 +1,6 @@
-<?php include '/View/Shared/header.php';  ?>  
+<?php include 'View/Shared/header.php';  ?>  
 <?php    
-    include PATH_PUBLIC_IMAGESLIDER. '/imageslider.php';    
+    include 'View/Public/Imageslider/imageslider.php';    
     ?>
 <!--end imageslider feature-->
 
@@ -36,4 +36,4 @@
 
         </div> <!--/end #content-recipes-->
 
-<?php include PATH_FOOTER; ?>
+<?php include 'View/Shared/footer.php'; ?>
