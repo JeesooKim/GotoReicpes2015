@@ -78,8 +78,8 @@
                                 <li><a href="../../Public/ImageGallery/imagegallery.php">Gallery</a></li>
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a class="ddl_link" href="../../Public/Events/events.php'; ?>">Events List</a></li>
-                                    <li><a class="ddl_link" href="../../Public/Volunteer/index.php'; ?>">Volunteer Sign Up</a></li>
+                                    <li><a class="ddl_link" href="../../Public/Events/events.php">Events List</a></li>
+                                    <li><a class="ddl_link" href="../../Public/Volunteer/index.php">Volunteer Sign Up</a></li>
                                 </ul></li>
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
