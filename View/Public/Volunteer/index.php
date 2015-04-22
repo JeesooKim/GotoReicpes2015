@@ -1,5 +1,4 @@
-<?php
-
+<?php 
 #File name: index.php
 #File for Volunteer
 #Team Project: PHP project-gotorecipes.com
@@ -8,10 +7,10 @@
 #Modified: 
 #Reference: Class material -PDO Class
 
-require("../../../Model/database.php");
-require("../../../Model/volunteer.php");
-require("../../../Model/volunteer_db.php");
-require("../../../Model/pagenator.php");
+require('../../../Model/database.php');
+require('../../../Model/volunteer.php');
+require('../../../Model/volunteer_db.php');
+require('../../../Model/pagenator.php');
 
 //Get the action 
 if (isset($_POST['action'])) {
@@ -52,6 +51,6 @@ if ($action == 'event_list') {
     include('event_list.php');
 
     
+    include '../../../View/Shared/_Layout/footer.php'; 
 }
 ?>
-<?php include "../../../View/Shared/footer.php";  ?>  

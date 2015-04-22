@@ -1,4 +1,4 @@
-<?php include "../../../View/Shared/_Layout/header.php";  ?>  
+<?php include '../../../View/Shared/_Layout/header.php';  ?>  
 <!--end top-->
 <?php
 #File name: event_list.php

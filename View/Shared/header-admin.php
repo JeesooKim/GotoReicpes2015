@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><!-- This header is only for the Admin index.php --> 
+<html lang="en">
+    <!-- This header is only for the Admin index.php 
+    This file is supposed to be directly under View/Admin/--> 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,21 +43,21 @@
             <nav class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="../Admin/index.php">                     
+                        <a class="navbar-brand" href="./index.php">                     
                             <img id="logo" src="../../Content/uploads/images/logo.jpg" alt="gotorecipes" title="Homepage" /></a>
                     </div><!-- end of "navbar-header-->
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right"> 
                             <div id="profile" style="color: white;">
-<!--                                <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b> -->
+<!--                                <b id="welcome">Welcome : <i><?php //echo $login_session; ?></i></b> -->
                                 <br/>
-                                <b id="logout"><a href="../Admin/logout.php">Log Out</a></b>
+                                <b id="logout"><a href="./logout.php">Log Out</a></b>
                             </div>
-
                             <!--
-                                                        <li><a href="<?php //echo PATH_VIEW_ADMIN;  ?>/register.php">Register</a></li>
-                                                        <li><a href="<?php //echo PATH_VIEW_ADMIN;  ?>/login.php">Login</a></li>                                -->
+                                                        <li><a href="../../View/Admin/register.php">Register</a></li>
+                                                        <li><a href="../../View/Admin/login.php">Login</a></li>                                -->
+                            >>>>>>> origin/master
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->

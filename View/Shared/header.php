@@ -13,7 +13,7 @@
         <link href="./Content/css/bootstrap.css" rel="stylesheet" />
         <link href="./Content/css/style.css" rel="stylesheet" type="text/css" />
         <link href="./Content/css/reset.css" rel="stylesheet" type="text/css" />
-
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -38,18 +38,12 @@
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
                             <a class="navbar-brand" href="./index.php">                     
                                 <img id="logo" src="./Content/uploads/images/logo.jpg" alt="gotorecipes" /></a>
                         </div><!-- end of "navbar-header-->
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div class="navbar">
                             <ul class="nav navbar-nav navbar-right">                                    
                                 <li><a href="./View/Admin/register.php">Register</a></li>
                                 <li><a href="./View/Admin/login_index.php">Login</a></li>                                
@@ -63,7 +57,7 @@
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a class="ddl_link" href="./View/Public/Recipes/recipes.php">Recipes</a></li>
-                                    <li><a class="ddl_link" href="./View/Public/Toprecipes//toprecipes.php">Today Recipes</a></li>
+                                    <li><a class="ddl_link" href="./View/Public/Toprecipes/toprecipes.php">Today Recipes</a></li>
                                 </ul></li>
                             <li><a href="./View/Public/ImageGallery/imagegallery.php">Gallery</a></li>
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>
@@ -77,10 +71,6 @@
                                     <li><a class="ddl_link" href="./View/Public/Sitemap/sitemap.php">Sitemap</a></li>
                                 </ul></li>                                       
                         </ul>
-                        <form class="navbar-form navbar-right" role="search">
-                            <input type="text" class="form-control" type="search" placeholder="Search . . .">
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
                     </div><!-- /.container-fluid -->
                 </nav>
                 <!--end top_nav-->

@@ -22,10 +22,10 @@
             </div>
             
             <div class="col-md-4">
-                <div clas="row">
-                <p class="SpecialFont">We love food and we love cooking. If you have a recipe you’d like to share, we’d love to hear from you!
+                <div class="row">
+                    <p class="SpecialFont"><strong>We love food and we love cooking. </strong><br /><br />If you have a recipe you’d like to share, we’d love to hear from you!<br /><br />
                 Looking for something delicious and dairy-free? You've come to the right place. Explore the recipes below, search for something specific or filter by category.
-                    We want people to enjoy their savoury love affair with cheese to its absolute fullest. We simply want to give people the joy of food recipes, without any compromise.</p>
+                <br /><br />    We want people to enjoy their savoury love affair with cheese to its absolute fullest. We simply want to give people the joy of food recipes, without any compromise.</p>
                 </div>
                 </div>
             <div class="col-md-4"> 
