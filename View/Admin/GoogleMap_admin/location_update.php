@@ -1,7 +1,7 @@
 <?php
-require_once( PATH_DATABASE);  
-require( PATH_MODEL_LOCATIONS);
-require(PATH_MODEL_LOCATION_DB);
+require_once( '../../../Model/database.php');
+require_once( '../../../Model/locations.php');
+require_once( '../../../Model/location_db.php');
 
 
 if(isset($_GET['id'])) {
@@ -45,11 +45,11 @@ if (isset($_POST['location_update'])) {
 
 <!--Update form-->
 
-<?php include '../../Shared/header-admin.php';    ?>
+<?php include '../../Shared/_Layout/header-admin.php';    ?>
 <!--end top-->
 
 
-    <?php include PATH_SIDEMENU;    ?>
+    <?php include '../../Shared/_Layout/side-menu.php';    ?>
 
     <div class="row">
                 <div class="col-md-12">
@@ -96,4 +96,4 @@ if (isset($_POST['location_update'])) {
 </div>
 <!--End of update form-->
 
-<?php include '../../Shared/footer-admin.php'; ?>
+<?php include '../../Shared/_Layout/footer-admin.php'; ?>

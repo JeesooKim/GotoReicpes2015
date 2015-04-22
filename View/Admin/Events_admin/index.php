@@ -1,5 +1,5 @@
 <?php
-        require_once( '../../../Model/database.php');   //SERVER ROOT is not working but SITEROOT is working ......why?
+        require_once( '../../../Model/database.php');   
         require_once( '../../../Model/event.php');
         require_once( '../../../Model/events_db.php');
 
