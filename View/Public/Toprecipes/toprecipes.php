@@ -1,5 +1,5 @@
 <?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
+<?php  //include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 <?php  //include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  ?>
 
 <?php
@@ -12,15 +12,16 @@
 #Reference: Class material -PDO Class
 ?>
 
-<?php include PATH_HEADER;  ?>  
+<?php include "../../../View/Shared/header.php";  ?>  
 <!--end top-->
 
 <?php
-require(PATH_DATABASE);
-require(PATH_MODEL_TOPRECIPE);
-require(PATH_MODEL_TOPRECIPE_DB);
-require(PATH_MODEL_CATEGORY);
-require(PATH_MODEL_PAGENATOR);
+require("../../../Model/database.php");
+require("../../../Model/toprecipe.php");
+require("../../../Model/toprecipe_db.php");
+require("../../../Model/category.php");
+require("../../../Model/category_db.php");
+require("../../../Model/pagenator.php");
 
 $pgSelf = "toprecipes.php";
 $cntPerPage = 5;
@@ -122,4 +123,4 @@ echo "</table>";
 //Display Page link list data
 $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 ?>
-<?php include PATH_FOOTER; ?>
+<?php include "../../../View/Shared/footer.php";  ?>  

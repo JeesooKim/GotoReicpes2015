@@ -9,6 +9,12 @@
 #Modified: 
 #Reference: Class material -PDO Class
 ?>
+<div id="sidebar">
+        
+        <?php include PATH_VIEW_SHARED . '/side-menu.php';  ?>
+    </div> <!-- end of #sidebar -->         
+<div id="main">
+
 <h1>Today's Recipe</h1>
 <br /><br />                
     <form action="." method="GET">
@@ -99,6 +105,9 @@ endforeach;
 //Get pages link list
 $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 
+?>
+</div>
+<?php
 include  PATH_FOOTER_ADMIN; 
 
 ?>
