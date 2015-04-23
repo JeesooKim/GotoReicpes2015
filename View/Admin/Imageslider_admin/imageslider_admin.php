@@ -22,6 +22,10 @@ require_once( '../../../Model/imagesliders.php');
 require_once( '../../../Model/imageslider_db.php');
 ?>
 
+    <ol class="breadcrumb">
+        <li><a href="../index.php">Admin Panel</a></li>
+        <li class="active">Images List</li>
+    </ol>
 <article>
     <a href="imageslider_insert.php">Add new image</a>
 </article>

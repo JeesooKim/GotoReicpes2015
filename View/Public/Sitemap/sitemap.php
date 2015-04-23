@@ -96,4 +96,4 @@ endforeach;
 echo "</table>";
 
 ?>
-<?php include "../../../View/Shared/footer.php";  ?>  
+<?php include "../../../View/Shared/_Layout/footer.php";  ?>  

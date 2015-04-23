@@ -76,10 +76,6 @@
                                     <li><a class="ddl_link" href="../../Public/Sitemap/sitemap.php">Sitemap</a></li>
                                 </ul></li>                                       
                         </ul>
-                        <form class="navbar-form navbar-right" role="search">
-                            <input type="text" class="form-control" type="search" placeholder="Search . . .">
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
                     </div><!-- /.container-fluid -->
                 </nav>
                 <!--end top_nav-->
