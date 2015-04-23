@@ -21,10 +21,18 @@
                 </div>
             </div>
             
+            <div>
+                <div class="row">
+                    <h1 class="caps-h1">
+                        <strong>If you have a recipe you’d like to share, we’d love to hear from you!</strong>
+                    </h1>
+                </div>
+            </div>
+            
             <div class="col-md-4">
                 <div class="row">
-                    <p class="SpecialFont"><strong>We love food and we love cooking. </strong><br /><br />If you have a recipe you’d like to share, we’d love to hear from you!<br /><br />
-                Looking for something delicious and dairy-free? You've come to the right place. Explore the recipes below, search for something specific or filter by category.
+                    <p class="SpecialFont">We love food and we love cooking. If you have a recipe you’d like to share, we’d love to hear from you!<br /><br />
+                Looking for something delicious and rewarding? You've come to the right place. Explore the recipes here, search for something specific or filter by category.
                 <br /><br />    We want people to enjoy their savoury love affair with cheese to its absolute fullest. We simply want to give people the joy of food recipes, without any compromise.</p>
                 </div>
                 </div>
@@ -32,6 +40,11 @@
                 <!--Image from: ca.daiyafoods.com/recipes -->
                 <img id="plate" src="./Content/uploads/images/top-mac_cheese-2-640.png" alt="Plate" />
             </div>
+            
+                <div class="youtube-row">
+                    <?php //implementation by Johnson Ta
+                     include 'Youtube/youtube-feed.php'; ?>
+                </div>
 
         
 

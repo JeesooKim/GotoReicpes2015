@@ -174,9 +174,10 @@ body{
 
 /*------------------------end content--------------------------*/
 
+
 #plate{
     margin: 30px;
-    width: 100%;
+    width: 130%;
     position:absolute;
 }
 
@@ -304,6 +305,7 @@ body{
 }
 
 .SpecialFont{
+    line-height: 1.125em;
     width:100%;
     margin-left:30%;
     margin-top: 25px;
@@ -313,8 +315,33 @@ body{
     color:#606060;
 }
 
+.caps-h1{
+    width:95%;
+    text-align:center;
+    margin-top: 40px;
+    margin-left: 20%;
+    font-size: 3em;
+    font-family: 'Lobster', cursive;
+    color:#dab738;
+}
+
 .row{
     width:75%;
+}
+
+.youtube-row{
+    margin:auto;
+    width:90%;
+}
+.results{
+    float:left;
+    display:inline;
+    list-style-type: none;
+}
+
+ul
+{
+    list-style-type: none;
 }
 
 /***********responsive additions here ************/
@@ -341,7 +368,6 @@ body{
         display:block;
         height:15%;
     }
-    
     header{
         width:80%;
     }
@@ -413,10 +439,14 @@ body{
       }
       .SpecialFont{
           font-size:2em;
-          width: 85%;
+          width: 90%;
         float:left;
         margin-left:2%;
         text-align:center;
+    }
+    
+    .caps-h1{
+        margin-left:3%;
     }
     #content .rslides{
         display:none;
