@@ -23,7 +23,7 @@ class EventsDB{
         $dbCon = Database::getDB();
 
         //query to retrieve events
-        $query= "SELECT * FROM events WHERE (event_start >= '". date("Y-m-d H:i:s") . "' OR event_end >= '". date("Y-m-d H:i:s") . "') ORDER BY event_start";
+        $query= "SELECT * FROM events";
         
         //execute the query
         $result = $dbCon->query($query);
@@ -43,7 +43,7 @@ class EventsDB{
     
     public static function GetEvent($eventId){
         $dbCon=Database::getDB();
-        $query="SELECT * FROM events WHERE event_id = '$eventId' WHERE (event_start >= ". date("Y-m-d H:i:s") . " OR event_end >= ". date("Y-m-d H:i:s") . ") ORDER BY event_start";
+        $query="SELECT * FROM events WHERE event_id = '$eventId' ";
         $result = $dbCon->query($query);
         //convert result into array
         $row = $result -> fetch();
