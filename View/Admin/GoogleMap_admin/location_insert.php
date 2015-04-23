@@ -44,7 +44,7 @@ if(isset($_POST['location_insert'])){
 
 
     <?php include '../../Shared/_Layout/side-menu.php';    ?>
-
+<div class="container">
     <ol class="breadcrumb">
         <li><a href="../index.php">Admin Panel</a></li>
         <li><a href="../GoogleMap_admin/location_admin.php">Locations list</a></li>
@@ -100,6 +100,7 @@ if(isset($_POST['location_insert'])){
         <a class="btn btn-default" href="location_admin.php">Back to list</a>
     </form>
             </div>
+    </div>
 
 
 <?php include '../../Shared/_Layout/footer-admin.php'; ?>

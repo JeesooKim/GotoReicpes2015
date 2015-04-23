@@ -45,11 +45,13 @@ if (isset($_POST['imageslider_update'])) {
 ?>
 
 <!--Update form-->
-<?php include '../../Shared/header-admin.php';    ?>
+<?php include '../../Shared/_Layout/header-admin.php';    ?>
 <!--end top-->
 
 
-    <?php include '../../Shared/_Layout/side-menu.php';    ?>
+    <div id="sidebar">
+       <?php include '../../Shared/_Layout/side-menu.php';  ?> 
+    </div> <!-- end of #sidebar -->
 <!--end top-->
 <div id="main">
     <ol class="breadcrumb">
@@ -69,7 +71,7 @@ if (isset($_POST['imageslider_update'])) {
         </div>
         
         <div class="form-group">
-            <img style="width:650px;" src="<?php echo SERVERROOT.'/Content/uploads/images/imageslider/'.  $img_path; ?>" alt="<?php echo $img_name; ?>" title="<?php echo $img_name; ?>" />
+            <img style="width:650px;" src="<?php echo '../../../Content/uploads/images/imageslider/'.  $img_path; ?>" alt="<?php echo $img_name; ?>" title="<?php echo $img_name; ?>" />
             <input type="file" name="image" id="image" />
             <input type="submit" name="imageslider_update" value="Update" />
             <p>Must be less than 512kb. Only JPG, GIF and PNG files.</p>

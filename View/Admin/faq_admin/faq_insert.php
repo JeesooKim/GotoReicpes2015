@@ -20,15 +20,20 @@ if(isset($_POST['faq_insert'])){
 }
 ?>
 
-<?php include '../../Shared/header-admin.php';    ?>
+<?php include '../../Shared/_Layout/header-admin.php';    ?>
 <!--end top-->
+
+
+    <?php include '../../Shared/_Layout/side-menu.php';    ?>
+<!--end top-->
+
+<div class="container">
 <ol class="breadcrumb">
         <li><a href="../index.php">Admin Panel</a></li>
         <li><a href="../faq_admin/faq_index.php">FAQ</a></li>
         <li class="active">Add new question & answer</li>
     </ol>
 
-<div id="main">
     <h1>Insert a branch</h1>
 
     <form action="faq_insert.php" method="post">

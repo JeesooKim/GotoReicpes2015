@@ -16,7 +16,7 @@ FaqDB::deleteQuestion($q_id);
 
 <!--end top-->
 
-<div id="main">
+<div class="container">
     <ol class="breadcrumb">
         <li><a href="../index.php">Admin Panel</a></li>
         <li class="active">FAQ</li>

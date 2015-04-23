@@ -25,7 +25,7 @@
     });
     
 </script>
-<div id="sidebar">
+    <div id="sidebar">
        <?php include '../../Shared/_Layout/side-menu.php';  ?> 
     </div> <!-- end of #sidebar -->
 
