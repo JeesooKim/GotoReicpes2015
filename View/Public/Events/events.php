@@ -1,8 +1,7 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 <?php
-        require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
-        require_once( PATH_MODEL_EVENT);
-        require_once( PATH_MODEL_EVENTS_DB);
+        require_once('../../../Model/database.php');   
+        require_once('../../../Model/event.php');
+        require_once('../../../Model/events_db.php');
 
         #File name: events.php
         #File for Events-Public(1/1)
@@ -15,7 +14,7 @@
         //connect to db
         //bring data here
         //display the data
-        include PATH_HEADER; 
+        include "../../../View/Shared/_Layout/header.php";
 ?>
 <?php  
 // list of events will be rendered.
@@ -49,7 +48,7 @@ $( "#accordion" ).accordion();
 
 <div id="main">
     <ol class="breadcrumb">
-        <li><a href="<?php echo SERVERROOT; ?>/index.php">Home</a></li>
+        <li><a href="../../../index.php">Home</a></li>
         <li class="active">Events</li>
         
     </ol>
@@ -101,9 +100,7 @@ $( "#accordion" ).accordion();
 ?>
 <!-- END of FILE events_view-->
 <!-- START of footer -->
-<?php include PATH_FOOTER; ?>
-
-
+<?php include "../../../View/Shared/_Layout/footer.php";?>
         
         
         

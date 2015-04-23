@@ -47,7 +47,7 @@ $( "#accordion" ).accordion();
  
 <div id="main">
     <ol class="breadcrumb">
-        <li><a href="<?php echo SERVERROOT; ?>/index.php">Home</a></li>
+        <li><a href="../../../index.php">Home</a></li>
         <li class="active">Recipes</li>
         <li class="active"><?php echo $current_category->getCatName(); ?></li>        
         <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
@@ -127,5 +127,5 @@ $( "#accordion" ).accordion();
 </div> <!-- end #main -->
 <!-- END of FILE recipe_list_view-->
 <!-- START of footer include in recipe_list_view-->
-<?php include PATH_FOOTER; ?>
+<?php include "../../../View/Shared/_Layout/footer.php"; ?>
  
