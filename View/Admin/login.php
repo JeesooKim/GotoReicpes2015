@@ -13,7 +13,7 @@ $error=''; //Variable To Store Error Mesage
 
 if(isset($_POST['submit'])){
     if(empty($_POST['username']) || empty($_POST['password'])){
-        $error ="Username or Password is invalid";
+        $error = "Username or Password is invalid";
     } else //if username and password inputs are not null, do the following
             {
         
@@ -26,8 +26,8 @@ if(isset($_POST['submit'])){
                  //do the following
                  
                     //Define $username and $password
-                   $username =$_POST['username'];
-                   $password=$_POST['password'];
+                   $username = $_POST['username'];
+                   $password = $_POST['password'];
                    //To protect MySQL injection for Security purpose
                    $username =stripslashes($username);   //stripslashes(): Un-quotes a quoted string.
                    $password=stripslashes($password);
