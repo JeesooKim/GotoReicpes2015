@@ -59,17 +59,6 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="../../../index.php">Home<span class="sr-only">(current)</span></a></li>
                             <li><a href="#">About Us</a></li>
-<!--                                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                        <li><a class="ddl_link" href="#">Top Recipes</a></li>
-                                        <li><a class="ddl_link" href="#">Newest Recipes</a></li>
-                                        <li class="divider"></li>
-                                        <li><a class="ddl_link" href="#">Appetizers</a></li>
-                                        <li><a class="ddl_link" href="#">Breakfast</a></li>
-                                        <li><a class="ddl_link" href="#">Lunch</a></li>
-                                        <li><a class="ddl_link" href="#">Dinner</a></li>
-                                </ul></li>
-                            -->
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a class="ddl_link" href="../../Public/Recipes/recipes.php">Recipes</a></li>
@@ -87,10 +76,6 @@
                                     <li><a class="ddl_link" href="../../Public/Sitemap/sitemap.php">Sitemap</a></li>
                                 </ul></li>                                       
                         </ul>
-                        <form class="navbar-form navbar-right" role="search">
-                            <input type="text" class="form-control" type="search" placeholder="Search . . .">
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
                     </div><!-- /.container-fluid -->
                 </nav>
                 <!--end top_nav-->
