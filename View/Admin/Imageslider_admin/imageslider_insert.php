@@ -73,8 +73,8 @@ if (isset($_POST['submit'])) {
 
 <ol class="breadcrumb">
     <li><a href="../index.php">Admin Panel</a></li>
-    <li><a href="../Imageslider_admin/imageslider_admin.php">Imageslider</a></li>
-    <li class="active">Insert</li>
+    <li><a href="../Imageslider_admin/imageslider_admin.php">Image List</a></li>
+    <li class="active">Insert new image</li>
 </ol>
 
 <div id="main">

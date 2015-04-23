@@ -52,6 +52,12 @@ if (isset($_POST['imageslider_update'])) {
     <?php include '../../Shared/_Layout/side-menu.php';    ?>
 <!--end top-->
 <div id="main">
+    <ol class="breadcrumb">
+        <li><a href="../index.php">Admin Panel</a></li>
+        <li><a href="../Imageslider_admin/imageslider_admin.php">Image list</a></li>
+        <li class="active">Update Image</li>
+    </ol>
+    
     <h1>Update this image</h1>
 
     <form action="imageslider_update.php" method="POST" enctype="multipart/form-data">

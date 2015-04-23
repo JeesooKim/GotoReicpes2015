@@ -51,6 +51,11 @@ if (isset($_POST['location_update'])) {
 
     <?php include '../../Shared/_Layout/side-menu.php';    ?>
 
+    <ol class="breadcrumb">
+        <li><a href="../index.php">Admin Panel</a></li>
+        <li><a href="GoogleMap_admin/location_admin.php">Locations list</a></li>
+        <li class="active">Update Location</li>
+    </ol>
     <div class="row">
                 <div class="col-md-12">
     <h1 class="page-header">Update Branch Location: <?php echo $map_location_branch; ?></h1>
