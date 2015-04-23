@@ -22,6 +22,11 @@
         <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
     </ol>
 
+    <?php
+        if(isset($_GET['err'])){
+            echo $_GET['err'];
+        }
+    ?>
     <form action="index.php" method="post" enctype="multipart/form-data">         
         <table class="table table-responsive table-bordered">                
             <tr>
@@ -29,6 +34,7 @@
                 <td> 
                     <!--$categories = CategoryDB::getCategories();-->
                     <select name="category_id">
+                        <option value="" Selected>== Choose Category ==</option>
                         <?php foreach ($categories as $category) : ?>
                             <option value="<?php echo $category->getCatID(); ?>"><?php echo $category->getCatName(); ?>                              
                             </option>
@@ -43,11 +49,11 @@
             </tr>
             <tr>
                 <td><label>Title:</label></td>
-                <td> <input type="text" name="img_title" /></td>
+                <td> <input type="text" name="img_title" Required/></td>
             </tr>
             <tr>
                 <td><label>Key Ingredient:</label></td>
-                <td><input type="text" name="img_key" /></td>
+                <td><input type="text" name="img_key" Required/></td>
             </tr>
             <tr>
                 <td><label>Description:</label></td>

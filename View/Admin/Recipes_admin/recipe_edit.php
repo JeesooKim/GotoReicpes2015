@@ -21,8 +21,15 @@
         <li class="active">Edit Recipe</li>        
         <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
     </ol>
+    <?php
+        if(isset($_GET['err'])){
+            echo $_GET['err'];
+        }
+    ?>
     <br/>
-   
+   <a href="?action=show_insert_form">Insert a New Recipe</a> &nbsp;|&nbsp;   
+   <a href="index.php?action=list_recipes">View Recipes List</a>
+    <hr/>
     
     <form action="index.php" method="post" >      
          <input type="hidden" name="recipe_id" value="<?php echo $recipe->getRecipeID(); ?>" />
@@ -45,11 +52,11 @@
                 
                  <tr>
                     <td><label>Name:</label></td>
-                    <td> <input type="text" name="recipe_name"  value="<?php echo $recipe->getRecipeName();  ?>"/></td>
+                    <td> <input type="text" name="recipe_name"  value="<?php echo $recipe->getRecipeName();  ?>" Required/></td>
                 </tr>
                 <tr>
                     <td><label>Key Ingredient:</label></td>
-                    <td><input type="text" name="recipe_key" value="<?php echo $recipe->getRecipeKeyIngredient(); ?>" /></td>
+                    <td><input type="text" name="recipe_key" value="<?php echo $recipe->getRecipeKeyIngredient(); ?>" Required/></td>
                 </tr>
                 <tr>
                     <td><label>Number of Serving:</label></td>
@@ -61,11 +68,11 @@
                 </tr>
                 <tr>
                     <td><label>Ingredients:</label></td>
-                    <td><textarea name="recipe_ingredients"><?php echo $recipe->getRecipeIngredients(); ?></textarea></td>
+                    <td><textarea name="recipe_ingredients" Required><?php echo $recipe->getRecipeIngredients(); ?></textarea></td>
                 </tr>
                 <tr>
                     <td><label>Steps:</label></td>
-                    <td><textarea name="recipe_steps"><?php echo $recipe->getRecipeSteps(); ?></textarea></td>
+                    <td><textarea name="recipe_steps" Required><?php echo $recipe->getRecipeSteps(); ?></textarea></td>
                 </tr>
                 
         </table>

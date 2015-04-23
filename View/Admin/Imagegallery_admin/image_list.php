@@ -9,7 +9,6 @@
 #Reference: Class material -PDO Class
 ?>
 <div id="sidebar">
-
     <?php include '../../Shared/_Layout/side-menu.php'; ?>
 </div> <!-- end of #sidebar -->         
 <div id="main">
@@ -26,8 +25,8 @@
         <input type='hidden' name='action' value='list_images'/>
         Category: 
         <select name='category_id'>
-            <!--option value='0'><?php //echo $current_category->getCatName();  ?></option>
-            <  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
+            <option value='0'><?php echo $current_category->getCatName();  ?></option>
+            <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
             <?php foreach ($categories as $category) : ?>
                 <option value='<?php echo $category->getCatID(); ?>'><?php echo $category->getCatName(); ?></option>
             <?php endforeach; ?>

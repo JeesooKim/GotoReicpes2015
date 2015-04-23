@@ -1,4 +1,5 @@
 <?php
+
 require_once( '../../../Model/database.php');
 require_once( '../../../Model/category.php');
 require_once( '../../../Model/category_db.php');
@@ -61,12 +62,9 @@ else if ($action == 'show_edit_form') {
     // this action is triggered by line 50 of image_list.php 
     // Get the IDs
     //gets the id of the selected image
-    $img_id = $_POST['image_id'];
-    //get the category of the selected image
-    $category_id = $_POST['category_id'];
-    //the category object of the selected image to get the name of the category below
-    $current_category = CategoryDB::getCategory($category_id);
-    //name of the current category for the selected image
+    $img_id = $_POST['image_id'];    //get the category of the selected image
+    $category_id = $_POST['category_id'];    //the category object of the selected image to get the name of the category below
+    $current_category = CategoryDB::getCategory($category_id);    //name of the current category for the selected image
     $category_name = $current_category->getCatName();
 
     $categories = CategoryDB::getCategories();
@@ -85,21 +83,29 @@ else if ($action == 'show_edit_form') {
     $img_path = $image->getPath();
     $img_size = $image->getSize();
 
+    $img_new_filename = basename($_FILES['file_upload']['name']); //get the file name if there is any file browsed for uploading
+    $img_edit_filename = $_POST['img_filename'];  //file name from the edit page, 
+
     $img_title = $_POST['img_title'];
     $img_key = $_POST['img_key'];
     $img_detail = $_POST['img_detail'];
     $img_author = $_POST['img_author'];
     $img_source = $_POST['img_source'];
-    $img_edit_filename = $_POST['img_filename'];  //file name from the edit page, 
-    $img_new_filename = basename($_FILES['file_upload']['name']); //get the file name if there is any file browsed for uploading
 
 
     /*     * ******* Required field validation ******** */
+    $valid = true;
+    if ($category_id == null || empty($category_id)) {
+        $error .= "Please choose the <em>category</em><br/>";
+        $valid = false;
+    }
     if ($img_title === NULL || empty($img_title)) {
         $error .= "Please enter the title of the image.";
+        $valid = false;
     }
     if ($img_key === NULL || empty($img_key)) {
         $error .= "Please enter the key ingredient for the image file.";
+        $valid = false;
     }
     /*     * **** required field validaton (end) ************ */
 
@@ -124,9 +130,15 @@ else if ($action == 'show_edit_form') {
         if (!get_magic_quotes_gpc()) {
             $img_filename = addslashes($img_filename);
         }
-
-        ImageGalleryDB::editImage($img_id, $img_title, $img_key, $img_detail, $img_filename, $img_path, $img_size, $img_type, $img_author, $img_source, $category_id);
-
+        
+        if (!$valid) {
+            $error .= "Sorry, your image was not edited.<br/>";
+            if ($error != "") {
+                header("location:index.php?action=show_edit_form&err=" . $error);
+            }
+        } else if ($valid) {
+            ImageGalleryDB::editImage($img_title,$category_id, $img_key, $img_detail, $img_filename, $img_path, $img_size, $img_type, $img_author, $img_source,$img_id);
+        
         // Display the Image List page for the current category
         header("Location: .?category_id=$category_id");
     } else {
@@ -179,9 +191,10 @@ else if ($action == 'show_edit_form') {
                 $pathToThumbs = $img_path . "thumbnails/";
                 $thumbWidth = 150;   //in dpi              
                 ImageEdit::CreateThumbs($pathToImages, $pathToThumbs, $thumbWidth);
-                ImageGalleryDB::editImage($img_id, $img_title, $img_key, $img_detail, $img_filename, $img_path, $img_size, $img_type, $img_author, $img_source, $category_id);
-
-                // Display the Image List page for the current category
+                //ImageGalleryDB::editImage($img_id, $img_title, $img_key, $img_detail, $img_filename, $img_path, $img_size, $img_type, $img_author, $img_source, $category_id);
+ImageGalleryDB::editImage($img_title,$category_id, $img_key, $img_detail, $img_filename, $img_path, $img_size, $img_type, $img_author, $img_source,$img_id);
+                
+            }// Display the Image List page for the current category
                 header("Location: .?category_id=$category_id");
             } else {
                 $error.= 'Image FIle upload fail.<br/>';
@@ -189,11 +202,9 @@ else if ($action == 'show_edit_form') {
         }//end of else if($uploadOK) 
     } //end of uploading a file in EDIT page     
 }  //******************Editing Image Gallery ends ******************//
+//************Uploading (Inserting) Image Gallery starts ***********//    
 else if ($action == 'show_upload_form') {
-
-    //************Uploading (Inserting) Image Gallery starts ***********//    
     $categories = CategoryDB::getCategories();
-
     include('image_upload.php');
 } else if ($action == 'Upload Image') {
 
@@ -230,6 +241,9 @@ else if ($action == 'show_upload_form') {
     //echo "Image type $img_type";
 
     /*     * ******* Required field validation ******** */
+    if ($category_id === NULL || empty($category_id)) {
+        $error .= "Please choose the category.";
+    }
     if ($img_title === NULL || empty($img_title)) {
         $error .= "Please enter the title of the image.";
     }
@@ -256,8 +270,9 @@ else if ($action == 'show_upload_form') {
     //Check if $uploadOK is set to 0 by an error             
     if (!$uploadOK) {
         $error .= "Sorry, your file was not uploaded.";
-        //include(PATH_ERRORS. '/error.php');    
-        echo $error;
+        if ($error != "") {
+            header("location:index.php?action=show_upload_form&err=" . $error);
+        }
     } else if ($uploadOK) {
         // if everything is ok, try to upload file        
         //$current_category = CategoryDB::getCategory($category_id);       

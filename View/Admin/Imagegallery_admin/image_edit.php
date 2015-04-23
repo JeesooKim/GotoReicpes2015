@@ -19,8 +19,13 @@
         <li class="active"><a href="../Imagegallery_admin/index.php">Image Gallery</a></li>  
         <li class="active">Edit Image</li>        
     </ol>
+    <?php
+        if(isset($_GET['err'])){
+            echo $_GET['err'];
+        }
+    ?>
         
-    <a href="?action=show_insert_form">Insert a New Recipe</a> &nbsp;|&nbsp;   <a href="index.php?action=list_images">View Image List</a>
+    <a href="index.php?action=list_images">View Image List</a>
     <hr/>    
 
      <form action="index.php" method="post" enctype="multipart/form-data">      
@@ -32,6 +37,8 @@
                     <td> 
                         <!--$categories = CategoryDB::getCategories();-->
                         <select name="category_id">
+                            <option value="<?php echo $category_id; ?>" selected><?php echo $category_name; ?>                              
+                            </option>
                             <?php foreach ($categories as $category) : ?>
                             <option value="<?php echo $category->getCatID(); ?>"><?php echo $category->getCatName(); ?>                              
                             </option>
@@ -69,7 +76,7 @@
                 </tr>
                 
         </table>
-        <label>&nbsp;</label>
+        <br/><br/>
         <input type="submit" name="action" value="Edit_Image" />  
         <br />
     </form>

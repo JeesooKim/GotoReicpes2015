@@ -97,7 +97,7 @@ class ImageGalleryDB{
         }        
     }
     
-    public static function editImage($img_id,$img_title,$img_key, $img_detail, $img_filename,$img_path, $img_size, $img_type , $img_author,$img_source, $cat_id){
+    public static function editImage($img_title,$cat_id, $img_key, $img_detail, $img_filename,$img_path, $img_size, $img_type , $img_author,$img_source,$img_id){
         //the parameter $image for this method is supposed to be an object initiated by the ImageGallery class
         try{
         $dbCon= Database::getDB();       
@@ -114,10 +114,9 @@ class ImageGalleryDB{
                 . "img_type = ?, "
                 . "img_author = ?, "
                 . "img_source = ? "
-                . "WHERE img_id = ?";
-        
+                . "WHERE img_id = ?";        
          //$dbCon->exec($sql); 
-         $statement = $dbCon->prepare($query);        
+         $statement = $dbCon->prepare($sql);        
          $statement->execute(array(            
              $img_title,$cat_id,$img_key,$img_detail,$img_filename,$img_path,$img_size,$img_type,$img_author,$img_source,$img_id));  
          }
