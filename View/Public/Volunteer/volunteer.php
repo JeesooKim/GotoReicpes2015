@@ -79,7 +79,7 @@ if ($action == 'show_add_form') {
         //Add Volunteer to database
         VolunteerDB::addVolunteer($volunteer);
 
-        //header('Location: ./volunteer.php?action=show_result&name=$name');
+        header('Location: ./volunteer.php?action=show_result&name=$name');
     }    
 }else if ($action == 'show_result') {
     
