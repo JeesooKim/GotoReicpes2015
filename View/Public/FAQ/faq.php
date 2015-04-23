@@ -1,11 +1,10 @@
-<?php include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php";  
-
-require_once( PATH_DATABASE);
-require_once( PATH_MODEL_FAQS );
-require_once( PATH_MODEL_FAQ_DB );
+<?php 
+require_once('../../../Model/database.php');
+require_once('../../../Model/faqs.php');
+require_once('../../../Model/faq_db.php');
 ?>
 
-<?php include PATH_HEADER;  ?>  
+<?php include "../../../View/Shared/_Layout/header.php";  ?>  
 <!--end top-->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -38,4 +37,4 @@ require_once( PATH_MODEL_FAQ_DB );
 
 
 
-<?php include (PATH_FOOTER); ?>
+<?php include ("../../../View/Shared/_Layout/footer.php"); ?>

@@ -18,7 +18,7 @@
  
 <div id="main">
      <ol class="breadcrumb">
-        <li><a href="<?php echo SERVERROOT; ?>/index.php">Home</a></li>
+        <li><a href="../../../index.php">Home</a></li>
         <li class="active">Image Gallery</li>
         <li class="active"><?php echo $current_category->getCatName(); ?></li>        
         <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
@@ -47,9 +47,9 @@
                 <?php 
                      foreach ($images as $image) : 
                          
-                         $img_ref= PATH_IMAGES. '/'. $current_category->getCatName() .
+                         $img_ref= '../../../Content/uploads/images/'. $current_category->getCatName() .
                                    '/'. $image->getFilename();
-                        $img_src = PATH_IMAGES. '/' . $current_category->getCatName() . 
+                        $img_src = '../../../Content/uploads/images/' . $current_category->getCatName() . 
                                  '/thumbnails/'.$image->getFilename();
                          
                   ?>                   
@@ -94,5 +94,5 @@ document.getElementById('links').onclick = function (event) {
 <!-- END of FILE image_list_view-->
 
 <!-- START of footer include in image_list_view-->
-<?php include PATH_FOOTER; ?> 
+<?php include "../../../View/Shared/_Layout/footer.php";  ?> 
 <!-- END of 'footer include' in image_list_view-->

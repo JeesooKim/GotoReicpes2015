@@ -1,16 +1,14 @@
-<?php //include "c:/xampp/htdocs/GotoReicpes2015/config.php";   ?>
-<?php include "C:/wamp/www/GotorecipesGITHUB/GotoReicpes2015/config.php"; ?>
 <?php
-require_once(PATH_DATABASE);
-require_once(PATH_MODEL_LOCATIONS);
-require_once(PATH_MODEL_LOCATION_DB);
+require_once('../../../Model/database.php');
+require_once('../../../Model/locations.php');
+require_once('../../../Model/location_db.php');
 
-include PATH_HEADER;
+include "../../../View/Shared/_Layout/header.php";
 ?>
 
 <div id='main'>
     <ol class="breadcrumb">
-        <li><a href="<?php echo SERVERROOT; ?>/index.php">Home</a></li>
+        <li><a href="../../../index.php">Home</a></li>
         <li class="active">Contact Us</li>
 
         <!--  $current_category = CategoryDB::getCategory($category_id);  from index.php -->
@@ -105,5 +103,5 @@ include PATH_HEADER;
     </form>
 </div><!-- end of #main -->
 <?php
-include PATH_FOOTER;
+include "../../../View/Shared/_Layout/footer.php";
 ?>

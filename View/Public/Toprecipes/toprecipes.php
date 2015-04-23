@@ -8,8 +8,7 @@
 #Reference: Class material -PDO Class
 ?>
 
-<?php include "../../../View/Shared/_Layout/header.php";  ?>  
-<!--end top-->
+<?php include "../../Shared/_Layout/header.php";  ?>  
 
 <?php
 require("../../../Model/database.php");

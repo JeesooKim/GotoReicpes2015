@@ -1,10 +1,9 @@
-<?php  include "c:/xampp/htdocs/GotoReicpes2015/config.php";  ?>
 <?php
-require_once( PATH_DATABASE);   //SERVER ROOT is not working but SITEROOT is working ......why?
-require_once( PATH_MODEL_CATEGORY);
-require_once( PATH_MODEL_CATEGORY_DB);
-require_once( PATH_MODEL_IMAGEGALLERY);
-require_once( PATH_MODEL_IMAGEGALLERY_DB);
+require_once('../../../Model/database.php');   
+require_once('../../../Model/category.php');
+require_once('../../../Model/category_db.php');
+require_once('../../../Model/imagegallery.php');
+require_once('../../../Model/imagegallery_db.php');
 
 #File name: imagegallery.php
 #File for Image Gallery-Public
@@ -21,9 +20,8 @@ require_once( PATH_MODEL_IMAGEGALLERY_DB);
 //For selected images....depending on category,    list of images will be rendered.
 //get the imagesobject,,,ImageGalleryDB::getPath()
 
-include PATH_HEADER; 
-?>
-<?php   
+include "../../../View/Shared/_Layout/header.php"; 
+   
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
