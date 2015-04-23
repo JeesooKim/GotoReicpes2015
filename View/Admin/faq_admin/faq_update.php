@@ -37,7 +37,16 @@ if (isset($_POST['faq_update'])) {
 
 <?php include '../../Shared/_Layout/header-admin.php';    ?>
 <!--end top-->
-<div id="main">
+
+
+    <?php include '../../Shared/_Layout/side-menu.php';    ?>
+<!--end top-->
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="../index.php">Admin Panel</a></li>
+        <li><a href="../faq_admin/faq_index.php">FAQ</a></li>
+        <li class="active">Add new question & answer</li>
+    </ol>
     <h1>Update: <?php echo $faq_question; ?></h1>
 
    

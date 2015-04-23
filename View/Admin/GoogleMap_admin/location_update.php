@@ -50,10 +50,10 @@ if (isset($_POST['location_update'])) {
 
 
     <?php include '../../Shared/_Layout/side-menu.php';    ?>
-
+<div class="container">
     <ol class="breadcrumb">
         <li><a href="../index.php">Admin Panel</a></li>
-        <li><a href="GoogleMap_admin/location_admin.php">Locations list</a></li>
+        <li><a href="../GoogleMap_admin/location_admin.php">Locations list</a></li>
         <li class="active">Update Location</li>
     </ol>
     <div class="row">
@@ -98,6 +98,8 @@ if (isset($_POST['location_update'])) {
         <button type="submit" class="btn btn-primary" name="location_update">Update</button>
         <a class="btn btn-default" href="location_admin.php">Back to list</a>
     </form>
+                </div>
+</div>
 </div>
 <!--End of update form-->
 

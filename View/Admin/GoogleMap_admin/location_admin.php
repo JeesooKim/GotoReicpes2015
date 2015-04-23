@@ -26,6 +26,7 @@ if (isset($_POST['location_id'])) {
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
 <!-- Recipes data tables CDN --> 
 
+<div class="container">
     <ol class="breadcrumb">
         <li><a href="../index.php">Admin Panel</a></li>
         <li class="active">Locations List</li>
@@ -87,7 +88,7 @@ if (isset($_POST['location_id'])) {
             </tbody>
         </table>
     </div>
-
+</div>
 
 
 

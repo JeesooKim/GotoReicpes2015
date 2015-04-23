@@ -13,6 +13,7 @@
 <script  src="../../../Content/js/calendar.js"></script>
 <script  src="../../../Content/js/calendar_jquery.js"></script>
 
+<div class="container">
 <h1>Today's Recipe</h1>
 <br /><br />                
 
@@ -77,3 +78,5 @@ echo "<br /><br />";
 
 echo '<iframe src="./ref/blank.php" name="eventjob" width="100%" height="800" scrolling="no"></iframe>';
 ?>
+
+</div>

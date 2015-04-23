@@ -5,11 +5,11 @@
     </ul>
     <ul class="sidebar-nav" id="sidebar">     
         <li><a href="../Events_admin/index.php">Events<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-        <li><a href="../Imageslider_admin/imageslider_admin.php">Image Slider<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+        <li><a href="../Imageslider_admin/imageslider_admin.php">Slider<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         <li><a href="../Imagegallery_admin/index.php">Gallery<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         <li><a href="../GoogleMap_admin/location_admin.php">Location<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         <li><a href="../Recipes_admin/index.php">Recipes<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-        <li><a href="../Toprecipes_admin/index.php">Top Recipes<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+        <li><a href="../Toprecipes_admin/index.php">Top Recipe<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         <li><a href="../Volunteer_admin/index.php">Volunteer<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         <li><a href="../Sitemap_admin/index.php">Sitemap<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
         <li><a href="../faq_admin/faq_index.php">FAQ<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
