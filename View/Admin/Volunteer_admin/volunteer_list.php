@@ -1,4 +1,3 @@
-<?php include '../../Shared/_Layout/header-admin.php';  ?>  
 <!--end top-->
 <?php
 #File name: volunteer_list.php
@@ -63,6 +62,6 @@ endforeach;
 //Display page link list
 $pgLink = Paginator::pageList($pgSelf, $pgPage, $totCnt, $cntPerPage, $pgLinkCnt, $condition );
 
-include  './ref/footer-admin-iframe.php';
+//include  './ref/footer-admin-iframe.php';
 
 ?>

@@ -75,6 +75,6 @@ endforeach;
 
     echo "<br /><br />";
     
-    echo '<iframe src="./ref/blank.php" name="eventjob" width="100%" height="800" scrolling="no"></iframe>';
+    echo '<iframe src="./ref/blank.php" name="eventjob" width="100%" height="800" scrolling="no" border="0"></iframe>';
 
 ?>

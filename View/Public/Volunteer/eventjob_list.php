@@ -9,6 +9,9 @@
 #Modified: 
 #Reference: Class material -PDO Class
 ?>
+
+<?php if ( count($eventjobadminPage) > 0 ) { ?>
+
 <table class="table" >
     <tr>
     <th>Event Id</th>
@@ -18,6 +21,16 @@
     <th>End Date</th>
     <th>Search Volunteer</th>
 </tr>
+<?php 
+}else{
+?>
+<tr>
+    <td colspan="6">No data Found!</td>
+    
+</tr>
+<?php
+}
+?>
 
 <?php
 foreach ($eventjobadminPage as $eventjob) :

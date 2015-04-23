@@ -1,4 +1,3 @@
-<?php include '../../Shared/_Layout/header-admin.php';  ?>  
 <!--end top-->
 <?php
 #File name: eventjob_list.php
@@ -8,7 +7,11 @@
 #Created: April 12 2015
 #Modified: 
 #Reference: Class material -PDO Class
+
+include  './ref/header-admin-iframe.php';
+
 ?>
+
 <table class="table" >
     <tr>
     <th>Event Id</th>
