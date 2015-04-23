@@ -72,7 +72,7 @@ body{
 }
 
 .container {
-        margin: 0 auto -60px;
+        margin: 0 auto 60px;
         padding-bottom: 60px;
         min-height: 100%;
         height: auto !important;
@@ -80,6 +80,12 @@ body{
 	background-color: #FDF9F0;
 	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 }
+
+.container-footer{
+    padding:5px;
+    height: 15px;
+}
+
 
 @media (max-width: 472px) {
 	#container{
@@ -347,33 +353,17 @@ body{
     }
     #plate{
     display:none;
-}
+    }
 }
 
 // Landscape phone to portrait tablet
 @media (max-width: 768px) {
-    body{
-        width:30%;
-    }
-    .container-fluid{
-        width:30%;
-    }
+    
     header{
-        width:30%;
+        width:140px;
     }
-    .navbar{
-        text-align:center;
-        margin-left:25%;
-        width:50%;
-    }
-    
-    .navbar ul li{
-        width:50%;
-        margin:auto;
-    }
-    
     #content .rslides{
-        width:78%;
+        width:38%;
     }
     
     .col-md-4 .box{
@@ -393,29 +383,48 @@ body{
     .container-footer{
         float:left;
     }
-    
-    header{
-        width:68%;
-    }
     #content{
         margin-left:3%;
         float:left;
         width:75%;
         height:auto;
     }
-    #plate{
-    display:none;
 }
 
-  @media (max-width: 600px) {
+  @media (max-width: 480px) {
+      .container-fluid{
+          margin-left:100px;
+          text-align:center;
+      }
+      .container {
+          width:480px;
+      }
+      .navbar-inverse{
+          width:100%;
+          padding-bottom:150px;
+      }
+      
+      #logo{
+          margin-left:-65px;
+          width:200px;
+      }
+      header{
+          width:70%;
+      }
       .SpecialFont{
+          font-size:2em;
+          width: 85%;
         float:left;
-        margin-left:4%;
-        text-align:left;
+        margin-left:2%;
+        text-align:center;
     }
     #content .rslides{
         display:none;
     }
-    #plate{
-    display:none;
+    
+    .col-md-4 .box img{
+        margin-right:2%;
+        float:none;
+        width:60%;
+    }
   }
