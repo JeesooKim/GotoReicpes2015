@@ -45,6 +45,6 @@ $login_session = $row['userName'];
     
 if(!isset($login_session)){
     mysql_close($connection);   //Closing Connection
-    header("location:login_index.php"); //Redirecting to Home page       
+    header("location:'../../index.php'"); //Redirecting to Home page       
 }
 ?>

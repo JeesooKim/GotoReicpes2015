@@ -44,7 +44,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="./index.php">                     
+                            <a class="navbar-brand" href="../../index.php">                     
                                 <img id="logo" src="../../Content/uploads/images/logo.jpg" alt="gotorecipes" /></a>
                         </div><!-- end of "navbar-header-->
 
@@ -63,7 +63,7 @@
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a class="ddl_link" href="../Public/Recipes/recipes.php">Recipes</a></li>
-                                    <li><a class="ddl_link" href="../Public/Toprecipes//toprecipes.php">Today Recipes</a></li>
+                                    <li><a class="ddl_link" href="../Public/Toprecipes/toprecipes.php">Today Recipes</a></li>
                                 </ul></li>
                             <li><a href="../Public/ImageGallery/imagegallery.php">Gallery</a></li>
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>

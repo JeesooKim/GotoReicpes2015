@@ -40,7 +40,7 @@ if (isset($_SESSION['login_user'])) {
         <fieldset name="Log_in">      
 
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="username" onBlur="if (this.value == '')
+            <input type="text" id="username" name="username" autofocus="autofocus" placeholder="username" onBlur="if (this.value == '')
                         this.value = 'username'" onFocus="if (this.value == 'username')
                                     this.value = ''"/>
             <br/>

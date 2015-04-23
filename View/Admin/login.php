@@ -1,5 +1,4 @@
 <?php
-
 #FILE name: login.php
 #Content: login scripts in which PHP session is initialized
 #Source: www.formget.com/login-form-in-php/

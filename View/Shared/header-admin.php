@@ -50,7 +50,11 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right"> 
                             <div id="profile" style="color: white;">
-<!--                                <b id="welcome">Welcome : <i><?php //echo $login_session; ?></i></b> -->
+                                <b id="welcome">Welcome,  <i>
+                                        <?php
+                                        //include('../Admin/session.php');
+                                        echo $login_session . "! <br/>";
+                                        ?></i></b>
                                 <br/>
                                 <b id="logout"><a href="./logout.php">Log Out</a></b>
                             </div>

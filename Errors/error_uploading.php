@@ -7,7 +7,7 @@
 #March 2015
 #Reference: Class material -PDO Class
 
-include  PATH_HEADER_ADMIN; 
+include  '../View/Shared/header_admin.php'; 
 
 ini_set('display_errors', 'on');
 //error_reporting(E_All);
@@ -24,4 +24,4 @@ ini_set('display_errors', 'on');
     
         
 </div>
-<?php include PATH_FOOTER_ADMIN; ?>
+<?php include '../View/Shared/footer_admin.php'; ?>

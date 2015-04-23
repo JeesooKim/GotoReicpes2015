@@ -12,6 +12,6 @@ if(session_destroy()){  // Destroying All Sessions
     
     //How does PHP know if session_destroy() is triggered?
     
-    header('Location: login_index.php'); //Redirecting to Home page
+    header('Location: logout_display.php'); //Redirecting to Home page
 }
 ?>

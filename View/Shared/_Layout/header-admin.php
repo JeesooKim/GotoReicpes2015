@@ -47,15 +47,19 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right"> 
-                            <div id="profile" style="color: white;">
-<!--                                <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b> -->
+                            <div id="profile" style="color: white;">                               
+                                <b id="welcome">Welcome,  <i>
+                                        <?php
+                                        include('../../Admin/session.php');
+                                        echo $login_session . "! <br/>";
+                                        ?></i></b>
                                 <br/>
                                 <b id="logout"><a href="../../Admin/logout.php">Log Out</a></b>
                             </div>
 
-<!--
-                            <li><a href="<?php //echo PATH_VIEW_ADMIN; ?>/register.php">Register</a></li>
-                            <li><a href="<?php //echo PATH_VIEW_ADMIN; ?>/login.php">Login</a></li>                                -->
+                            <!--
+                                                        <li><a href="<?php //echo PATH_VIEW_ADMIN;  ?>/register.php">Register</a></li>
+                                                        <li><a href="<?php //echo PATH_VIEW_ADMIN;  ?>/login.php">Login</a></li>                                -->
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
